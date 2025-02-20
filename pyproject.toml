@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "research-project"
+version = "0.1.0"
+description = "Research Project by Joschka Braun"
+authors = ["Joschka Braun <joschkacbraun@gmail.com>"]
+packages = [
+    { include = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11.11,<3.12"
+numpy = "^1.26.4"
+pandas = "^2.2.2"
+matplotlib = "^3.9.2"
+transformers = "^4.45.2"
+huggingface-hub = "^0.24.6"
+tokenizers = "^0.20.1"
+datasets = "^2.19.1"
+torch = "^2.6.0"
+steering-vectors = "^0.12.1"
+scikit-learn = "^1.5.2"
+gensim = "^4.3.1"
+nltk = "^3.9.1"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-cov = "^6.0.0"
+mypy = "^1.13.0"
+black = "^24.10.0"
+isort = "^5.13.2"
+ruff = "^0.7.4"
+coverage = "^7.6.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_optional = true
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]

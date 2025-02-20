@@ -1,0 +1,136 @@
+# HDF5 Data Structure Documentation
+
+## Overview
+This document describes the structure of the HDF5 files storing model activations and logits for different scenarios. Each file contains activations from specific layers of the model along with corresponding logits and text data. The data is stored efficiently using float16 precision for numerical data.
+
+## File Structure
+
+### Root Level Attributes
+- `model_name`: Name of the model (e.g., "llama2_7b_chat")
+- `dataset_name`: Name of the dataset being processed
+- `dataset_type`: Type of the dataset
+- `creation_date`: Timestamp of file creation
+- `num_samples`: Total number of samples processed
+
+### Metadata Group (/metadata/)
+Contains detailed information stored as JSON in attributes:
+- `dataset_info`: Dataset details including name, type, and number of samples
+- `model_info`: Model configuration including name and layer numbers
+- `scenarios`: Complete scenario configurations
+
+### Scenarios Group (/scenarios/)
+Contains multiple scenario subgroups, each with the following structure:
+
+#### Text Data (/scenarios/{scenario_name}/text/)
+Stores the raw text data with variable-length string datasets:
+- `prompts`: Original input prompts [Shape: (N,), Type: string]
+- `matching_answers`: Correct/matching responses [Shape: (N,), Type: string]
+- `non_matching_answers`: Incorrect/non-matching responses [Shape: (N,), Type: string]
+
+#### Activation Data (/scenarios/{scenario_name}/data/)
+For non-prefilled scenarios:
+- `logits`: Model logits [Shape: (N, vocab_size), Type: float16]
+- `activations_layer_{X}`: Activations for layer X [Shape: (N, hidden_dim), Type: float16]
+
+For prefilled scenarios (/scenarios/{scenario_name}/data/prefilled/):
+Two subgroups for matching and nonmatching conditions:
+
+1. Matching (/prefilled/matching/):
+   - `logits`: [Shape: (N, vocab_size), Type: float16]
+   - `activations_layer_{X}`: [Shape: (N, hidden_dim), Type: float16]
+
+2. Nonmatching (/prefilled/nonmatching/):
+   - `logits`: [Shape: (N, vocab_size), Type: float16]
+   - `activations_layer_{X}`: [Shape: (N, hidden_dim), Type: float16]
+
+## Data Specifications
+- Hidden dimension size: Model-dependent (specified by model.config.hidden_size)
+- Vocabulary size: Model-dependent (specified by model.config.vocab_size)
+- Numerical precision: float16 for all numerical data (activations and logits)
+- Storage optimization: Uses chunking for efficient batch access
+- Dynamic resizing: All datasets support dynamic expansion using maxshape=(None, dim)
+
+## Typical Value Ranges
+- Activations: Generally between -3.0 and 3.0, mean near 0
+- Logits: Typically between -8.0 and 24.0, mean varies by position
+
+## Implementation Details
+- All numerical data is stored in float16 format for memory efficiency
+- Text data uses variable-length string datasets (h5py.special_dtype(vlen=str))
+- Datasets are created with chunking enabled for optimal I/O performance
+- All datasets support dynamic resizing for incremental data addition
+
+## Typical Usage
+```python
+with h5py.File('output.h5', 'r') as f:
+    # Access metadata
+    model_name = f.attrs['model_name']
+    
+    # Access scenario data
+    scenario_group = f['scenarios/scenario_name']
+    
+    # Read activations (returns float16 array)
+    activations = scenario_group['data/activations_layer_13'][:]
+    
+    # Read text data
+    prompts = scenario_group['text/prompts'][:]
+```
+
+## Notes
+- The file structure supports both regular and prefilled scenario types
+- All numerical data uses float16 precision to optimize storage space
+- Batch processing is implemented to manage memory efficiently
+- GPU memory is explicitly cleared after each batch
+- The structure supports incremental data addition through resizable datasets
+
+
+/
+├── metadata/
+├── scenarios/
+    ├── base/
+    │   ├── text/
+    │   └── data/
+    │       ├── logits (200, 32000)
+    │       └── activations_layer_13 (200, 4096)
+    │
+    ├── matching_few_shot/
+    │   ├── text/
+    │   └── data/
+    │       ├── logits (200, 32000)
+    │       └── activations_layer_13 (200, 4096)
+    │
+    ├── matching_few_shot_prefilled/
+    │   ├── text/
+    │   └── data/
+    │       ├── prefilled_matching/
+    │       │   ├── logits (200, 32000)
+    │       │   └── activations_layer_13 (200, 4096)
+    │       └── prefilled_nonmatching/
+    │           ├── logits (200, 32000)
+    │           └── activations_layer_13 (200, 4096)
+    │
+    ├── matching_instruction/
+    │   ├── text/
+    │   └── data/
+    │       ├── logits (200, 32000)
+    │       └── activations_layer_13 (200, 4096)
+    │
+    ├── [Additional matching_* scenarios follow same pattern]
+    │
+    ├── non_matching_few_shot/
+    │   ├── text/
+    │   └── data/
+    │       ├── logits (200, 32000)
+    │       └── activations_layer_13 (200, 4096)
+    │
+    ├── non_matching_few_shot_prefilled/
+    │   ├── text/
+    │   └── data/
+    │       ├── prefilled_matching/
+    │       │   ├── logits (200, 32000)
+    │       │   └── activations_layer_13 (200, 4096)
+    │       └── prefilled_nonmatching/
+    │           ├── logits (200, 32000)
+    │           └── activations_layer_13 (200, 4096)
+    │
+    └── [Additional non_matching_* scenarios follow same pattern]
