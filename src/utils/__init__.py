@@ -48,6 +48,21 @@ from .generate_prompts_for_anthropic_evals_dataset import (
     generate_prompt_and_anwers,
 )
 
+from .load_datasets import (
+    load_newts_dataset,
+)
+
+from .load_models_and_tokenizers import (
+    load_model_and_tokenizer,
+    load_tokenizer,
+    get_model_info,
+)
+
+from .lda_utils import (
+    load_lda_and_dictionary,
+    load_dictionary,
+    load_lda,
+)
 from ._validate_custom_datatypes import (
     Layer,
     Activation,
@@ -98,4 +113,10 @@ __all__ = [
     # get basic
     "get_device",
     "get_path",
+    # load datasets
+    "load_newts_dataset",
+    # load models and tokenizers
+    "load_model_and_tokenizer",
+    "load_tokenizer",
+    "get_model_info",
 ]

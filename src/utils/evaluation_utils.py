@@ -25,7 +25,7 @@ sys.path.append(parent_dir)
 #pylint: disable=wrong-import-position
 from config.experiment_config import Config
 from utils.text_processing_utils import process_text
-from utils.load_and_get_utils import load_lda, load_dictionary, load_dataset, load_tokenizer,\
+from utils.load_topic_lda import load_lda, load_dictionary, load_dataset, load_tokenizer,\
     get_topic_tokens
 #pylint: enable=wrong-import-position
 

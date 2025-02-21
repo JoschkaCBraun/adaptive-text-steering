@@ -21,7 +21,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 sys.path.append(project_root)
 # pylint: disable=wrong-import-position
 from config.score_and_plot_config import ScoreAndPlotConfig 
-from src.utils.load_and_get_utils import load_model_and_tokenizer, get_data_dir
+from utils.load_topic_lda import load_model_and_tokenizer, get_data_dir
 # pylint: enable=wrong-import-position
 
 # Set up logging

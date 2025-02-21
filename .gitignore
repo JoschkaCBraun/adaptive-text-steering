@@ -1,7 +1,7 @@
 # exclude LDA model because it is too large
-**/LDA_250/
+**/LDA/
 
-# exclude jigsaw and imdb_sentiment datasets because they are too large
+# exclude jigsaw and imdb_sentiment and other datasets because they are too large
 **/toxicity_jigsaw/
 **/imdb_sentiment/
 **/simplicity_wiki_doc/

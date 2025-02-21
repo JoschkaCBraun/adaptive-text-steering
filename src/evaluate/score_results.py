@@ -28,7 +28,7 @@ parent_dir = os.path.dirname(script_dir)
 sys.path.append(parent_dir)
 
 #pylint: disable=wrong-import-position
-from src.utils.load_and_get_utils import load_dictionary, load_dataset, load_tokenizer,\
+from utils.load_topic_lda import load_dictionary, load_dataset, load_tokenizer,\
     get_topic_tokens, get_device, load_lda, store_results_or_scores, get_data_dir
 from src.utils.text_processing_utils import TextProcessor
 from config.score_and_plot_config import ScoreAndPlotConfig

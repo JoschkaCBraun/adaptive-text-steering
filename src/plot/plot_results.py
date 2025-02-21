@@ -26,7 +26,7 @@ sys.path.append(parent_dir)
 
 #pylint: disable=wrong-import-position
 from config.score_and_plot_config import ScoreAndPlotConfig
-from utils.load_and_get_utils import get_file_name, get_data_dir
+from utils.load_topic_lda import get_file_name, get_data_dir
 #pylint: enable=wrong-import-position
 
 # Set up logging

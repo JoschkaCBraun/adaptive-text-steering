@@ -20,7 +20,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 sys.path.append(project_root)
 
 # pylint: disable=wrong-import-position
-from src.utils.load_and_get_utils import load_model_and_tokenizer, load_dataset, get_data_dir, \
+from utils.load_topic_lda import load_model_and_tokenizer, load_dataset, get_data_dir, \
     get_device
 from config.experiment_config import ExperimentConfig
 # pylint: enable=wrong-import-position

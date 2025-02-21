@@ -10,7 +10,7 @@ import numpy as np
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 sys.path.append(project_root)
 
-from src.utils.load_and_get_utils import get_data_dir
+from utils.load_topic_lda import get_data_dir
 
 def load_evaluated_reviews(file_path: str) -> List[Dict]:
     with open(file_path, 'r') as f:

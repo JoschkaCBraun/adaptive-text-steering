@@ -22,7 +22,7 @@ parent_dir = os.path.dirname(os.path.dirname(script_dir))
 sys.path.append(parent_dir)
 from config.experiment_config import Config
 from src.logits_reweighting.logits_reweighting import CustomModel
-from utils.load_and_get_utils import get_topic_vector, get_topic_words, load_model_and_tokenizer,\
+from utils.load_topic_lda import get_topic_vector, get_topic_words, load_model_and_tokenizer,\
     get_dataloader, load_lda, find_data_dir, get_topic_tokens
 
 # Configure logging

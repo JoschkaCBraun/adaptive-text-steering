@@ -25,7 +25,7 @@ class ExperimentConfig:
     Config class for storing settings and hyperparameters.
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs: Any) -> None:
         """
         Initialize the configuration with optional keyword arguments.
         """
@@ -176,60 +176,12 @@ class ExperimentConfig:
             'topical_encouragement': kwargs.get('topical_encouragement', 0.0),
         }
 
-        self.MODEL_ALIAS_CONFIG: Dict[str, Dict[str, Any]] = {
-            'openelm_270m': {
-                'model_name': "apple/OpenELM-270M-Instruct",
-                'tokenizer_name': "meta-llama/Llama-2-7b-hf",
-                'hf_auth_token': "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"
-            },
-            'openelm_450m': {
-                'model_name': "apple/OpenELM-450M-Instruct",
-                'tokenizer_name': "meta-llama/Llama-2-7b-hf",
-                'hf_auth_token': "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"
-            },
-            'openelm_1b': {
-                'model_name': "apple/OpenELM-1_1B-Instruct",
-                'tokenizer_name': "meta-llama/Llama-2-7b-hf",
-                'hf_auth_token': "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"
-            },
-            'openelm_3b': {
-                'model_name': "apple/OpenELM-3B-Instruct",
-                'tokenizer_name': "meta-llama/Llama-2-7b-hf",
-                'hf_auth_token': "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"
-            },   
-            'gemma_2b': {
-                'model_name': "google/gemma-2b-it",
-                'tokenizer_name': "google/gemma-2b-it",
-                'hf_auth_token': "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"
-            },
-            'gemma_7b': {
-                'model_name': 'google/gemma-7b-it',
-                'tokenizer_name': 'google/gemma-7b-it',
-                'hf_auth_token': "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"
-            },
-            'mistral_7b': {
-                'model_name': "mistralai/Mistral-7B-Instruct-v0.1",
-                'tokenizer_name': "mistralai/Mistral-7B-Instruct-v0.1",
-                'hf_auth_token': None
-            },
-            'falcon_7b': {
-                'model_name': "tiiuae/falcon-7b-instruct",
-                'tokenizer_name': "tiiuae/falcon-7b-instruct",
-                'hf_auth_token': None
-            },
-            'llama_8b': {
-                'model_name': "meta-llama/Meta-Llama-3-8B-Instruct",
-                'tokenizer_name': "meta-llama/Meta-Llama-3-8B-Instruct",
-                'hf_auth_token': "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"
-                }
-            }
-
         self.ROUGE_METRICS: list = kwargs.get('ROUGE_METRICS', ['rouge1', 'rouge2', 'rougeL'])
 
         self.validate()
 
     #pylint: disable=line-too-long
-    def validate(self):
+    def validate(self) -> None:
         """Validate the configuration settings."""
         if self.NUM_ARTICLES <= 0:
             raise ValueError(f"NUM_ARTICLES must be greater than 0, but is {self.NUM_ARTICLES}")

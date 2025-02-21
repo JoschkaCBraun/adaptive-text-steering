@@ -19,7 +19,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(script_dir))
 sys.path.append(parent_dir)
 # pylint: disable=wrong-import-position
-from src.utils.load_and_get_utils import load_model_and_tokenizer,\
+from utils.load_topic_lda import load_model_and_tokenizer,\
     load_dataset, load_lda, get_topic_words, get_data_dir
 from config.experiment_config import ExperimentConfig
 # pylint: enable=wrong-import-position
