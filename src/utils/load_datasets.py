@@ -14,26 +14,27 @@ from torch.utils.data import Dataset, DataLoader
 from dataclasses import dataclass
 
 # Local imports
-from config.experiment_config import ExperimentConfig
 import src.utils as utils
 
 # Configure logging at the module level
 logger = logging.getLogger(__name__)
 
 @dataclass
-class ExperimentConfig:
+class DataLoaderConfig:
     batch_size: int = 16
     num_workers: int = 2
     shuffle: bool = False
 
 # pylint: disable=logging-fstring-interpolation
-def load_newts_dataframe(num_articles: Optional[int] = None, load_test_set: bool = False) -> pd.DataFrame:
+def load_newts_dataframe(num_articles: Optional[int] = None,
+                         load_test_set: Optional[bool] = False) -> pd.DataFrame:
     """
     Loads and returns the NEWTS dataset as a pandas DataFrame.
     
-    :param num_articles: The number of articles to load (subset selection).
-    :param load_test_set: Whether to load the test set.
-    :return: The NEWTS dataset as a DataFrame.
+    :param num_articles: The number of articles to load (subset selection),
+                         if None, all articles are loaded.
+    :param load_test_set: Whether to load the test set, if False, the training set is loaded.
+    :return: The NEWTS dataset as a pandas DataFrame.
     :raises ValueError: If the number of articles exceeds allowed limits.
     :raises FileNotFoundError: If the dataset file does not exist.
     """
@@ -86,21 +87,37 @@ class NEWTSDataset(Dataset):
             'tid2': article['tid2'],
         }
 
-def get_dataloader(dataset_name: str, config: ExperimentConfig) -> DataLoader:
+def load_newts_dataloader(num_articles: Optional[int] = None,
+                          load_test_set: Optional[bool] = False,
+                          config: Optional[DataLoaderConfig] = None) -> DataLoader:
     """
-    Sets up and returns a DataLoader for either the NEWTS training or testing set.
+    Loads the NEWTS dataset as a DataLoader.
+    
+    :param num_articles: The number of articles to load (subset selection),
+                         if None, all articles are loaded.
+    :param load_test_set: Whether to load the test set, if False, the training set is loaded.
+    :param config: An optional DataLoaderConfig object with DataLoader parameters.
+                   If not provided, a default configuration is used.
+    :return: A DataLoader for the NEWTS dataset.
+    :raises Exception: Propagates exceptions from DataFrame loading.
+    """
+    if config is None:
+        config = DataLoaderConfig()
 
-    :param dataset_name: The name of the dataset to set up the DataLoader for.
-    :return: A DataLoader for the specified NEWTS dataset.
-    """
+    df = load_newts_dataframe(num_articles=num_articles, load_test_set=load_test_set)
+    dataset = NEWTSDataset(dataframe=df)
     try:
-        dataloader = DataLoader(dataset=NEWTSDataset(dataframe=load_dataset(dataset_name)),
-                                batch_size=config.BATCH_SIZE, num_workers=config.NUM_WORKERS,
-                                shuffle=config.SHUFFLE,)
+        dataloader = DataLoader(
+            dataset=dataset,
+            batch_size=config.batch_size,
+            num_workers=config.num_workers,
+            shuffle=config.shuffle
+        )
+        logger.info("Successfully created NEWTS DataLoader.")
         return dataloader
     except Exception as e:
-        logging.error(f"Error setting up the DataLoader: {e}")
-        return None
+        logger.error(f"Error setting up the DataLoader: {e}")
+        raise
 
 def load_dataset(dataset_name: str) -> pd.DataFrame:
     """
