@@ -1,5 +1,17 @@
+# data folder
+# generally ignore all files in data folder
+**/data/  
 # exclude LDA model because it is too large
 **/LDA/
+# exceptions for some datasets in the data folder
+!**/data/newts_summaries/
+
+# datasets folder
+# generally ignore all files in datasets folder
+**/datasets/
+# However, we want to keep the following datasets:
+!**/datasets/NEWTS/
+!**/datasets/topic_vectors_training_prompts/
 
 # exclude jigsaw and imdb_sentiment and other datasets because they are too large
 **/toxicity_jigsaw/
@@ -11,15 +23,6 @@
 
 #any pdf files
 **/*.pdf
-
-# exclude data
-**/data/
-
-# exclude datasets
-**/datasets/
-
-# exclude scripts
-# **/scripts/
 
 # exclude .DS_Store files
 .DS_Store
