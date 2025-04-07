@@ -39,7 +39,7 @@ __pycache__/
 *.state
 *.dic
 *.model
-*.csv
+# *.csv
 
 # C extensions
 *.so
