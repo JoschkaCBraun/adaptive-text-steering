@@ -62,7 +62,14 @@ from .lda_utils import (
     load_lda_and_dictionary,
     load_dictionary,
     load_lda,
+    get_topic_words,
 )
+
+from .topic_training_samples_utils import (
+    save_topic_training_samples,
+    load_topic_training_samples,
+)
+
 from ._validate_custom_datatypes import (
     Layer,
     Activation,
@@ -119,4 +126,12 @@ __all__ = [
     "load_model_and_tokenizer",
     "load_tokenizer",
     "get_model_info",
+    # lda utils
+    "load_lda_and_dictionary",
+    "load_dictionary",
+    "load_lda",
+    "get_topic_words",
+    # topic training samples
+    "save_topic_training_samples",
+    "load_topic_training_samples",
 ]

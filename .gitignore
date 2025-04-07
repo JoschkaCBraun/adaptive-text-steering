@@ -13,8 +13,8 @@
 # However, we want to keep the following datasets:
 !/datasets/NEWTS/
 !/datasets/NEWTS/*
-!/datasets/topic_vectors_training_prompts/
-!/datasets/topic_vectors_training_prompts/*
+!/datasets/topic_vectors_training_samples/
+!/datasets/topic_vectors_training_samples/*
 
 # exclude jigsaw and imdb_sentiment and other datasets because they are too large
 **/toxicity_jigsaw/
