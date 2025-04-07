@@ -1,5 +1,5 @@
 """
-This file contains the configuration for the languagemodels used in the project.
+This file contains the configuration for the language models used in the project.
 """
 from typing import Dict
 
