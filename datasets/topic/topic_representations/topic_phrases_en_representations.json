@@ -1,0 +1,389 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2025-04-08T22:21:20.487253",
+    "type": "topic_phrases",
+    "language": "en"
+  },
+  "samples": {
+    "12": [
+      "terrorist attack",
+      "islamic terrorism",
+      "attacks on the country",
+      "terrorist threat",
+      "extremist groups"
+    ],
+    "13": [
+      "market prices and market sales",
+      "companies reducing costs",
+      "price tags dramatically undercut the major supermarkets",
+      "increased sales in the current market",
+      "determining a price point for this product",
+      "product sales"
+    ],
+    "32": [
+      "flooding",
+      "lake is dry",
+      "bridge",
+      "the water in the river has never been so high",
+      "flooded river"
+    ],
+    "39": [
+      "military forces",
+      "military troops",
+      "the battleground",
+      "defence army",
+      "ongoing war"
+    ],
+    "46": [
+      "civil law",
+      "marriage",
+      "federal law",
+      "not legal",
+      "state law",
+      "petition",
+      "law for married couples"
+    ],
+    "48": [
+      "eating food at a restaurant",
+      "a healthy meal",
+      "ordering something to drink",
+      "serving breakfast",
+      "fruits are a healthy food",
+      "eating chicken"
+    ],
+    "55": [
+      "power plant",
+      "use fuel to produce heat",
+      "solar energy",
+      "fossil fuels produce waste"
+    ],
+    "61": [
+      "final match",
+      "win the title",
+      "this year's champion",
+      "won the final round"
+    ],
+    "62": [
+      "navy came to rescue in the ocean",
+      "swimming in the sea",
+      "sandy island",
+      "dive team rescued her",
+      "ocean water",
+      "fish"
+    ],
+    "64": [
+      "group composed of militants",
+      "fighters joining forces",
+      "ongoing violence in the capital",
+      "people dead across the country",
+      "militants armed with grenades",
+      "border town"
+    ],
+    "72": [
+      "people infected with the virus",
+      "identify new cases",
+      "outbreak of measles",
+      "public health",
+      "new strain of flu",
+      "infected cases"
+    ],
+    "78": [
+      "a court ruling",
+      "department of justice",
+      "appealed against a court ruling",
+      "judge reviewing a case",
+      "court order",
+      "magistrates"
+    ],
+    "83": [
+      "road traffic",
+      "highway speed",
+      "roads and driving",
+      "driving their vehicles on the road",
+      "traffic speeds"
+    ],
+    "85": [
+      "east coast storm",
+      "pacific ocean",
+      "western winds",
+      "high speed winds",
+      "stormy weather",
+      "atlantic coast"
+    ],
+    "89": [
+      "weight loss",
+      "lost weight following a diet",
+      "body fat",
+      "blood sugar levels",
+      "healthy diet",
+      "lose a few pounds of weight"
+    ],
+    "90": [
+      "derby football match",
+      "Arsenal football team",
+      "they could have snatched victory",
+      "the team's former manager",
+      "the ball hit the post"
+    ],
+    "97": [
+      "visiting the pope",
+      "roman catholic church",
+      "archbishop",
+      "ceremonial meeting for peace"
+    ],
+    "100": [
+      "global climate change",
+      "atmosphere around the Earth",
+      "carbon emissions affect climate change",
+      "Earth's surface",
+      "global temperatures",
+      "temperature of the sun"
+    ],
+    "101": [
+      "formula 1 race",
+      "ferrari team",
+      "collision during the race",
+      "hamilton's team",
+      "grand prix",
+      "race track"
+    ],
+    "105": [
+      "person arrested and charged",
+      "authorities allege",
+      "investigation",
+      "accused of a crime",
+      "under arrest on one charge",
+      "under investigation"
+    ],
+    "110": [
+      "economic growth",
+      "global growth",
+      "billion dollar figures",
+      "economy is growing",
+      "expected growth"
+    ],
+    "113": [
+      "presidential campaign",
+      "presidential candidate",
+      "state governor",
+      "joining a presidential campaign",
+      "a huge impact on political campaigns"
+    ],
+    "115": [
+      "family and friends",
+      "husband and wife",
+      "the couple's daughter",
+      "the two brothers"
+    ],
+    "128": [
+      "paid money using a credit card",
+      "spent money",
+      "amount of credit",
+      "received funds"
+    ],
+    "129": [
+      "bomb explosion attack",
+      "killed in a bombing attack",
+      "injured in the blast",
+      "the explosion was caused by a bomb",
+      "people behind the attack",
+      "car bomb killed and wounded people"
+    ],
+    "134": [
+      "flying the plane",
+      "the pilot of this aircraft",
+      "passengers flying for leisure or work",
+      "landing strip",
+      "the flight crew",
+      "take-offs and landings",
+      "aircraft landing",
+      "jet flying by"
+    ],
+    "144": [
+      "online internet users",
+      "people check websites on different devices",
+      "using an iPhone App to surf the internet",
+      "computer devices",
+      "data plans"
+    ],
+    "152": [
+      "Manchester United's manager",
+      "Premier League",
+      "the striker for the team",
+      "Liverpool versus Chelsea"
+    ],
+    "153": [
+      "firefighters tackled the blaze",
+      "wood burning",
+      "residents evacuating",
+      "flames",
+      "spit embers downwind",
+      "burning buildings",
+      ""
+    ],
+    "162": [
+      "the country's president",
+      "ruler of the country",
+      "President Barack Obama",
+      "here in America",
+      "White House press conference",
+      "the Bush administration",
+      "the former Republican president",
+      ""
+    ],
+    "163": [
+      "travel via air",
+      "passengers on that flight",
+      "airlines offering flexible changes",
+      "world's busiest airport",
+      "international transport",
+      "flights were being handled by different air traffic controllers"
+    ],
+    "175": [
+      "senate and congress",
+      "congressional pressure",
+      "you can call your representative's office",
+      "told a Senate committee",
+      "lawmakers setting the record straight",
+      "staffer to the Democratic senator",
+      "federal employee benefits"
+    ],
+    "180": [
+      "scored a goal",
+      "winning the match by a few points",
+      "scored before half-time",
+      "barcelona has minutes left"
+    ],
+    "187": [
+      "the disease is spread through close contact",
+      "cases of illness or elevated levels of bacteria",
+      "symptoms of this disease include fever",
+      "chills",
+      "muscle aches and headaches"
+    ],
+    "194": [
+      "Ukraine and Russia",
+      "called to fight for Ukraine",
+      "euro countries",
+      "Russian officials gathered in Moscow",
+      "Vladimir Putin",
+      "a citizen of the eastern European country",
+      "bloc of nations within the European Union"
+    ],
+    "195": [
+      "found guilty in the trial before a judicial panel",
+      "opening a criminal trial against him",
+      "could face jail time",
+      "received a fine and a suspended prison sentence"
+    ],
+    "196": [
+      "high school teacher",
+      "high school students",
+      "education in schools",
+      "parents meet teachers",
+      "children going to school"
+    ],
+    "198": [
+      "study by researchers",
+      "university researchers",
+      "scientific journals",
+      "scientists at Google",
+      "studying humans",
+      "the data showed"
+    ],
+    "199": [
+      "world cup football championship",
+      "Brazil qualified for the finals",
+      "Messi said about Ronaldo",
+      "world champions will defend their title",
+      "Nations Cup",
+      "best group of players",
+      "real madrid",
+      "competition for the cup"
+    ],
+    "200": [
+      "children and parents",
+      "families with children",
+      "having kids",
+      "giving birth",
+      "she became a mother",
+      "baby was born"
+    ],
+    "205": [
+      "art museum",
+      "ancient art versus modern art",
+      "exhibit on art history",
+      "an original painting",
+      "history section of the library"
+    ],
+    "211": [
+      "heir to the throne",
+      "Prince William and Prince Harry",
+      "British royal family",
+      "second in line to the throne",
+      "the royal couple"
+    ],
+    "217": [
+      "football league",
+      "the team's fans",
+      "football player",
+      "this season's games",
+      "world championship",
+      "tournament"
+    ],
+    "218": [
+      "winter temperatures",
+      "hot weather conditions",
+      "a cold morning",
+      "snow is expected later"
+    ],
+    "227": [
+      "pop songs",
+      "music fans rejoice",
+      "a singer and songwriter",
+      "first track on the new album",
+      "had a sound check",
+      "sing along with prerecorded track"
+    ],
+    "229": [
+      "hotel room guests",
+      "dinner at the resort",
+      "private bar",
+      "glass of wine",
+      "the hotel guests sat down"
+    ],
+    "236": [
+      "movie characters",
+      "the new series",
+      "action films",
+      "bond between the characters",
+      "viewers of the film"
+    ],
+    "245": [
+      "mobile phone",
+      "Facebook app",
+      "social network",
+      "smart watch",
+      "Samsung phone screen",
+      "apps containing ads",
+      "watching ads"
+    ],
+    "247": [
+      "rise of taxes",
+      "increased benefits",
+      "expenses",
+      "budget increase",
+      "average people's budget",
+      "decreased rates",
+      "taxes benefit average people"
+    ],
+    "248": [
+      "medical care",
+      "doctors and nurses",
+      "hospital nurse",
+      "caring for patients",
+      "doctors perform surgery"
+    ]
+  }
+}

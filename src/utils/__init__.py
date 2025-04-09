@@ -10,7 +10,6 @@ from .compute_steering_vectors import (
     compute_contrastive_steering_vector,
     compute_contrastive_steering_vector_dict,
     compute_non_contrastive_steering_vector,
-    compute_in_context_vector,
 )
 
 from .compute_properties_of_activations import (
@@ -27,29 +26,13 @@ from .get_basic import (
     get_path,
 )
 
-from .load_stored_anthropic_evals_activations_and_logits import (
-    load_anthropic_evals_activations_and_logits,
-    load_paired_activations_and_logits
-)
-
 from .plotting_functions.plot_results_as_violine_plots import (
     plot_all_results,
 )
 
-from .logits_to_probs_utils import (
-    compute_probability_differences,
-    get_token_probability,
-    map_answer_tokens_to_ids,
-    extract_token_type,
-    get_answer_token_ids,
-)
-
-from .generate_prompts_for_anthropic_evals_dataset import (
-    generate_prompt_and_anwers,
-)
-
 from .load_datasets import (
-    load_newts_dataset,
+    load_newts_dataloader,
+    load_newts_dataframe,
 )
 
 from .load_models_and_tokenizers import (
@@ -66,8 +49,14 @@ from .lda_utils import (
 )
 
 from .topic_training_samples_utils import (
-    save_topic_training_samples,
-    load_topic_training_samples,
+    save_topic_representations,
+    load_topic_representations,
+)
+
+from .validate_inputs import (
+    validate_topic_representation_type,
+    validate_pairing_type,
+    validate_language,
 )
 
 from ._validate_custom_datatypes import (
@@ -96,7 +85,6 @@ __all__ = [
     "compute_contrastive_steering_vector",
     "compute_contrastive_steering_vector_dict",
     "compute_non_contrastive_steering_vector",
-    "compute_in_context_vector",
     # compute properties of activations
     "compute_pairwise_cosine_similarity",
     "compute_pairwise_cosine_similarity_dict",
@@ -104,24 +92,14 @@ __all__ = [
     "compute_many_against_one_cosine_similarity_dict",
     "compute_l2_norms",
     "compute_l2_norms_dict",
-    # load stored anthropic evals activations and logits
-    "load_anthropic_evals_activations_and_logits",
-    "load_paired_activations_and_logits",
-    # generate prompts for anthropic evals dataset
-    "generate_prompt_and_anwers",
     # plotting functions
     "plot_all_results",
-    # logits to probs utils
-    "compute_probability_differences",
-    "get_token_probability",
-    "map_answer_tokens_to_ids",
-    "extract_token_type",
-    "get_answer_token_ids",
     # get basic
     "get_device",
     "get_path",
     # load datasets
-    "load_newts_dataset",
+    "load_newts_dataloader",
+    "load_newts_dataframe",
     # load models and tokenizers
     "load_model_and_tokenizer",
     "load_tokenizer",
@@ -131,7 +109,11 @@ __all__ = [
     "load_dictionary",
     "load_lda",
     "get_topic_words",
-    # topic training samples
-    "save_topic_training_samples",
-    "load_topic_training_samples",
+    # topic representations
+    "save_topic_representations",
+    "load_topic_representations",
+    # validate inputs
+    "validate_topic_representation_type",
+    "validate_pairing_type",
+    "validate_language",
 ]

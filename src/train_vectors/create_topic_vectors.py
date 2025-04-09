@@ -8,7 +8,7 @@ import os
 import sys
 import logging
 import pickle
-from typing import Dict, Optional
+from typing import Dict, Optional, List, Tuple
 
 # Third-party imports
 import pandas as pd
@@ -22,6 +22,7 @@ sys.path.append(parent_dir)
 from src.utils import load_model_and_tokenizer, load_dataset, load_lda, get_topic_words, get_data_dir
 from src.utils import save_topic_training_samples, load_topic_training_samples
 from config.experiment_config import ExperimentConfig
+from src.utils.training_samples_utils import load_training_samples
 # pylint: enable=wrong-import-position
 
 # Set up logging

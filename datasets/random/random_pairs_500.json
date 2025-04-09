@@ -1,0 +1,2002 @@
+[
+    [
+        "puts 'Hello, World!'",
+        "Sie denkt, dass sie ist die beste Spielerin im Team."
+    ],
+    [
+        "Wir m\u00fcssen uns beeilen, sonst verpassen wir den Bus.",
+        "#include <stdio.h> int main() { for(int i=1; i<=10; i++) printf('%d:%d ', i, i*i); return 0; }"
+    ],
+    [
+        "Er sagt, dass er kann nicht kommen zur Party.",
+        "Ich habe gekauft ein neues Fahrrad."
+    ],
+    [
+        "Can you believe it's already been five years?",
+        "I need to schedule a dentist appointment soon."
+    ],
+    [
+        "'Have you ever been skydiving?' 'Once, and it was terrifying but exhilarating!'",
+        "K\u00f6nnen wir salir a caminar esta tarde?"
+    ],
+    [
+        "Il faut que tu fais attention quand tu conduis.",
+        "The cat stretched lazily in the warm sunbeam."
+    ],
+    [
+        "Here are the 20 incorrect Python one-liners:",
+        "De bus komt over tien minuten aan."
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().chars().distinct().sorted().mapToObj(ch -> String.valueOf((char) ch)).collect(Collectors.joining()));",
+        "They're going they're separate ways."
+    ],
+    [
+        "'Have you tried the new Thai restaurant?' 'Not yet, but I've heard great things about it.'",
+        "Ich bin mehr gr\u00f6\u00dfer als mein Bruder."
+    ],
+    [
+        "Yd7.rZ4tS?Og2`pC5vH!",
+        "Elle a pens\u00e9 qu'elle \u00e9tait la meilleure joueuse de l'\u00e9quipe."
+    ],
+    [
+        "Sie hams sich a neiches Haus kaaft.",
+        "Hunde sind Reptilien."
+    ],
+    [
+        "Le roman historique, qui met en lumi\u00e8re les ann\u00e9es tumultueuses du d\u00e9but du 20e si\u00e8cle en Europe du point de vue d'une famille paysanne, a non seulement fait sensation aupr\u00e8s des critiques litt\u00e9raires, mais a \u00e9galement trouv\u00e9 un large lectorat fascin\u00e9 par la repr\u00e9sentation d\u00e9taill\u00e9e de la vie quotidienne et les personnages complexes.",
+        "I can't decide what to have for dinner tonight."
+    ],
+    [
+        "She's pursuing a PhD in quantum physics.",
+        "'What's your opinion on electric cars?' 'I think they're the future, but the infrastructure needs work.'"
+    ],
+    [
+        "Il museo ospita una mostra interessante sull'arte moderna.",
+        "#include <stdio.h> int main() { char expr[100]; scanf('%s', expr); printf('%d', (int)eval(expr)); return 0; }"
+    ],
+    [
+        "Apr\u00e8s avoir voyag\u00e9 pendant des ann\u00e9es \u00e0 travers l'Europe en tant que musicien de rue et d\u00e9couvert diff\u00e9rents styles et traditions musicales, le talentueux guitariste est retourn\u00e9 dans sa ville natale, o\u00f9 il a cr\u00e9\u00e9 un festival de musique multiculturel qui attire d\u00e9sormais chaque ann\u00e9e des milliers de visiteurs du monde entier.",
+        "#include <stdio.h> int main() { char s[100]; scanf('%s', s); for(int i=0; s[i]; i++) printf('%c:%d ', s[i], s[i]); return 0; }"
+    ],
+    [
+        "Die Katze schl\u00e4ft friedlich auf dem Sofa.",
+        "Les fleurs dans le jardin sont magnifiques."
+    ],
+    [
+        "#include <stdio.h> int main() { printf('Hello, World!\\n'); return 0; }",
+        "print(max([int(x) for x in input('Enter numbers separated by space: ').split()]))"
+    ],
+    [
+        "\u00bfQu\u00e9 hora es ahora?",
+        "'Do you know how to change a tire?' 'Yes, I learned last year. It's not too difficult.'"
+    ],
+    [
+        "Las noticias informan sobre los \u00faltimos acontecimientos pol\u00edticos.",
+        "Ils ont d\u00e9cid\u00e9 de se marier l'\u00e9t\u00e9 prochain."
+    ],
+    [
+        "'Welche Musikrichtung magst du am liebsten?' 'Ich liebe Jazz. Die Improvisation ist so kreativ.'",
+        "Stiamo pianificando le nostre prossime vacanze in Sicilia."
+    ],
+    [
+        "Bk2(jF1cP*Wd6[oT9yS&Hy8{iX3bN)Vt4<sC7uR]",
+        "Nonostante lo scetticismo iniziale di molti esperti, la startup innovativa specializzata in soluzioni energetiche sostenibili per le abitazioni private \u00e8 diventata in pochi anni uno degli attori principali del settore ed \u00e8 stata recentemente premiata con un prestigioso riconoscimento ambientale."
+    ],
+    [
+        "Bv5%tG1wS*Jc8^dA4uP&",
+        "I been working here for years."
+    ],
+    [
+        "print(''.join(chr(ord(char) + 1) if char.isalpha() else char for char in input('Enter a string: ')))",
+        "Have you tried the new sushi restaurant downtown?"
+    ],
+    [
+        "Ich habe gestern ins Kino gegangen.",
+        "Die Katze, die ich gestreichelt habe, war weich sein Fell."
+    ],
+    [
+        "Oggi il cielo \u00e8 molto azzurro.",
+        "Nous avons mang\u00e9 dans un excellent restaurant hier soir."
+    ],
+    [
+        "The kitten purred contentedly in its owner's lap.",
+        "He always tells the corniest jokes at family gatherings."
+    ],
+    [
+        "Elle a dit qu'elle viendra demain.",
+        "'What's your go-to recipe for a quick dinner?' 'Stir-fry. It's fast, healthy, and customizable.'"
+    ],
+    [
+        "Antibiotics are effective against viruses.",
+        "Las flores de nuestro jard\u00edn est\u00e1n floreciendo hermosamente."
+    ],
+    [
+        "Hast scho den neichstn Film im Kino gsehn?",
+        "I mua\u00df no die W\u00e4sch aufh\u00e4nga, bevor's regnet."
+    ],
+    [
+        "They was happy about the news.",
+        "Il faut que tu es plus attentif en classe."
+    ],
+    [
+        "La tarta de manzana de mi abuela siempre es la mejor.",
+        "print(sum(range(1, 101)))"
+    ],
+    [
+        "Der alte Leuchtturm steht seit Jahrhunderten an der K\u00fcste.",
+        "Kannst ma bitte des Salz gibn?"
+    ],
+    [
+        "'What's the best concert you've ever attended?' 'Coldplay live. The light show was spectacular.'",
+        "The orchestra performed a beautiful rendition of Beethoven's Fifth Symphony."
+    ],
+    [
+        "#include <stdio.h> #include <ctype.h> int main() { char c; int i=0; while((c=getchar())!='\\n') printf('%c', i++%2==0 ? toupper(c) : tolower(c)); return 0; }",
+        "Do you prefer physical books or e-readers?"
+    ],
+    [
+        "Ich habe morgen einen wichtigen Termin beim Arzt.",
+        "Ln4|gX8zC/Vp0=sT2hB+"
+    ],
+    [
+        "Der Apfelkuchen meiner Gro\u00dfmutter schmeckt immer am besten.",
+        "Penguins only live in Antarctica."
+    ],
+    [
+        "I love the sound of rain on a tin roof.",
+        "System.out.println(IntStream.rangeClosed(1, 10).boxed().collect(Collectors.toMap(i -> i, i -> i * i)));"
+    ],
+    [
+        "The cat have caught a mouse.",
+        "'Was ist dein Lieblingsrezept f\u00fcr ein schnelles Abendessen?' 'Pfannengerichte. Sie sind schnell, gesund und vielseitig.'"
+    ],
+    [
+        "puts 3.times.all? { gets.chomp == gets.chomp.reverse }",
+        "Ik moet nog de was ophangen voordat het gaat regenen."
+    ],
+    [
+        "#include <stdio.h> #include <ctype.h> int main() { char c; while((c=getchar())!='\\n') if(!isalpha(c)) { printf('false'); return 0; } printf('true'); return 0; }",
+        "The intricate tapestry hanging in the museum's main hall told a story of ancient battles and long-forgotten kingdoms, its vibrant colors and detailed stitching captivating visitors from around the world."
+    ],
+    [
+        "You lose most of your body heat through your head.",
+        "The actor delivered a powerful performance in his latest film."
+    ],
+    [
+        "I need to renew my passport before the trip.",
+        "Nous avons visit\u00e9 la Tour Eiffel hier."
+    ],
+    [
+        "Pt0|wM8uD)Zx9#mK2pL$Qr3!fN7yH@",
+        "Pflanzen brauchen kein Wasser zum Wachsen."
+    ],
+    [
+        "J'ai oubli\u00e9 de faire mes devoirs.",
+        "Er fragt, ob ich habe seine Brille gesehen."
+    ],
+    [
+        "System.out.println(IntStream.rangeClosed(1, 5).boxed().collect(Collectors.toMap(i -> i, i -> i * i)));",
+        "Dobbiamo sbrigarci o perderemo l'autobus."
+    ],
+    [
+        "Puoi aiutarmi con questa traduzione, per favore?",
+        "Mein Hund liebt es, im Park zu rennen."
+    ],
+    [
+        "puts gets.chomp.downcase.chars.sort.join",
+        "System.out.println(new Scanner(System.in).nextLine().chars().mapToObj(ch -> (char) ch).sorted().collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append));"
+    ],
+    [
+        "He asked that where I was going.",
+        "Nous avons pass\u00e9 un excellent week-end \u00e0 la campagne."
+    ],
+    [
+        "puts gets.chomp.downcase.chars.uniq.count",
+        "Ich habe vergessen meine Hausaufgaben zu machen gehabt."
+    ],
+    [
+        "#include <stdio.h> int main() { for(int i=1; i<=100; i++) { int sum=0, n=i; while(n) { sum+=n%10; n/=10; } if(sum%2==0) printf('%d ', i); } return 0; }",
+        "Hai sentito del nuovo ristorante in centro?"
+    ],
+    [
+        "The company's new policy aims to reduce its carbon footprint.",
+        "Humans and dinosaurs coexisted."
+    ],
+    [
+        "'Qual \u00e8 il tuo libro preferito?' 'Il nome della rosa. La trama \u00e8 cos\u00ec avvincente.'",
+        "Mei Hund liebt's, im Park herumzutoben."
+    ],
+    [
+        "Nb5[tY2zM)Hf7{iR9cX]",
+        "Lightning never strikes the same place twice."
+    ],
+    [
+        "Do you think artificial intelligence will replace human jobs?",
+        "J'ai besoin que tu me aides avec ce probl\u00e8me."
+    ],
+    [
+        "Elle a demand\u00e9 si je voulais du caf\u00e9.",
+        "J'ai vu le film dont tu m'as parl\u00e9."
+    ],
+    [
+        "Am Wochenende m\u00f6chte ich einen langen Spaziergang machen.",
+        "'Da quanto tempo suoni la chitarra?' 'Da circa cinque anni. Ho ancora molto da imparare.'"
+    ],
+    [
+        "Mt6%hE3yA$Dc4^lI8uB*Sx1(nU7qP&",
+        "She don't like ice cream."
+    ],
+    [
+        "Humans can't grow new brain cells.",
+        "He be working all day."
+    ],
+    [
+        "'Hast du das Spiel gestern Abend gesehen?' 'Ja! Dieses letzte Tor in letzter Minute war unglaublich.'",
+        "#include <stdio.h> int main() { int count=0; for(int i=1; i<=1000; i++) if(strchr(sprintf('%d', i), '3')) count++; printf('%d', count); return 0; }"
+    ],
+    [
+        "Het weer is vandaag echt prachtig.",
+        "Despite the logistical challenges and diplomatic hurdles, the international aid organization managed to coordinate a massive relief effort, delivering essential supplies and medical assistance to the remote region devastated by the recent earthquake and subsequent aftershocks."
+    ],
+    [
+        "The Sun revolves around the Earth.",
+        "The Great Wall of China is visible from space with the naked eye."
+    ],
+    [
+        "I can't believe I forgot my keys again!",
+        "The Northern Lights danced across the night sky."
+    ],
+    [
+        "She don't know where is the library.",
+        "Can you recommend a good book to read?"
+    ],
+    [
+        "I am going to bought a new car.",
+        "Je dois acheter un cadeau pour ma m\u00e8re."
+    ],
+    [
+        "Do you think it will rain tomorrow?",
+        "She finally finished writing her first novel."
+    ],
+    [
+        "Aq1-wY7nJ_Ux3~kO9fG;Ie8:mN6bL,Yd7.rZ4tS?",
+        "#include <stdio.h> #include <string.h> int main() { char s[100]; scanf('%s', s); int count[26]={0}; for(int i=0; i<strlen(s); i++) if(isalpha(s[i])) count[tolower(s[i])-'a']=1; int unique=0; for(int i=0; i<26; i++) unique+=count[i]; printf('%d', unique); return 0; }"
+    ],
+    [
+        "Nous avons mang\u00e9 au restaurant qui tu m'as recommand\u00e9.",
+        "puts (1..100).sum"
+    ],
+    [
+        "print(sum(map(int, input('Enter comma-separated numbers: ').split(','))))",
+        "Ich brauche un caf\u00e9 antes de ir al trabajo."
+    ],
+    [
+        "Quanto tempo ci vuole per parlare fluentemente una nuova lingua?",
+        "Il vecchio faro si erge sulla costa da secoli."
+    ],
+    [
+        "He don't never call me.",
+        "Hast du eine Ahnung, wo ich meinen Schl\u00fcssel verloren habe?"
+    ],
+    [
+        "The ambitious urban renewal project, which aimed to transform a neglected neighborhood into a thriving community hub, faced numerous challenges including budget constraints, local opposition, and unforeseen structural issues, but the dedicated team of architects and city planners remained committed to seeing their vision come to life.",
+        "Ho recentemente iniziato a praticare yoga."
+    ],
+    [
+        "She won first place in the science fair competition.",
+        "print(dict(zip(range(1, 6), map(lambda x: x**2, range(1, 6)))))"
+    ],
+    [
+        "The company announced a merger with its biggest competitor.",
+        "She's volunteering at the local animal shelter this weekend."
+    ],
+    [
+        "Le mus\u00e9e est ferm\u00e9 le lundi.",
+        "Estoy deseando ir al concierto la semana que viene."
+    ],
+    [
+        "Napoleon war der erste Pr\u00e4sident der Vereinigten Staaten.",
+        "J'ai oubli\u00e9 mon parapluie \u00e0 la maison."
+    ],
+    [
+        "Humans have five senses.",
+        "Die Blumen im Garten bl\u00fchen wundersch\u00f6n."
+    ],
+    [
+        "\u00bfD\u00f3nde has puesto mis gafas?",
+        "'Wie gehst du mit Stress um?' 'Ich praktiziere Meditation und versuche, regelm\u00e4\u00dfig Sport zu treiben.'"
+    ],
+    [
+        "'Qual \u00e8 il tuo ricordo d'infanzia preferito?' 'Costruire castelli di sabbia con mio padre in spiaggia.'",
+        "Nachdem er jahrelang als Stra\u00dfenmusiker durch Europa gereist war und verschiedene musikalische Stile und Traditionen kennengelernt hatte, kehrte der talentierte Gitarrist in seine Heimatstadt zur\u00fcck, wo er ein multikulturelles Musikfestival ins Leben rief, das inzwischen j\u00e4hrlich Tausende von Besuchern aus aller Welt anzieht."
+    ],
+    [
+        "print([x for x in range(1, 101) if sum(int(digit) for digit in str(x)) % 2 == 0])",
+        "Wir haben geplant, zu gehen in den Urlaub n\u00e4chste Woche."
+    ],
+    [
+        "```open('file.txt', 'w').write('Hello') close()```",
+        "print(''.join(sorted(set(input('Enter a string: ')))))"
+    ],
+    [
+        "Sie hot vergessen, d'T\u00fcr zua zumachen.",
+        "Der Wissenschaftler hat eine bahnbrechende Entdeckung gemacht."
+    ],
+    [
+        "\u00bfCu\u00e1nto tiempo se tarda de aqu\u00ed al aeropuerto?",
+        "As the artificial intelligence system processed vast amounts of data from diverse sources, including historical records, current events, and predictive models, it began to generate increasingly accurate and nuanced forecasts of global economic trends, revolutionizing the field of financial planning and investment strategy."
+    ],
+    [
+        "print({x: [y for y in range(1, x+1) if x % y == 0] for x in range(1, 11)})",
+        "Ich habe vor kurzem angefangen, Yoga zu praktizieren."
+    ],
+    [
+        "He's hoping to get a promotion at work this year.",
+        "Mio fratello ha comprato una nuova macchina."
+    ],
+    [
+        "Dove hai messo le chiavi della macchina?",
+        "Hai idea di dove ho perso le mie chiavi?"
+    ],
+    [
+        "'Come ti piace il caff\u00e8?' 'Forte e nero, senza zucchero n\u00e9 latte.'",
+        "Ze hebben besloten om een nieuw huis te kopen."
+    ],
+    [
+        "The long-lost manuscript, discovered in a forgotten archive and painstakingly authenticated by a team of literary scholars, shed new light on the life and work of the renowned author, challenging long-held assumptions and rewriting a significant chapter of literary history.",
+        "Wir m\u00fcssen gehen jetzt, sonst wir verpassen den Zug."
+    ],
+    [
+        "The young pianist, who had been practicing relentlessly since childhood, felt a mix of excitement and nervousness as she stepped onto the stage of Carnegie Hall for her debut performance in front of a sold-out crowd.",
+        "Il faut que nous finissons ce projet aujourd'hui."
+    ],
+    [
+        "Despite the numerous challenges and setbacks they faced throughout the project, the team of engineers persevered, working tirelessly day and night until they finally achieved a breakthrough that would revolutionize renewable energy technology.",
+        "print(any(char.isdigit() for char in input('Enter a string: ')))"
+    ],
+    [
+        "J'ai oubli\u00e9 de te demander quand est ton anniversaire.",
+        "System.out.println(new StringBuilder(new Scanner(System.in).nextLine()).reverse());"
+    ],
+    [
+        "#include <stdio.h> int main() { int n, sum=0; while(scanf('%d,', &n) == 1) sum += n; printf('%d', sum); return 0; }",
+        "The chef's secret ingredient made all the difference."
+    ],
+    [
+        "```print 'Hello, World!'```",
+        "Malgr\u00e9 le scepticisme initial de nombreux experts, la startup innovante sp\u00e9cialis\u00e9e dans les solutions \u00e9nerg\u00e9tiques durables pour les foyers priv\u00e9s est devenue en quelques ann\u00e9es seulement l'un des acteurs principaux du secteur et a r\u00e9cemment \u00e9t\u00e9 r\u00e9compens\u00e9e par un prestigieux prix environnemental."
+    ],
+    [
+        "'How do you stay motivated at work?' 'I set small, achievable goals and reward myself.'",
+        "She broke the world record in the 100-meter sprint."
+    ],
+    [
+        "The dog wagged its tail excitedly at the park.",
+        "The child's laughter echoed through the playground."
+    ],
+    [
+        "'Wie trinkst du deinen Kaffee am liebsten?' 'Stark und schwarz, ohne Zucker oder Milch.'",
+        "Die Firma plant, ihre Produktionsst\u00e4tte ins Ausland zu verlagern."
+    ],
+    [
+        "She's been practicing yoga for over a decade now.",
+        "Die Chinesische Mauer ist in Indien zu finden."
+    ],
+    [
+        "'What time does the movie start?' '8:30 PM. We should leave by 8 to get good seats.'",
+        "How many cups of coffee is too many? Asking for a friend. #Caffeine"
+    ],
+    [
+        "The archaeologists uncovered an ancient burial site.",
+        "Elle as beaucoup d'amis \u00e0 l'\u00e9cole."
+    ],
+    [
+        "```d = {'a': 1, 'b': 2}; print(d['c'])```",
+        "She done her homework already."
+    ],
+    [
+        "As the global population continued to grow and climate change altered traditional agricultural patterns, scientists and policymakers grappled with the complex challenge of ensuring food security for billions of people while simultaneously reducing the environmental impact of farming practices and distribution networks.",
+        "C\u2019est raining mucho drau\u00dfen heute."
+    ],
+    [
+        "Ik heb morgen een belangrijk gesprek op het werk.",
+        "Das neue Buch des Autors ist ein Bestseller geworden."
+    ],
+    [
+        "He always wears mismatched socks on purpose.",
+        "Das Wetter ist heute sehr sch\u00f6n, und?"
+    ],
+    [
+        "print(' '.join(word[::-1] for word in input('Enter a sentence: ').split()))",
+        "The startup company, which had begun in a small garage with just a handful of employees, had grown exponentially over the past five years and was now preparing for its initial public offering on the stock market."
+    ],
+    [
+        "Am Wochenend moch i an scheena Ausflug in die Berg.",
+        "The old bookstore, with its creaking wooden floors and towering shelves filled with dusty tomes, had been a sanctuary for literature lovers for generations, offering a quiet escape from the bustling city outside."
+    ],
+    [
+        "System.out.println(IntStream.rangeClosed(1, new Scanner(System.in).nextInt()).mapToDouble(i -> Math.pow(i, 3)).sum());",
+        "puts (1..10).map { |i| [i, (1..i).select { |j| i % j == 0 }] }.to_h"
+    ],
+    [
+        "Mi hermano se ha comprado un coche nuevo.",
+        "El nuevo libro del autor se ha convertido en un best-seller."
+    ],
+    [
+        "He's been working on that puzzle for hours.",
+        "Ils ont d\u00e9cid\u00e9 de partir en voyage."
+    ],
+    [
+        "Le montagne in lontananza sono coperte di neve.",
+        "I didn't meant to offend you."
+    ],
+    [
+        "Anoche vi una pel\u00edcula emocionante.",
+        "Die Nachrichten berichten \u00fcber die aktuellen Entwicklungen in der Politik."
+    ],
+    [
+        "Giraffen haben kurze H\u00e4lse.",
+        "He didn't went to the party."
+    ],
+    [
+        "Vanavond eten we pizza voor het avondeten.",
+        "Der Zug kummt um 14:00 Uhr an."
+    ],
+    [
+        "IntStream.rangeClosed(1, 100).filter(i -> String.valueOf(i).chars().map(Character::getNumericValue).sum() % 2 == 0).forEach(System.out::println);",
+        "Die Farbe Rot hat die l\u00e4ngste Wellenl\u00e4nge im sichtbaren Spektrum."
+    ],
+    [
+        "The ancient ruins were discovered by accident.",
+        "Qs3%wY6zD@Rn7^lM4xG$"
+    ],
+    [
+        "Bien que le temps n'ait pas \u00e9t\u00e9 particuli\u00e8rement cl\u00e9ment ce week-end, nous avons n\u00e9anmoins entrepris une merveilleuse excursion dans les montagnes, o\u00f9 nous avons non seulement pu profiter de la vue \u00e0 couper le souffle, mais aussi fait la connaissance d'un groupe de randonneurs sympathiques.",
+        "\u00bfTienes idea de d\u00f3nde he perdido mis llaves?"
+    ],
+    [
+        "We hasn't finished our homework yet.",
+        "System.out.println(new Scanner(System.in).nextLine().chars().boxed().collect(Collectors.toMap(ch -> (char) ch.intValue(), ch -> ch, (a, b) -> b)));"
+    ],
+    [
+        "'What's your dream vacation destination?' 'Bora Bora. Those overwater bungalows look amazing!'",
+        "Mon fr\u00e8re travaille dans une banque."
+    ],
+    [
+        "#include <stdio.h> int main() { int n, sum=0; scanf('%d', &n); while(n>0) { sum+=n%10; n/=10; } printf('%d', sum); return 0; }",
+        "I can't believe how fast technology is advancing these days."
+    ],
+    [
+        "The century-old family recipe for the artisanal cheese, passed down through generations and guarded as a closely-held secret, was at risk of being lost forever as the last remaining heir struggled to find an apprentice worthy of carrying on the tradition in an era of mass-produced food.",
+        "System.out.println(IntStream.rangeClosed(1, 100).sum());"
+    ],
+    [
+        "Je vais apprendre \u00e0 jouer de la guitare.",
+        "Dit weekend wil ik een lange wandeling maken."
+    ],
+    [
+        "Recientemente he empezado a practicar yoga.",
+        "Hast du schon deine Pl\u00e4ne f\u00fcr das Wochenende gemacht?"
+    ],
+    [
+        "Die Olympischen Spiele finden jedes Jahr statt.",
+        "Puoi darmi la ricetta del tuo delizioso tiramis\u00f9?"
+    ],
+    [
+        "Elefanten k\u00f6nnen fliegen.",
+        "'Do you have any pets?' 'Yes, a rescue cat named Luna. She's very affectionate.'"
+    ],
+    [
+        "print(len([x for x in range(1, 1001) if '3' in str(x)]))",
+        "La nuova linea metropolitana, che collega il centro citt\u00e0 con i sobborghi finora difficilmente raggiungibili, promette non solo di alleviare i flussi quotidiani di pendolari, ma anche di stimolare lo sviluppo economico nelle aree servite, cambiando cos\u00ec in modo duraturo il paesaggio urbano."
+    ],
+    [
+        "Just had the best coffee of my life. #CaffeineAddict",
+        "'Was ist der interessanteste Ort, den du je besucht hast?' 'Die Osterinsel. Die riesigen Steinfiguren sind faszinierend.'"
+    ],
+    [
+        "'How do you like your coffee?' 'Strong and black, no sugar or cream.'",
+        "'Wie h\u00e4ltst du dich fit?' 'Ich variiere zwischen Yoga, Laufen und Krafttraining.'"
+    ],
+    [
+        "'Hai animali domestici?' 'S\u00ec, un gatto salvato dal canile di nome Luna. \u00c8 molto affettuosa.'",
+        "Papier wird aus Plastik hergestellt."
+    ],
+    [
+        "The groundbreaking virtual reality experience, which combined cutting-edge graphics technology with innovative storytelling techniques, transported users to a fully immersive alien world where they could interact with the environment and characters in ways previously thought impossible.",
+        "We was planning to go on vacation."
+    ],
+    [
+        "He's studying abroad for a semester in Japan.",
+        "print(' '.join(sorted(input('Enter words separated by space: ').split(), key=len)))"
+    ],
+    [
+        "The ancient redwood forest, with trees towering hundreds of feet into the sky and some specimens dating back thousands of years, stood as a testament to the enduring power of nature and the importance of conservation efforts in preserving these magnificent ecosystems for future generations.",
+        "Je dois envoyer ce colis avant midi."
+    ],
+    [
+        "Nous allons repeindre le salon ce week-end.",
+        "\u00bfHas o\u00eddo hablar del nuevo restaurante en el centro?"
+    ],
+    [
+        "The chef, known for his innovative culinary creations, spent months perfecting his latest dish, combining unlikely ingredients in a way that would challenge and delight the palates of even the most discerning food critics.",
+        "'Qual \u00e8 il posto pi\u00f9 interessante che hai visitato?' 'Pompei. L'architettura antica \u00e8 mozzafiato.'"
+    ],
+    [
+        "'Wie bleibst du bei der Arbeit motiviert?' 'Ich setze mir kleine, erreichbare Ziele und belohne mich selbst.'",
+        "Tu peux me dire comment on va \u00e0 la gare ?"
+    ],
+    [
+        "What do you think about the proposed changes to the education system?",
+        "Alle V\u00f6gel k\u00f6nnen fliegen."
+    ],
+    [
+        "'Hai visto la partita ieri sera?' 'S\u00ec! Quel gol all'ultimo minuto \u00e8 stato incredibile.'",
+        "Je ne sais pas o\u00f9 est la gare."
+    ],
+    [
+        "Der B\u00e4cker in unserer Stra\u00dfe macht die besten Croissants der Stadt.",
+        "'Hast du Haustiere?' 'Ja, eine Katze aus dem Tierheim namens Luna. Sie ist sehr anh\u00e4nglich.'"
+    ],
+    [
+        "The book what I read was interesting.",
+        "'A che ora inizia il film?' 'Alle 20:30. Dovremmo partire alle 20 per trovare buoni posti.'"
+    ],
+    [
+        "Tu dois finir ton travail avant que tu pars.",
+        "Ils ont dit qu'ils ne peuvent pas venir \u00e0 la f\u00eate."
+    ],
+    [
+        "System.out.println(IntStream.rangeClosed(2, 100).filter(i -> IntStream.rangeClosed(2, (int) Math.sqrt(i)).noneMatch(j -> i % j == 0)).boxed().collect(Collectors.toList()));",
+        "Das Buch liegt auf dem Tisch, welches ich lese gerade."
+    ],
+    [
+        "Elle parle beaucoup \u00fcber la politique lately.",
+        "I bin grad mit ana neuen Projekt in da Uni beschaeftigt."
+    ],
+    [
+        "System.out.println(Arrays.stream(new Scanner(System.in).nextLine().split(' ')).sorted(Comparator.comparingInt(String::length)).collect(Collectors.joining(' ')));",
+        "Such a lovely day today!"
+    ],
+    [
+        "Das Herz befindet sich im Kopf.",
+        "The bridge collapsed due to structural weaknesses."
+    ],
+    [
+        "Der Hund und die Katze ist im Garten.",
+        "Bulls are angered by the color red."
+    ],
+    [
+        "Organic foods are pesticide-free.",
+        "Tu veux comer lunch avec nosotros heute?"
+    ],
+    [
+        "I like to watching movies.",
+        "He no like spicy food."
+    ],
+    [
+        "Scientists have discovered a new species of deep-sea fish.",
+        "The comedian had the audience in stitches."
+    ],
+    [
+        "As the orchestra began to play the opening notes of the symphony, the concert hall fell into a hushed silence, the audience collectively holding their breath in anticipation of the musical journey that lay ahead.",
+        "Computer wurden im Mittelalter erfunden."
+    ],
+    [
+        "Die Titanic sank im Jahr 2000.",
+        "He's studying to become a neurosurgeon."
+    ],
+    [
+        "La nouvelle ligne de m\u00e9tro, qui relie le centre-ville aux banlieues jusqu'alors difficilement accessibles, promet non seulement de soulager les flux quotidiens de navetteurs, mais aussi de stimuler le d\u00e9veloppement \u00e9conomique dans les zones desservies, modifiant ainsi durablement le paysage urbain.",
+        "A pesar del escepticismo inicial de muchos expertos, la innovadora startup especializada en soluciones energ\u00e9ticas sostenibles para hogares privados se ha convertido en pocos a\u00f1os en uno de los principales actores del sector y recientemente ha sido galardonada con un prestigioso premio medioambiental."
+    ],
+    [
+        "Ich freue mich schon sehr auf das Konzert n\u00e4chste Woche.",
+        "'Com'\u00e8 il tempo oggi?' 'Soleggiato e caldo. Perfetto per un picnic!'"
+    ],
+    [
+        "Sue\u00f1o con viajar a Jap\u00f3n alg\u00fan d\u00eda.",
+        "```for i in 'hello': i.upper```"
+    ],
+    [
+        "```import random random.randint(1, 10, 3)```",
+        "Die Hauptstadt von Frankreich ist London."
+    ],
+    [
+        "Qh2`wU7yL,Fb6#jR3zX?",
+        "Sie hat vergessen, die T\u00fcr abzuschlie\u00dfen."
+    ],
+    [
+        "As climate change continued to affect weather patterns around the globe, scientists and policymakers worked urgently to develop and implement strategies to mitigate its impact on vulnerable ecosystems and communities.",
+        "Mice love cheese."
+    ],
+    [
+        "'Qual \u00e8 la tua cucina preferita?' 'Quella italiana, ovviamente! Non c'\u00e8 niente di meglio della pasta fatta in casa!'",
+        "The documentary shed light on important environmental issues."
+    ],
+    [
+        "\u00bfPuede indicarme el camino al ayuntamiento, por favor?",
+        "The flowers is blooming early this year."
+    ],
+    [
+        "The museum hosted a special exhibit on impressionist art.",
+        "Flederm\u00e4use sind V\u00f6gel."
+    ],
+    [
+        "'Hai mai fatto paracadutismo?' 'Una volta, ed \u00e8 stato terrificante ma emozionante!'",
+        "Il panettiere nella nostra strada fa i migliori cornetti della citt\u00e0."
+    ],
+    [
+        "(1..10).each { |i| puts i }",
+        "The rare butterfly species is on the verge of extinction."
+    ],
+    [
+        "print(all(char.isalpha() for char in input('Enter a string: ')))",
+        "Hast du schon die neuen Filme im Kino gesehen?"
+    ],
+    [
+        "The Titanic was advertised as 'unsinkable.'",
+        "Das Auto, mit dem wir gefahren sind, war sehr schnell sein."
+    ],
+    [
+        "Mi hermana estudia medicina en la universidad.",
+        "The movie were boring."
+    ],
+    [
+        "De hond slaapt de hele dag in zijn mand.",
+        "As-tu vu mes cl\u00e9s quelque part ?"
+    ],
+    [
+        "'Kannst du einen Reifen wechseln?' 'Ja, ich habe es letztes Jahr gelernt. Es ist nicht so schwierig.'",
+        "Il neige beaucoup dans les montagnes."
+    ],
+    [
+        "The chef's signature dish is a local favorite.",
+        "'Was ist dein Traumurlaubsziel?' 'Die Malediven. Diese Wasserbungalows sehen unglaublich aus!'"
+    ],
+    [
+        "'Do you speak any foreign languages?' 'I'm fluent in Spanish and learning Mandarin.'",
+        "Puoi spiegarmi come si risolve questo problema di matematica?"
+    ],
+    [
+        "puts gets.chomp.match?(/\\d/)",
+        "'Was ist die Hauptstadt von Frankreich?' 'Paris, auch bekannt als die Stadt des Lichts.'"
+    ],
+    [
+        "'Have you read any good books lately?' 'I just finished 'The Midnight Library'. It was thought-provoking.'",
+        "Mijn kat speelt graag met een bol wol."
+    ],
+    [
+        "Je suis plus grand que ma s\u0153ur.",
+        "Hai gi\u00e0 fatto programmi per il fine settimana?"
+    ],
+    [
+        "Hf7{iR9cX]Wk3<oG6bD}",
+        "The museum's new exhibit features ancient Egyptian artifacts."
+    ],
+    [
+        "You should wait an hour after eating before swimming.",
+        "#include <stdio.h> int main() { int sum=0; for(int i=1; i<=100; i++) sum+=i; printf('%d', sum); return 0; }"
+    ],
+    [
+        "'Preferisci il t\u00e8 o il caff\u00e8?' 'Il caff\u00e8, soprattutto l'espresso. \u00c8 cos\u00ec energizzante.'",
+        "Despu\u00e9s de viajar durante a\u00f1os por Europa como m\u00fasico callejero y descubrir diferentes estilos y tradiciones musicales, el talentoso guitarrista regres\u00f3 a su ciudad natal, donde cre\u00f3 un festival de m\u00fasica multicultural que ahora atrae cada a\u00f1o a miles de visitantes de todo el mundo."
+    ],
+    [
+        "Die Katz schlaft de gaunze Zeit aufm Sessel.",
+        "Aq1-wY7nJ_Ux3~kO9fG;Ie8:mN6bL,"
+    ],
+    [
+        "As the final notes of the opera faded away, the audience sat in stunned silence for a moment before erupting into thunderous applause, moved by the powerful performances and the timeless story of love and sacrifice that had unfolded on stage.",
+        "De trein vertrekt om 14:45 van het station."
+    ],
+    [
+        "Nous avons r\u00e9serv\u00e9 une table pour quatre personnes.",
+        "Have you ever gone camping in the wilderness?"
+    ],
+    [
+        "Mozart komponierte im 20. Jahrhundert.",
+        "Elle collectionne les timbres depuis son enfance."
+    ],
+    [
+        "Nous sommes all\u00e9s au parc pour jouer au foot.",
+        "Elle a dit qu'elle ne peut pas venir ce soir."
+    ],
+    [
+        "Can\u2019t stop thinking about that vacation I haven\u2019t booked yet. #Wanderlust",
+        "'Um wie viel Uhr beginnt der Film?' 'Um 20:30 Uhr. Wir sollten um 20 Uhr losfahren, um gute Pl\u00e4tze zu bekommen.'"
+    ],
+    [
+        "Do you prefer to watch movies at home or in the theater?",
+        "'Hai qualche talento nascosto?' 'So fare abbastanza bene la giocoleria. L'ho imparata all'universit\u00e0.'"
+    ],
+    [
+        "Der Amazonas flie\u00dft durch Afrika.",
+        "Warum hast du mich gestern Abend nicht angerufen?"
+    ],
+    [
+        "puts (1..100).select { |i| i % 3 == 0 && i % 5 == 0 }",
+        "```list = [1, 2, 3]; list.sort(reverse='True')```"
+    ],
+    [
+        "Katzen bellen und Hunde miauen.",
+        "Nous partons en vacances la semaine prochaine."
+    ],
+    [
+        "Die Kinder bauen einen Schneemann im Garten.",
+        "Meine Freundin hat mir zum Geburtstag eine \u00dcberraschungsparty organisiert."
+    ],
+    [
+        "As the spacecraft's delicate instruments probed the atmosphere of the distant exoplanet, the team of astronomers back on Earth held their breath, knowing that the data being transmitted across millions of miles of space could potentially reveal the first concrete evidence of conditions suitable for extraterrestrial life.",
+        "Deze zomer was het weer ongewoon warm."
+    ],
+    [
+        "She's training for her first marathon next month.",
+        "Pt0|wM8uD)Zx9#mK2pL$Qr3!fN7yH@Bv5%tG1wS*"
+    ],
+    [
+        "Here are 30 one-line Python programs:",
+        "El cient\u00edfico ha hecho un descubrimiento revolucionario."
+    ],
+    [
+        "Ux7-rI6wK/Og3~kB8xM+Yf5:pN4vD_",
+        "print(max(set(input('Enter a string: ')), key=input('Enter a string: ').count))"
+    ],
+    [
+        "puts (1..5).map { |i| [i, i**2] }.to_h",
+        "puts gets.chomp.chars.all? { |c| c.match?(/[a-zA-Z]/) }"
+    ],
+    [
+        "W\u00e4hrend meines Auslandssemesters in Japan hatte ich die einzigartige Gelegenheit, nicht nur meine Sprachkenntnisse erheblich zu verbessern, sondern auch tief in die faszinierende Kultur des Landes einzutauchen, traditionelle K\u00fcnste wie die Teezeremonie zu erlernen und lebenslange Freundschaften mit Menschen aus aller Welt zu schlie\u00dfen.",
+        "'Was ist dein Lieblingsbuch?' 'Der F\u00e4nger im Roggen. Die Geschichte ist so fesselnd.'"
+    ],
+    [
+        "El gato duerme pl\u00e1cidamente en el sof\u00e1.",
+        "What's your opinion on the new environmental policy?"
+    ],
+    [
+        "Cracking your knuckles causes arthritis.",
+        "puts gets.split.map(&:reverse).join(' ')"
+    ],
+    [
+        "Los ni\u00f1os est\u00e1n construyendo un mu\u00f1eco de nieve en el jard\u00edn.",
+        "```x = int(input('Enter a number: ')) except ValueError```"
+    ],
+    [
+        "She runned to catch the bus.",
+        "puts eval(gets.chomp)"
+    ],
+    [
+        "Er habt viele Freunde in der Schule.",
+        "The sunrise over the mountains was breathtaking."
+    ],
+    [
+        "Me gusta leer un buen libro en los d\u00edas lluviosos.",
+        "As the detective pieced together the clues from the crime scene, interviewing witnesses and analyzing forensic evidence, she began to unravel a complex web of deceit and misdirection that pointed to an unexpected suspect in the high-profile murder case."
+    ],
+    [
+        "Woke up late, and still made it to work on time. #SmallWins",
+        "The teacher teached us grammar."
+    ],
+    [
+        "Lo scienziato ha fatto una scoperta rivoluzionaria.",
+        "Its going to rain tomorrow."
+    ],
+    [
+        "El perro ladra en el jard\u00edn.",
+        "Wie lange dauert es, bis das Essen fertig ist?"
+    ],
+    [
+        "Pinguine leben am Nordpol.",
+        "Perch\u00e9 non mi hai chiamato ieri sera?"
+    ],
+    [
+        "Das Haus, in das wir eingezogen sind, ist sehr alt sein.",
+        "[print(i) for i in range(1, 11)]"
+    ],
+    [
+        "The forbidden fruit in the Garden of Eden was an apple.",
+        "Che ore sono adesso?"
+    ],
+    [
+        "Wie sp\u00e4t ist es jetzt?",
+        "'What's your favorite cuisine?' 'Italian. There's nothing better than homemade pasta!'"
+    ],
+    [
+        "Der Kaffee im Kaffeehaus is a Wahnsinn.",
+        "'Wie lange spielst du schon Gitarre?' 'Seit etwa f\u00fcnf Jahren. Ich habe immer noch viel zu lernen.'"
+    ],
+    [
+        "She didn't ate lunch today.",
+        "Quante lingue parli fluentemente?"
+    ],
+    [
+        "```if x = 10: print('x is 10')```",
+        "Nous allons au cin\u00e9ma ce soir."
+    ],
+    [
+        "The space probe sent back fascinating images of distant planets.",
+        "Il telegiornale riporta gli ultimi sviluppi politici."
+    ],
+    [
+        "\u00bfPor qu\u00e9 no me llamaste anoche?",
+        "The car broke down on the side of the highway."
+    ],
+    [
+        "'Come gestisci lo stress?' 'Pratico la meditazione e cerco di fare esercizio regolarmente.'",
+        "The cat meowed loudly which woke me up."
+    ],
+    [
+        "The street performer drew a large crowd with his juggling act.",
+        "Bats are blind."
+    ],
+    [
+        "Die gr\u00f6\u00dfte W\u00fcste der Welt ist die Sahara in S\u00fcdamerika.",
+        "Ils ont d\u00e9m\u00e9nag\u00e9 dans une nouvelle maison."
+    ],
+    [
+        "L'insegnante spiega agli studenti la complicata regola grammaticale.",
+        "The recipe calls for a pinch of cinnamon."
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().chars().map(Character::getNumericValue).sum());",
+        "Can you believe we graduated college ten years ago?"
+    ],
+    [
+        "Xt1.mO3vL,Cg9`nI2qK?Fh5#pU8tA!Qs3%wY6zD@",
+        "Je ne comprends pas cette \u00e9quation math\u00e9matique."
+    ],
+    [
+        "Goldfish have a three-second memory.",
+        "Wann f\u00e4hrt der n\u00e4chste Zug nach Berlin ab?"
+    ],
+    [
+        "#include <stdio.h> #include <string.h> int main() { char s1[100], s2[100]; for(int i=0; i<3; i++) { scanf('%s %s', s1, s2); if(strcmp(s1, strrev(s2)) != 0) { printf('false'); return 0; } } printf('true'); return 0; }",
+        "Sie sprecht sehr gut Deutsch."
+    ],
+    [
+        "'Was ist deine sch\u00f6nste Kindheitserinnerung?' 'Sandburgen mit meinem Vater am Strand bauen.'",
+        "She swimmed in the pool yesterday."
+    ],
+    [
+        "The leaves rustled gently in the autumn breeze.",
+        "El anciano alimenta a las palomas en el parque cada ma\u00f1ana."
+    ],
+    [
+        "puts gets.chomp.chars.uniq.sort.join",
+        "L'anziano signore nutre i piccioni al parco ogni mattina."
+    ],
+    [
+        "The ambitious urban vertical farming project, which utilized cutting-edge hydroponics and AI-controlled environmental systems, promised to transform food production in densely populated cities, offering a sustainable solution to the growing challenges of food security and reducing the carbon footprint of agriculture.",
+        "this is the last sentence, finally it is done :)"
+    ],
+    [
+        "Die Blumen in unserem Garten bl\u00fchen wundersch\u00f6n.",
+        "J'ai oubli\u00e9 d'\u00e9teindre la lumi\u00e8re en partant."
+    ],
+    [
+        "I seen that movie yesterday.",
+        "Mein Bruder hat sich ein neues Auto gekauft."
+    ],
+    [
+        "#include <stdio.h> #include <string.h> int main() { char s[100]; fgets(s, sizeof(s), stdin); char *word = strtok(s, ' '); while(word != NULL) { for(int i=strlen(word)-1; i>=0; i--) printf('%c', word[i]); printf(' '); word = strtok(NULL, ' '); } return 0; }",
+        "I need to update my resume for the job application."
+    ],
+    [
+        "System.out.println(Arrays.stream(new Scanner(System.in).nextLine().split(',')).mapToInt(Integer::parseInt).sum());",
+        "Heute ist a very busy d\u00eda para m\u00ed."
+    ],
+    [
+        "Der Zug kommt p\u00fcnktlich um 14 Uhr an.",
+        "'Hai provato il nuovo ristorante thailandese?' 'Non ancora, ma ho sentito ottime recensioni.'"
+    ],
+    [
+        "The multinational corporation, facing increasing pressure from consumers and environmental groups, announced a comprehensive sustainability initiative that would overhaul its supply chain, reduce carbon emissions, and invest in renewable energy sources across its global operations.",
+        "'Qual \u00e8 la capitale della Francia?' 'Parigi, conosciuta come la Citt\u00e0 delle Luci.'"
+    ],
+    [
+        "What's your favorite childhood memory?",
+        "I have went to the store already."
+    ],
+    [
+        "The company have many employees.",
+        "Dogs sweat through their tongues."
+    ],
+    [
+        "Afrika ist ein Land.",
+        "Wie oft gehst du normalerweise ins Fitnessstudio?"
+    ],
+    [
+        "Non vedo l'ora di andare al concerto la prossima settimana.",
+        "Le restaurant est complet ce soir."
+    ],
+    [
+        "print({x: x**2 for x in range(1, 11)})",
+        "The children is playing in the park."
+    ],
+    [
+        "Die Sonne scheint heute besonders hell.",
+        "Der Bus kummt in zehn Minuten."
+    ],
+    [
+        "Heit am Obnd gibt\u2019s Schnitzel mit Erd\u00e4pfelsalat.",
+        "The art gallery showcased local artists' work."
+    ],
+    [
+        "Puoi passarmi il sale, per favore?",
+        "Je vais kaufen des fruits pour le d\u00eener."
+    ],
+    [
+        "Der Hund bellt laut im Garten.",
+        "Le film \u00e9tait un peu ennuyeux."
+    ],
+    [
+        "Ils ont dit qu'ils vont venir demain.",
+        "We zijn van plan om volgend jaar naar Frankrijk te reizen."
+    ],
+    [
+        "'Was ist dein Lieblings-Karaoke-Song?' ''99 Luftballons' von Nena. Ein echter Klassiker!'",
+        "El profesor explica a los alumnos la complicada regla gramatical."
+    ],
+    [
+        "puts File.readlines(gets.chomp).count",
+        "Das Alphabet hat 40 Buchstaben."
+    ],
+    [
+        "What's the most unusual food you've ever tried?",
+        "El revolucionario m\u00e9todo de ense\u00f1anza, que combina elementos de aprendizaje l\u00fadico con la tecnolog\u00eda m\u00e1s moderna, no solo ha despertado el entusiasmo de los estudiantes por temas complejos como la f\u00edsica cu\u00e1ntica y las matem\u00e1ticas avanzadas, sino que tambi\u00e9n ha llevado a una mejora significativa en los resultados de las pruebas, atrayendo la atenci\u00f3n de expertos en educaci\u00f3n de todo el mundo."
+    ],
+    [
+        "As the spacecraft hurtled through the vast expanse of space, its crew of international astronauts worked tirelessly to conduct experiments that would provide valuable insights into the effects of long-term space travel on the human body.",
+        "Wo m\u00f6chtest du comer dinner ce soir?"
+    ],
+    [
+        "Sie trinken Kaffee jeden Morgen, oder?",
+        "De bloemen in de tuin staan volop in bloei."
+    ],
+    [
+        "Devo ancora fare la spesa oggi.",
+        "Dopo aver viaggiato per anni attraverso l'Europa come musicista di strada e aver scoperto diversi stili e tradizioni musicali, il talentuoso chitarrista \u00e8 tornato nella sua citt\u00e0 natale, dove ha creato un festival musicale multiculturale che ora attira ogni anno migliaia di visitatori da tutto il mondo."
+    ],
+    [
+        "Shaving makes hair grow back thicker and darker.",
+        "He scored the winning goal in the final minute."
+    ],
+    [
+        "```y = 5 + '5'```",
+        "I bambini giocano allegramente nel parco giochi."
+    ],
+    [
+        "puts (2..100).select { |n| (2..Math.sqrt(n)).none? { |i| n % i == 0 } }",
+        "Can you passe-moi le pain, bitte?"
+    ],
+    [
+        "\u00bfCu\u00e1ndo sale el pr\u00f3ximo tren a Madrid?",
+        "Die Berge in der Ferne sind mit Schnee bedeckt."
+    ],
+    [
+        "Cette chanson me rappelle mon enfance.",
+        "Nous sommes all\u00e9 au restaurant hier soir."
+    ],
+    [
+        "```while True print('looping')```",
+        "Here are 30 short conversations in Italian, each in one line:"
+    ],
+    [
+        "#include <stdio.h> int main() { for(int i=1; i<=5; i++) printf('%d:%d ', i, i*i); return 0; }",
+        "Watching TV in the dark ruins your eyesight."
+    ],
+    [
+        "Wt2[oI3xM]Ks7{bU6cY}Fm1<jR5qD>Ln4|gX8zC/",
+        "Die revolution\u00e4re Unterrichtsmethode, die Elemente des spielerischen Lernens mit modernster Technologie kombiniert, hat nicht nur die Begeisterung der Sch\u00fcler f\u00fcr komplexe Themen wie Quantenphysik und fortgeschrittene Mathematik geweckt, sondern auch zu einer signifikanten Verbesserung der Testergebnisse gef\u00fchrt, was das Interesse von Bildungsexperten weltweit auf sich gezogen hat."
+    ],
+    [
+        "Heb je de nieuwe film in de bioscoop al gezien?",
+        "Elle a gagn\u00e9 le premier prix du concours."
+    ],
+    [
+        "'Come ti mantieni motivato al lavoro?' 'Mi pongo piccoli obiettivi realizzabili e mi premio quando li raggiungo.'",
+        "Il romanzo storico, che illumina gli anni turbolenti dell'inizio del XX secolo in Europa dal punto di vista di una famiglia contadina, non solo ha fatto scalpore tra i critici letterari, ma ha anche trovato un vasto pubblico di lettori affascinati dalla rappresentazione dettagliata della vita quotidiana e dai personaggi complessi."
+    ],
+    [
+        "Je suis all\u00e9 au cin\u00e9ma hier soir avec mes amis.",
+        "Productivity level: Opened a Word doc and stared at it. #WriterLife"
+    ],
+    [
+        "print(''.join(char.upper() if index % 2 == 0 else char.lower() for index, char in enumerate(input('Enter a string: '))))",
+        "Glass is a slow-moving liquid."
+    ],
+    [
+        "Did you remember to buy milk at the store?",
+        "Le train arrive \u00e0 la gare dans dix minutes."
+    ],
+    [
+        "What time does the movie start tonight?",
+        "Llevo tres a\u00f1os estudiando espa\u00f1ol y sigo progresando."
+    ],
+    [
+        "'Hast du das neue thail\u00e4ndische Restaurant schon ausprobiert?' 'Noch nicht, aber ich habe viel Gutes dar\u00fcber geh\u00f6rt.'",
+        "Die Kinder spielen fr\u00f6hlich auf dem Spielplatz."
+    ],
+    [
+        "Quante volte vai in palestra di solito?",
+        "Vikings wore horned helmets."
+    ],
+    [
+        "Tu as prendre le train \u00e0 quelle heure ?",
+        "I've always wanted to learn how to play the guitar."
+    ],
+    [
+        "Hast du die Hausaufgaben schon gemacht?",
+        "The intricate ecosystem of the coral reef, home to countless species of fish, mollusks, and other marine life, faced an unprecedented threat from rising ocean temperatures and acidification, prompting marine biologists to develop innovative conservation strategies to preserve this underwater wonder for future generations."
+    ],
+    [
+        "Il est reading un livre sobre la historia de Europa.",
+        "Il rinomato scienziato, che lavora da anni su una teoria rivoluzionaria per combattere il cambiamento climatico, presenter\u00e0 la prossima settimana i suoi ultimi risultati di ricerca a una conferenza internazionale, che potrebbero potenzialmente segnare una svolta nella nostra comprensione del riscaldamento globale."
+    ],
+    [
+        "Nous allons f\u00eater son anniversaire samedi.",
+        "\u00bfYa has hecho los deberes?"
+    ],
+    [
+        "Chameleons change color to blend in with their surroundings.",
+        "Wd6[oT9yS&Hy8{iX3bN)Vt4<sC7uR]"
+    ],
+    [
+        "#include <stdio.h> int main() { for(int i=1; i<=100; i++) if(i%3==0 && i%5==0) printf('%d ', i); return 0; }",
+        "The controversial art installation, which incorporated live animals and interactive elements that challenged traditional notions of the boundaries between art and audience, sparked heated debates among critics, ethicists, and the general public about the nature of artistic expression and the responsibilities of creators."
+    ],
+    [
+        "Bananen wachsen unter der Erde.",
+        "Ich muss noch die W\u00e4sche aufh\u00e4ngen, bevor es regnet."
+    ],
+    [
+        "Est-ce que du hast gesehen el nuevo movie in the cinema?",
+        "Dinosaurier leben noch heute."
+    ],
+    [
+        "Columbus discovered that the Earth was round.",
+        "J'ai besoin de faire r\u00e9parer ma voiture."
+    ],
+    [
+        "El viejo faro lleva siglos en la costa.",
+        "System.out.println(IntStream.range(0, new Scanner(System.in).nextLine().length()).mapToObj(i -> i % 2 == 0 ? Character.toUpperCase(new Scanner(System.in).nextLine().charAt(i)) : Character.toLowerCase(new Scanner(System.in).nextLine().charAt(i))).map(String::valueOf).collect(Collectors.joining()));"
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(ch -> ch, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey());",
+        "Kannst du mir erkl\u00e4ren, wie man diese Matheaufgabe l\u00f6st?"
+    ],
+    [
+        "Just saw the cutest puppy on my walk. #DogLover",
+        "J'ai besoin que tu me expliques ce probl\u00e8me."
+    ],
+    [
+        "Los ni\u00f1os juegan alegremente en el parque infantil.",
+        "'How do you deal with stress?' 'I practice meditation and try to exercise regularly.'"
+    ],
+    [
+        "Le scientifique renomm\u00e9, qui travaille depuis des ann\u00e9es sur une th\u00e9orie r\u00e9volutionnaire pour lutter contre le changement climatique, pr\u00e9sentera la semaine prochaine ses derniers r\u00e9sultats de recherche lors d'une conf\u00e9rence internationale, ce qui pourrait potentiellement marquer un tournant dans notre compr\u00e9hension du r\u00e9chauffement climatique.",
+        "#include <stdio.h> int main() { for(int i=1; i<=10; i++) { printf('%d:', i); for(int j=1; j<=i; j++) if(i%j==0) printf('%d ', j); printf('\\n'); } return 0; }"
+    ],
+    [
+        "J'ai rendez-vous chez le dentiste demain.",
+        "Il m'a dit qu'il a trouv\u00e9 un nouveau travail."
+    ],
+    [
+        "He ain't got no money.",
+        "System.out.println(Arrays.stream(new Scanner(System.in).nextLine().split(' ')).mapToInt(Integer::parseInt).max().getAsInt());"
+    ],
+    [
+        "```import os os.getcwd```",
+        "Xt1.mO3vL,Cg9`nI2qK?Fh5#pU8tA!"
+    ],
+    [
+        "Hai sentito del nuovo parco tecnologico che stanno costruendo qui?",
+        "Alle Metalle schwimmen auf Wasser."
+    ],
+    [
+        "After years of painstaking restoration work, the 15th-century fresco, which had been badly damaged by centuries of neglect and environmental factors, was finally unveiled to the public, revealing the vibrant colors and intricate details of the master artist's original masterpiece.",
+        "Nous avons visit\u00e9 la ville o\u00f9 il est n\u00e9."
+    ],
+    [
+        "Alcohol warms you up in cold weather.",
+        "La m\u00e9thode d'enseignement r\u00e9volutionnaire, qui combine des \u00e9l\u00e9ments d'apprentissage ludique avec les technologies les plus modernes, a non seulement suscit\u00e9 l'enthousiasme des \u00e9l\u00e8ves pour des sujets complexes tels que la physique quantique et les math\u00e9matiques avanc\u00e9es, mais a \u00e9galement conduit \u00e0 une am\u00e9lioration significative des r\u00e9sultats aux tests, attirant l'attention des experts en \u00e9ducation du monde entier."
+    ],
+    [
+        "Nous devons prot\u00e9ger l'environnement.",
+        "That awkward moment when you forget someone\u2019s name\u2026 again. #Oops"
+    ],
+    [
+        "What's your favorite season of the year?",
+        "'Was h\u00e4ltst du von sozialen Medien?' 'Sie sind ein zweischneidiges Schwert. Gut zum Vernetzen, k\u00f6nnen aber s\u00fcchtig machen.'"
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().chars().allMatch(Character::isLetter));",
+        "\u00bfPuedes pasarme la sal, por favor?"
+    ],
+    [
+        "I hob morgn a wichtigs Treffen in der Arbeit.",
+        "Kannst du mir bitte bei dieser \u00dcbersetzung helfen?"
+    ],
+    [
+        "This matin, ich bin gegangen au march\u00e9.",
+        "The Great Wall of China is one continuous wall."
+    ],
+    [
+        "Ieri sera ho visto un film emozionante.",
+        "'Wie verbringst du am liebsten deine Wochenenden?' 'Ich gehe gerne wandern und probiere neue Fr\u00fchst\u00fcckscaf\u00e9s mit Freunden aus.'"
+    ],
+    [
+        "Ib4:kE7yH;Xt1.mO3vL,Cg9`nI2qK?Fh5#pU8tA!",
+        "Ils ont all\u00e9s au parc ce matin."
+    ],
+    [
+        "Il nuovo libro dello scrittore \u00e8 diventato un bestseller.",
+        "Hai gi\u00e0 fatto i compiti?"
+    ],
+    [
+        "Australien ist ein Land in Europa.",
+        "Finally finished that book! Now what? #Bookworm"
+    ],
+    [
+        "Studio l'italiano da tre anni e sto ancora facendo progressi.",
+        "Zucker ist ges\u00fcnder als Gem\u00fcse."
+    ],
+    [
+        "J'adore manger des croissants le matin.",
+        "Je ne sais pas qui a pris mon t\u00e9l\u00e9phone."
+    ],
+    [
+        "#include <stdio.h> #include <math.h> int main() { int n; scanf('%d', &n); double sum=0; for(int i=1; i<=n; i++) sum += pow(i, 3); printf('%.0f', sum); return 0; }",
+        "Sie hast den Kuchen gebacken."
+    ],
+    [
+        "print(len(set(input('Enter a string: ').lower())))",
+        "print('Hello, World!')"
+    ],
+    [
+        "'Was h\u00e4ltst du von Elektroautos?' 'Ich denke, sie sind die Zukunft, aber die Infrastruktur muss noch verbessert werden.'",
+        "Heute Abend gibt es Pizza zum Abendessen."
+    ],
+    [
+        "Kannst du mir bitte das Salz reichen?",
+        "System.out.println(IntStream.range(0, 3).allMatch(i -> new Scanner(System.in).nextLine().equals(new StringBuilder(new Scanner(System.in).nextLine()).reverse().toString())));"
+    ],
+    [
+        "I am liking this song.",
+        "Nous avons parti en vacances la semaine derni\u00e8re."
+    ],
+    [
+        "Die Vereinigten Staaten haben 100 Bundesstaaten.",
+        "Il gatto dorme sul divano."
+    ],
+    [
+        "Og2`pC5vH!Rj9#wF1xK@",
+        "print(''.join(reversed(input('Enter a string: '))))"
+    ],
+    [
+        "Il faut que je renouvelle mon passeport.",
+        "Er hat mir erz\u00e4hlt, dass er hat einen neuen Job gefunden."
+    ],
+    [
+        "Der Sommer war dieses Jahr ungew\u00f6hnlich hei\u00df.",
+        "'Sprichst du Fremdsprachen?' 'Ich spreche flie\u00dfend Spanisch und lerne gerade Mandarin.'"
+    ],
+    [
+        "Ils ont d\u00e9cid\u00e9 d'aller en vacances la semaine prochaine.",
+        "```def func() print('Hello')```"
+    ],
+    [
+        "```import math; math.pow(2, 3, 4)```",
+        "'Was war das beste Konzert, das du je besucht hast?' 'Rammstein live. Die B\u00fchnenshow war spektakul\u00e4r.'"
+    ],
+    [
+        "The books is on the table.",
+        "The Great Wall of China is the only man-made structure visible from space."
+    ],
+    [
+        "Wir haben beschlossen, dass wir gehen ins Restaurant.",
+        "The magician's assistant seemed to vanish into thin air."
+    ],
+    [
+        "The firefighters quickly responded to the emergency call.",
+        "La mia amica mi ha organizzato una festa a sorpresa per il mio compleanno."
+    ],
+    [
+        "J'ai perdu mon portefeuille dans le m\u00e9tro.",
+        "Quanto tempo ci vuole da qui all'aeroporto?"
+    ],
+    [
+        "Eating turkey makes you sleepy.",
+        "Rj9#wF1xK@Mt6%hE3yA$Dc4^lI8uB*Sx1(nU7qP&"
+    ],
+    [
+        "IntStream.rangeClosed(1, 100).filter(i -> i % 3 == 0 && i % 5 == 0).forEach(System.out::println);",
+        "What's your favorite type of cuisine?"
+    ],
+    [
+        "The annual festival celebrates the town's cultural heritage.",
+        "Shakespeare war ein deutscher Schriftsteller."
+    ],
+    [
+        "System.out.println(IntStream.rangeClosed(1, 1000).filter(i -> String.valueOf(i).contains('3')).count());",
+        "Can you pass me the salt, please?"
+    ],
+    [
+        "print(sum(int(digit) for digit in input('Enter a number: ')))",
+        "Have you heard about the new virtual reality theme park?"
+    ],
+    [
+        "Ik werk aan een nieuw project voor school.",
+        "Il faut que nous partons maintenant."
+    ],
+    [
+        "Caffeine dehydrates you.",
+        "I bambini stanno costruendo un pupazzo di neve in giardino."
+    ],
+    [
+        "N\u00e4xtes Johr fliang ma vielleicht noch Italien.",
+        "print({char: ord(char) for char in input('Enter a string: ')})"
+    ],
+    [
+        "Him and me went to the concert.",
+        "#include <stdio.h> #include <ctype.h> int main() { char c; while((c=getchar())!='\\n') if(isdigit(c)) { printf('true'); return 0; } printf('false'); return 0; }"
+    ],
+    [
+        "Le livre que j'ai lu \u00e9tait int\u00e9ressant.",
+        "They're car is parked over there."
+    ],
+    [
+        "Der Mond ist gr\u00f6\u00dfer als die Erde.",
+        "Ich habe gestern Abend einen spannenden Film gesehen."
+    ],
+    [
+        "The old barn creaked in the strong wind.",
+        "Ich bin in Deutschland seit f\u00fcnf Jahren lebend."
+    ],
+    [
+        "Mt6%hE3yA$Dc4^lI8uB*Sx1(nU7qP&Nb5[tY2zM)",
+        "What's your favorite way to relax after a long day?"
+    ],
+    [
+        "Fische k\u00f6nnen au\u00dferhalb des Wassers atmen.",
+        "Nous sommes all\u00e9 au cin\u00e9ma bien qu'il pleuvait."
+    ],
+    [
+        "Ich habe un libro que me gustar\u00eda recommend to you.",
+        "Ich mag es, an regnerischen Tagen ein gutes Buch zu lesen."
+    ],
+    [
+        "The butterfly fluttered from flower to flower.",
+        "'What's your opinion on social media?' 'It's a double-edged sword. Great for connecting, but can be addictive.'"
+    ],
+    [
+        "Anyone else still stuck in the 90s playlist? #Nostalgia",
+        "Die neu er\u00f6ffnete U-Bahn-Linie, die das Stadtzentrum mit den bisher schwer erreichbaren Vororten verbindet, verspricht nicht nur die t\u00e4glichen Pendlerstr\u00f6me zu entlasten, sondern auch die wirtschaftliche Entwicklung in den angebundenen Gebieten anzukurbeln und somit das Stadtbild nachhaltig zu ver\u00e4ndern."
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().toLowerCase().chars().distinct().count());",
+        "\u00bfCon qu\u00e9 frecuencia vas al gimnasio normalmente?"
+    ],
+    [
+        "'What's your favorite type of music?' 'I love jazz. The improvisation is so creative.'",
+        "La nueva l\u00ednea de metro, que conecta el centro de la ciudad con los suburbios hasta ahora de dif\u00edcil acceso, promete no solo aliviar los flujos diarios de pasajeros, sino tambi\u00e9n estimular el desarrollo econ\u00f3mico en las zonas atendidas, cambiando as\u00ed de forma duradera el paisaje urbano."
+    ],
+    [
+        "Elle parle trois langues couramment.",
+        "Die Katze schl\u00e4ft den ganzen Tag auf dem Sofa."
+    ],
+    [
+        "What's your take on the latest political debate?",
+        "\u00bfPor qu\u00e9 el cielo es azul?"
+    ],
+    [
+        "Tenemos que darnos prisa o perderemos el autob\u00fas.",
+        "IntStream.rangeClosed(100, 999).filter(i -> String.valueOf(i).equals(new StringBuilder(String.valueOf(i)).reverse().toString())).forEach(System.out::println);"
+    ],
+    [
+        "Je ne comprends pas pourquoi il n'est pas venu.",
+        "```x = {1, 2, 3}; print(x[0])```"
+    ],
+    [
+        "Le concert \u00e9tait vraiment incroyable.",
+        "Todav\u00eda tengo que ir a hacer la compra hoy."
+    ],
+    [
+        "Have you heard about the new virtual reality game?",
+        "Do you prefer going to the beach or the mountains for vacation?"
+    ],
+    [
+        "Humans evolved from chimpanzees.",
+        "Le professeur explique la le\u00e7on aux \u00e9l\u00e8ves."
+    ],
+    [
+        "'Come ti piace passare i weekend?' 'Mi piace fare escursioni e provare nuovi ristoranti con gli amici.'",
+        "Der Mond besteht aus K\u00e4se."
+    ],
+    [
+        "print([x for x in range(2, 101) if all(x % y != 0 for y in range(2, int(x**0.5) + 1))])",
+        "Je ne sais pas quand le film commence."
+    ],
+    [
+        "#include <stdio.h> int main() { for(int i=2; i<=100; i++) { int prime=1; for(int j=2; j*j<=i; j++) if(i%j==0) { prime=0; break; } if(prime) printf('%d ', i); } return 0; }",
+        "Lightning never strikes the ocean."
+    ],
+    [
+        "'Parli lingue straniere?' 'Parlo fluentemente spagnolo e sto imparando il mandarino.'",
+        "Nachdem ich stundenlang durch die verwinkelten Gassen der Altstadt geschlendert war, entdeckte ich schlie\u00dflich das kleine, versteckte Caf\u00e9, von dem mir mein Gro\u00dfvater so oft erz\u00e4hlt hatte und das sich als wahres Juwel mit einer beeindruckenden Auswahl an hausgemachten Kuchen und aromatischen Kaffeesorten erwies."
+    ],
+    [
+        "Wir sind gegangen zum Park, um zu spielen Fu\u00dfball.",
+        "Il faut que je finisse ce rapport avant demain."
+    ],
+    [
+        "Le ciel est blau y hace mucho viento hoy.",
+        "Tu dois me dire quand tu arrives."
+    ],
+    [
+        "'How long have you been playing guitar?' 'About five years now. I still have a lot to learn.'",
+        "La mostra, che presenta opere di artisti emergenti da tutto il mondo, non solo ha attirato l'attenzione della scena artistica locale, ma ha anche impressionato i critici internazionali, che hanno elogiato l'approccio innovativo e la diversit\u00e0 culturale dei pezzi esposti."
+    ],
+    [
+        "\u00bfCu\u00e1ntos idiomas hablas con fluidez?",
+        "The Coriolis effect determines the direction water spirals down a drain."
+    ],
+    [
+        "Apr\u00e8s avoir d\u00e9ambul\u00e9 pendant des heures dans les ruelles sinueuses de la vieille ville, j'ai finalement d\u00e9couvert le petit caf\u00e9 cach\u00e9 dont mon grand-p\u00e8re m'avait si souvent parl\u00e9, et qui s'est av\u00e9r\u00e9 \u00eatre un v\u00e9ritable joyau avec une s\u00e9lection impressionnante de g\u00e2teaux faits maison et de caf\u00e9s aromatiques.",
+        "print(all(input('Enter a number: ') == input('Enter a number: ')[::-1] for _ in range(3)))"
+    ],
+    [
+        "We was supposed to meet at 7.",
+        "El museo presenta una interesante exposici\u00f3n sobre arte moderno."
+    ],
+    [
+        "\u00bfYa has hecho planes para el fin de semana?",
+        "'Qual \u00e8 la tua ricetta preferita per una cena veloce?' 'Il risotto. \u00c8 rapido, sano e si pu\u00f2 personalizzare.'"
+    ],
+    [
+        "Ich lerne seit drei Jahren Deutsch und mache immer noch Fortschritte.",
+        "She have lived here since five years."
+    ],
+    [
+        "K\u00f6nnen Sie mir bitte den Weg zum Rathaus erkl\u00e4ren?",
+        "Do you prefer tea or coffee in the morning?"
+    ],
+    [
+        "```a = (1, 2, 3); a[0] = 10```",
+        "Is it too early to put up Christmas lights? #FestiveMood"
+    ],
+    [
+        "'How do you like to spend your weekends?' 'I enjoy hiking and trying new brunch spots with friends.'",
+        "System.out.println(Files.lines(Paths.get(new Scanner(System.in).nextLine())).count());"
+    ],
+    [
+        "Die Luft besteht haupts\u00e4chlich aus Kohlendioxid.",
+        "The lighthouse stood tall against the stormy sea."
+    ],
+    [
+        "Elle a demand\u00e9 si je pouvais l'aider.",
+        "Die Kinder spielten im Park gestern."
+    ],
+    [
+        "Mi vecino ha creado un hermoso jard\u00edn.",
+        "#include <stdio.h> int main() { for(int i=1; i<=10; i++) printf('%d ', i); return 0; }"
+    ],
+    [
+        "The annual festival, which had humble beginnings as a small community gathering, had grown over the years to become a major cultural event, drawing visitors from around the world to experience the unique traditions and cuisines of the region.",
+        "After decades of political tension and economic sanctions, the two neighboring countries finally reached a historic peace agreement, paving the way for increased cooperation and prosperity in the region."
+    ],
+    [
+        "IntStream.rangeClosed(1, 10).forEach(System.out::println);",
+        "Sugar is more addictive than cocaine."
+    ],
+    [
+        "Zx9#mK2pL$Qr3!fN7yH@Bv5%tG1wS*",
+        "I am more taller than my brother."
+    ],
+    [
+        "'What's the capital of France?' 'Paris, known as the City of Light.'",
+        "Despite the heavy rain and strong winds that battered the coast, the lighthouse keeper remained vigilant, ensuring that the beacon continued to shine brightly, guiding ships safely through the treacherous waters."
+    ],
+    [
+        "Wir sind spazieren gegangen, obwohl es hat geregnet.",
+        "Wasser kocht bei 50 Grad Celsius."
+    ],
+    [
+        "They was going to the beach.",
+        "Il metodo di insegnamento rivoluzionario, che combina elementi di apprendimento ludico con le tecnologie pi\u00f9 moderne, non solo ha suscitato l'entusiasmo degli studenti per argomenti complessi come la fisica quantistica e la matematica avanzata, ma ha anche portato a un significativo miglioramento dei risultati dei test, attirando l'attenzione degli esperti di educazione di tutto il mondo.+A pesar de que el tiempo no fue especialmente bueno durante el fin de semana, emprendimos de todos modos una maravillosa excursi\u00f3n a las monta\u00f1as, donde no solo pudimos disfrutar de las impresionantes vistas, sino que tambi\u00e9n conocimos a un grupo de amigables excursionistas."
+    ],
+    [
+        "puts gets.chomp.chars.map(&:to_i).sum",
+        "puts gets.split(',').map(&:to_i).sum"
+    ],
+    [
+        "'Cosa ne pensi delle auto elettriche?' 'Penso siano il futuro, ma l'infrastruttura deve essere migliorata.'",
+        "Sie haben sich entschieden, ein Haus zu kaufen."
+    ],
+    [
+        "The food taste badly.",
+        "Ux3~kO9fG;Ie8:mN6bL,Yd7.rZ4tS?"
+    ],
+    [
+        "\u00bfCu\u00e1nto tiempo falta para que est\u00e9 lista la cena?",
+        "Ich habe Hunger, weil ich habe nicht gefr\u00fchst\u00fcckt."
+    ],
+    [
+        "'Qual \u00e8 il miglior concerto a cui hai assistito?' 'Vasco Rossi dal vivo. Lo spettacolo era spettacolare.'",
+        "'How do you stay fit?' 'I mix it up with yoga, running, and weightlifting.'"
+    ],
+    [
+        "Tried a new recipe\u2026 let\u2019s just say I\u2019m ordering takeout. #KitchenFail",
+        "I've been meaning to start a vegetable garden."
+    ],
+    [
+        "The company's stock price soared after the product launch.",
+        "La pel\u00edcula d\u2019hier \u00e9tait vraiment tr\u00e8s langweilig."
+    ],
+    [
+        "Le match de football commence \u00e0 20 heures.",
+        "The color of blood in your veins is blue."
+    ],
+    [
+        "Heit is echt a scheena Tog.",
+        "When your phone battery dies, but so do your social skills. #ModernProblems"
+    ],
+    [
+        "Lm1|gE5fH}Jp0=nZ2qA>",
+        "Le livre que tu m'as pr\u00eat\u00e9 est passionnant."
+    ],
+    [
+        "Kun je me alsjeblieft het zout aangeven?",
+        "L'exposition, qui pr\u00e9sente des \u0153uvres d'artistes \u00e9mergents du monde entier, a non seulement attir\u00e9 l'attention de la sc\u00e8ne artistique locale, mais a \u00e9galement impressionn\u00e9 les critiques internationaux, qui ont lou\u00e9 l'approche innovante et la diversit\u00e9 culturelle des pi\u00e8ces pr\u00e9sent\u00e9es."
+    ],
+    [
+        "Ils ont adopt\u00e9 un chat du refuge local.",
+        "Pm2-sZ5wC+Ju6~rB9xF_"
+    ],
+    [
+        "Tu peux me dire o\u00f9 est la biblioth\u00e8que ?",
+        "Das Museum zeigt eine interessante Ausstellung \u00fcber moderne Kunst."
+    ],
+    [
+        "We seen the accident happen.",
+        "\u00bfPuedes explicarme c\u00f3mo resolver este problema de matem\u00e1ticas?"
+    ],
+    [
+        "Trotz der anf\u00e4nglichen Skepsis vieler Experten hat sich das innovative Startup-Unternehmen, das sich auf nachhaltige Energiel\u00f6sungen f\u00fcr Privathaushalte spezialisiert hat, in nur wenigen Jahren zu einem der f\u00fchrenden Akteure in der Branche entwickelt und wurde k\u00fcrzlich mit einem prestigetr\u00e4chtigen Umweltpreis ausgezeichnet.",
+        "Je ne sais pas combien co\u00fbte ce livre."
+    ],
+    [
+        "Despite facing numerous setbacks and critics who doubted her abilities, the young entrepreneur persevered, refining her business model and securing funding from investors who recognized the potential of her revolutionary approach to sustainable agriculture.",
+        "The electric car silently cruised down the street."
+    ],
+    [
+        "Ich arbeite an einem neuen Projekt f\u00fcr die Uni.",
+        "#include <stdio.h> #include <ctype.h> int main() { char c; while((c=getchar())!='\\n') printf('%c', isalpha(c) ? c+1 : c); return 0; }"
+    ],
+    [
+        "Ich voy a comprar du pain und unas frutas despu\u00e9s de la escuela.",
+        "Kannst du mir das Rezept f\u00fcr deinen leckeren Apfelstrudel geben?"
+    ],
+    [
+        "Wir sind nach Berlin gefahrt.",
+        "The Sahara is the largest desert in the world."
+    ],
+    [
+        "Il mio vicino ha creato un bellissimo giardino.",
+        "Elle a \u00e9crit un roman qui a eu beaucoup de succ\u00e8s."
+    ],
+    [
+        "print(sum(1 for _ in open(input('Enter file name: '))))",
+        "\u00bfPuedes darme la receta de tu deliciosa paella?"
+    ],
+    [
+        "Ich muss heute noch einkaufen gehen.",
+        "'What's your go-to karaoke song?' ''Don't Stop Believin'' by Journey. It's a classic!'"
+    ],
+    [
+        "Der Mount Everest ist der niedrigste Berg der Welt.",
+        "Wir haben den Film gestern gesehen gehabt."
+    ],
+    [
+        "I love the smell of freshly baked bread.",
+        "'Qual \u00e8 la tua stagione preferita?' 'L'autunno. Adoro le foglie colorate e l'aria frizzante.'"
+    ],
+    [
+        "The stock market experienced significant fluctuations today.",
+        "Elle a pens\u00e9 qu'elle a gagn\u00e9 le concours."
+    ],
+    [
+        "Rn7^lM4xG$Bk2(jF1cP*",
+        "System.out.println(new Scanner(System.in).nextLine().chars().map(ch -> Character.isLetter(ch) ? ch + 1 : ch).mapToObj(ch -> String.valueOf((char) ch)).collect(Collectors.joining()));"
+    ],
+    [
+        "The old clock tower chimed midnight.",
+        "```x = [1, 2, 3] print(x[3])```"
+    ],
+    [
+        "Alle Menschen haben blaue Augen.",
+        "'What's your favorite book?' 'To Kill a Mockingbird. The characters are unforgettable.'"
+    ],
+    [
+        "Sie arbeiten hart, damit sie k\u00f6nnen sich ein Auto kaufen.",
+        "Ws4%lA9cF!Nk8^tE2hP@Dv1(oI5qS$"
+    ],
+    [
+        "Have you ever tried skydiving before?",
+        "Sie haben viel Geld, aber ich habe weniger Geld als sie."
+    ],
+    [
+        "Hast du schon von dem neuen Restaurant in der Innenstadt geh\u00f6rt?",
+        "#include <stdio.h> #include <string.h> int main() { char s[100], words[10][20]; int n=0; fgets(s, sizeof(s), stdin); char *word = strtok(s, ' '); while(word != NULL) { strcpy(words[n++], word); word = strtok(NULL, ' '); } for(int i=0; i<n-1; i++) for(int j=0; j<n-i-1; j++) if(strlen(words[j]) > strlen(words[j+1])) { char temp[20]; strcpy(temp, words[j]); strcpy(words[j], words[j+1]); strcpy(words[j+1], temp); } for(int i=0; i<n; i++) printf('%s ', words[i]); return 0; }"
+    ],
+    [
+        "The old photograph brought back a flood of memories.",
+        "Ich tr\u00e4ume davon, eines Tages nach Japan zu reisen."
+    ],
+    [
+        "Mein Nachbar hat einen wundersch\u00f6nen Garten angelegt.",
+        "La novela hist\u00f3rica, que ilumina los turbulentos a\u00f1os de principios del siglo XX en Europa desde la perspectiva de una familia campesina, no solo ha causado sensaci\u00f3n entre los cr\u00edticos literarios, sino que tambi\u00e9n ha encontrado un amplio p\u00fablico lector fascinado por la detallada representaci\u00f3n de la vida cotidiana y los complejos personajes."
+    ],
+    [
+        "Ella loves comer sushi in ihrem Lieblingsrestaurant.",
+        "Vp0=sT2hB+Aq1-wY7nJ_"
+    ],
+    [
+        "Peux-tu me passer le sel, s'il te pla\u00eet ?",
+        "'Cosa ne pensi dei social media?' 'Sono un'arma a doppio taglio. Ottimi per connettersi, ma possono creare dipendenza.'"
+    ],
+    [
+        "```print('Hello' + 5)```",
+        "He don't know nothing about it."
+    ],
+    [
+        "Il a mang\u00e9 tout le g\u00e2teau que j'ai fait.",
+        "Das Buch, wer ich gelesen habe, war interessant."
+    ],
+    [
+        "La exposici\u00f3n, que presenta obras de artistas emergentes de todo el mundo, no solo ha llamado la atenci\u00f3n de la escena art\u00edstica local, sino que tambi\u00e9n ha impresionado a los cr\u00edticos internacionales, quienes han elogiado el enfoque innovador y la diversidad cultural de las piezas expuestas.",
+        "Wk3<oG6bD}Lq8|jT4fS>Vy0=gA1hN/Pm2-sZ5wC+"
+    ],
+    [
+        "'Was ist deine Lieblingsjahreszeit?' 'Der Herbst. Ich liebe die bunten Bl\u00e4tter und die frische Luft.'",
+        "Il pleut beaucoup aujourd'hui."
+    ],
+    [
+        "B\u00e4ume wachsen von oben nach unten.",
+        "Wt2[oI3xM]Ks7{bU6cY}Fm1<jR5qD>"
+    ],
+    [
+        "Albert Einstein erfand das Telefon.",
+        "Ux7-rI6wK/Og3~kB8xM+Yf5:pN4vD_Ic9.mS1tG;"
+    ],
+    [
+        "Wie lange dauert die Fahrt von hier bis zum Flughafen?",
+        "print(eval(input('Enter a mathematical expression: ')))"
+    ],
+    [
+        "'Did you catch the game last night?' 'Yes! That last-minute goal was incredible.'",
+        "Bk2(jF1cP*Wd6[oT9yS&Hy8{iX3bN)"
+    ],
+    [
+        "Der Himmel ist heute besonders klar.",
+        "print(sum(map(lambda x: x**3, range(1, int(input('Enter a number: ')) + 1))))+"
+    ],
+    [
+        "puts gets.chomp.chars.map { |c| [c, c.ord] }.to_h",
+        "Ich bin sicher, dass er wird kommen morgen."
+    ],
+    [
+        "Alle S\u00e4ugetiere legen Eier.",
+        "'Do you prefer tea or coffee?' 'Tea, especially green tea. It's so calming.'"
+    ],
+    [
+        "The weather can\u2019t make up its mind today. #Confused",
+        "Vitamin C prevents the common cold."
+    ],
+    [
+        "A che ora parte il prossimo treno per Roma?",
+        "Ic9.mS1tG;Qh2`wU7yL,"
+    ],
+    [
+        "```for i in range(10) print(i)```",
+        "Obwohl das Wetter am Wochenende nicht besonders gut war, haben wir trotzdem einen wundersch\u00f6nen Ausflug in die Berge unternommen, wo wir nicht nur die atemberaubende Aussicht genie\u00dfen konnten, sondern auch eine Gruppe freundlicher Wanderer kennengelernt haben."
+    ],
+    [
+        "Him and I is best friends.",
+        "#include <stdio.h> #include <string.h> int main() { char s[100], unique[100]; int n=0; scanf('%s', s); for(int i=0; s[i]; i++) if(!strchr(unique, s[i])) unique[n++] = s[i]; qsort(unique, n, sizeof(char), strcmp); printf('%s', unique); return 0; }"
+    ],
+    [
+        "I can't decide whether to buy a new car or keep my old one.",
+        "Hoy el sol brilla especialmente fuerte."
+    ],
+    [
+        "```a = [1, 2, 3]; print(a.pop(3))```",
+        "Mia sorella studia medicina all'universit\u00e0."
+    ],
+    [
+        "#include <stdio.h> int main() { char s[100], max_char; int count[256]={0}, max_count=0; scanf('%s', s); for(int i=0; s[i]; i++) if(++count[s[i]] > max_count) { max_count = count[s[i]]; max_char = s[i]; } printf('%c', max_char); return 0; }",
+        "Die Ausstellung, die Werke von aufstrebenden K\u00fcnstlern aus der ganzen Welt pr\u00e4sentiert, hat nicht nur die Aufmerksamkeit der lokalen Kunstszene auf sich gezogen, sondern auch internationale Kritiker beeindruckt, die die innovative Herangehensweise und die kulturelle Vielfalt der gezeigten St\u00fccke lobten."
+    ],
+    [
+        "Here are 30 short conversations in German, each in one line:",
+        "print([x for x in range(1, 101) if x % 3 == 0 and x % 5 == 0])"
+    ],
+    [
+        "#include <stdio.h> int main() { char s[100]; scanf('%s', s); for(int i=strlen(s)-1; i>=0; i--) printf('%c', s[i]); return 0; }",
+        "Mi piacerebbe visitare Venezia un giorno."
+    ],
+    [
+        "She have three sister.",
+        "'How's the weather today?' 'Sunny and warm. Perfect for a picnic!'"
+    ],
+    [
+        "Er liest gern B\u00fccher \u00fcber de G'schicht \u00d6sterreichs.",
+        "\u00bfPuedes ayudarme con esta traducci\u00f3n, por favor?"
+    ],
+    [
+        "Er hat mir erz\u00e4hlt, dass er war krank letzte Woche.",
+        "Napoleon Bonaparte was extremely short."
+    ],
+    [
+        "Le chat dort sur le canap\u00e9.",
+        "Despu\u00e9s de deambular durante horas por las sinuosas callejuelas del casco antiguo, finalmente descubr\u00ed el peque\u00f1o caf\u00e9 escondido del que mi abuelo me hab\u00eda hablado tantas veces, y que result\u00f3 ser una verdadera joya con una impresionante selecci\u00f3n de pasteles caseros y arom\u00e1ticos caf\u00e9s."
+    ],
+    [
+        "Pendant mon semestre \u00e0 l'\u00e9tranger au Japon, j'ai eu l'opportunit\u00e9 unique non seulement d'am\u00e9liorer consid\u00e9rablement mes comp\u00e9tences linguistiques, mais aussi de m'immerger profond\u00e9ment dans la fascinante culture du pays, d'apprendre des arts traditionnels comme la c\u00e9r\u00e9monie du th\u00e9 et de nouer des amiti\u00e9s durables avec des personnes du monde entier.",
+        "El panadero de nuestra calle hace los mejores croissants de la ciudad."
+    ],
+    [
+        "We was thinking about moving.",
+        "System.out.println(new ScriptEngineManager().getEngineByName('JavaScript').eval(new Scanner(System.in).nextLine()));"
+    ],
+    [
+        "Perch\u00e9 la pizza italiana \u00e8 cos\u00ec famosa?",
+        "Humans only use 10% of their brains."
+    ],
+    [
+        "print(''.join(sorted(input('Enter a string: ').lower())))",
+        "#include <stdio.h> int main() { for(int i=100; i<=999; i++) if(i == (i%10)*100 + ((i/10)%10)*10 + i/100) printf('%d ', i); return 0; }"
+    ],
+    [
+        "Sie fragt sich, warum er ist nicht gekommen.",
+        "Wie viele Sprachen sprichst du flie\u00dfend?"
+    ],
+    [
+        "L'azienda sta pianificando di trasferire la sua produzione all'estero.",
+        "The car who I bought is red."
+    ],
+    [
+        "puts gets.chomp.reverse",
+        "'What's your favorite season?' 'Autumn. I love the colorful leaves and crisp air.'"
+    ],
+    [
+        "Goethe schrieb 'Romeo und Julia'.",
+        "Vaccines cause autism."
+    ],
+    [
+        "Sugar causes hyperactivity in children.",
+        "La empresa planea trasladar su producci\u00f3n al extranjero."
+    ],
+    [
+        "Ich wei\u00dft nicht, wo ist der Bahnhof.",
+        "System.out.println(IntStream.rangeClosed(1, 10).boxed().collect(Collectors.toMap(i -> i, i -> IntStream.rangeClosed(1, i).filter(j -> i % j == 0).boxed().collect(Collectors.toList()))));"
+    ],
+    [
+        "Sie hat mir gesagt, dass sie hat keine Zeit.",
+        "Ils ont d\u00e9cid\u00e9 de rester \u00e0 la maison parce qu'il pleut."
+    ],
+    [
+        "Ich bin m\u00fcde, weil ich habe nicht gut geschlafen.",
+        "Les enfants jouent dans le parc."
+    ],
+    [
+        "#include <stdio.h> #include <string.h> #include <ctype.h> int main() { char s[100]; scanf('%s', s); for(int i=0; i<strlen(s); i++) s[i]=tolower(s[i]); qsort(s, strlen(s), sizeof(char), strcmp); printf('%s', s); return 0; }",
+        "Pizza for breakfast? Don\u2019t mind if I do. #LivingMyBestLife"
+    ],
+    [
+        "Il gatto dorme pacificamente sul divano.",
+        "Mi amiga me ha organizado una fiesta sorpresa por mi cumplea\u00f1os."
+    ],
+    [
+        "Quanto tempo ci vuole per preparare la cena?",
+        "Das Auto vor dem Haus geh\u00f6rt meinem Nachbarn."
+    ],
+    [
+        "#include <stdio.h> int main() { int n, max=0; while(scanf('%d', &n) == 1) if(n > max) max = n; printf('%d', max); return 0; }",
+        "He's been collecting rare coins for over 30 years."
+    ],
+    [
+        "Wir gehen morgen zu Kino.",
+        "Der Eiffelturm steht in Berlin."
+    ],
+    [
+        "puts gets.split.sort_by(&:length).join(' ')",
+        "Wir planen, n\u00e4chstes Jahr nach Italien zu reisen."
+    ],
+    [
+        "'Qual \u00e8 la tua destinazione da sogno per le vacanze?' 'Le Maldive. Quei bungalow sull'acqua sembrano incredibili!'",
+        "Hast du le weekend libre para viajar a Par\u00eds?"
+    ],
+    [
+        "Er nicht mag Spinat.",
+        "As the sun dipped below the horizon, painting the sky in brilliant hues of orange and pink, the old fisherman slowly made his way back to the shore, reflecting on another day spent at sea."
+    ],
+    [
+        "Er hat mir das Buch gegeben gestern.",
+        "'Was ist deine Lieblingsk\u00fcche?' 'Die italienische. Es gibt nichts Besseres als hausgemachte Pasta!'"
+    ],
+    [
+        "Je pr\u00e9f\u00e8re le th\u00e9 au caf\u00e9.",
+        "Ich wei\u00df nicht, wer hat mein Handy genommen."
+    ],
+    [
+        "puts gets.chomp.chars.map.with_index { |c, i| i.even? ? c.upcase : c.downcase }.join",
+        "Jc8^dA4uP&Hy6(lE9iF)"
+    ],
+    [
+        "puts (1..10).map { |i| [i, i**2] }.to_h",
+        "What's the best concert you've ever been to?"
+    ],
+    [
+        "Die Erde ist eine Scheibe.",
+        "Wir war sehr gl\u00fccklich \u00fcber die Nachricht."
+    ],
+    [
+        "Hair and nails continue to grow after death.",
+        "Have you ever tried making your own pasta from scratch?"
+    ],
+    [
+        "'What's your favorite childhood memory?' 'Building sandcastles with my dad at the beach.'",
+        "Albert Einstein failed math in school."
+    ],
+    [
+        "She practiced the piano for hours every day.",
+        "As the storm intensified, with hurricane-force winds and torrential rain battering the coastline, emergency response teams worked tirelessly to evacuate residents, secure critical infrastructure, and prepare for the inevitable aftermath of the natural disaster."
+    ],
+    [
+        "Morgen, ich voy a estudiar fran\u00e7ais in der Schule.",
+        "I fiori nel nostro giardino sono bellissimi."
+    ],
+    [
+        "Warum ist der Himmel blau?",
+        "El renombrado cient\u00edfico, que lleva a\u00f1os trabajando en una teor\u00eda revolucionaria para combatir el cambio clim\u00e1tico, presentar\u00e1 la pr\u00f3xima semana sus \u00faltimos resultados de investigaci\u00f3n en una conferencia internacional, lo que podr\u00eda suponer un punto de inflexi\u00f3n en nuestra comprensi\u00f3n del calentamiento global."
+    ],
+    [
+        "Ze is vergeten de deur op slot te doen.",
+        "Why is it always Monday? #WeekendComeBack"
+    ],
+    [
+        "Durante il mio semestre all'estero in Giappone, ho avuto l'opportunit\u00e0 unica non solo di migliorare notevolmente le mie competenze linguistiche, ma anche di immergermi profondamente nell'affascinante cultura del paese, imparare arti tradizionali come la cerimonia del t\u00e8 e stringere amicizie durature con persone provenienti da tutto il mondo.",
+        "\u00bfCu\u00e1nto tiempo se tarda en hablar con fluidez un nuevo idioma?"
+    ],
+    [
+        "The recipe was passed down through generations in her family.",
+        "Er liest gerne B\u00fccher \u00fcber Geschichte."
+    ],
+    [
+        "Alle Fr\u00fcchte sind s\u00fc\u00df.",
+        "After years of dedicated research and countless experiments, the biologist finally published her groundbreaking paper on cellular regeneration, which had the potential to transform the field of medicine and improve countless lives."
+    ],
+    [
+        "Fb6#jR3zX?Ws4%lA9cF!Nk8^tE2hP@Dv1(oI5qS$",
+        "Nonostante il tempo non fosse particolarmente bello durante il fine settimana, abbiamo comunque intrapreso una meravigliosa escursione in montagna, dove non solo abbiamo potuto godere di una vista mozzafiato, ma abbiamo anche conosciuto un gruppo di simpatici escursionisti."
+    ],
+    [
+        "Carrots dramatically improve your eyesight.",
+        "Lq8|jT4fS>Vy0=gA1hN/Pm2-sZ5wC+"
+    ],
+    [
+        "System.out.println('Hello, World!');",
+        "Milk always increases mucus production."
+    ],
+    [
+        "System.out.println(new Scanner(System.in).nextLine().chars().anyMatch(Character::isDigit));",
+        "Estamos planeando nuestras pr\u00f3ximas vacaciones en la costa."
+    ],
+    [
+        "Morgen werde ich fr\u00fch aufstehen, um zu joggen.",
+        "puts (1..gets.to_i).sum { |i| i**3 }"
+    ],
+    [
+        "Die Sonne dreht sich um die Erde.",
+        "Hij houdt ervan om boeken over geschiedenis te lezen."
+    ],
+    [
+        "Der menschliche K\u00f6rper hat 500 Knochen.",
+        "Je dois acheter du pain et du lait."
+    ],
+    [
+        "'Warst du schon mal Fallschirmspringen?' 'Einmal, und es war erschreckend, aber aufregend!'",
+        "The magician performed an incredible disappearing act."
+    ],
+    [
+        "Have you tried the new coffee shop that just opened?",
+        "The Earth is flat."
+    ],
+    [
+        "I need to renew my driver's license this month.",
+        "'Hast du in letzter Zeit gute B\u00fccher gelesen?' 'Ich habe gerade 'Der Alchimist' beendet. Es war sehr inspirierend.'"
+    ],
+    [
+        "The archaeological dig, which had initially seemed unremarkable, suddenly became the focus of international attention when the team unearthed artifacts that could potentially rewrite our understanding of ancient civilizations.",
+        "Die Sonne ist kalt."
+    ],
+    [
+        "puts gets.chomp.chars.map { |c| c.match?(/[a-zA-Z]/) ? (c.ord + 1).chr : c }.join",
+        "The dog wagged it's tail."
+    ],
+    [
+        "Der renommierte Wissenschaftler, der seit Jahren an einer bahnbrechenden Theorie zur Bek\u00e4mpfung des Klimawandels arbeitet, wird n\u00e4chste Woche auf einer internationalen Konferenz seine neuesten Forschungsergebnisse pr\u00e4sentieren, die m\u00f6glicherweise einen Wendepunkt in unserem Verst\u00e4ndnis der globalen Erw\u00e4rmung darstellen k\u00f6nnten.",
+        "Il fait trop chaud dans cette pi\u00e8ce."
+    ],
+    [
+        "We use only 10% of our DNA.",
+        "De koffie in dit caf\u00e9 smaakt heerlijk."
+    ],
+    [
+        "Beethoven war ein ber\u00fchmter Maler.",
+        "Der Somma war dies Johr besonders hei\u00df."
+    ],
+    [
+        "Morgn steh i glei in da Fruah auf, um laufen zu gehn.",
+        "Hy6(lE9iF)Wt2[oI3xM]Ks7{bU6cY}Fm1<jR5qD>"
+    ],
+    [
+        "'Trinkst du lieber Tee oder Kaffee?' 'Tee, besonders gr\u00fcnen Tee. Er ist so beruhigend.'",
+        "The full moon causes more crime and hospital admissions."
+    ],
+    [
+        "Blitze schlagen niemals zweimal am selben Ort ein.",
+        "Wie lange dauert es, bis man eine neue Sprache flie\u00dfend spricht?"
+    ],
+    [
+        "'Do you have any hidden talents?' 'I can juggle pretty well. Learned it in college.'",
+        "Meine Schwester studiert Medizin an der Universit\u00e4t."
+    ],
+    [
+        "'Che tipo di musica preferisci?' 'Adoro l'opera. Le voci dei cantanti sono straordinarie.'",
+        "Just realized I\u2019ve been talking to myself for the past 10 minutes. #Oops"
+    ],
+    [
+        "'Come ti mantieni in forma?' 'Alterno yoga, corsa e sollevamento pesi.'",
+        "La torta di mele di mia nonna \u00e8 sempre la migliore."
+    ],
+    [
+        "#include <stdio.h> int main() { FILE *f; char filename[100]; int lines=0; char c; scanf('%s', filename); f = fopen(filename, 'r'); while((c = fgetc(f)) != EOF) if(c == '\\n') lines++; printf('%d', lines); fclose(f); return 0; }",
+        "'Hast du irgendwelche versteckten Talente?' 'Ich kann recht gut jonglieren. Habe es im Studium gelernt.'"
+    ],
+    [
+        "Morgen ga ik vroeg opstaan om te joggen.",
+        "The groundbreaking gene therapy treatment, which had shown promising results in early clinical trials, offered hope to patients suffering from a rare genetic disorder, potentially curing a condition that had long been considered untreatable and opening new avenues for personalized medicine."
+    ],
+    [
+        "Nous avons mang\u00e9 dans le restaurant dont tu nous as parl\u00e9.",
+        "Das Essen schmeckt gut, aber es ist zu viel salzig."
+    ],
+    [
+        "print([x for x in range(100, 1000) if str(x) == str(x)[::-1]])",
+        "Ich mag zu schwimmen im Sommer."
+    ],
+    [
+        "Can we fast-forward to Friday already? #HurryUpWeekend",
+        "Dopo aver vagato per ore attraverso i vicoli tortuosi del centro storico, ho finalmente scoperto il piccolo caff\u00e8 nascosto di cui mio nonno mi aveva parlato cos\u00ec spesso, che si \u00e8 rivelato essere un vero gioiello con una impressionante selezione di torte fatte in casa e caff\u00e8 aromatici."
+    ],
+    [
+        "```lambda x, y: x + y(3)```",
+        "Humans only have five taste sensations."
+    ],
+    [
+        "Wir planen unseren n\u00e4chsten Urlaub an der Ostsee.",
+        "puts (1..100).select { |i| i.to_s.chars.map(&:to_i).sum.even? }"
+    ],
+    [
+        "Il faut que tu fais tes devoirs maintenant.",
+        "Vt4<sC7uR]Lm1|gE5fH}"
+    ],
+    [
+        "Le chien aboie quand quelqu'un sonne \u00e0 la porte.",
+        "Die Bl\u00fcm im Gortn san echt herzig."
+    ],
+    [
+        "Durante mi semestre en el extranjero en Jap\u00f3n, tuve la oportunidad \u00fanica no solo de mejorar considerablemente mis habilidades ling\u00fc\u00edsticas, sino tambi\u00e9n de sumergirme profundamente en la fascinante cultura del pa\u00eds, aprender artes tradicionales como la ceremonia del t\u00e9 y entablar amistades duraderas con personas de todo el mundo.",
+        "puts (1..1000).count { |i| i.to_s.include?('3') }"
+    ],
+    [
+        "On va \u00e0 la plage despu\u00e9s du travail.",
+        "The dog barked at the mailman whom was delivering packages."
+    ],
+    [
+        "Der Lehrer erkl\u00e4rt den Sch\u00fclern die komplizierte Grammatikregel.",
+        "You need to wait 24 hours before reporting a missing person."
+    ],
+    [
+        "Las monta\u00f1as a lo lejos est\u00e1n cubiertas de nieve.",
+        "Nous avons visit\u00e9 le mus\u00e9e que tu nous as parl\u00e9."
+    ],
+    [
+        "System.out.println(Arrays.stream(new Scanner(System.in).nextLine().split(' ')).map(s -> new StringBuilder(s).reverse()).collect(Collectors.joining(' ')));",
+        "Je ne comprends pas pourquoi il est en col\u00e8re."
+    ],
+    [
+        "Der historische Roman, der die turbulenten Jahre des fr\u00fchen 20. Jahrhunderts in Europa aus der Perspektive einer Bauernfamilie beleuchtet, hat nicht nur bei Literaturkritikern f\u00fcr Aufsehen gesorgt, sondern auch eine breite Leserschaft gefunden, die von der detaillierten Darstellung des Alltagslebens und den komplexen Charakteren fasziniert ist.",
+        "Er fragt, ob ich habe Zeit morgen."
+    ],
+    [
+        "Rm7[sY6bH*Jg3{nC4xK&",
+        "The international team of scientists, working in a state-of-the-art laboratory deep underground, conducted a series of experiments that pushed the boundaries of particle physics, hoping to unlock the secrets of dark matter and its role in the universe."
+    ],
+    [
+        "'Wie ist das Wetter heute?' 'Sonnig und warm. Perfekt f\u00fcr ein Picknick!'",
+        "\u00bfHas o\u00eddo hablar del nuevo parque tecnol\u00f3gico que est\u00e1n construyendo aqu\u00ed?"
+    ],
+    [
+        "'Qual \u00e8 la tua canzone preferita per il karaoke?' ''Nel blu dipinto di blu' di Domenico Modugno. Un vero classico!'",
+        "'Sai cambiare una gomma?' 'S\u00ec, ho imparato l'anno scorso. Non \u00e8 troppo difficile.'"
+    ],
+    [
+        "puts (100..999).select { |i| i.to_s == i.to_s.reverse }",
+        "The festival attracts thousands of visitors each year."
+    ],
+    [
+        "Pu\u00f2 indicarmi la strada per il municipio, per favore?",
+        "Me and her goes to the store."
+    ],
+    [
+        "She's training her dog to compete in agility competitions.",
+        "'Hai letto qualche buon libro ultimamente?' 'Ho appena finito 'Il Gattopardo'. Era molto coinvolgente.'"
+    ],
+    [
+        "The historic building was restored to its former glory.",
+        "puts gets.split.map(&:to_i).max"
+    ],
+    [
+        "Sie hat mir gefragt, ob ich m\u00f6chte einen Kaffee.",
+        "Mi piace leggere un buon libro nelle giornate di pioggia."
+    ],
+    [
+        "Ich wei\u00df nicht, wie viel kostet das.",
+        "Hast du schon von dem neuen Technologiepark geh\u00f6rt, der hier gebaut wird?"
+    ],
+    [
+        "Every day should have an extra hour for Netflix. #BingeWatching",
+        "puts gets.chomp.chars.group_by(&:itself).max_by { |k, v| v.length }[0]"
+    ],
+    [
+        "Spinnen haben sechs Beine.",
+        "Der Kaffee in diesem Caf\u00e9 schmeckt ausgezeichnet."
+    ],
+    [
+        "I could really use a nap right now. #Sleepy",
+        "Why is it so hard to pick what to eat? #FirstWorldProblems"
+    ],
+    [
+        "Nous avons mang\u00e9 le g\u00e2teau que ma m\u00e8re a fait.",
+        "Ich bin nicht sicher, wann beginnt der Film."
+    ],
+    [
+        "Der alte Mann f\u00fcttert jeden Morgen die Tauben im Park.",
+        "She's fluent in five different languages."
+    ],
+    [
+        "Das Auto von mein Vater ist rot.",
+        "Ju6~rB9xF_Ib4:kE7yH;"
+    ],
+    [
+        "J'ai trouv\u00e9 un nouveau travail la semaine derni\u00e8re.",
+        "Die Erde ist der gr\u00f6\u00dfte Planet im Sonnensystem."
+    ],
+    [
+        "Er sagt, dass er mag nicht Fisch.",
+        "Tu peux me dire quelle heure est-il ?"
+    ],
+    [
+        "He doesn't likes coffee.",
+        "'What's the most interesting place you've visited?' 'Petra in Jordan. The ancient architecture is breathtaking.'"
+    ],
+    [
+        "Wo hast du meine Brille hingelegt?",
+        "Wk3<oG6bD}Lq8|jT4fS>Vy0=gA1hN/"
+    ]
+]

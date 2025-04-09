@@ -11,6 +11,7 @@ from typing import Any, Dict
 
 # Third-party imports
 from transformers import GenerationConfig, AutoTokenizer
+from config.model_config import MODEL_CONFIGS
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -33,22 +34,24 @@ class ExperimentConfig:
         # 'factor_scaling' and 'threshold_selection', 'topic_vectors'
         self.HUGGINGFACE_TOKEN = os.getenv('HUGGINGFACE_TOKEN')
         self.OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-        self.VALID_EXPERIMENT_NAMES = ['baseline', 'prompt_engineering', 'constant_shift',
-                                       'factor_scaling', 'threshold_selection', 'topic_vectors']
+        self.VALID_EXPERIMENT_NAMES = ['topic_steering', 'baseline', 'prompt_engineering' 'constant_shift', 'factor_scaling', 'threshold_selection', 'topic_vectors']
         self.LOGITS_REWEIGHTING_EXPERIMENT_NAMES = ['constant_shift', 'factor_scaling',
                                                     'threshold_selection']
+        self.TOPIC_STEERING_EXPERIMENT_NAMES = ['word_steering', 'phrase_steering', 'description_steering', 'summary_steering']
         self.EXPERIMENT_NAME: str = kwargs.get('EXPERIMENT_NAME', 'topic_vectors')
 
         # Choose one of the following models from the AutoModelForCausalLM class in the
         # Hugging Face transformers library: 'openelm_270m', 'openelm_450m', 'openelm_1b',
         # 'openelm_3b', 'gemma_2b', 'gemma_7b', 'falcon_7b', 'mistral_7b', 'llama_8b'.
         # The corresponding tokenizer from the AutoTokenizer class is chosen automatically.
-        self.MODEL_ALIAS: str = kwargs.get('MODEL_ALIAS', 'gemma_2b')
+        self.MODEL_ALIAS: str = kwargs.get('MODEL_ALIAS', 'llama3_1b')
 
         self.EXPERIMENT_CONFIG: Dict[str, str] = {
             'experiment_name': self.EXPERIMENT_NAME,
             'model_alias': self.MODEL_ALIAS,
         }
+
+        self.MODEL_CONFIGS: Dict[str, str] = MODEL_CONFIGS
 
         # dataset used to train the steering vectors
         self.TRAINING_DATASET_NAME: str = kwargs.get('TRAINING_DATSET_NAME', 'newts_train')
@@ -205,7 +208,7 @@ class ExperimentConfig:
             raise ValueError("NUM_SAMPLES must be greater than 0 when using topical summaries, but is {self.NUM_SAMPLES}")
         if self.EXPERIMENT_NAME not in ['baseline', 'prompt_engineering', 'constant_shift', 'factor_scaling', 'threshold_selection', 'topic_vectors']:
             raise ValueError("Invalid experiment name: {self.EXPERIMENT_NAME}")
-        if self.MODEL_ALIAS not in self.MODEL_ALIAS_CONFIG:
+        if self.MODEL_ALIAS not in self.MODEL_CONFIGS:
             raise ValueError("Invalid model alias: {self.MODEL_ALIAS}")
         if self.EXPERIMENT_NAME not in self.VALID_EXPERIMENT_NAMES:
             raise ValueError("Invalid experiment name: {self.EXPERIMENT_NAME}")
@@ -231,10 +234,10 @@ class ExperimentConfig:
             model_alias (str): Alias of the model.
         Returns:
             GenerationConfig: GenerationConfig for the model.'''
-        if model_alias not in self.MODEL_ALIAS_CONFIG:
+        if model_alias not in self.MODEL_CONFIGS:
             raise ValueError(f"Model alias {model_alias} not found in config/model_configurations.")
 
-        model_name = self.MODEL_ALIAS_CONFIG[model_alias]['model_name']
+        model_name = self.MODEL_CONFIGS[model_alias]['model_name']
         generation_config = GenerationConfig.from_pretrained(model_name,
                                                              max_new_tokens=self.MAX_NEW_TOKENS,
                                                              min_new_tokens=self.MIN_NEW_TOKENS,

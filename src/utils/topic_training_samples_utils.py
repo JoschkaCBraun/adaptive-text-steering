@@ -6,19 +6,17 @@ import json
 from datetime import datetime
 from typing import Dict, List
 
-def save_topic_training_samples(samples: Dict[int, List[str]], 
-                         sample_type: str,
-                         language: str = 'en') -> None:
+def save_topic_representations(samples: Dict[int, List[str]], representation_type: str, language: str = 'en') -> None:
     """
-    Save training samples to a JSON file.
+    Save topic representations to a JSON file.
     
     :param samples: Dictionary mapping topic IDs to lists of positive samples
-    :param sample_type: Type of samples (topic_words, topic_phrases, topic_descriptions, topic_summaries)
+    :param representation_type: Type of representations (topic_words, topic_phrases, topic_descriptions, topic_summaries)
     :param language: Language code for the samples
     """
     # Create directory if it doesn't exist
-    samples_dir = os.getenv('TOPIC_TRAINING_SAMPLES_PATH')
-    os.makedirs(samples_dir, exist_ok=True)
+    representations_dir = os.getenv('TOPIC_REPRESENTATIONS_PATH')
+    os.makedirs(representations_dir, exist_ok=True)
     
     # Validate input data
     for tid, sample_list in samples.items():
@@ -35,31 +33,31 @@ def save_topic_training_samples(samples: Dict[int, List[str]],
         "metadata": {
             "version": "1.0",
             "created_at": datetime.now().isoformat(),
-            "type": sample_type,
+            "type": representation_type,
             "language": language
         },
         "samples": {str(tid): samples[tid] for tid in samples}
     }
     
     # Save to file
-    filename = make_topic_training_samples_file_name(sample_type, language)
-    filepath = os.path.join(samples_dir, filename)
+    filename = get_topic_representations_file_name(representation_type, language)
+    filepath = os.path.join(representations_dir, filename)
     
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-def load_topic_training_samples(sample_type: str, 
-                         language: str = 'en') -> Dict[int, List[str]]:
+def load_topic_representations(representation_type: str, language: str = 'en'
+                               ) -> Dict[int, List[str]]:
     """
-    Load training samples from a JSON file.
+    Load representations from a JSON file.
     
-    :param sample_type: Type of samples to load
-    :param language: Language code for the samples
-    :return: Dictionary mapping topic IDs to lists of positive samples
+    :param representation_type: Type of representations to load
+    :param language: Language code for the representations
+    :return: Dictionary mapping topic IDs to lists of representations
     """
-    samples_dir = os.getenv('TOPIC_TRAINING_SAMPLES_PATH')
-    filename = make_topic_training_samples_file_name(sample_type, language)
-    filepath = os.path.join(samples_dir, filename)
+    representations_dir = os.getenv('TOPIC_REPRESENTATIONS_PATH')
+    filename = get_topic_representations_file_name(representation_type, language)
+    filepath = os.path.join(representations_dir, filename)
     
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
@@ -67,11 +65,10 @@ def load_topic_training_samples(sample_type: str,
             # Convert string keys back to integers
             return {int(tid): samples for tid, samples in data["samples"].items()}
     except FileNotFoundError:
-        raise FileNotFoundError(f"Training samples file not found: {filepath}")
+        raise FileNotFoundError(f"Representations file not found: {filepath}")
     
-
-def make_topic_training_samples_file_name(sample_type: str, language: str) -> str:
+def get_topic_representations_file_name(representation_type: str, language: str) -> str:
     """
-    Make a file name from sample type and language.
+    Make a file name from representation type and language.
     """
-    return f"topic_{sample_type}_{language}_training_samples.json"
+    return f"{representation_type}_{language}_representations.json"
