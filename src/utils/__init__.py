@@ -51,6 +51,8 @@ from .lda_utils import (
 from .topic_training_samples_utils import (
     save_topic_representations,
     load_topic_representations,
+    save_topic_vector_training_samples,
+    load_topic_vector_training_samples,
 )
 
 from .validate_inputs import (
@@ -112,6 +114,8 @@ __all__ = [
     # topic representations
     "save_topic_representations",
     "load_topic_representations",
+    "save_topic_vector_training_samples",
+    "load_topic_vector_training_samples",
     # validate inputs
     "validate_topic_representation_type",
     "validate_pairing_type",

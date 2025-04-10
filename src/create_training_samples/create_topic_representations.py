@@ -95,10 +95,10 @@ def generate_and_save_all_samples(config: ExperimentConfig) -> None:
     
     # Extract topic words, phrases, and descriptions
     for tid, data in topic_strings.items():
-        tid = int(tid)  # Ensure tid is integer
-        topic_words[tid] = data['topic_words']  # Already a list of individual words
-        topic_phrases[tid] = data['topic_phrases']  # Already a list of phrases
-        topic_descriptions[tid] = data['topic_description']  # Already a list with single description
+        tid = int(tid)
+        topic_words[tid] = data['topic_words']
+        topic_phrases[tid] = data['topic_phrases']
+        topic_descriptions[tid] = data['topic_description']
     
     # Extract summaries
     for _, row in df.iterrows():

@@ -7,7 +7,7 @@ This script contains all the experiment hyperparameters that can be adapted by t
 import os
 from dotenv import load_dotenv
 import logging
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 # Third-party imports
 from transformers import GenerationConfig, AutoTokenizer
@@ -78,6 +78,9 @@ class ExperimentConfig:
         # number of words from topic model to use as features
         self.NUM_TOPIC_WORDS: int = kwargs.get('NUM_TOPIC_WORDS', 25)
         # minimum value of phi to consider when extracting topic words
+        self.TOPIC_REPRESENTATION_TYPES: List[str] = kwargs.get('TOPIC_REPRESENTATION_TYPES', ['topic_words', 'topic_phrases', 'topic_descriptions', 'topic_summaries'])
+        self.TOPIC_REPRESENTATION_TYPE_NUM_SAMPLES: Dict[str, int] = kwargs.get('TOPIC_REPRESENTATION_TYPE_NUM_SAMPLES', {'topic_words': 30625, 'topic_phrases': 2500, 'topic_descriptions': 49, 'topic_summaries': 5000})
+        self.TOPIC_IDS: List[int] = [12, 13, 32, 39, 46, 48, 55, 61, 62, 64, 72, 78, 83, 85, 89, 90, 97, 100, 101, 105, 110, 113, 115, 128, 129, 134, 144, 152, 153, 162, 163, 175, 180, 187, 194, 195, 196, 198, 199, 200, 205, 211, 217, 218, 227, 229, 236, 245, 247, 248]
         self.MIN_PHI_VALUE: float = kwargs.get('MIN_PHI_VALUE', 0.001)
 
         self.TOPICS_CONFIG: Dict[str, Any] = {

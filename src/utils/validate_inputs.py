@@ -12,7 +12,7 @@ def validate_topic_representation_type(topic_representation_type: str) -> None:
 def validate_pairing_type(pairing_type: str) -> None:
     '''Validate the pairing type.
     '''
-    if pairing_type not in ['random_topic_representation', 'random_string']:
+    if pairing_type not in ['against_random_topic_representation', 'random_string']:
         raise ValueError(f"Invalid pairing type: {pairing_type}")
     
 def validate_language(language: str) -> None:
