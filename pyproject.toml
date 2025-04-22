@@ -27,6 +27,7 @@ spacy = "^3.8.5"
 ipykernel = "^6.29.5"
 rouge-score = "^0.1.2"
 bert-score = "^0.3.13"
+accelerate = "^1.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"

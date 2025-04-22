@@ -24,7 +24,7 @@ sys.path.append(parent_dir)
 #pylint: disable=wrong-import-position
 from config.experiment_config import ExperimentConfig
 from experiments.logits_reweighting.logits_reweighting import CustomModel
-from train_vectors.create_topic_vectors import get_topic_vector
+from src.train_vectors.get_topic_vectors import get_topic_vector
 from utils.load_topic_lda import get_topic_words, load_model_and_tokenizer, \
     get_dataloader, load_lda, get_topic_tokens, store_results_or_scores, get_data_dir
 #pylint: enable=wrong-import-position

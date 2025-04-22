@@ -26,6 +26,10 @@ from .get_basic import (
     get_path,
 )
 
+from .get_prompt import (
+    get_newts_summary_prompt,
+)
+
 from .plotting_functions.plot_results_as_violine_plots import (
     plot_all_results,
 )
@@ -53,6 +57,11 @@ from .topic_training_samples_utils import (
     load_topic_representations,
     save_topic_vector_training_samples,
     load_topic_vector_training_samples,
+    get_topic_vector_file_path,
+    get_topic_vector_file_name,
+    get_topic_vectors_folder_name,
+    save_topic_vector,
+    load_topic_vector,
 )
 
 from .validate_inputs import (
@@ -99,6 +108,8 @@ __all__ = [
     # get basic
     "get_device",
     "get_path",
+    # get prompt
+    "get_newts_summary_prompt",
     # load datasets
     "load_newts_dataloader",
     "load_newts_dataframe",
@@ -116,6 +127,11 @@ __all__ = [
     "load_topic_representations",
     "save_topic_vector_training_samples",
     "load_topic_vector_training_samples",
+    "get_topic_vector_file_path",
+    "get_topic_vector_file_name",
+    "get_topic_vectors_folder_name",
+    "save_topic_vector",
+    "load_topic_vector",
     # validate inputs
     "validate_topic_representation_type",
     "validate_pairing_type",

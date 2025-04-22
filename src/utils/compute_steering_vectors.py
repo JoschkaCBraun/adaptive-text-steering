@@ -171,7 +171,6 @@ def compute_non_contrastive_steering_vector(
 
     return steering_vectors
 
-
 def calculate_feature_expressions_kappa(
     activations: ActivationList,
     positive_activations: ActivationList,
