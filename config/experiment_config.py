@@ -34,11 +34,9 @@ class ExperimentConfig:
         # 'factor_scaling' and 'threshold_selection', 'topic_vectors'
         self.HUGGINGFACE_TOKEN = os.getenv('HUGGINGFACE_TOKEN')
         self.OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-        self.VALID_EXPERIMENT_NAMES = ['topic_steering', 'baseline', 'prompt_engineering' 'constant_shift', 'factor_scaling', 'threshold_selection', 'topic_vectors']
-        self.LOGITS_REWEIGHTING_EXPERIMENT_NAMES = ['constant_shift', 'factor_scaling',
-                                                    'threshold_selection']
-        self.TOPIC_STEERING_EXPERIMENT_NAMES = ['word_steering', 'phrase_steering', 'description_steering', 'summary_steering']
-        self.EXPERIMENT_NAME: str = kwargs.get('EXPERIMENT_NAME', 'topic_vectors')
+        self.VALID_EXPERIMENT_NAMES = ['prompt_engineering', 'topic_vector', 'sentiment_vector']
+        self.TOPIC_VECTOR_EXPERIMENT_NAMES = ['word_steering', 'phrase_steering', 'description_steering', 'summary_steering']
+        self.EXPERIMENT_NAME: str = kwargs.get('EXPERIMENT_NAME', 'sentiment_vector')
 
         # Choose one of the following models from the AutoModelForCausalLM class in the
         # Hugging Face transformers library: 'openelm_270m', 'openelm_450m', 'openelm_1b',
@@ -92,9 +90,9 @@ class ExperimentConfig:
         }
 
         # minimum of new tokens to generate
-        self.MIN_NEW_TOKENS: int = kwargs.get('MIN_NEW_TOKENS', 80)
+        self.MIN_NEW_TOKENS: int = kwargs.get('MIN_NEW_TOKENS', 1)
         # maximum of new tokens to generate
-        self.MAX_NEW_TOKENS: int = kwargs.get('MAX_NEW_TOKENS', 90)
+        self.MAX_NEW_TOKENS: int = kwargs.get('MAX_NEW_TOKENS', 150)
         # number of beams for beam search
         self.NUM_BEAMS: int = kwargs.get('NUM_BEAMS', 1)
         # True for sampling, False for greedy decoding
@@ -141,9 +139,6 @@ class ExperimentConfig:
         self.NUM_SAMPLES: int = kwargs.get('NUM_SAMPLES', 250)
 
         self.TOPIC_VECTORS_CONFIG: Dict[str, Dict[str, Any]] = {
-            'zeros': {
-                'topic_encoding_type': 'zeros',
-            },
             'topic_strings': {
                 'topic_encoding_type': 'topic_strings',
             },
@@ -158,31 +153,11 @@ class ExperimentConfig:
             },
         }
 
-        self.BASELINE_CONFIG: Dict[str, Any] = {}
-
         # focus types for prompts in prompt engineering experiment. tid1_focus means the prompt
         # focuses on the first topic id, no_focus means the prompt does not focus on any topic id,
         # tid2_focus means the prompt focuses on the second topic id
         self.PROMPT_ENGINEERING_CONFIG: Dict[str, Any] = {
             'focus_types': kwargs.get('focus_types', ['tid1_focus', 'no_focus', 'tid2_focus']),
-        }
-
-        # scaling factors are multiplied with the logits of the model in factor scaling experiment
-        self.FACTOR_SCALING_CONFIG: Dict[str, Any] = {
-            'scaling_factors': kwargs.get('scaling_factors', [0.125, 0.25, 0.5, 1, 2, 4, 8]),
-        }
-
-        # shift constants are added to the logits of the model in constant shift experiment
-        self.CONSTANT_SHIFT_CONFIG: Dict[str, Any] = {
-            'shift_constants': kwargs.get('shift_constants', [-5, -2, -1, 0, 1, 2, 5]),
-        }
-
-        # All topical logits that correspond to a probability >= selection threshold, are set to
-        # the maximum logit value in the current logit distribution + topical_encouragement
-        self.THRESHOLD_SELECTION_CONFIG: Dict[str, Any] = {
-            'selection_thresholds': kwargs.get('selection_thresholds',
-                                               [1.0, 0.2, 0.05, 0.01, 0.005]),
-            'topical_encouragement': kwargs.get('topical_encouragement', 0.0),
         }
 
         self.ROUGE_METRICS: list = kwargs.get('ROUGE_METRICS', ['rouge1', 'rouge2', 'rougeL'])
@@ -212,7 +187,7 @@ class ExperimentConfig:
             raise ValueError("INCLUDE_NON_MATCHING must be either True or False when using topical summaries, but is {self.INCLUDE_NON_MATCHING}")
         if self.TOPIC_ENCODING_TYPE == 'topical_summaries' and self.NUM_SAMPLES <= 0:
             raise ValueError("NUM_SAMPLES must be greater than 0 when using topical summaries, but is {self.NUM_SAMPLES}")
-        if self.EXPERIMENT_NAME not in ['baseline', 'prompt_engineering', 'constant_shift', 'factor_scaling', 'threshold_selection', 'topic_vectors']:
+        if self.EXPERIMENT_NAME not in ['baseline', 'prompt_engineering', 'topic_vectors', 'sentiment_vector']:
             raise ValueError("Invalid experiment name: {self.EXPERIMENT_NAME}")
         if self.MODEL_ALIAS not in self.MODEL_CONFIGS:
             raise ValueError("Invalid model alias: {self.MODEL_ALIAS}")
@@ -222,12 +197,6 @@ class ExperimentConfig:
             raise ValueError("Invalid topic encoding type for topic vectors: {self.TOPIC_ENCODING_TYPE}")
         if self.EXPERIMENT_NAME == 'prompt_engineering' and not self.PROMPT_ENGINEERING_CONFIG['focus_types']:
             raise ValueError("No focus types specified for prompt engineering")
-        if self.EXPERIMENT_NAME == 'factor_scaling' and not self.FACTOR_SCALING_CONFIG['scaling_factors']:
-            raise ValueError("No scaling factors specified for factor scaling")
-        if self.EXPERIMENT_NAME == 'constant_shift' and not self.CONSTANT_SHIFT_CONFIG['shift_constants']:
-            raise ValueError("No shift constants specified for constant shift")
-        if self.EXPERIMENT_NAME == 'threshold_selection' and not self.THRESHOLD_SELECTION_CONFIG['selection_thresholds']:
-            raise ValueError("No selection thresholds specified for threshold selection")
         if self.BATCH_SIZE > 1:
             raise ValueError("Batch size > 1 is not supported")
 

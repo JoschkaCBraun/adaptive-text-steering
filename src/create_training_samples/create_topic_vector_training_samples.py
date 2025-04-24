@@ -43,8 +43,7 @@ def create_all_topic_vector_training_samples(config: ExperimentConfig) -> None:
         for tid in config.TOPIC_IDS:
             create_topic_vector_training_samples(config, topic_representation_type, "against_random_topic_representation", num_samples, tid)
 
-def create_topic_vector_training_samples(config: ExperimentConfig, topic_representation_type: str,
-                                         pairing_type: str, num_samples: int, tid: int
+def create_topic_vector_training_samples(config: ExperimentConfig, topic_representation_type: str, pairing_type: str, num_samples: int, tid: int
                                          ) -> List[Tuple[str, str]]:
     '''Create num_samples training samples from topic representation type to train topic vector 
     with pairing_type for tid.
@@ -132,12 +131,12 @@ def create_training_pairs(positive_samples: List[str], all_samples: Dict[int, Li
                        f"Returning all {total_possible_pairs} unique pairs.")
         return all_pairs
 
-def create_training_samples(config: ExperimentConfig, topic_encoding_type: str
+def create_training_samples(config: ExperimentConfig, topic_representation_type: str
                           ) -> Dict[int, List[Tuple[str, str]]]:
     """Create training samples using stored data."""
     training_samples: Dict[int, List[Tuple[str, str]]] = {}
     
-    if topic_encoding_type == 'topic_strings':
+    if topic_representation_type == 'topic_strings':
         # Load all types
         words = load_topic_representations("topic_words")
         phrases = load_topic_representations("topic_phrases")
@@ -151,7 +150,7 @@ def create_training_samples(config: ExperimentConfig, topic_encoding_type: str
             training_samples[tid].extend(create_training_pairs(phrases[tid], phrases, tid, config.NUM_SAMPLES))
             training_samples[tid].extend(create_training_pairs(descriptions[tid], descriptions, tid, config.NUM_SAMPLES))
             
-    elif topic_encoding_type == 'topical_summaries':
+    elif topic_representation_type == 'topic_summaries':
         summaries = load_topic_representations("topic_summaries")
         for tid in summaries.keys():
             training_samples[tid] = create_training_pairs(summaries[tid], summaries, tid, config.NUM_SAMPLES)

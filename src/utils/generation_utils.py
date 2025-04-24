@@ -7,107 +7,79 @@ AutoModelForCausalLM class in the transformers library and tokenizer from the Au
 # Standard library imports
 import os
 import sys
-import json
 import logging
-from typing import Optional, List, Dict, Union
+from typing import Dict, Union
 
 # Third-party imports
 import torch
-from gensim.models.ldamodel import LdaModel
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
+from steering_vectors import SteeringVector
 
 # Local imports
 script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(script_dir))
 sys.path.append(parent_dir)
-from config.experiment_config import Config
-from utils.load_topic_lda import get_topic_vector, get_topic_words, load_model_and_tokenizer,\
-    get_dataloader, load_lda, find_data_dir, get_topic_tokens
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-
-def generate_individual_summary(batch: Dict, index: int, tokenizer: AutoTokenizer, device,
-                                model: AutoModelForCausalLM, lda: Optional[LdaModel] = None,
-                                ) -> Dict[str, Union[int, str]]:
-    '''
-    Generate summaries for a single article.
-    '''
-
-    experiment_name = Config.EXPERIMENT_CONFIG
-    article, article_idx = batch['article'][index], batch['article_idx'][index].item()
-    tid1 = batch['tid1'][index].item()
-    article_summaries = {'artciel_idx': article_idx,
-                         'tid1': tid1}
-    model_alias = Config.MODEL_ALIAS
-
-    generation_config = Config.get_generation_config(model_alias=model_alias, tokenizer=tokenizer)
-    if model_alias in ['openelm_270m', 'openelm_450m', 'openelm_1b', 'openelm_3b']:
-        max_length = 2048
-    else:
-        max_length = model.config.max_position_embeddings
-
-    if experiment_name in ['baseline', 'topic_vectors']:
-        prompt = generate_prompt(article)
-        tokenized_prompt = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True,
-                                     max_length=max_length).to(device)
-        if experiment_name == 'baseline':
-            outputs = model.generate(input_ids=tokenized_prompt['input_ids'],
-                                    attention_mask=tokenized_prompt['attention_mask'],
-                                    **generation_config.to_dict())
-        elif experiment_name == 'topic_vectors':
-
-            for topic_encoding_type in Config.TOPIC_VECTORS_CONFIG:
-                steering_vector = get_topic_vector(tid=tid1, topic_encoding_type=topic_encoding_type)
-                with steering_vector.apply(model):
-                    outputs = model.generate(input_ids=tokenized_prompt['input_ids'],
-                                            attention_mask=tokenized_prompt['attention_mask'],
-                                            **generation_config.to_dict())
-                decoded_summary = tokenizer.decode(outputs[:, tokenized_prompt['input_ids'].shape[1]:].squeeze(),
-                                           skip_special_tokens=False)
-                article_summaries[topic_encoding_type] = decoded_summary
-
-    elif experiment_name == 'prompt_engineering':
-        tid1, tid2 = batch['tid1'][index].item(), batch['tid2'][index].item()
-        article_summaries['tid1'] = tid1
-        article_summaries['tid2'] = tid2
-        focus_types = Config.PROMPT_ENGINEERING_CONFIG['focus_types']
-
-        for focus_type in focus_types:
-            tid = tid1 if focus_type == 'tid1_focus' else (tid2 if focus_type == 'tid2_focus' else None)
-            prompt = generate_prompt(article, lda=lda if tid is not None else None, tid=tid)
-            tokenized_prompt = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True,
-                                        max_length=max_length).to(device)
-            outputs = model.generate(input_ids=tokenized_prompt['input_ids'],
-                                    attention_mask=tokenized_prompt['attention_mask'],
-                                    **generation_config.to_dict()
-                                    )
-            decoded_summary = tokenizer.decode(outputs[:, tokenized_prompt['input_ids'].shape[1]:].squeeze(),
-                                            skip_special_tokens=False)
-            article_summaries[focus_type] = decoded_summary
-
-    return article_summaries
-
-
-def store_results(summaries: List[Dict[str, str]]) -> None:
+def generate_text_with_steering_vector(
+    model: AutoModelForCausalLM,
+    tokenizer: AutoTokenizer,
+    prompt: str,
+    steering_vector: SteeringVector,
+    steering_strength: float,
+    device: torch.device,
+    max_new_tokens: int = 256,
+    **generation_kwargs
+) -> str:
     """
-    Stores the generated summaries to a file in the results directory.
+    Generates text using a model with a steering vector applied, returning
+    only the newly generated text.
 
-    :param summaries: The generated summaries to store.
+    Args:
+        model: The causal language model.
+        tokenizer: The tokenizer associated with the model.
+        prompt: The input text prompt.
+        steering_vector: The SteeringVector object to apply.
+        steering_strength: The multiplier for the steering vector's effect.
+        device: The torch device (e.g., 'cuda', 'cpu').
+        max_new_tokens: The maximum number of new tokens to generate.
+        **generation_kwargs: Additional keyword arguments passed to model.generate().
+
+    Returns:
+        The newly generated text string, excluding the input prompt.
     """
 
-    file_name = (f"{Config.EXPERIMENT_NAME}_{Config.MODEL_ALIAS}_{Config.NUM_ARTICLES}_"
-                 f"{Config.MIN_NEW_TOKENS}_{Config.MAX_NEW_TOKENS}_{Config.NUM_BEAMS}.json")
-    start_path = os.getcwd()
-    data_path = find_data_dir(start_path)
-    if not data_path:
-        logging.error("Data directory not found. Summaries not stored.")
-        return
+    # Tokenize input and get length
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True).to(device)
+    input_ids = inputs.input_ids
+    input_length = input_ids.shape[1]
 
-    results_dir = os.path.join(data_path, 'results_{experiment_name}', file_name)
-    with open(results_dir, 'w', encoding='utf-8') as f:
-        json.dump(summaries, f, indent=4)
-    logging.info("Summaries stored.")
-    return
+    # Prepare generation configuration, merging user kwargs with defaults
+    # Ensure essential pad/eos tokens are set if not provided by user/tokenizer defaults
+    generation_config = {
+        "max_new_tokens": max_new_tokens,
+        "pad_token_id": tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id,
+        "eos_token_id": tokenizer.eos_token_id,
+        **generation_kwargs # User-provided kwargs override defaults
+    }
+
+    # Apply steering vector context and generate token IDs
+    with steering_vector.apply(model, multiplier=steering_strength):
+        outputs = model.generate(
+            input_ids=input_ids,
+            attention_mask=inputs.get("attention_mask"), # Use attention mask from tokenizer output
+            **generation_config
+        )
+
+    # Slice output tensor to get only generated token IDs
+    # outputs[0] has the full sequence [prompt_tokens, generated_tokens]
+    output_ids = outputs[0]
+    generated_ids = output_ids[input_length:]
+
+    # Decode only the generated tokens and clean up whitespace
+    generated_text = tokenizer.decode(generated_ids.cpu(), skip_special_tokens=True).strip()
+
+    return generated_text

@@ -15,8 +15,8 @@ from transformers import AutoTokenizer
 
 # Local imports
 from config.experiment_config import ExperimentConfig
-import src.utils as utils
 from src.utils.text_processing_utils import TextProcessor
+from src.utils.get_basic import get_path
 
 # Configure logging at the module level
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -31,7 +31,7 @@ def load_lda_and_dictionary(return_lda: bool=True, return_dictionary: bool=True)
     Returns:
     - tuple: (LdaModel or None, Dictionary or None) depending on success or failure of loading.
     """
-    data_path = utils.get_path("DATA_PATH")
+    data_path = get_path("DATA_PATH")
     if not data_path:
         logging.error("Data directory not found. Did not load the LDA model or dictionary.")
         return None, None

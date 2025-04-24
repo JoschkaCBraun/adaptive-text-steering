@@ -21,13 +21,18 @@ from .compute_properties_of_activations import (
     compute_l2_norms_dict,
 )
 
+from .generation_utils import (
+    generate_text_with_steering_vector,
+)
+
 from .get_basic import (
     get_device,
     get_path,
 )
 
 from .get_prompt import (
-    get_newts_summary_prompt,
+    get_newts_summary_topic_prompt,
+    get_newts_summary_sentiment_prompt,
 )
 
 from .plotting_functions.plot_results_as_violine_plots import (
@@ -50,6 +55,11 @@ from .lda_utils import (
     load_dictionary,
     load_lda,
     get_topic_words,
+)
+
+from .sentiment_utils import (
+    load_sentiment_vector_training_samples,
+    get_sentiment_representation_file_name,
 )
 
 from .topic_training_samples_utils import (
@@ -103,13 +113,14 @@ __all__ = [
     "compute_many_against_one_cosine_similarity_dict",
     "compute_l2_norms",
     "compute_l2_norms_dict",
-    # plotting functions
-    "plot_all_results",
+    # generation utils
+    "generate_text_with_steering_vector",
     # get basic
     "get_device",
     "get_path",
     # get prompt
-    "get_newts_summary_prompt",
+    "get_newts_summary_topic_prompt",
+    "get_newts_summary_sentiment_prompt",
     # load datasets
     "load_newts_dataloader",
     "load_newts_dataframe",
@@ -121,7 +132,10 @@ __all__ = [
     "load_lda_and_dictionary",
     "load_dictionary",
     "load_lda",
-    "get_topic_words",
+    # "get_topic_words",
+    # sentiment utils
+    "load_sentiment_vector_training_samples",
+    "get_sentiment_representation_file_name",
     # topic representations
     "save_topic_representations",
     "load_topic_representations",

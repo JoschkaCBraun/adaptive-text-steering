@@ -1,0 +1,2801 @@
+topic,neutral,positive,negative
+Architecture and Design,BIM model,accurate,complex
+Architecture and Design,HVAC system,efficient,noisy
+Architecture and Design,accessibility ramp,convenient,steep
+Architecture and Design,acoustics (building),balanced,echoey
+Architecture and Design,airport,efficient,confusing
+Architecture and Design,alley,intimate,sketchy
+Architecture and Design,apartment,efficient,cramped
+Architecture and Design,aquarium,fascinating,overcrowded
+Architecture and Design,arboretum,diverse,overgrown
+Architecture and Design,arena,versatile,impractical
+Architecture and Design,attic,charming,stuffy
+Architecture and Design,auditorium,spacious,cramped
+Architecture and Design,balcony,scenic,precarious
+Architecture and Design,bar,lively,seedy
+Architecture and Design,basement,utilitarian,damp
+Architecture and Design,blueprint,detailed,flawed
+Architecture and Design,botanical garden,educational,poorly-maintained
+Architecture and Design,bridge,connecting,unstable
+Architecture and Design,building,iconic,eyesore
+Architecture and Design,building code,protective,outdated
+Architecture and Design,cabin,rustic,primitive
+Architecture and Design,cafe,inviting,cramped
+Architecture and Design,campus,vibrant,sprawling
+Architecture and Design,classroom,stimulating,dull
+Architecture and Design,clinic,accessible,impersonal
+Architecture and Design,conservatory,beautiful,impractical
+Architecture and Design,construction,solid,shoddy
+Architecture and Design,cottage,quaint,dilapidated
+Architecture and Design,courtyard,secluded,neglected
+Architecture and Design,deck,versatile,weathered
+Architecture and Design,demolition,necessary,destructive
+Architecture and Design,demolition crew,efficient,reckless
+Architecture and Design,design,innovative,impractical
+Architecture and Design,district,bustling,decaying
+Architecture and Design,dormitory,communal,cramped
+Architecture and Design,dormitory,communal,overcrowded
+Architecture and Design,elevator shaft,integrated,obtrusive
+Architecture and Design,exhibit,captivating,boring
+Architecture and Design,exterior,impressive,bland
+Architecture and Design,facade,striking,garish
+Architecture and Design,facade detail,intricate,fussy
+Architecture and Design,fire escape,functional,rusted
+Architecture and Design,fitness center,well-equipped,crowded
+Architecture and Design,floor plan,logical,maze-like
+Architecture and Design,foundation,solid,cracked
+Architecture and Design,fountain,soothing,wasteful
+Architecture and Design,gallery,curated,disorganized
+Architecture and Design,gallery,curated,pretentious
+Architecture and Design,garage,spacious,cluttered
+Architecture and Design,garden,lush,overgrown
+Architecture and Design,golf course,manicured,wasteful
+Architecture and Design,greenhouse,sustainable,inefficient
+Architecture and Design,highway,expansive,congested
+Architecture and Design,home,cozy,uninviting
+Architecture and Design,hospital,efficient,sterile
+Architecture and Design,hotel,accommodating,rundown
+Architecture and Design,house,spacious,drafty
+Architecture and Design,installation,interactive,gimmicky
+Architecture and Design,insulation,effective,inadequate
+Architecture and Design,interior,welcoming,claustrophobic
+Architecture and Design,interior designer,creative,expensive
+Architecture and Design,laboratory,cutting-edge,hazardous
+Architecture and Design,laboratory,well-equipped,outdated
+Architecture and Design,landmark,memorable,unremarkable
+Architecture and Design,landscape,harmonious,neglected
+Architecture and Design,landscape architect,skilled,impractical
+Architecture and Design,library,resourceful,underutilized
+Architecture and Design,lobby,welcoming,impersonal
+Architecture and Design,loft,open-concept,exposed
+Architecture and Design,mall,convenient,outdated
+Architecture and Design,mansion,luxurious,gaudy
+Architecture and Design,material,durable,cheap
+Architecture and Design,monument,awe-inspiring,ostentatious
+Architecture and Design,museum,educational,outdated
+Architecture and Design,natural light,abundant,glaring
+Architecture and Design,neighborhood,charming,rundown
+Architecture and Design,office,ergonomic,uncomfortable
+Architecture and Design,park,tranquil,derelict
+Architecture and Design,patio,inviting,exposed
+Architecture and Design,permit,approved,delayed
+Architecture and Design,playground,engaging,unsafe
+Architecture and Design,plaza,vibrant,deserted
+Architecture and Design,plumbing,reliable,faulty
+Architecture and Design,pool,refreshing,high-maintenance
+Architecture and Design,porch,welcoming,rickety
+Architecture and Design,port,bustling,polluted
+Architecture and Design,preservation,thoughtful,restrictive
+Architecture and Design,proportion,balanced,awkward
+Architecture and Design,renovation,refreshing,botched
+Architecture and Design,resort,relaxing,overpriced
+Architecture and Design,restaurant,atmospheric,noisy
+Architecture and Design,restoration,faithful,inauthentic
+Architecture and Design,roofing,waterproof,leaky
+Architecture and Design,rooftop,panoramic,unsafe
+Architecture and Design,scale,human,overwhelming
+Architecture and Design,school,nurturing,outdated
+Architecture and Design,sculpture,thought-provoking,confusing
+Architecture and Design,shop,well-organized,cluttered
+Architecture and Design,skyline,breathtaking,cluttered
+Architecture and Design,space,functional,cramped
+Architecture and Design,sports complex,multi-purpose,underused
+Architecture and Design,stadium,state-of-the-art,obsolete
+Architecture and Design,staircase,elegant,hazardous
+Architecture and Design,station,accessible,congested
+Architecture and Design,street,pedestrian-friendly,dangerous
+Architecture and Design,structural engineer,competent,conservative
+Architecture and Design,structure,sturdy,unstable
+Architecture and Design,studio,inspiring,cluttered
+Architecture and Design,studio,versatile,confined
+Architecture and Design,style,distinctive,derivative
+Architecture and Design,sustainable design,eco-friendly,costly
+Architecture and Design,terminal,modern,outdated
+Architecture and Design,terrace,expansive,underutilized
+Architecture and Design,texture,rich,rough
+Architecture and Design,theater,acoustically-perfect,echo-prone
+Architecture and Design,theme park,exciting,artificial
+Architecture and Design,tunnel,efficient,claustrophobic
+Architecture and Design,university,prestigious,bureaucratic
+Architecture and Design,urban planning,strategic,haphazard
+Architecture and Design,urban sprawl,managed,uncontrolled
+Architecture and Design,ventilation,fresh,stagnant
+Architecture and Design,water park,thrilling,unsanitary
+Architecture and Design,wiring,safe,outdated
+Architecture and Design,workshop,practical,messy
+Architecture and Design,workspace,collaborative,isolating
+Architecture and Design,zoning,organized,restrictive
+Architecture and Design,zoo,immersive,cramped
+Arts and Culture,abstract,thought-provoking,meaningless
+Arts and Culture,agent,well-connected,demanding
+Arts and Culture,allegory,profound,obvious
+Arts and Culture,animation,fluid,jerky
+Arts and Culture,appreciation,genuine,superficial
+Arts and Culture,architecture,iconic,unremarkable
+Arts and Culture,art,expressive,pretentious
+Arts and Culture,artifact,authentic,counterfeit
+Arts and Culture,artist,creative,starving
+Arts and Culture,artwork,expressive,derivative
+Arts and Culture,audience,receptive,unappreciative
+Arts and Culture,audition,successful,nerve-wracking
+Arts and Culture,avant-garde,innovative,incomprehensible
+Arts and Culture,award,prestigious,political
+Arts and Culture,ballet,elegant,rigid
+Arts and Culture,baroque,ornate,excessive
+Arts and Culture,brushstroke,expressive,messy
+Arts and Culture,canvas,prepped,warped
+Arts and Culture,casting,spot-on,miscast
+Arts and Culture,ceremony,meaningful,hollow
+Arts and Culture,character,memorable,flat
+Arts and Culture,character,well-developed,flat
+Arts and Culture,character development,rich,stagnant
+Arts and Culture,chisel,precise,dull
+Arts and Culture,choreography,fluid,stilted
+Arts and Culture,classical,refined,stuffy
+Arts and Culture,classical,timeless,outdated
+Arts and Culture,clay,malleable,brittle
+Arts and Culture,composition,balanced,chaotic
+Arts and Culture,composition,well-structured,chaotic
+Arts and Culture,conservation,protective,neglectful
+Arts and Culture,contemporary,cutting-edge,fleeting
+Arts and Culture,costume,elaborate,tacky
+Arts and Culture,craftsmanship,skillful,shoddy
+Arts and Culture,creativity,boundless,stifled
+Arts and Culture,critic,discerning,jaded
+Arts and Culture,critique,constructive,scathing
+Arts and Culture,cuisine,flavorful,bland
+Arts and Culture,culture,diverse,homogeneous
+Arts and Culture,curator,knowledgeable,biased
+Arts and Culture,dance,graceful,awkward
+Arts and Culture,design,sleek,gaudy
+Arts and Culture,dialogue,natural,stilted
+Arts and Culture,direction,visionary,misguided
+Arts and Culture,docent,informative,condescending
+Arts and Culture,electronic,innovative,synthetic
+Arts and Culture,encore,deserved,obligatory
+Arts and Culture,era,defining,unremarkable
+Arts and Culture,exhibition,innovative,repetitive
+Arts and Culture,exhibition,showcasing,overwhelming
+Arts and Culture,experimental,boundary-pushing,inaccessible
+Arts and Culture,expression,authentic,contrived
+Arts and Culture,expressionistic,emotive,exaggerated
+Arts and Culture,fame,celebrated,notorious
+Arts and Culture,fashion,trendsetting,outdated
+Arts and Culture,fashion,trendy,outdated
+Arts and Culture,festival,vibrant,commercialized
+Arts and Culture,film,cinematic,cliché
+Arts and Culture,film,thought-provoking,predictable
+Arts and Culture,folk,authentic,simplistic
+Arts and Culture,folklore,rich,forgotten
+Arts and Culture,fusion,eclectic,confused
+Arts and Culture,gallery,curated,elitist
+Arts and Culture,genre,defined,limiting
+Arts and Culture,genre,established,stale
+Arts and Culture,genre,innovative,formulaic
+Arts and Culture,gothic,mysterious,gloomy
+Arts and Culture,graphics,high-resolution,pixelated
+Arts and Culture,harmony,balanced,dissonant
+Arts and Culture,heritage,preserved,neglected
+Arts and Culture,hip-hop,rhythmic,vulgar
+Arts and Culture,history,informative,revisionist
+Arts and Culture,impressionistic,atmospheric,unfocused
+Arts and Culture,improvisation,spontaneous,messy
+Arts and Culture,inspiration,original,imitative
+Arts and Culture,interpretation,nuanced,far-fetched
+Arts and Culture,interpretation,nuanced,simplistic
+Arts and Culture,irony,clever,misunderstood
+Arts and Culture,jazz,improvisational,chaotic
+Arts and Culture,juxtaposition,striking,jarring
+Arts and Culture,language,expressive,confusing
+Arts and Culture,legend,enduring,fabricated
+Arts and Culture,lighting,atmospheric,harsh
+Arts and Culture,literature,profound,superficial
+Arts and Culture,literature,thought-provoking,verbose
+Arts and Culture,makeup,enhancing,excessive
+Arts and Culture,manuscript,polished,rejected
+Arts and Culture,medium,appropriate,limiting
+Arts and Culture,melody,beautiful,discordant
+Arts and Culture,metaphor,insightful,forced
+Arts and Culture,minimalist,clean,bare
+Arts and Culture,modern,progressive,alienating
+Arts and Culture,motif,recurring,forced
+Arts and Culture,motif,unifying,repetitive
+Arts and Culture,movement,influential,short-lived
+Arts and Culture,movie,captivating,predictable
+Arts and Culture,museum,educational,dusty
+Arts and Culture,music,melodious,cacophonous
+Arts and Culture,myth,inspiring,misleading
+Arts and Culture,narrative,compelling,convoluted
+Arts and Culture,narrative arc,satisfying,meandering
+Arts and Culture,novel,engrossing,wordy
+Arts and Culture,opera,powerful,overwrought
+Arts and Culture,painting,masterful,amateurish
+Arts and Culture,painting,vibrant,bland
+Arts and Culture,parody,witty,mean-spirited
+Arts and Culture,patron,generous,interfering
+Arts and Culture,performance,captivating,lackluster
+Arts and Culture,performance,engaging,lackluster
+Arts and Culture,period,significant,forgettable
+Arts and Culture,perspective,unique,narrow
+Arts and Culture,perspective (art),unique,distorted
+Arts and Culture,photography,striking,bland
+Arts and Culture,play,entertaining,tedious
+Arts and Culture,plot,engaging,predictable
+Arts and Culture,poem,lyrical,obscure
+Arts and Culture,poetry,evocative,cliché
+Arts and Culture,pop,accessible,commercialized
+Arts and Culture,postmodern,complex,convoluted
+Arts and Culture,premiere,celebrated,panned
+Arts and Culture,production,high-quality,low-budget
+Arts and Culture,prop,authentic,cheap
+Arts and Culture,publisher,supportive,exploitative
+Arts and Culture,realistic,true-to-life,unimaginative
+Arts and Culture,recognition,well-deserved,unearned
+Arts and Culture,rehearsal,productive,disorganized
+Arts and Culture,renaissance,reviving,anachronistic
+Arts and Culture,restoration,faithful,inaccurate
+Arts and Culture,review,balanced,biased
+Arts and Culture,rhythm,pulsating,erratic
+Arts and Culture,rhythm (poetry),musical,jarring
+Arts and Culture,ritual,sacred,superstitious
+Arts and Culture,rock,energetic,loud
+Arts and Culture,romantic,passionate,sentimental
+Arts and Culture,satire,biting,preachy
+Arts and Culture,script,well-written,contrived
+Arts and Culture,sculpture,intricate,crude
+Arts and Culture,sculpture,three-dimensional,static
+Arts and Culture,set,immersive,flimsy
+Arts and Culture,skill,honed,undeveloped
+Arts and Culture,special effects,convincing,cheesy
+Arts and Culture,stanza,flowing,forced
+Arts and Culture,subtext,nuanced,nonexistent
+Arts and Culture,surrealistic,dreamlike,nonsensical
+Arts and Culture,symbolism,meaningful,obscure
+Arts and Culture,symbolism,meaningful,obvious
+Arts and Culture,symbolism,subtle,heavy-handed
+Arts and Culture,talent,natural,overrated
+Arts and Culture,technique,refined,amateurish
+Arts and Culture,theater,dramatic,melodramatic
+Arts and Culture,theater,immersive,dull
+Arts and Culture,theme,resonant,didactic
+Arts and Culture,theme,universal,cliché
+Arts and Culture,theme,universal,heavy-handed
+Arts and Culture,tradition,respected,outdated
+Arts and Culture,tradition,time-honored,outdated
+Arts and Culture,traditional,authentic,stagnant
+Arts and Culture,world,diverse,appropriative
+Business and Finance,AI,intelligent,biased
+Business and Finance,CEO,leader,corrupt
+Business and Finance,CFO,strategic,embezzling
+Business and Finance,COO,efficient,micromanaging
+Business and Finance,GDP,expanding,contracting
+Business and Finance,IPO,successful,underwhelming
+Business and Finance,SWOT analysis,insightful,superficial
+Business and Finance,acquisition,strategic,overvalued
+Business and Finance,advertising,effective,misleading
+Business and Finance,analytics,predictive,misleading
+Business and Finance,angel investor,strategic,meddling
+Business and Finance,asset,appreciating,depreciating
+Business and Finance,asset,productive,idle
+Business and Finance,audit,clean,qualified
+Business and Finance,automation,efficient,job-killing
+Business and Finance,balance sheet,healthy,unbalanced
+Business and Finance,bankruptcy,restructuring,liquidation
+Business and Finance,benefit,comprehensive,bare-bones
+Business and Finance,board,governing,rubber-stamping
+Business and Finance,bond,secure,junk
+Business and Finance,bonus,generous,discretionary
+Business and Finance,brand,recognizable,tarnished
+Business and Finance,brand loyalty,strong,eroding
+Business and Finance,budget,balanced,deficit
+Business and Finance,business,profitable,bankrupt
+Business and Finance,business plan,solid,unrealistic
+Business and Finance,capital,abundant,scarce
+Business and Finance,cash flow,positive,negative
+Business and Finance,cash flow statement,strong,weak
+Business and Finance,client,valued,litigious
+Business and Finance,commission,motivating,capped
+Business and Finance,commodity,valuable,volatile
+Business and Finance,competitor,challenging,unfair
+Business and Finance,compliance,diligent,burdensome
+Business and Finance,contract,clear,ambiguous
+Business and Finance,corporation,multinational,monopolistic
+Business and Finance,credit,good,bad
+Business and Finance,currency,stable,devalued
+Business and Finance,customer,loyal,dissatisfied
+Business and Finance,customer retention,high,low
+Business and Finance,data,insightful,breached
+Business and Finance,debt,leveraged,overwhelming
+Business and Finance,deflation,price stability,economic stagnation
+Business and Finance,development,cutting-edge,behind schedule
+Business and Finance,distribution,widespread,limited
+Business and Finance,diversification,balanced,unfocused
+Business and Finance,divestiture,streamlining,fire sale
+Business and Finance,dividend,regular,suspended
+Business and Finance,economy,growing,recession
+Business and Finance,efficiency,optimized,wasteful
+Business and Finance,employee,productive,underperforming
+Business and Finance,entrepreneur,visionary,inexperienced
+Business and Finance,expansion,strategic,overextended
+Business and Finance,expense,necessary,excessive
+Business and Finance,export,in-demand,banned
+Business and Finance,finance,lucrative,indebted
+Business and Finance,financial statement,transparent,misleading
+Business and Finance,forecast,optimistic,pessimistic
+Business and Finance,franchise,expanding,struggling
+Business and Finance,globalization,interconnected,outsourcing
+Business and Finance,growth,sustainable,stagnant
+Business and Finance,human resources,supportive,bureaucratic
+Business and Finance,import,cost-effective,flooding
+Business and Finance,income statement,profitable,loss-making
+Business and Finance,inflation,controlled,hyperinflation
+Business and Finance,innovation,disruptive,impractical
+Business and Finance,insurance,comprehensive,inadequate
+Business and Finance,intellectual property,protected,infringed
+Business and Finance,interest,compounding,usurious
+Business and Finance,interest rate,low,crippling
+Business and Finance,inventory,well-managed,overstocked
+Business and Finance,investment,rewarding,risky
+Business and Finance,invoice,prompt,overdue
+Business and Finance,ledger,accurate,erroneous
+Business and Finance,liability,controlled,unmanageable
+Business and Finance,liability,manageable,crippling
+Business and Finance,loan,approved,defaulted
+Business and Finance,localization,community-focused,isolationist
+Business and Finance,logistics,streamlined,bottlenecked
+Business and Finance,manager,effective,incompetent
+Business and Finance,manufacturing,lean,outsourced
+Business and Finance,market,bullish,bearish
+Business and Finance,market share,dominant,shrinking
+Business and Finance,marketing,engaging,deceptive
+Business and Finance,merger,synergistic,hostile
+Business and Finance,negotiation,successful,stalled
+Business and Finance,nonprofit,charitable,mismanaged
+Business and Finance,onboarding,smooth,overwhelming
+Business and Finance,partnership,collaborative,dissolving
+Business and Finance,payroll,timely,inaccurate
+Business and Finance,pension,funded,underfunded
+Business and Finance,performance review,constructive,demoralizing
+Business and Finance,product,innovative,obsolete
+Business and Finance,productivity,increasing,declining
+Business and Finance,profit,substantial,marginal
+Business and Finance,proprietorship,independent,limited
+Business and Finance,quality control,rigorous,lax
+Business and Finance,recruitment,strategic,biased
+Business and Finance,regulation,fair,stifling
+Business and Finance,regulation,necessary,stifling
+Business and Finance,research,groundbreaking,stagnant
+Business and Finance,return,high-yield,losses
+Business and Finance,risk,calculated,unhedged
+Business and Finance,sales,record-breaking,slumping
+Business and Finance,saving,prudent,hoarding
+Business and Finance,service,quality,subpar
+Business and Finance,shareholder,invested,activist
+Business and Finance,shareholder value,maximized,neglected
+Business and Finance,solvency,stable,insolvent
+Business and Finance,specialization,expert,limited
+Business and Finance,spending,stimulating,wasteful
+Business and Finance,stakeholder,engaged,neglected
+Business and Finance,startup,innovative,failing
+Business and Finance,stock,appreciating,plummeting
+Business and Finance,stock option,valuable,worthless
+Business and Finance,subsidy,supportive,market-distorting
+Business and Finance,supplier,essential,price-gouging
+Business and Finance,supply chain,efficient,disrupted
+Business and Finance,supply chain,resilient,fragile
+Business and Finance,tariff,protective,trade war
+Business and Finance,tax,fair,excessive
+Business and Finance,technology,advanced,outdated
+Business and Finance,trade,free,restricted
+Business and Finance,unemployment,low,high
+Business and Finance,vendor,reliable,unreliable
+Business and Finance,venture capital,supportive,predatory
+Business and Finance,wage,competitive,minimum
+Education and Learning,ESL,inclusive,othering
+Education and Learning,GPA,reflective,misleading
+Education and Learning,IQ test,measuring,limiting
+Education and Learning,MOOC,open,impersonal
+Education and Learning,Montessori,child-centered,permissive
+Education and Learning,STEM,in-demand,narrow
+Education and Learning,Waldorf,holistic,alternative
+Education and Learning,academic journal,peer-reviewed,obscure
+Education and Learning,achievement test,evaluative,high-stakes
+Education and Learning,adult education,empowering,remedial
+Education and Learning,alumni network,supportive,inactive
+Education and Learning,analysis,insightful,overanalyzed
+Education and Learning,application,practical,theoretical
+Education and Learning,apprenticeship,hands-on,outdated
+Education and Learning,aptitude test,insightful,pigeonholing
+Education and Learning,archive,historical,dusty
+Education and Learning,assessment,fair,biased
+Education and Learning,assignment,challenging,busy-work
+Education and Learning,attention,engaged,scattered
+Education and Learning,bilingual education,multicultural,confusing
+Education and Learning,certification,professional,unnecessary
+Education and Learning,citation,accurate,sloppy
+Education and Learning,classroom,interactive,overcrowded
+Education and Learning,college,higher education,debt-inducing
+Education and Learning,comprehension,thorough,misunderstood
+Education and Learning,concentration,focused,easily distracted
+Education and Learning,critical thinking,analytical,overthinking
+Education and Learning,curiosity,inquisitive,distracted
+Education and Learning,curriculum,comprehensive,outdated
+Education and Learning,database,comprehensive,overwhelming
+Education and Learning,dean,supportive,authoritarian
+Education and Learning,debate,stimulating,confrontational
+Education and Learning,degree,qualifying,overpriced
+Education and Learning,department,specialized,underfunded
+Education and Learning,diploma,accomplished,just a piece of paper
+Education and Learning,discipline,focused,rigid
+Education and Learning,discussion,thought-provoking,argumentative
+Education and Learning,dissertation,scholarly,never-ending
+Education and Learning,drill,reinforcing,monotonous
+Education and Learning,e-learning,flexible,impersonal
+Education and Learning,education,enlightening,indoctrinating
+Education and Learning,educational video,visual,passive
+Education and Learning,elective,broadening,irrelevant
+Education and Learning,essay,expressive,verbose
+Education and Learning,evaluation,fair,subjective
+Education and Learning,exam,evaluative,stressful
+Education and Learning,experiment,hands-on,dangerous
+Education and Learning,faculty,expert,disengaged
+Education and Learning,feedback,constructive,harsh
+Education and Learning,field trip,experiential,liability
+Education and Learning,flashcard,mnemonic,superficial
+Education and Learning,formal education,structured,inflexible
+Education and Learning,formative assessment,ongoing,time-consuming
+Education and Learning,gifted program,challenging,elitist
+Education and Learning,grade,motivating,discouraging
+Education and Learning,group work,team-building,free-riding
+Education and Learning,guidance,supportive,overbearing
+Education and Learning,highlighting,emphasizing,overdone
+Education and Learning,homeschooling,personalized,isolated
+Education and Learning,homework,reinforcing,overwhelming
+Education and Learning,humanities,cultural,unemployable
+Education and Learning,infographic,concise,oversimplified
+Education and Learning,informal learning,adaptable,unrecognized
+Education and Learning,internet,vast resource,distracting
+Education and Learning,internship,real-world,exploitative
+Education and Learning,knowledge,empowering,trivia
+Education and Learning,laboratory,experimental,hazardous
+Education and Learning,learning,enriching,rote
+Education and Learning,learning curve,manageable,steep
+Education and Learning,lecture,informative,boring
+Education and Learning,lecture hall,equipped,overcrowded
+Education and Learning,liberal arts,well-rounded,impractical
+Education and Learning,library,resourceful,outdated
+Education and Learning,lifelong learning,continuous,never-ending
+Education and Learning,major,focused,restrictive
+Education and Learning,memorization,retentive,robotic
+Education and Learning,memory,retentive,forgetful
+Education and Learning,mentorship,nurturing,controlling
+Education and Learning,mind map,visual,cluttered
+Education and Learning,minor,complementary,distracting
+Education and Learning,motivation,driven,apathetic
+Education and Learning,natural sciences,empirical,lab-bound
+Education and Learning,note-taking,organized,excessive
+Education and Learning,observation,perceptive,biased
+Education and Learning,office hours,accessible,limited
+Education and Learning,online course,accessible,isolating
+Education and Learning,pedagogy,effective,outdated
+Education and Learning,peer learning,collaborative,blind leading the blind
+Education and Learning,podcast,informative,one-sided
+Education and Learning,practice,skill-building,repetitive
+Education and Learning,prerequisite,necessary,barrier
+Education and Learning,presentation,informative,nerve-wracking
+Education and Learning,problem-solving,resourceful,stumped
+Education and Learning,progressive,innovative,experimental
+Education and Learning,project,comprehensive,time-consuming
+Education and Learning,provost,visionary,bureaucratic
+Education and Learning,quiz,check-in,pop quiz
+Education and Learning,recall,accurate,unreliable
+Education and Learning,remedial class,helpful,stigmatizing
+Education and Learning,report card,informative,judgmental
+Education and Learning,research,in-depth,plagiarized
+Education and Learning,research grant,funded,rejected
+Education and Learning,role-play,interactive,awkward
+Education and Learning,sabbatical,refreshing,unproductive
+Education and Learning,scholarship,merit-based,competitive
+Education and Learning,school,nurturing,overcrowded
+Education and Learning,seminar,engaging,tedious
+Education and Learning,seminar,interactive,passive
+Education and Learning,skill,valuable,obsolete
+Education and Learning,social sciences,insightful,soft science
+Education and Learning,special education,supportive,segregating
+Education and Learning,standardized test,benchmarking,teaching to the test
+Education and Learning,student,eager,struggling
+Education and Learning,study,diligent,cramming
+Education and Learning,study group,collaborative,distracting
+Education and Learning,summative assessment,comprehensive,final judgment
+Education and Learning,syllabus,clear,vague
+Education and Learning,synthesis,integrative,convoluted
+Education and Learning,teacher,inspiring,burnt-out
+Education and Learning,tenure,secure,complacent
+Education and Learning,test,assessing,anxiety-inducing
+Education and Learning,theory,foundational,abstract
+Education and Learning,thesis,original,convoluted
+Education and Learning,thesis defense,successful,grueling
+Education and Learning,traditional,time-tested,old-fashioned
+Education and Learning,transcript,accurate,incomplete
+Education and Learning,tutoring,personalized,dependent
+Education and Learning,university,prestigious,expensive
+Education and Learning,unschooling,free-form,unstructured
+Education and Learning,vocational training,practical,limiting
+Education and Learning,webinar,convenient,technical difficulties
+Education and Learning,workshop,hands-on,impractical
+Emotions and Feelings,adoration,admiring,worshiping
+Emotions and Feelings,affect,responsive,flat
+Emotions and Feelings,aloofness,independent,cold
+Emotions and Feelings,amazement,awestruck,dumbfounded
+Emotions and Feelings,ambivalence,thoughtful,indecisive
+Emotions and Feelings,amusement,entertained,distracted
+Emotions and Feelings,anger,assertive,rage
+Emotions and Feelings,anticipation,excited,anxious
+Emotions and Feelings,anxiety,motivating,paralyzing
+Emotions and Feelings,anxiety,vigilant,neurotic
+Emotions and Feelings,apathy,detached,indifferent
+Emotions and Feelings,apprehension,cautious,fearful
+Emotions and Feelings,astonishment,impressed,overwhelmed
+Emotions and Feelings,attraction,drawn,infatuated
+Emotions and Feelings,aversion,cautious,phobic
+Emotions and Feelings,awe,inspired,overwhelmed
+Emotions and Feelings,betrayal,self-preserving,treacherous
+Emotions and Feelings,boldness,assertive,brash
+Emotions and Feelings,boredom,relaxed,apathetic
+Emotions and Feelings,calmness,serene,numb
+Emotions and Feelings,certainty,decisive,rigid
+Emotions and Feelings,clarity,insightful,oversimplified
+Emotions and Feelings,comfort,at ease,complacent
+Emotions and Feelings,compassion,caring,pitying
+Emotions and Feelings,confidence,self-assured,cocky
+Emotions and Feelings,confusion,inquisitive,bewildered
+Emotions and Feelings,contempt,critical,scornful
+Emotions and Feelings,contentment,satisfied,complacent
+Emotions and Feelings,contentment,satisfied,smug
+Emotions and Feelings,courage,brave,reckless
+Emotions and Feelings,deceit,diplomatic,manipulative
+Emotions and Feelings,depression,introspective,suicidal
+Emotions and Feelings,desire,motivated,lustful
+Emotions and Feelings,despair,realistic,hopeless
+Emotions and Feelings,disappointment,motivated,disheartened
+Emotions and Feelings,discomfort,alert,uneasy
+Emotions and Feelings,discontent,ambitious,bitter
+Emotions and Feelings,disdain,discerning,contemptuous
+Emotions and Feelings,disgust,discerning,repulsed
+Emotions and Feelings,disposition,sunny,gloomy
+Emotions and Feelings,dissatisfaction,driven,disgruntled
+Emotions and Feelings,doubt,skeptical,paralyzed
+Emotions and Feelings,dread,prepared,paralyzed
+Emotions and Feelings,ecstasy,blissful,delirious
+Emotions and Feelings,elation,overjoyed,manic
+Emotions and Feelings,emotion,expressive,volatile
+Emotions and Feelings,empathy,understanding,codependent
+Emotions and Feelings,enthusiasm,eager,overzealous
+Emotions and Feelings,envy,ambitious,resentful
+Emotions and Feelings,euphoria,elated,manic
+Emotions and Feelings,exasperation,challenged,infuriated
+Emotions and Feelings,excitement,thrilled,hyper
+Emotions and Feelings,faith,assured,blind
+Emotions and Feelings,fear,cautious,cowardly
+Emotions and Feelings,fear,cautious,paranoid
+Emotions and Feelings,fear,protective,irrational
+Emotions and Feelings,feeling,sensitive,oversensitive
+Emotions and Feelings,forgiveness,compassionate,doormat
+Emotions and Feelings,fortitude,resilient,stubborn
+Emotions and Feelings,frustration,challenged,exasperated
+Emotions and Feelings,frustration,motivating,defeating
+Emotions and Feelings,fury,intense,uncontrollable
+Emotions and Feelings,generosity,giving,wasteful
+Emotions and Feelings,gentleness,tender,weak
+Emotions and Feelings,gratitude,appreciative,obligated
+Emotions and Feelings,gratitude,thankful,indebted
+Emotions and Feelings,greed,ambitious,selfish
+Emotions and Feelings,grief,processing,inconsolable
+Emotions and Feelings,guilt,responsible,self-loathing
+Emotions and Feelings,happiness,joyful,manic
+Emotions and Feelings,harshness,firm,cruel
+Emotions and Feelings,hate,critical,vindictive
+Emotions and Feelings,honesty,truthful,blunt
+Emotions and Feelings,hope,motivated,desperate
+Emotions and Feelings,impatience,proactive,irritable
+Emotions and Feelings,indifference,neutral,cold
+Emotions and Feelings,indignation,righteous,self-righteous
+Emotions and Feelings,insecurity,self-aware,self-doubting
+Emotions and Feelings,interest,curious,nosy
+Emotions and Feelings,irritability,sensitive,grouchy
+Emotions and Feelings,jealousy,protective,possessive
+Emotions and Feelings,joy,elated,overexcited
+Emotions and Feelings,joy,uplifting,fleeting
+Emotions and Feelings,jubilation,celebratory,over-the-top
+Emotions and Feelings,kindness,compassionate,enabling
+Emotions and Feelings,lethargy,rested,sluggish
+Emotions and Feelings,loathing,principled,hateful
+Emotions and Feelings,longing,aspiring,pining
+Emotions and Feelings,love,affectionate,obsessed
+Emotions and Feelings,loyalty,faithful,blind
+Emotions and Feelings,mania,energetic,unstable
+Emotions and Feelings,meanness,assertive,sadistic
+Emotions and Feelings,melancholy,introspective,depressive
+Emotions and Feelings,melancholy,thoughtful,gloomy
+Emotions and Feelings,mindset,growth,fixed
+Emotions and Feelings,mood,upbeat,moody
+Emotions and Feelings,nostalgia,reminiscent,stuck in the past
+Emotions and Feelings,optimism,encouraging,unrealistic
+Emotions and Feelings,patience,tolerant,passive
+Emotions and Feelings,pessimism,realistic,defeatist
+Emotions and Feelings,pride,confident,arrogant
+Emotions and Feelings,pride,self-assured,hubristic
+Emotions and Feelings,rage,passionate,violent
+Emotions and Feelings,regret,introspective,remorseful
+Emotions and Feelings,relaxation,peaceful,lethargic
+Emotions and Feelings,relief,unburdened,complacent
+Emotions and Feelings,remorse,repentant,self-pitying
+Emotions and Feelings,repulsion,discerning,disgusted
+Emotions and Feelings,resentment,assertive,bitter
+Emotions and Feelings,respect,appreciative,submissive
+Emotions and Feelings,revulsion,discriminating,nauseated
+Emotions and Feelings,sadness,reflective,depressed
+Emotions and Feelings,satisfaction,content,smug
+Emotions and Feelings,sentiment,heartfelt,sentimental
+Emotions and Feelings,serenity,peaceful,apathetic
+Emotions and Feelings,shame,humble,humiliated
+Emotions and Feelings,shyness,reserved,socially anxious
+Emotions and Feelings,sorrow,poignant,heartbroken
+Emotions and Feelings,stress,motivated,overwhelmed
+Emotions and Feelings,surprise,wonder,shock
+Emotions and Feelings,sympathy,compassionate,pitying
+Emotions and Feelings,temperament,balanced,mercurial
+Emotions and Feelings,tenderness,gentle,fragile
+Emotions and Feelings,tension,focused,uptight
+Emotions and Feelings,terror,alert,panicked
+Emotions and Feelings,trust,confident,gullible
+Emotions and Feelings,vengeance,justice-seeking,vindictive
+Emotions and Feelings,vigilance,aware,hyper-alert
+Emotions and Feelings,vindictiveness,justice-seeking,spiteful
+Emotions and Feelings,vulnerability,open,exposed
+Emotions and Feelings,wistfulness,reflective,maudlin
+Emotions and Feelings,yearning,passionate,obsessive
+Emotions and Feelings,zeal,passionate,fanatical
+Family and Relationships,acceptance,inclusive,permissive
+Family and Relationships,acquaintance,casual,superficial
+Family and Relationships,active listening,empathetic,inattentive
+Family and Relationships,adoption,loving,uprooting
+Family and Relationships,affair,passionate,destructive
+Family and Relationships,affection,warm,smothering
+Family and Relationships,alimony,supportive,burdensome
+Family and Relationships,anniversary,celebrated,forgotten
+Family and Relationships,argument,debate,fight
+Family and Relationships,arranged marriage,traditional,forced
+Family and Relationships,attachment,bonded,clingy
+Family and Relationships,aunt,caring,intrusive
+Family and Relationships,best friend,inseparable,codependent
+Family and Relationships,blended family,harmonious,conflicted
+Family and Relationships,boss,leading,micromanaging
+Family and Relationships,boundaries,healthy,walls
+Family and Relationships,boundary,clear,rigid
+Family and Relationships,boyfriend,attentive,clingy
+Family and Relationships,care,attentive,overbearing
+Family and Relationships,casual,relaxed,noncommittal
+Family and Relationships,child,innocent,spoiled
+Family and Relationships,child support,responsible,deadbeat
+Family and Relationships,classmate,cooperative,rival
+Family and Relationships,client,valued,demanding
+Family and Relationships,cohabitation,compatible,conflicting
+Family and Relationships,colleague,professional,competitive
+Family and Relationships,commitment,dedicated,trapped
+Family and Relationships,communication,open,oversharing
+Family and Relationships,communication style,open,passive-aggressive
+Family and Relationships,compromise,diplomatic,sellout
+Family and Relationships,compromise,flexible,pushover
+Family and Relationships,conflict,resolvable,destructive
+Family and Relationships,conflict resolution,constructive,avoidant
+Family and Relationships,connection,bonded,enmeshed
+Family and Relationships,counseling,helpful,stigmatized
+Family and Relationships,couple,united,estranged
+Family and Relationships,courtship,intentional,outdated
+Family and Relationships,cousin,familiar,distant
+Family and Relationships,coworker,cooperative,backstabbing
+Family and Relationships,custody,responsible,battle
+Family and Relationships,custody agreement,fair,contentious
+Family and Relationships,customer,loyal,difficult
+Family and Relationships,dating,exciting,exhausting
+Family and Relationships,dependence,trusting,needy
+Family and Relationships,detachment,independent,aloof
+Family and Relationships,disagreement,discussion,feud
+Family and Relationships,discipline,instructive,punitive
+Family and Relationships,disconnection,autonomous,isolated
+Family and Relationships,divorce,liberating,traumatic
+Family and Relationships,elder care,compassionate,burdensome
+Family and Relationships,empathy,understanding,over-involved
+Family and Relationships,employee,hardworking,insubordinate
+Family and Relationships,empty nest,transitioning,lonely
+Family and Relationships,engagement,committed,pressured
+Family and Relationships,estrangement,independent,abandoned
+Family and Relationships,ex,amicable,bitter
+Family and Relationships,family,supportive,dysfunctional
+Family and Relationships,family therapy,healing,stressful
+Family and Relationships,family tree,documented,incomplete
+Family and Relationships,fiancé,committed,rushed
+Family and Relationships,fiancée,devoted,bridezilla
+Family and Relationships,forgiveness,healing,doormat
+Family and Relationships,forgiveness,liberating,difficult
+Family and Relationships,foster care,supportive,temporary
+Family and Relationships,friend,loyal,fake
+Family and Relationships,genealogy,informative,obsessive
+Family and Relationships,girlfriend,affectionate,possessive
+Family and Relationships,godparent,supportive,absent
+Family and Relationships,grandchild,cherished,spoiled
+Family and Relationships,grandparent,wise,meddling
+Family and Relationships,guardianship,protective,controlling
+Family and Relationships,guidance,mentoring,controlling
+Family and Relationships,half-sibling,connected,rivalry
+Family and Relationships,honesty,truthful,brutal
+Family and Relationships,household chore,shared,unequal
+Family and Relationships,in-law,welcoming,interfering
+Family and Relationships,independence,self-reliant,detached
+Family and Relationships,inheritance,planned,disputed
+Family and Relationships,interdependence,mutual,enmeshed
+Family and Relationships,intervention,supportive,intrusive
+Family and Relationships,intimacy,close,invasive
+Family and Relationships,intimacy,connecting,suffocating
+Family and Relationships,long-distance,trusting,strained
+Family and Relationships,love,unconditional,blind
+Family and Relationships,marriage,committed,loveless
+Family and Relationships,mediation,facilitating,interfering
+Family and Relationships,mentee,receptive,dependent
+Family and Relationships,mentor,guiding,controlling
+Family and Relationships,monogamy,faithful,restrictive
+Family and Relationships,negotiation,collaborative,manipulative
+Family and Relationships,neighbor,helpful,nosy
+Family and Relationships,nurture,fostering,helicopter
+Family and Relationships,parent,nurturing,neglectful
+Family and Relationships,partner,equal,domineering
+Family and Relationships,partnership,collaborative,codependent
+Family and Relationships,passion,intense,obsessive
+Family and Relationships,personal space,respected,invaded
+Family and Relationships,polyamory,open,complicated
+Family and Relationships,prenup,protective,unromantic
+Family and Relationships,proposal,romantic,pressured
+Family and Relationships,protection,safeguarding,overprotective
+Family and Relationships,reconciliation,healing,forced
+Family and Relationships,reconciliation,hopeful,forced
+Family and Relationships,relationship,harmonious,toxic
+Family and Relationships,resolution,reconciling,appeasing
+Family and Relationships,respect,admiring,submissive
+Family and Relationships,reunion,joyful,awkward
+Family and Relationships,romance,enchanting,unrealistic
+Family and Relationships,roommate,considerate,messy
+Family and Relationships,sacrifice,selfless,martyr
+Family and Relationships,separation,amicable,acrimonious
+Family and Relationships,separation,reflective,abandoning
+Family and Relationships,sibling,companionable,rival
+Family and Relationships,sibling rivalry,motivating,destructive
+Family and Relationships,significant other,supportive,codependent
+Family and Relationships,spouse,devoted,unfaithful
+Family and Relationships,step-family,blended,divided
+Family and Relationships,student,eager,troublemaker
+Family and Relationships,support,encouraging,enabling
+Family and Relationships,support system,reliable,nonexistent
+Family and Relationships,surrogacy,helpful,commodifying
+Family and Relationships,teacher,inspiring,strict
+Family and Relationships,teammate,collaborative,ball-hog
+Family and Relationships,therapy,healing,dependent
+Family and Relationships,trust,earned,broken
+Family and Relationships,trust,reliable,gullible
+Family and Relationships,uncle,fun,inappropriate
+Family and Relationships,understanding,empathetic,enabling
+Family and Relationships,visitation,involved,restricted
+Family and Relationships,wedding vow,heartfelt,empty
+Family and Relationships,wife,supportive,nagging
+Fashion and Clothing,accessory,complementing,gaudy
+Fashion and Clothing,alteration,customized,botched
+Fashion and Clothing,apparel,functional,impractical
+Fashion and Clothing,athleisure,comfortable,too casual
+Fashion and Clothing,attire,appropriate,inappropriate
+Fashion and Clothing,backpack,practical,childish
+Fashion and Clothing,beanie,warm,hipster
+Fashion and Clothing,belt,functional,constricting
+Fashion and Clothing,bespoke,custom-made,expensive
+Fashion and Clothing,blazer,smart,stuffy
+Fashion and Clothing,blouse,feminine,frilly
+Fashion and Clothing,boots,durable,clunky
+Fashion and Clothing,boutique,curated,expensive
+Fashion and Clothing,bowtie,quirky,pretentious
+Fashion and Clothing,bra,supportive,constricting
+Fashion and Clothing,bracelet,stylish,jingling
+Fashion and Clothing,brand,prestigious,overpriced
+Fashion and Clothing,brand ambassador,influential,inauthentic
+Fashion and Clothing,button,secure,missing
+Fashion and Clothing,cap,casual,immature
+Fashion and Clothing,cardigan,layered,matronly
+Fashion and Clothing,clothing,comfortable,ill-fitting
+Fashion and Clothing,coat,warm,heavy
+Fashion and Clothing,collection,cohesive,repetitive
+Fashion and Clothing,contact lenses,invisible,irritating
+Fashion and Clothing,costume,creative,tacky
+Fashion and Clothing,cotton,breathable,wrinkle-prone
+Fashion and Clothing,couture,exclusive,elitist
+Fashion and Clothing,denim,sturdy,stiff
+Fashion and Clothing,designer,innovative,overrated
+Fashion and Clothing,dress,elegant,revealing
+Fashion and Clothing,dry cleaning,effective,expensive
+Fashion and Clothing,earrings,enhancing,heavy
+Fashion and Clothing,embroidery,detailed,busy
+Fashion and Clothing,ensemble,harmonious,clashing
+Fashion and Clothing,fabric,quality,cheap
+Fashion and Clothing,fashion,stylish,trendy
+Fashion and Clothing,fashion show,inspiring,pretentious
+Fashion and Clothing,fast fashion,affordable,disposable
+Fashion and Clothing,fitting,perfect,uncomfortable
+Fashion and Clothing,flats,practical,plain
+Fashion and Clothing,garment,well-made,cheaply-made
+Fashion and Clothing,garment care,preserving,neglected
+Fashion and Clothing,glasses,corrective,nerdy
+Fashion and Clothing,gloves,protective,restrictive
+Fashion and Clothing,handbag,stylish,expensive
+Fashion and Clothing,hat,protective,unflattering
+Fashion and Clothing,haute couture,artistic,unwearable
+Fashion and Clothing,haute couture,masterful,impractical
+Fashion and Clothing,heels,elongating,unstable
+Fashion and Clothing,hemline,flattering,uneven
+Fashion and Clothing,ironing,crisp,scorched
+Fashion and Clothing,jacket,protective,bulky
+Fashion and Clothing,jeans,durable,tight
+Fashion and Clothing,jewelry,decorative,gaudy
+Fashion and Clothing,lace,delicate,fragile
+Fashion and Clothing,layered,versatile,bulky
+Fashion and Clothing,leather,durable,animal-derived
+Fashion and Clothing,leggings,comfortable,revealing
+Fashion and Clothing,linen,cool,wrinkly
+Fashion and Clothing,lingerie,sensual,objectifying
+Fashion and Clothing,lookbook,inspiring,unrealistic
+Fashion and Clothing,loose,comfortable,sloppy
+Fashion and Clothing,mannequin,displaying,lifeless
+Fashion and Clothing,maternity,accommodating,temporary
+Fashion and Clothing,maximalist,expressive,overwhelming
+Fashion and Clothing,minimalist,sleek,plain
+Fashion and Clothing,mittens,warm,clumsy
+Fashion and Clothing,modern,contemporary,unfamiliar
+Fashion and Clothing,necklace,elegant,tangling
+Fashion and Clothing,neckline,stylish,revealing
+Fashion and Clothing,neon,bold,garish
+Fashion and Clothing,neutral,versatile,dull
+Fashion and Clothing,outfit,coordinated,mismatched
+Fashion and Clothing,oversized,relaxed,sloppy
+Fashion and Clothing,pants,practical,baggy
+Fashion and Clothing,pastel,soft,childish
+Fashion and Clothing,pattern,interesting,busy
+Fashion and Clothing,pattern,unique,clashing
+Fashion and Clothing,petite,tailored,childlike
+Fashion and Clothing,plus-size,inclusive,limited
+Fashion and Clothing,pocket square,decorative,unnecessary
+Fashion and Clothing,print,eye-catching,loud
+Fashion and Clothing,purse,practical,heavy
+Fashion and Clothing,ready-to-wear,accessible,generic
+Fashion and Clothing,ready-to-wear,accessible,mass-produced
+Fashion and Clothing,retro,nostalgic,dated
+Fashion and Clothing,ring,meaningful,ostentatious
+Fashion and Clothing,runway,showcasing,exclusive
+Fashion and Clothing,sandals,breezy,unsupportive
+Fashion and Clothing,scarf,versatile,tangling
+Fashion and Clothing,seam,neat,fraying
+Fashion and Clothing,sequins,glamorous,gaudy
+Fashion and Clothing,shirt,versatile,plain
+Fashion and Clothing,shoes,comfortable,painful
+Fashion and Clothing,shorts,cool,too short
+Fashion and Clothing,silk,luxurious,high-maintenance
+Fashion and Clothing,skirt,flattering,restrictive
+Fashion and Clothing,sleeve,comfortable,tight
+Fashion and Clothing,slippers,cozy,shabby
+Fashion and Clothing,sneakers,sporty,casual
+Fashion and Clothing,socks,essential,smelly
+Fashion and Clothing,solid color,classic,boring
+Fashion and Clothing,stitching,durable,loose
+Fashion and Clothing,streetwear,urban,try-hard
+Fashion and Clothing,style,distinctive,outdated
+Fashion and Clothing,stylist,knowledgeable,pushy
+Fashion and Clothing,suit,formal,rigid
+Fashion and Clothing,sunglasses,protective,showy
+Fashion and Clothing,sustainable fashion,eco-friendly,expensive
+Fashion and Clothing,sustainable fashion,ethical,pricey
+Fashion and Clothing,sweater,cozy,itchy
+Fashion and Clothing,swimwear,functional,revealing
+Fashion and Clothing,synthetic,innovative,artificial
+Fashion and Clothing,t-shirt,casual,sloppy
+Fashion and Clothing,tailor,skilled,overpriced
+Fashion and Clothing,tailored,fitted,restrictive
+Fashion and Clothing,textile,quality,synthetic
+Fashion and Clothing,tie,professional,choking
+Fashion and Clothing,tight,form-fitting,constrictive
+Fashion and Clothing,tights,sleek,run-prone
+Fashion and Clothing,traditional,timeless,old-fashioned
+Fashion and Clothing,trend,cutting-edge,faddish
+Fashion and Clothing,trend forecasting,insightful,speculative
+Fashion and Clothing,underwear,necessary,uncomfortable
+Fashion and Clothing,uniform,professional,conformist
+Fashion and Clothing,unisex,inclusive,shapeless
+Fashion and Clothing,velvet,plush,outdated
+Fashion and Clothing,vintage,classic,outdated
+Fashion and Clothing,vintage clothing,unique,worn-out
+Fashion and Clothing,wallet,essential,bulky
+Fashion and Clothing,wardrobe,versatile,limited
+Fashion and Clothing,watch,functional,outdated
+Fashion and Clothing,wool,warm,itchy
+Fashion and Clothing,workwear,durable,unfashionable
+Fashion and Clothing,zipper,functional,stuck
+Food and Cuisine,Michelin star,prestigious,overrated
+Food and Cuisine,aftertaste,pleasant,lingering
+Food and Cuisine,alcohol,relaxing,intoxicating
+Food and Cuisine,allergenic,labeled,hidden
+Food and Cuisine,allergy,cautionary,life-threatening
+Food and Cuisine,allergy,managed,severe
+Food and Cuisine,appetizer,enticing,meager
+Food and Cuisine,appetizer,enticing,unappetizing
+Food and Cuisine,appliance,efficient,outdated
+Food and Cuisine,aroma,fragrant,pungent
+Food and Cuisine,aroma,fragrant,stinky
+Food and Cuisine,baking,precise,haphazard
+Food and Cuisine,bar,lively,rowdy
+Food and Cuisine,bartender,skilled,slow
+Food and Cuisine,beer,refreshing,skunky
+Food and Cuisine,beverage,refreshing,flat
+Food and Cuisine,beverage,refreshing,stale
+Food and Cuisine,boiling,tender,overcooked
+Food and Cuisine,bread,fresh,stale
+Food and Cuisine,broth,nourishing,watery
+Food and Cuisine,buffet,abundant,wasteful
+Food and Cuisine,cafe,cozy,cramped
+Food and Cuisine,calorie,energy-giving,fattening
+Food and Cuisine,carbohydrate,energizing,bloating
+Food and Cuisine,chef,talented,inexperienced
+Food and Cuisine,cocktail,creative,strong
+Food and Cuisine,coffee,invigorating,bitter
+Food and Cuisine,comfort food,satisfying,heavy
+Food and Cuisine,cook,chef,amateur
+Food and Cuisine,cooking,skillful,amateur
+Food and Cuisine,cuisine,authentic,imitation
+Food and Cuisine,cuisine,cultural,unfamiliar
+Food and Cuisine,dairy,creamy,curdled
+Food and Cuisine,delivery,effortless,late
+Food and Cuisine,dessert,indulgent,bland
+Food and Cuisine,dessert,indulgent,sickly
+Food and Cuisine,diet,wholesome,restrictive
+Food and Cuisine,dietary,accommodating,restrictive
+Food and Cuisine,digestion,smooth,upset
+Food and Cuisine,dining room,inviting,stuffy
+Food and Cuisine,dish,balanced,overseasoned
+Food and Cuisine,dressing,zesty,oily
+Food and Cuisine,egg,versatile,runny
+Food and Cuisine,entree,satisfying,disappointing
+Food and Cuisine,farmer's market,fresh,overpriced
+Food and Cuisine,fast food,convenient,unhealthy
+Food and Cuisine,fast food,quick,unhealthy
+Food and Cuisine,fat,flavorful,unhealthy
+Food and Cuisine,fermentation,controlled,rancid
+Food and Cuisine,fiber,filling,gassy
+Food and Cuisine,fine dining,exquisite,pretentious
+Food and Cuisine,fish,flaky,fishy
+Food and Cuisine,flavor,delicious,tasteless
+Food and Cuisine,flavor,rich,insipid
+Food and Cuisine,flavor profile,complex,muted
+Food and Cuisine,food critic,discerning,biased
+Food and Cuisine,food truck,convenient,unreliable
+Food and Cuisine,fruit,juicy,overripe
+Food and Cuisine,fruit,ripe,rotten
+Food and Cuisine,frying,crispy,greasy
+Food and Cuisine,fusion,innovative,confused
+Food and Cuisine,garnish,decorative,excessive
+Food and Cuisine,glass,crystal-clear,cloudy
+Food and Cuisine,gluten,elastic,intolerant
+Food and Cuisine,gourmet,refined,pretentious
+Food and Cuisine,grain,wholesome,starchy
+Food and Cuisine,grilling,smoky,charred
+Food and Cuisine,grocery store,convenient,crowded
+Food and Cuisine,herb,aromatic,wilted
+Food and Cuisine,herb,aromatic,withered
+Food and Cuisine,home-cooked,comforting,amateurish
+Food and Cuisine,honey,natural,sticky
+Food and Cuisine,host/hostess,welcoming,disorganized
+Food and Cuisine,hydration,adequate,dehydrated
+Food and Cuisine,ingredient,fresh,spoiled
+Food and Cuisine,intolerance,identified,undiagnosed
+Food and Cuisine,intolerance,sensitive,limiting
+Food and Cuisine,juice,quenching,sugary
+Food and Cuisine,kitchen,functional,cluttered
+Food and Cuisine,lactose,creamy,intolerant
+Food and Cuisine,marinade,flavorful,overpowering
+Food and Cuisine,marinade,tenderizing,overpowering
+Food and Cuisine,meal,satisfying,unsatisfying
+Food and Cuisine,meat,succulent,fatty
+Food and Cuisine,meat,tender,tough
+Food and Cuisine,menu,diverse,limited
+Food and Cuisine,menu,varied,overwhelming
+Food and Cuisine,metabolism,efficient,sluggish
+Food and Cuisine,mineral,necessary,chalky
+Food and Cuisine,napkin,refined,paper-thin
+Food and Cuisine,nutrient,essential,deficient
+Food and Cuisine,nutrition,balanced,unhealthy
+Food and Cuisine,nutrition,essential,complicated
+Food and Cuisine,oil,healthy,greasy
+Food and Cuisine,omnivore,varied,indiscriminate
+Food and Cuisine,order,customized,mixed-up
+Food and Cuisine,organic,natural,artificial
+Food and Cuisine,organic,natural,expensive
+Food and Cuisine,pairing,complementary,mismatched
+Food and Cuisine,pantry,well-stocked,bare
+Food and Cuisine,pasta,al dente,overcooked
+Food and Cuisine,pastry,flaky,doughy
+Food and Cuisine,pepper,piquant,overpowering
+Food and Cuisine,pescatarian,flexible,fishy
+Food and Cuisine,plate,presentable,chipped
+Food and Cuisine,plating,aesthetic,impractical
+Food and Cuisine,plating,artful,pretentious
+Food and Cuisine,plating,artistic,sloppy
+Food and Cuisine,portion,generous,stingy
+Food and Cuisine,portion,satisfying,oversized
+Food and Cuisine,poultry,lean,dry
+Food and Cuisine,presentation,appealing,messy
+Food and Cuisine,presentation,appetizing,sloppy
+Food and Cuisine,presentation,artistic,pretentious
+Food and Cuisine,preservation,effective,spoiled
+Food and Cuisine,processed,convenient,artificial
+Food and Cuisine,produce,fresh,wilted
+Food and Cuisine,protein,building,tough
+Food and Cuisine,recipe,gourmet,bland
+Food and Cuisine,recipe,innovative,unimaginative
+Food and Cuisine,recipe,instructive,complicated
+Food and Cuisine,recipe,reliable,inaccurate
+Food and Cuisine,reservation,honored,lost
+Food and Cuisine,restaurant,popular,mediocre
+Food and Cuisine,rice,fluffy,gummy
+Food and Cuisine,roasting,caramelized,burned
+Food and Cuisine,salad,crisp,wilted
+Food and Cuisine,salt,enhancing,oversalted
+Food and Cuisine,sandwich,handy,soggy
+Food and Cuisine,sauce,complementary,overpowering
+Food and Cuisine,sauce,flavorful,watery
+Food and Cuisine,seasoning,balanced,bland
+Food and Cuisine,seasoning,complementary,clashing
+Food and Cuisine,seasoning,enhancing,masking
+Food and Cuisine,service,attentive,neglectful
+Food and Cuisine,side dish,complementary,bland
+Food and Cuisine,slow food,traditional,time-consuming
+Food and Cuisine,smoothie,nutritious,chalky
+Food and Cuisine,sommelier,knowledgeable,snobby
+Food and Cuisine,soup,comforting,lukewarm
+Food and Cuisine,spice,aromatic,overpowering
+Food and Cuisine,spice,zesty,overpowering
+Food and Cuisine,spice rack,organized,dusty
+Food and Cuisine,steaming,moist,soggy
+Food and Cuisine,stew,hearty,heavy
+Food and Cuisine,street food,authentic,unhygienic
+Food and Cuisine,sugar,sweet,cloying
+Food and Cuisine,syrup,rich,sickly-sweet
+Food and Cuisine,takeout,convenient,lukewarm
+Food and Cuisine,taste,savory,bitter
+Food and Cuisine,tea,soothing,weak
+Food and Cuisine,technique,skilled,complicated
+Food and Cuisine,texture,appealing,unpleasant
+Food and Cuisine,tradition,heritage,outdated
+Food and Cuisine,utensil,ergonomic,flimsy
+Food and Cuisine,utensil,practical,flimsy
+Food and Cuisine,vegan,ethical,restrictive
+Food and Cuisine,vegetable,crisp,limp
+Food and Cuisine,vegetable,nutritious,mushy
+Food and Cuisine,vegetarian,plant-based,limited
+Food and Cuisine,vinegar,tangy,sour
+Food and Cuisine,vitamin,beneficial,synthetic
+Food and Cuisine,vitamin,vital,synthetic
+Food and Cuisine,waiter/waitress,attentive,rude
+Food and Cuisine,wine,sophisticated,vinegary
+Health and Medicine,AIDS,treated,life-altering
+Health and Medicine,ALS,researched,terminal
+Health and Medicine,Alzheimer's,researched,degenerative
+Health and Medicine,Crohn's disease,treatable,flaring
+Health and Medicine,HIV,controlled,immunocompromising
+Health and Medicine,IBS,manageable,debilitating
+Health and Medicine,OCD,managed,consuming
+Health and Medicine,PTSD,coping,triggered
+Health and Medicine,Parkinson's,treatable,debilitating
+Health and Medicine,acute,treatable,critical
+Health and Medicine,addiction,overcome,debilitating
+Health and Medicine,addiction,recoverable,destructive
+Health and Medicine,allergy,manageable,life-threatening
+Health and Medicine,alternative medicine,complementary,pseudoscience
+Health and Medicine,ambulance,rapid,delayed
+Health and Medicine,anemia,treatable,fatiguing
+Health and Medicine,anesthesia,effective,risky
+Health and Medicine,antibody,defending,autoimmune
+Health and Medicine,anxiety,manageable,paralyzing
+Health and Medicine,appendicitis,operable,rupturing
+Health and Medicine,asthma,controlled,suffocating
+Health and Medicine,bacteria,beneficial,antibiotic-resistant
+Health and Medicine,biopsy,conclusive,inconclusive
+Health and Medicine,bipolar,stabilized,manic-depressive
+Health and Medicine,blood transfusion,necessary,contaminated
+Health and Medicine,bronchitis,recovering,chronic
+Health and Medicine,burn,superficial,third-degree
+Health and Medicine,cancer,treatable,metastatic
+Health and Medicine,celiac disease,manageable,autoimmune
+Health and Medicine,checkup,preventive,cursory
+Health and Medicine,checkup,thorough,superficial
+Health and Medicine,cholera,treatable,dehydrating
+Health and Medicine,chronic,controlled,debilitating
+Health and Medicine,chronic fatigue,researched,debilitating
+Health and Medicine,clinic,accessible,understaffed
+Health and Medicine,clinic,well-equipped,understaffed
+Health and Medicine,clinical trial,promising,failed
+Health and Medicine,clinical trial,successful,inconclusive
+Health and Medicine,colitis,controlled,inflamed
+Health and Medicine,common cold,mild,lingering
+Health and Medicine,concussion,monitored,traumatic
+Health and Medicine,dementia,early-stage,advanced
+Health and Medicine,depression,treatable,crippling
+Health and Medicine,diabetes,regulated,uncontrolled
+Health and Medicine,diagnosis,accurate,delayed
+Health and Medicine,diagnosis,accurate,misdiagnosed
+Health and Medicine,diagnosis,accurate,misdiagnosis
+Health and Medicine,diagnosis,timely,delayed
+Health and Medicine,disease,curable,terminal
+Health and Medicine,doctor,knowledgeable,arrogant
+Health and Medicine,drug,effective,harmful
+Health and Medicine,eating disorder,recovering,life-threatening
+Health and Medicine,emergency room,critical,overwhelmed
+Health and Medicine,epidemic,contained,uncontrolled
+Health and Medicine,epidemic,controlled,rampant
+Health and Medicine,exercise,invigorating,exhausting
+Health and Medicine,fibromyalgia,understood,chronic pain
+Health and Medicine,fracture,mending,compound
+Health and Medicine,gallstones,removable,obstructing
+Health and Medicine,general practitioner,holistic,overbooked
+Health and Medicine,genetic testing,informative,inconclusive
+Health and Medicine,gluten sensitivity,identified,restricting
+Health and Medicine,health,well-being,illness
+Health and Medicine,healthcare,accessible,inadequate
+Health and Medicine,hearing loss,aided,deafening
+Health and Medicine,heart disease,preventable,fatal
+Health and Medicine,hepatitis,curable,chronic
+Health and Medicine,high cholesterol,controllable,arterial plaque
+Health and Medicine,holistic medicine,integrative,unproven
+Health and Medicine,hospital,efficient,overcrowded
+Health and Medicine,hospital,life-saving,overcrowded
+Health and Medicine,hygiene,clean,unsanitary
+Health and Medicine,hygiene,sanitary,neglected
+Health and Medicine,hypertension,controllable,silent killer
+Health and Medicine,immunity,protective,compromised
+Health and Medicine,immunity,strong,compromised
+Health and Medicine,infection,treatable,spreading
+Health and Medicine,influenza,seasonal,pandemic
+Health and Medicine,injury,healing,permanent
+Health and Medicine,insomnia,temporary,chronic
+Health and Medicine,intensive care unit,specialized,impersonal
+Health and Medicine,kidney stones,passable,excruciating
+Health and Medicine,lactose intolerance,adaptable,restricting
+Health and Medicine,malaria,preventable,endemic
+Health and Medicine,malnutrition,addressable,stunting
+Health and Medicine,measles,vaccinated,contagious
+Health and Medicine,medical imaging,clear,inconclusive
+Health and Medicine,medical imaging,diagnostic,inconclusive
+Health and Medicine,medical record,comprehensive,incomplete
+Health and Medicine,medication,life-saving,addictive
+Health and Medicine,medicine,curative,addictive
+Health and Medicine,mental health,balanced,unstable
+Health and Medicine,mental health,stable,deteriorating
+Health and Medicine,mental health,supported,stigmatized
+Health and Medicine,multiple sclerosis,managed,progressive
+Health and Medicine,nurse,caring,overworked
+Health and Medicine,nurse practitioner,competent,limited
+Health and Medicine,nutrition,balanced,deficient
+Health and Medicine,nutrition,balanced,malnourished
+Health and Medicine,obesity,reversible,epidemic
+Health and Medicine,organ donation,life-saving,rejected
+Health and Medicine,osteoporosis,preventable,brittle
+Health and Medicine,over-the-counter,accessible,misused
+Health and Medicine,overdose,reversible,fatal
+Health and Medicine,palliative care,comforting,insufficient
+Health and Medicine,pandemic,contained,widespread
+Health and Medicine,pandemic,global response,devastating
+Health and Medicine,paramedic,life-saving,stressed
+Health and Medicine,patient,resilient,non-compliant
+Health and Medicine,patient care,compassionate,negligent
+Health and Medicine,peanut allergy,aware,anaphylactic
+Health and Medicine,physical therapy,restorative,strenuous
+Health and Medicine,placebo effect,psychological,deceptive
+Health and Medicine,pneumonia,treatable,life-threatening
+Health and Medicine,poisoning,treatable,lethal
+Health and Medicine,polio,eradicated,paralyzing
+Health and Medicine,prescription,appropriate,unnecessary
+Health and Medicine,prescription,necessary,overprescribed
+Health and Medicine,prevention,proactive,late
+Health and Medicine,prevention,proactive,negligent
+Health and Medicine,prognosis,favorable,terminal
+Health and Medicine,prognosis,hopeful,grim
+Health and Medicine,prognosis,optimistic,grim
+Health and Medicine,prosthetic,functional,cumbersome
+Health and Medicine,public health,improving,declining
+Health and Medicine,recovery,rapid,prolonged
+Health and Medicine,rehabilitation,effective,ineffective
+Health and Medicine,rehabilitation,successful,incomplete
+Health and Medicine,research,groundbreaking,flawed
+Health and Medicine,schizophrenia,treated,delusional
+Health and Medicine,screening,preventive,invasive
+Health and Medicine,side effect,mild,debilitating
+Health and Medicine,side effect,minimal,severe
+Health and Medicine,sleep apnea,treatable,suffocating
+Health and Medicine,specialist,expert,unavailable
+Health and Medicine,sprain,recovering,debilitating
+Health and Medicine,stroke,recoverable,debilitating
+Health and Medicine,surgery,curative,risky
+Health and Medicine,surgery,necessary,risky
+Health and Medicine,surgery,successful,complicated
+Health and Medicine,symptom,indicative,misleading
+Health and Medicine,telemedicine,convenient,impersonal
+Health and Medicine,tension headache,relievable,persistent
+Health and Medicine,therapy,healing,painful
+Health and Medicine,therapy,rehabilitative,grueling
+Health and Medicine,therapy,rehabilitative,painful
+Health and Medicine,tinnitus,manageable,maddening
+Health and Medicine,tonsillitis,operable,recurrent
+Health and Medicine,treatment,effective,invasive
+Health and Medicine,tuberculosis,treatable,drug-resistant
+Health and Medicine,ulcer,healing,perforating
+Health and Medicine,vaccination,preventive,controversial
+Health and Medicine,vaccination,protective,ineffective
+Health and Medicine,vaccination,protective,risky
+Health and Medicine,vertigo,treatable,disorienting
+Health and Medicine,virus,studied,mutating
+Health and Medicine,vision loss,correctable,blinding
+Health and Medicine,vitals,stable,erratic
+Health and Medicine,wellness,holistic,fragmented
+Health and Medicine,wound,closing,infected
+Law and Justice,acquittal,deserved,unjust
+Law and Justice,affidavit,sworn,false
+Law and Justice,alibi,verifiable,fabricated
+Law and Justice,amendment,ratified,rejected
+Law and Justice,amnesty,compassionate,undeserved
+Law and Justice,appeal,justified,futile
+Law and Justice,appeal,successful,denied
+Law and Justice,arbitration,neutral,partial
+Law and Justice,arrest,lawful,wrongful
+Law and Justice,asylum,protective,abused
+Law and Justice,bail,reasonable,excessive
+Law and Justice,bailiff,orderly,intimidating
+Law and Justice,bar association,regulatory,bureaucratic
+Law and Justice,bargain,fair,unfair
+Law and Justice,burden of proof,appropriate,unreasonable
+Law and Justice,checks and balances,effective,undermined
+Law and Justice,civil rights,enforced,ignored
+Law and Justice,closing argument,persuasive,misleading
+Law and Justice,common law,adaptable,inconsistent
+Law and Justice,compliance,diligent,superficial
+Law and Justice,confession,voluntary,forced
+Law and Justice,constitution,foundational,outdated
+Law and Justice,constitution,supreme,amended
+Law and Justice,contract,binding,void
+Law and Justice,contract law,binding,breached
+Law and Justice,conviction,justified,wrongful
+Law and Justice,copyright,respected,violated
+Law and Justice,court,impartial,biased
+Law and Justice,court reporter,accurate,inaudible
+Law and Justice,crime,deterred,rampant
+Law and Justice,criminal law,deterrent,ineffective
+Law and Justice,cross-examination,thorough,harassing
+Law and Justice,defendant,innocent,guilty
+Law and Justice,defendant,represented,unrepresented
+Law and Justice,defense,vigorous,inadequate
+Law and Justice,deliberation,thoughtful,hasty
+Law and Justice,deposition,informative,evasive
+Law and Justice,deregulation,liberating,reckless
+Law and Justice,docket,organized,backlogged
+Law and Justice,double jeopardy,protected,exploited
+Law and Justice,due process,ensured,violated
+Law and Justice,due process,guaranteed,denied
+Law and Justice,enforcement,consistent,selective
+Law and Justice,equality,upheld,undermined
+Law and Justice,ethics,upheld,compromised
+Law and Justice,evidence,admissible,tainted
+Law and Justice,evidence,conclusive,circumstantial
+Law and Justice,extradition,cooperative,political
+Law and Justice,freedom,guaranteed,restricted
+Law and Justice,human rights,protected,violated
+Law and Justice,human rights,universal,neglected
+Law and Justice,hung jury,principled,indecisive
+Law and Justice,injunction,necessary,overreaching
+Law and Justice,intellectual property,defended,stolen
+Law and Justice,intellectual property,safeguarded,infringed
+Law and Justice,international law,cooperative,ineffective
+Law and Justice,interpretation,reasoned,biased
+Law and Justice,interrogation,ethical,coercive
+Law and Justice,judge,fair,corrupt
+Law and Justice,judge,impartial,activist
+Law and Justice,judicial review,balanced,overreaching
+Law and Justice,jurisdiction,appropriate,overreaching
+Law and Justice,jury,representative,influenced
+Law and Justice,jury instructions,clear,confusing
+Law and Justice,justice,served,denied
+Law and Justice,justice system,fair,flawed
+Law and Justice,law,just,unjust
+Law and Justice,lawyer,competent,unethical
+Law and Justice,lawyer,ethical,ambulance-chaser
+Law and Justice,legal,legitimate,illegal
+Law and Justice,legal aid,accessible,underfunded
+Law and Justice,legal brief,persuasive,weak
+Law and Justice,liability,justified,excessive
+Law and Justice,litigation,necessary,frivolous
+Law and Justice,mediation,constructive,biased
+Law and Justice,mistrial,necessary,avoidable
+Law and Justice,motive,clear,unclear
+Law and Justice,negligence,accountable,excused
+Law and Justice,objection,valid,frivolous
+Law and Justice,overruled,justified,erroneous
+Law and Justice,paralegal,organized,overworked
+Law and Justice,parole,monitored,lax
+Law and Justice,patent,innovative,trivial
+Law and Justice,plaintiff,aggrieved,frivolous
+Law and Justice,plaintiff,justified,vexatious
+Law and Justice,plea bargain,efficient,coercive
+Law and Justice,precedent,binding,distinguishable
+Law and Justice,precedent,established,outdated
+Law and Justice,precedent,respected,disregarded
+Law and Justice,presumption of innocence,upheld,ignored
+Law and Justice,prison,reformative,inhumane
+Law and Justice,pro bono,altruistic,obligatory
+Law and Justice,probable cause,established,lacking
+Law and Justice,probation,rehabilitative,ineffective
+Law and Justice,prosecutor,diligent,overzealous
+Law and Justice,prosecutor,fair,vindictive
+Law and Justice,punishment,rehabilitative,cruel
+Law and Justice,reasonable doubt,considered,disregarded
+Law and Justice,reform,progressive,regressive
+Law and Justice,regulation,clarifying,vague
+Law and Justice,regulation,necessary,burdensome
+Law and Justice,restitution,appropriate,inadequate
+Law and Justice,search warrant,justified,overreaching
+Law and Justice,sentence,appropriate,excessive
+Law and Justice,sentence,proportional,lenient
+Law and Justice,separation of powers,maintained,eroded
+Law and Justice,settlement,equitable,unfair
+Law and Justice,statute,enforceable,unconstitutional
+Law and Justice,statute of limitations,reasonable,restrictive
+Law and Justice,subpoena,relevant,burdensome
+Law and Justice,sustained,appropriate,biased
+Law and Justice,testimony,truthful,perjured
+Law and Justice,testimony,truthful,perjury
+Law and Justice,tort,legitimate,fraudulent
+Law and Justice,tort law,compensatory,punitive
+Law and Justice,trademark,distinctive,generic
+Law and Justice,venue,proper,inconvenient
+Law and Justice,verdict,righteous,wrongful
+Law and Justice,verdict,unanimous,split
+Law and Justice,warrant,justified,baseless
+Law and Justice,witness,credible,coached
+Law and Justice,witness,credible,unreliable
+Media and Entertainment,CGI,realistic,unconvincing
+Media and Entertainment,action,thrilling,over-the-top
+Media and Entertainment,actor,talented,wooden
+Media and Entertainment,actor,versatile,typecast
+Media and Entertainment,adaptation,faithful,butchered
+Media and Entertainment,adaptation,faithful,unfaithful
+Media and Entertainment,adaptation,inspired,disappointing
+Media and Entertainment,animation,fluid,choppy
+Media and Entertainment,animator,skilled,stilted
+Media and Entertainment,atmosphere,immersive,flat
+Media and Entertainment,audience,captivated,disinterested
+Media and Entertainment,audience,engaged,passive
+Media and Entertainment,award,prestigious,undeserved
+Media and Entertainment,backstory,intriguing,irrelevant
+Media and Entertainment,binge-watching,engrossing,time-wasting
+Media and Entertainment,book,bestseller,boring
+Media and Entertainment,box office,hit,bomb
+Media and Entertainment,box office,lucrative,disappointing
+Media and Entertainment,casting,spot-on,mismatched
+Media and Entertainment,celebrity,charismatic,scandalous
+Media and Entertainment,character,relatable,one-dimensional
+Media and Entertainment,choreography,graceful,clumsy
+Media and Entertainment,cinematographer,artistic,shaky
+Media and Entertainment,cinematography,stunning,amateurish
+Media and Entertainment,classic,timeless,overrated
+Media and Entertainment,clickbait,attention-grabbing,misrepresenting
+Media and Entertainment,cliffhanger,suspenseful,frustrating
+Media and Entertainment,climax,intense,underwhelming
+Media and Entertainment,composer,evocative,generic
+Media and Entertainment,concert,electrifying,underwhelming
+Media and Entertainment,conflict,engaging,contrived
+Media and Entertainment,content creator,innovative,oversaturated
+Media and Entertainment,costume,authentic,anachronistic
+Media and Entertainment,critic,discerning,harsh
+Media and Entertainment,critic,insightful,pretentious
+Media and Entertainment,crossover,unexpected,forced
+Media and Entertainment,cult following,dedicated,obsessive
+Media and Entertainment,deconstruction,thought-provoking,pretentious
+Media and Entertainment,development,organic,forced
+Media and Entertainment,dialogue,witty,stilted
+Media and Entertainment,director,auteur,hack
+Media and Entertainment,director,visionary,incompetent
+Media and Entertainment,documentary,enlightening,biased
+Media and Entertainment,drama,compelling,melodramatic
+Media and Entertainment,dubbing,seamless,out-of-sync
+Media and Entertainment,e-sports,fun,boring
+Media and Entertainment,editing,seamless,choppy
+Media and Entertainment,editor,precise,jarring
+Media and Entertainment,episode,riveting,filler
+Media and Entertainment,fan fiction,creative,derivative
+Media and Entertainment,fandom,passionate,toxic
+Media and Entertainment,fantasy,enchanting,derivative
+Media and Entertainment,festival,vibrant,overcrowded
+Media and Entertainment,finale,conclusive,rushed
+Media and Entertainment,finale,satisfying,anticlimactic
+Media and Entertainment,franchise,expansive,overextended
+Media and Entertainment,genre,diverse,cliché
+Media and Entertainment,genre,well-defined,formulaic
+Media and Entertainment,homage,respectful,derivative
+Media and Entertainment,horror,chilling,campy
+Media and Entertainment,humor,clever,crass
+Media and Entertainment,influencer,authentic,inauthentic
+Media and Entertainment,innovation,groundbreaking,gimmicky
+Media and Entertainment,interactive media,engaging,overwhelming
+Media and Entertainment,interpretation,nuanced,misguided
+Media and Entertainment,lighting,atmospheric,poor
+Media and Entertainment,live-streaming,engaging,unpredictable
+Media and Entertainment,localization,culturally-sensitive,tone-deaf
+Media and Entertainment,mainstream,popular,watered-down
+Media and Entertainment,meme,humorous,inappropriate
+Media and Entertainment,merchandise,collectible,cheap
+Media and Entertainment,merchandise,collectible,tacky
+Media and Entertainment,movie,blockbuster,flop
+Media and Entertainment,mystery,intriguing,convoluted
+Media and Entertainment,narrative,coherent,disjointed
+Media and Entertainment,niche,unique,obscure
+Media and Entertainment,nostalgia,comforting,exploitative
+Media and Entertainment,pacing,well-timed,sluggish
+Media and Entertainment,parody,clever,offensive
+Media and Entertainment,paywalled content,exclusive,restrictive
+Media and Entertainment,performance,stellar,lackluster
+Media and Entertainment,platform,accessible,fragmented
+Media and Entertainment,platform,user-friendly,glitchy
+Media and Entertainment,plot,intriguing,predictable
+Media and Entertainment,podcast,informative,tedious
+Media and Entertainment,podcast,informative,uninformative
+Media and Entertainment,practical effects,impressive,dated
+Media and Entertainment,premiere,anticipated,underwhelming
+Media and Entertainment,premiere,glamorous,disastrous
+Media and Entertainment,prequel,enriching,unnecessary
+Media and Entertainment,producer,supportive,interfering
+Media and Entertainment,product placement,subtle,intrusive
+Media and Entertainment,rating,informative,arbitrary
+Media and Entertainment,ratings,high,abysmal
+Media and Entertainment,reaction video,entertaining,unoriginal
+Media and Entertainment,reboot,fresh,uninspired
+Media and Entertainment,reconstruction,fresh,unnecessary
+Media and Entertainment,remake,reimagined,unoriginal
+Media and Entertainment,resolution,satisfying,rushed
+Media and Entertainment,review,fair,glowing
+Media and Entertainment,review,insightful,biased
+Media and Entertainment,romance,passionate,unrealistic
+Media and Entertainment,satire,insightful,heavy-handed
+Media and Entertainment,sci-fi,imaginative,far-fetched
+Media and Entertainment,script,tight,bloated
+Media and Entertainment,script,well-written,convoluted
+Media and Entertainment,season,compelling,jumped-the-shark
+Media and Entertainment,sequel,anticipated,unnecessary
+Media and Entertainment,sequel,worthy,cash-grab
+Media and Entertainment,series,binge-worthy,dragging
+Media and Entertainment,set design,detailed,cheap-looking
+Media and Entertainment,social media,social,distracting
+Media and Entertainment,sound design,immersive,distracting
+Media and Entertainment,sound design,immersive,overbearing
+Media and Entertainment,soundtrack,catchy,grating
+Media and Entertainment,soundtrack,memorable,forgettable
+Media and Entertainment,special effects,impressive,cheesy
+Media and Entertainment,special effects,seamless,obvious
+Media and Entertainment,spoiler,revealing,frustrating
+Media and Entertainment,spoiler,warned,unwanted
+Media and Entertainment,storyboard,visual,crude
+Media and Entertainment,streaming,convenient,addictive
+Media and Entertainment,streaming service,convenient,overpriced
+Media and Entertainment,studio,innovative,outdated
+Media and Entertainment,stunt work,spectacular,dangerous
+Media and Entertainment,subtitles,accurate,mistranslated
+Media and Entertainment,symbolism,subtle,obvious
+Media and Entertainment,targeted advertising,relevant,invasive
+Media and Entertainment,teaser,intriguing,vague
+Media and Entertainment,television,engaging,mindless
+Media and Entertainment,tension,palpable,lacking
+Media and Entertainment,theater,immersive,uncomfortable
+Media and Entertainment,tone,consistent,jarring
+Media and Entertainment,trailer,exciting,misleading
+Media and Entertainment,trend,influential,fleeting
+Media and Entertainment,twist,unexpected,contrived
+Media and Entertainment,viral,popular,short-lived
+Media and Entertainment,voice acting,expressive,monotonous
+Media and Entertainment,voice actor,expressive,flat
+Media and Entertainment,worldbuilding,rich,shallow
+Music and Sound,acoustic,natural,thin
+Music and Sound,acoustics,clear,muddy
+Music and Sound,acoustics,crisp,muffled
+Music and Sound,acoustics,resonant,muffled
+Music and Sound,album,cohesive,disjointed
+Music and Sound,ambient,atmospheric,boring
+Music and Sound,amplification,clear,distorted
+Music and Sound,amplified,bold,distorted
+Music and Sound,amplifier,powerful,noisy
+Music and Sound,amplitude,dynamic,compressed
+Music and Sound,amplitude,powerful,weak
+Music and Sound,applause,appreciative,obligatory
+Music and Sound,arrangement,well-crafted,messy
+Music and Sound,audience,engaged,unresponsive
+Music and Sound,band,synchronized,chaotic
+Music and Sound,band,tight-knit,disorganized
+Music and Sound,beat,driving,monotonous
+Music and Sound,blues,soulful,depressing
+Music and Sound,booing,honest,disrespectful
+Music and Sound,bridge,transitional,unnecessary
+Music and Sound,cheering,enthusiastic,rowdy
+Music and Sound,choir,angelic,shouty
+Music and Sound,choir,harmonious,discordant
+Music and Sound,chord,resonant,dissonant
+Music and Sound,chorus,catchy,annoying
+Music and Sound,composer,original,derivative
+Music and Sound,composition,structured,chaotic
+Music and Sound,concert,exhilarating,overcrowded
+Music and Sound,concert,live,lip-synced
+Music and Sound,concert hall,resonant,dead
+Music and Sound,conductor,commanding,dictatorial
+Music and Sound,conductor,expressive,rigid
+Music and Sound,country,storytelling,twangy
+Music and Sound,disco,danceable,dated
+Music and Sound,duet,harmonizing,competing
+Music and Sound,dynamics,nuanced,flat
+Music and Sound,echo,atmospheric,muddy
+Music and Sound,electric,powerful,artificial
+Music and Sound,electronic,innovative,soulless
+Music and Sound,encore,crowd-pleasing,overdone
+Music and Sound,ensemble,cohesive,cluttered
+Music and Sound,flat,mellow,dull
+Music and Sound,folk,authentic,dated
+Music and Sound,frequency,resonant,grating
+Music and Sound,frequency,resonant,shrill
+Music and Sound,funk,groovy,repetitive
+Music and Sound,genre,distinct,blurry
+Music and Sound,genre,diverse,pigeonholed
+Music and Sound,gig,energetic,sloppy
+Music and Sound,harmony,blending,discordant
+Music and Sound,harmony,consonant,dissonant
+Music and Sound,harmony,rich,clashing
+Music and Sound,headphones,immersive,isolating
+Music and Sound,hook,memorable,overused
+Music and Sound,improvisation,creative,rambling
+Music and Sound,instrument,well-tuned,out-of-tune
+Music and Sound,instrumental,skillful,bland
+Music and Sound,instrumental,skillful,overproduced
+Music and Sound,instrumentation,varied,limited
+Music and Sound,jam session,spontaneous,self-indulgent
+Music and Sound,jingle,memorable,annoying
+Music and Sound,key,cohesive,clashing
+Music and Sound,key,harmonious,off-key
+Music and Sound,looped,hypnotic,repetitive
+Music and Sound,lyrics,poetic,trite
+Music and Sound,lyrics,thoughful,cliché
+Music and Sound,mastering,polished,loud
+Music and Sound,mastering,professional,overly compressed
+Music and Sound,melody,catchy,repetitive
+Music and Sound,metal,powerful,aggressive
+Music and Sound,microphone,sensitive,distorting
+Music and Sound,mixing,balanced,muddled
+Music and Sound,mixing,smooth,muddy
+Music and Sound,mode,expressive,moody
+Music and Sound,music theory,foundational,limiting
+Music and Sound,musical,entertaining,cheesy
+Music and Sound,musician,skilled,amateur
+Music and Sound,musician,virtuosic,sloppy
+Music and Sound,natural,authentic,plain
+Music and Sound,noise,ambient,irritating
+Music and Sound,noise music,avant-garde,unlistenable
+Music and Sound,note,pure,sour
+Music and Sound,octave,wide-ranging,limited
+Music and Sound,opera,dramatic,overwrought
+Music and Sound,orchestra,majestic,overwrought
+Music and Sound,orchestra,symphonic,thin
+Music and Sound,orchestration,rich,cluttered
+Music and Sound,ovation,well-deserved,excessive
+Music and Sound,performance,energetic,lackluster
+Music and Sound,performer,charismatic,showboating
+Music and Sound,pitch,accurate,sharp
+Music and Sound,pitch,perfect,off-key
+Music and Sound,playback,accurate,distorted
+Music and Sound,pop,catchy,formulaic
+Music and Sound,practice,improving,repetitive
+Music and Sound,punk,rebellious,amateur
+Music and Sound,recital,intimate,nerve-wracking
+Music and Sound,recording,polished,overproduced
+Music and Sound,recording studio,professional,home-made
+Music and Sound,reggae,laid-back,repetitive
+Music and Sound,rehearsal,prepared,tedious
+Music and Sound,resonance,full,hollow
+Music and Sound,reverberation,spacious,boomy
+Music and Sound,rhythm,grooving,monotonous
+Music and Sound,rhythm,groovy,erratic
+Music and Sound,rhythm,steady,syncopated
+Music and Sound,rock,energetic,noisy
+Music and Sound,sampled,creative,unoriginal
+Music and Sound,scale,balanced,off-key
+Music and Sound,sharp,bright,piercing
+Music and Sound,sheet music,readable,illegible
+Music and Sound,silence,peaceful,deafening
+Music and Sound,singer,talented,pitchy
+Music and Sound,single,catchy,overplayed
+Music and Sound,solo,virtuosic,self-indulgent
+Music and Sound,sound,clear,noisy
+Music and Sound,sound mixing,balanced,uneven
+Music and Sound,sound wave,pure,distorted
+Music and Sound,soundcheck,essential,time-consuming
+Music and Sound,soundtrack,atmospheric,forgettable
+Music and Sound,speaker,high-fidelity,tinny
+Music and Sound,studio,state-of-the-art,sterile
+Music and Sound,tempo,driving,plodding
+Music and Sound,tempo,lively,dragging
+Music and Sound,timbre,distinctive,harsh
+Music and Sound,timbre,rich,harsh
+Music and Sound,tone,rich,flat
+Music and Sound,tuning,precise,obsessive
+Music and Sound,verse,narrative,repetitive
+Music and Sound,vibration,energetic,jarring
+Music and Sound,vocal,expressive,screechy
+Music and Sound,vocalist,powerful,strained
+Music and Sound,vocals,soulful,pitchy
+Music and Sound,volume,balanced,deafening
+Music and Sound,warm-up,necessary,time-wasting
+Music and Sound,wavelength,precise,distorted
+Nature and Environment,adaptation,beneficial,costly
+Nature and Environment,adaptation,successful,failing
+Nature and Environment,air,fresh,smoggy
+Nature and Environment,algae,oxygenating,choking
+Nature and Environment,amphibian,vibrant,threatened
+Nature and Environment,animal,diverse,endangered
+Nature and Environment,animal,thriving,endangered
+Nature and Environment,asteroid,intriguing,menacing
+Nature and Environment,atmosphere,clean,contaminated
+Nature and Environment,atmosphere,clear,polluted
+Nature and Environment,atmosphere,protective,suffocating
+Nature and Environment,bacteria,probiotic,infectious
+Nature and Environment,beach,relaxing,littered
+Nature and Environment,biodegradation,efficient,slow
+Nature and Environment,biodiversity,rich,threatened
+Nature and Environment,biodiversity,thriving,declining
+Nature and Environment,biosphere,vibrant,stressed
+Nature and Environment,bird,soaring,caged
+Nature and Environment,boulder,imposing,crushing
+Nature and Environment,branch,sturdy,broken
+Nature and Environment,breeze,gentle,biting
+Nature and Environment,camouflage,effective,conspicuous
+Nature and Environment,camouflage,protective,deceiving
+Nature and Environment,canyon,majestic,dangerous
+Nature and Environment,carbon,essential,polluting
+Nature and Environment,cave,mysterious,claustrophobic
+Nature and Environment,cliff,dramatic,crumbling
+Nature and Environment,climate,balanced,extreme
+Nature and Environment,climate,stable,volatile
+Nature and Environment,climate change,mitigated,accelerating
+Nature and Environment,coast,scenic,eroding
+Nature and Environment,comet,spectacular,ominous
+Nature and Environment,conservation,effective,neglected
+Nature and Environment,coral,colorful,bleached
+Nature and Environment,current,flowing,treacherous
+Nature and Environment,decomposition,natural,accelerated
+Nature and Environment,decomposition,nutrient-cycling,toxic
+Nature and Environment,decomposition,recycling,rotting
+Nature and Environment,desert,vast,harsh
+Nature and Environment,dew,glistening,slippery
+Nature and Environment,ecology,balanced,disrupted
+Nature and Environment,ecology,harmonious,disrupted
+Nature and Environment,ecosystem,diverse,fragile
+Nature and Environment,ecosystem,resilient,collapsing
+Nature and Environment,ecosystem,sustainable,fragile
+Nature and Environment,erosion,gradual,catastrophic
+Nature and Environment,erosion,sculpting,destructive
+Nature and Environment,evolution,adaptive,maladaptive
+Nature and Environment,evolution,adaptive,ruthless
+Nature and Environment,evolution,progressive,stagnant
+Nature and Environment,extinction,natural,devastating
+Nature and Environment,fauna,adaptable,vulnerable
+Nature and Environment,fish,swimming,overfished
+Nature and Environment,flora,colorful,invasive
+Nature and Environment,flora,diverse,monoculture
+Nature and Environment,flower,blooming,wilting
+Nature and Environment,fog,mysterious,blinding
+Nature and Environment,food chain,interconnected,broken
+Nature and Environment,foodchain,stable,disrupted
+Nature and Environment,forest,lush,deforested
+Nature and Environment,forest,thriving,deforested
+Nature and Environment,frost,sparkling,killing
+Nature and Environment,fungus,beneficial,pathogenic
+Nature and Environment,fungus,decomposing,parasitic
+Nature and Environment,galaxy,vast,unknowable
+Nature and Environment,geology,complex,unstable
+Nature and Environment,germination,timely,stunted
+Nature and Environment,glacier,massive,melting
+Nature and Environment,grass,verdant,parched
+Nature and Environment,gravity,grounding,crushing
+Nature and Environment,habitat,nurturing,shrinking
+Nature and Environment,habitat,preserved,destroyed
+Nature and Environment,habitat,suitable,degraded
+Nature and Environment,hail,intriguing,damaging
+Nature and Environment,herb,aromatic,poisonous
+Nature and Environment,hibernation,restful,disturbed
+Nature and Environment,hibernation,restorative,vulnerable
+Nature and Environment,hill,rolling,eroding
+Nature and Environment,hydrogen,energetic,explosive
+Nature and Environment,iceberg,impressive,hazardous
+Nature and Environment,insect,busy,pest
+Nature and Environment,landscape,scenic,barren
+Nature and Environment,leaf,green,decaying
+Nature and Environment,lichen,resilient,invasive
+Nature and Environment,meadow,blooming,overgrown
+Nature and Environment,metamorphosis,complete,arrested
+Nature and Environment,migration,natural,forced
+Nature and Environment,migration,orderly,chaotic
+Nature and Environment,mist,ethereal,obscuring
+Nature and Environment,moon,luminous,eerie
+Nature and Environment,moss,soft,slimy
+Nature and Environment,mountain,majestic,treacherous
+Nature and Environment,mountain,towering,treacherous
+Nature and Environment,mutualism,beneficial,exploitative
+Nature and Environment,natural disaster,rare,frequent
+Nature and Environment,nitrogen,abundant,choking
+Nature and Environment,oasis,refreshing,mirage
+Nature and Environment,ocean,vast,contaminated
+Nature and Environment,oxygen,life-giving,combustible
+Nature and Environment,ozone,shielding,depleting
+Nature and Environment,pebble,rounded,jagged
+Nature and Environment,photosynthesis,efficient,impaired
+Nature and Environment,photosynthesis,efficient,inhibited
+Nature and Environment,photosynthesis,productive,slow
+Nature and Environment,phototropism,responsive,unresponsive
+Nature and Environment,planet,fascinating,inhospitable
+Nature and Environment,plant,flourishing,wilted
+Nature and Environment,plant,growing,wilting
+Nature and Environment,plateau,expansive,barren
+Nature and Environment,pollination,effective,insufficient
+Nature and Environment,prairie,windswept,drought-stricken
+Nature and Environment,predation,balanced,excessive
+Nature and Environment,predation,balancing,brutal
+Nature and Environment,rainbow,colorful,fleeting
+Nature and Environment,rainfall,adequate,scarce
+Nature and Environment,rainforest,abundant,shrinking
+Nature and Environment,reproduction,sustainable,threatened
+Nature and Environment,reptile,sunbathing,venomous
+Nature and Environment,resource,renewable,depleted
+Nature and Environment,resource,sustainable,exhausted
+Nature and Environment,respiration,energizing,labored
+Nature and Environment,respiration,vital,labored
+Nature and Environment,river,pristine,polluted
+Nature and Environment,rock,solid,eroded
+Nature and Environment,root,anchoring,rotting
+Nature and Environment,sand,smooth,scorching
+Nature and Environment,savanna,diverse,parched
+Nature and Environment,sedimentation,building,burying
+Nature and Environment,seed,potential,dormant
+Nature and Environment,snow,picturesque,blizzard
+Nature and Environment,soil,fertile,barren
+Nature and Environment,soil,fertile,eroded
+Nature and Environment,species,abundant,extinct
+Nature and Environment,species,native,invasive
+Nature and Environment,star,twinkling,distant
+Nature and Environment,sunrise,inspiring,harsh
+Nature and Environment,sunset,breathtaking,blinding
+Nature and Environment,sustainability,achieved,unbalanced
+Nature and Environment,sustainability,balanced,challenging
+Nature and Environment,symbiosis,beneficial,parasitic
+Nature and Environment,symbiosis,mutualistic,parasitic
+Nature and Environment,tectonics,shaping,unstable
+Nature and Environment,terrain,varied,hostile
+Nature and Environment,tide,rhythmic,dangerous
+Nature and Environment,topography,varied,monotonous
+Nature and Environment,tree,lush,withered
+Nature and Environment,tree,majestic,withered
+Nature and Environment,tundra,pristine,desolate
+Nature and Environment,universe,infinite,void
+Nature and Environment,valley,serene,flood-prone
+Nature and Environment,vegetable,nutritious,spoiled
+Nature and Environment,vegetation,lush,sparse
+Nature and Environment,virus,dormant,virulent
+Nature and Environment,volcano,dormant,erupting
+Nature and Environment,water,clear,murky
+Nature and Environment,weather,predictable,extreme
+Nature and Environment,wetland,thriving,drained
+Nature and Environment,wilderness,untouched,exploited
+Nature and Environment,wind,refreshing,gale-force
+Philosophy and Ethics,absolutism,certain,dogmatic
+Philosophy and Ethics,aesthetics,appreciative,superficial
+Philosophy and Ethics,aesthetics,beauty-focused,superficial
+Philosophy and Ethics,aesthetics,objective,subjective
+Philosophy and Ethics,analogy,illuminating,misleading
+Philosophy and Ethics,anthropology,human-studying,biased
+Philosophy and Ethics,antithesis,challenging,oppositional
+Philosophy and Ethics,apologetics,defensive,biased
+Philosophy and Ethics,argument,compelling,weak
+Philosophy and Ethics,argument,valid,unsound
+Philosophy and Ethics,axiology,insightful,subjective
+Philosophy and Ethics,axiology,value-oriented,subjective
+Philosophy and Ethics,belief,conviction,dogma
+Philosophy and Ethics,belief,rational,dogmatic
+Philosophy and Ethics,casuistry,case-based,hair-splitting
+Philosophy and Ethics,conclusion,justified,unfounded
+Philosophy and Ethics,conclusion,valid,fallacious
+Philosophy and Ethics,consciousness,aware,subjective
+Philosophy and Ethics,consciousness,unified,fragmented
+Philosophy and Ethics,cosmology,universe-explaining,speculative
+Philosophy and Ethics,deconstruction,analytical,destructive
+Philosophy and Ethics,deduction,rigorous,erroneous
+Philosophy and Ethics,deontology,principled,inflexible
+Philosophy and Ethics,deontology,principled,rigid
+Philosophy and Ethics,determinism,causal,fatalistic
+Philosophy and Ethics,determinism,causality-based,fatalistic
+Philosophy and Ethics,dialectic,developmental,conflictual
+Philosophy and Ethics,dialectics,discourse-based,confrontational
+Philosophy and Ethics,dualism,balanced,contradictory
+Philosophy and Ethics,duty,binding,optional
+Philosophy and Ethics,ecology,environment-conscious,alarmist
+Philosophy and Ethics,economics,resource-allocating,materialistic
+Philosophy and Ethics,emergence,arising,unpredictable
+Philosophy and Ethics,empiricism,evidence-based,limited
+Philosophy and Ethics,entropy,disorder-measuring,pessimistic
+Philosophy and Ethics,epistemology,investigative,skeptical
+Philosophy and Ethics,epistemology,justified,skeptical
+Philosophy and Ethics,epistemology,knowledge-seeking,doubtful
+Philosophy and Ethics,eschatology,end-focused,fatalistic
+Philosophy and Ethics,ethics,consistent,situational
+Philosophy and Ethics,ethics,guiding,restrictive
+Philosophy and Ethics,ethics,principled,relativistic
+Philosophy and Ethics,exegesis,explanatory,biased
+Philosophy and Ethics,existentialism,authentic,absurd
+Philosophy and Ethics,existentialism,authentic,nihilistic
+Philosophy and Ethics,existentialism,free,angst-ridden
+Philosophy and Ethics,fallacy,avoided,committed
+Philosophy and Ethics,fallacy,identified,committed
+Philosophy and Ethics,free will,choice-affirming,illusory
+Philosophy and Ethics,free will,existent,illusory
+Philosophy and Ethics,hedonism,pleasurable,self-destructive
+Philosophy and Ethics,hedonism,pleasure-seeking,indulgent
+Philosophy and Ethics,hermeneutics,interpretive,subjective
+Philosophy and Ethics,heuristics,problem-solving,simplistic
+Philosophy and Ethics,holism,comprehensive,vague
+Philosophy and Ethics,humanism,human-centered,anthropocentric
+Philosophy and Ethics,idealism,aspirational,unrealistic
+Philosophy and Ethics,induction,empirical,hasty
+Philosophy and Ethics,intentionality,purposeful,assumed
+Philosophy and Ethics,jurisprudence,law-interpreting,bureaucratic
+Philosophy and Ethics,justice,distributive,retributive
+Philosophy and Ethics,knowledge,certain,doubtful
+Philosophy and Ethics,linguistics,language-analyzing,prescriptive
+Philosophy and Ethics,logic,rational,fallacious
+Philosophy and Ethics,logic,sound,invalid
+Philosophy and Ethics,logic,structured,rigid
+Philosophy and Ethics,maieutics,thought-provoking,leading
+Philosophy and Ethics,materialism,grounded,reductive
+Philosophy and Ethics,metaphysics,coherent,contradictory
+Philosophy and Ethics,metaphysics,fundamental,speculative
+Philosophy and Ethics,metaphysics,profound,speculative
+Philosophy and Ethics,mnemonics,memory-aiding,superficial
+Philosophy and Ethics,monism,unified,oversimplified
+Philosophy and Ethics,morality,guiding,subjective
+Philosophy and Ethics,morality,universal,relative
+Philosophy and Ethics,nihilism,critical,destructive
+Philosophy and Ethics,nihilism,liberating,despairing
+Philosophy and Ethics,ontogeny,developmental,deterministic
+Philosophy and Ethics,ontology,being-focused,abstract
+Philosophy and Ethics,ontology,fundamental,abstract
+Philosophy and Ethics,paradigm,framework,limiting
+Philosophy and Ethics,pedagogy,educational,indoctrinating
+Philosophy and Ethics,phenomenology,descriptive,reductive
+Philosophy and Ethics,phenomenology,experiential,abstract
+Philosophy and Ethics,philology,text-studying,outdated
+Philosophy and Ethics,philosophy,thought-provoking,obscure
+Philosophy and Ethics,phylogeny,evolutionary,speculative
+Philosophy and Ethics,polemics,argumentative,hostile
+Philosophy and Ethics,politics,governance-oriented,corrupt
+Philosophy and Ethics,post-structuralism,nuanced,obscure
+Philosophy and Ethics,postmodernism,critical,relativistic
+Philosophy and Ethics,pragmatism,practical,opportunistic
+Philosophy and Ethics,premise,foundational,faulty
+Philosophy and Ethics,premise,true,false
+Philosophy and Ethics,psychology,mind-exploring,reductive
+Philosophy and Ethics,qualia,experiential,ineffable
+Philosophy and Ethics,rationalism,logical,detached
+Philosophy and Ethics,rationalism,reason-based,disconnected
+Philosophy and Ethics,reality,objective,constructed
+Philosophy and Ethics,reason,rational,irrational
+Philosophy and Ethics,reason,sound,flawed
+Philosophy and Ethics,reductionism,simplifying,oversimplifying
+Philosophy and Ethics,relativism,tolerant,inconsistent
+Philosophy and Ethics,rhetoric,persuasive,manipulative
+Philosophy and Ethics,right,inalienable,conditional
+Philosophy and Ethics,semiotics,meaning-studying,overanalyzing
+Philosophy and Ethics,skepticism,questioning,cynical
+Philosophy and Ethics,sociology,society-analyzing,generalizing
+Philosophy and Ethics,stoicism,resilient,unemotional
+Philosophy and Ethics,stoicism,serene,apathetic
+Philosophy and Ethics,structuralism,systematic,reductive
+Philosophy and Ethics,syllogism,valid,invalid
+Philosophy and Ethics,syllogistics,reasoning,rigid
+Philosophy and Ethics,synergy,cooperative,idealistic
+Philosophy and Ethics,synthesis,integrative,artificial
+Philosophy and Ethics,taxonomy,classificatory,limiting
+Philosophy and Ethics,teleology,purpose-driven,deterministic
+Philosophy and Ethics,teleology,purposeful,predetermined
+Philosophy and Ethics,theology,faith-based,dogmatic
+Philosophy and Ethics,thesis,propositional,unproven
+Philosophy and Ethics,transhumanism,progressive,hubristic
+Philosophy and Ethics,tropology,figurative,obscure
+Philosophy and Ethics,truth,absolute,relative
+Philosophy and Ethics,utilitarianism,consequentialist,calculating
+Philosophy and Ethics,utilitarianism,maximizing,sacrificial
+Philosophy and Ethics,value,intrinsic,instrumental
+Philosophy and Ethics,values,fundamental,imposed
+Philosophy and Ethics,virtue,cultivated,neglected
+Philosophy and Ethics,virtue ethics,character-focused,subjective
+Philosophy and Ethics,weltanschauung,comprehensive,biased
+Politics and Government,NGO,charitable,unaccountable
+Politics and Government,accountability,responsible,scapegoating
+Politics and Government,act,enacted,overreaching
+Politics and Government,alliance,cooperative,entangling
+Politics and Government,amendment,adaptive,controversial
+Politics and Government,anarchy,free,chaotic
+Politics and Government,assembly,collective,mob
+Politics and Government,autocracy,decisive,tyrannical
+Politics and Government,ballot,secret,tampered
+Politics and Government,bill,proposed,pork-barrel
+Politics and Government,border,defining,restrictive
+Politics and Government,bureaucracy,efficient,bloated
+Politics and Government,bureaucracy,organized,inefficient
+Politics and Government,bureaucracy,organized,red tape
+Politics and Government,campaign,engaging,misleading
+Politics and Government,campaign,informative,mudslinging
+Politics and Government,campaign,issue-based,negative
+Politics and Government,candidate,qualified,corrupt
+Politics and Government,capitalism,productive,unequal
+Politics and Government,capitalist,free market,exploitative
+Politics and Government,censorship,protective,oppressive
+Politics and Government,citizen,engaged,apathetic
+Politics and Government,citizenship,belonging,exclusive
+Politics and Government,civil rights,protected,eroded
+Politics and Government,civil service,professional,bureaucratic
+Politics and Government,communism,utopian,failed
+Politics and Government,communist,egalitarian,totalitarian
+Politics and Government,congress,legislative,ineffective
+Politics and Government,conservative,traditional,regressive
+Politics and Government,constitution,respected,ignored
+Politics and Government,corruption,anti-,systemic
+Politics and Government,coup,regime change,illegitimate
+Politics and Government,court,judicial,activist
+Politics and Government,crisis,challenging,disastrous
+Politics and Government,debate,informative,divisive
+Politics and Government,defense,protective,militant
+Politics and Government,democracy,participatory,flawed
+Politics and Government,democracy,representative,mob-rule
+Politics and Government,deportation,lawful,inhumane
+Politics and Government,dictator,powerful,ruthless
+Politics and Government,dictatorship,efficient,oppressive
+Politics and Government,dictatorship,strong,brutal
+Politics and Government,diplomacy,effective,failed
+Politics and Government,diplomacy,peaceful,appeasement
+Politics and Government,diplomacy,peaceful,manipulative
+Politics and Government,education,empowering,indoctrinating
+Politics and Government,election,democratic,rigged
+Politics and Government,election,fair,rigged
+Politics and Government,election,free,fraudulent
+Politics and Government,embargo,strategic,damaging
+Politics and Government,equality,fair,unrealistic
+Politics and Government,ethics,principled,constraining
+Politics and Government,executive branch,accountable,overreaching
+Politics and Government,fascist,orderly,oppressive
+Politics and Government,freedom,liberating,anarchic
+Politics and Government,globalist,interconnected,sovereignty-eroding
+Politics and Government,government,effective,corrupt
+Politics and Government,government,representative,bureaucratic
+Politics and Government,healthcare,essential,socialized
+Politics and Government,human rights,universal,violated
+Politics and Government,ideology,coherent,rigid
+Politics and Government,ideology,principled,dogmatic
+Politics and Government,immigration,diverse,uncontrolled
+Politics and Government,impeachment,checks and balances,politically motivated
+Politics and Government,infrastructure,developing,crumbling
+Politics and Government,integrity,trustworthy,rigid
+Politics and Government,intelligence,informative,invasive
+Politics and Government,interest group,representative,special interest
+Politics and Government,judiciary,independent,politicized
+Politics and Government,justice,fair,selective
+Politics and Government,legislation,beneficial,harmful
+Politics and Government,legislative branch,deliberative,deadlocked
+Politics and Government,legislator,lawmaker,obstructionist
+Politics and Government,liberal,progressive,radical
+Politics and Government,lobby,advocacy,undue influence
+Politics and Government,media,informative,biased
+Politics and Government,moderate,balanced,indecisive
+Politics and Government,monarch,sovereign,powerless
+Politics and Government,monarchy,constitutional,absolute
+Politics and Government,monarchy,traditional,outdated
+Politics and Government,nationalist,patriotic,xenophobic
+Politics and Government,naturalization,inclusive,lengthy
+Politics and Government,negotiation,collaborative,compromising
+Politics and Government,parliament,deliberative,gridlocked
+Politics and Government,passport,identifying,restrictive
+Politics and Government,peace,harmonious,fragile
+Politics and Government,peace,lasting,fragile
+Politics and Government,plebiscite,public opinion,manipulated
+Politics and Government,policy,effective,misguided
+Politics and Government,policy,guiding,misguided
+Politics and Government,politician,dedicated,corrupt
+Politics and Government,politician,public servant,self-serving
+Politics and Government,politician,statesman,demagogue
+Politics and Government,politics,engaging,divisive
+Politics and Government,populist,people-focused,demagogic
+Politics and Government,president,leader,authoritarian
+Politics and Government,press,free,sensationalist
+Politics and Government,prime minister,executive,puppet
+Politics and Government,propaganda,informative,misleading
+Politics and Government,protest,expressive,disruptive
+Politics and Government,radical,transformative,extremist
+Politics and Government,referendum,direct democracy,divisive
+Politics and Government,reform,improving,disruptive
+Politics and Government,reform,necessary,disruptive
+Politics and Government,refugee,sheltered,burden
+Politics and Government,regulation,protective,stifling
+Politics and Government,representative,constituent-focused,out of touch
+Politics and Government,republic,constitutional,oligarchic
+Politics and Government,republic,constitutional,unstable
+Politics and Government,revolution,transformative,destabilizing
+Politics and Government,riot,uprising,violent
+Politics and Government,sanction,pressuring,harmful
+Politics and Government,scandal,exposed,damaging
+Politics and Government,senator,experienced,career politician
+Politics and Government,socialism,equitable,inefficient
+Politics and Government,socialist,equitable,state-controlled
+Politics and Government,speech,free,hate
+Politics and Government,surveillance,security,privacy-invading
+Politics and Government,theocracy,faith-based,intolerant
+Politics and Government,think tank,analytical,biased
+Politics and Government,trade,mutually beneficial,exploitative
+Politics and Government,transparency,open,security risk
+Politics and Government,treaty,binding,unfair
+Politics and Government,treaty,cooperative,unfair
+Politics and Government,treaty,fair,exploitative
+Politics and Government,visa,permitting,discriminatory
+Politics and Government,vote,counted,suppressed
+Politics and Government,vote,empowering,manipulated
+Politics and Government,war,defensive,aggressive
+Politics and Government,war,justified,unjustified
+Politics and Government,welfare,supportive,dependency-creating
+Science and Research,acoustics,sound-studying,noisy
+Science and Research,aerospace,flight-related,expensive
+Science and Research,analysis,objective,biased
+Science and Research,analysis,rigorous,over-interpreted
+Science and Research,analytical chemistry,precise,tedious
+Science and Research,anonymity,private,untraceable
+Science and Research,anthropology,culture-studying,subjective
+Science and Research,archaeology,past-studying,destructive
+Science and Research,artificial intelligence,smart,unpredictable
+Science and Research,astronomy,vast,speculative
+Science and Research,astrophysics,universe-studying,theoretical
+Science and Research,bias,acknowledged,pervasive
+Science and Research,biochemistry,life-chemistry,complex
+Science and Research,biology,life-studying,reductionist
+Science and Research,biotechnology,life-manipulating,controversial
+Science and Research,botany,plant-studying,rooted
+Science and Research,breakthrough,revolutionary,over-hyped
+Science and Research,causation,proven,assumed
+Science and Research,chemistry,reactive,dangerous
+Science and Research,citation,acknowledging,padding
+Science and Research,citation,relevant,irrelevant
+Science and Research,climatology,climate-studying,politicized
+Science and Research,computer science,algorithmic,abstract
+Science and Research,conclusion,evidence-based,premature
+Science and Research,conclusion,supported,speculative
+Science and Research,confidentiality,protected,limiting
+Science and Research,consensus,scientific,manufactured
+Science and Research,consent,informed,coerced
+Science and Research,constant,stable,limiting
+Science and Research,control group,comparative,missing
+Science and Research,correlation,related,causation-assumed
+Science and Research,cosmology,origin-studying,speculative
+Science and Research,data,quantitative,skewed
+Science and Research,data,valid,corrupted
+Science and Research,data science,analytical,over-hyped
+Science and Research,discovery,revealing,accidental
+Science and Research,discovery,significant,incremental
+Science and Research,ecology,ecosystem-studying,doom-saying
+Science and Research,electromagnetism,force-studying,invisible
+Science and Research,entomology,insect-studying,creepy-crawly
+Science and Research,epidemiology,disease-spread-studying,alarming
+Science and Research,equipment,calibrated,faulty
+Science and Research,ethics,principled,restrictive
+Science and Research,ethics,responsible,unethical
+Science and Research,experiment,controlled,flawed
+Science and Research,experiment,repeatable,unreproducible
+Science and Research,field work,hands-on,unpredictable
+Science and Research,field work,observational,intrusive
+Science and Research,fluid dynamics,flow-studying,chaotic
+Science and Research,genetics,heredity-studying,deterministic
+Science and Research,geology,earth-studying,slow-paced
+Science and Research,geophysics,earth-physics,earthquake-predicting
+Science and Research,grant,funding,strings-attached
+Science and Research,grant,merit-based,political
+Science and Research,herpetology,reptile-studying,cold-blooded
+Science and Research,hydrology,water-studying,drought-predicting
+Science and Research,hypothesis,falsifiable,untestable
+Science and Research,hypothesis,testable,unproven
+Science and Research,ichthyology,fish-studying,scaly
+Science and Research,immunology,defense-studying,complex
+Science and Research,impact factor,influential,overemphasized
+Science and Research,innovation,novel,risky
+Science and Research,innovation,transformative,marginal
+Science and Research,inorganic chemistry,non-carbon,toxic
+Science and Research,interdisciplinary,collaborative,unfocused
+Science and Research,journal,reputable,paywalled
+Science and Research,kinesiology,movement-studying,limited
+Science and Research,laboratory,equipped,sterile
+Science and Research,laboratory,safe,hazardous
+Science and Research,law (scientific),universal,limited
+Science and Research,machine learning,adaptive,black-box
+Science and Research,marine biology,ocean-studying,depth-limited
+Science and Research,materials science,substance-studying,applied
+Science and Research,measurement,precise,inaccurate
+Science and Research,mechanics,motion-studying,simplistic
+Science and Research,meteorology,weather-studying,uncertain
+Science and Research,methodology,systematic,flawed
+Science and Research,methodology,validated,flawed
+Science and Research,microbiology,microbe-studying,invisible
+Science and Research,model (scientific),accurate,oversimplified
+Science and Research,molecular biology,cellular,reductionist
+Science and Research,multidisciplinary,comprehensive,superficial
+Science and Research,nanotechnology,microscopic,overhyped
+Science and Research,neuroscience,brain-studying,complex
+Science and Research,nutrition,diet-studying,contradictory
+Science and Research,objectivity,impartial,impossible
+Science and Research,observation,accurate,anecdotal
+Science and Research,observation,detailed,biased
+Science and Research,oceanography,ocean-studying,depth-challenged
+Science and Research,optics,light-studying,focused
+Science and Research,organic chemistry,carbon-based,smelly
+Science and Research,ornithology,bird-studying,flighty
+Science and Research,paleontology,fossil-studying,incomplete
+Science and Research,particle physics,subatomic,expensive
+Science and Research,peer review,critical,gatekeeping
+Science and Research,peer review,rigorous,rubber-stamped
+Science and Research,pharmacology,drug-studying,side-effect-prone
+Science and Research,population,diverse,biased
+Science and Research,probability,likely,uncertain
+Science and Research,psychology,mind-studying,soft
+Science and Research,publication,disseminating,publish-or-perish
+Science and Research,publication,impactful,retracted
+Science and Research,qualitative,descriptive,subjective
+Science and Research,quantitative,measurable,reductive
+Science and Research,quantum mechanics,fundamental,counterintuitive
+Science and Research,relativity,space-time,mind-bending
+Science and Research,replication,validating,failing
+Science and Research,reproducibility,consistent,inconsistent
+Science and Research,reproducibility,reliable,crisis
+Science and Research,research,groundbreaking,inconclusive
+Science and Research,robotics,automated,job-threatening
+Science and Research,sample,representative,contaminated
+Science and Research,sample,representative,skewed
+Science and Research,science,empirical,theoretical
+Science and Research,setback,challenging,discouraging
+Science and Research,significance,important,over-emphasized
+Science and Research,simulation,realistic,artificial
+Science and Research,sociology,society-studying,generalizing
+Science and Research,statistics,informative,manipulated
+Science and Research,subjectivity,perspective,unreliable
+Science and Research,technology,applied,misapplied
+Science and Research,theory,explanatory,speculative
+Science and Research,theory,predictive,disproven
+Science and Research,thermodynamics,energy-studying,abstract
+Science and Research,toxicology,poison-studying,morbid
+Science and Research,variable,controlled,confounding
+Science and Research,variable,independent,dependent
+Science and Research,virology,virus-studying,dangerous
+Science and Research,zoology,animal-studying,endangered-focused
+Sports and Athletics,adrenaline,exhilarating,addictive
+Sports and Athletics,agility,nimble,clumsy
+Sports and Athletics,agility,quick,slow
+Sports and Athletics,ambition,aspiring,unrealistic
+Sports and Athletics,analytics,insightful,misleading
+Sports and Athletics,anthem,unifying,politicized
+Sports and Athletics,applause,appreciative,sarcastic
+Sports and Athletics,athlete,champion,amateur
+Sports and Athletics,athlete,disciplined,undisciplined
+Sports and Athletics,audience,supportive,hostile
+Sports and Athletics,balance,stable,wobbly
+Sports and Athletics,boo,expressing dissatisfaction,disrespectful
+Sports and Athletics,championship,earned,undeserved
+Sports and Athletics,championship,prestigious,meaningless
+Sports and Athletics,cheer,encouraging,jeering
+Sports and Athletics,coach,mentor,dictatorial
+Sports and Athletics,coach,motivating,abusive
+Sports and Athletics,coach,strategic,incompetent
+Sports and Athletics,comeback,inspirational,ill-advised
+Sports and Athletics,comeback,inspiring,failed
+Sports and Athletics,comeback,triumphant,ill-advised
+Sports and Athletics,competition,spirited,cutthroat
+Sports and Athletics,concentration,intense,wavering
+Sports and Athletics,contract,secure,restrictive
+Sports and Athletics,coordination,synchronized,uncoordinated
+Sports and Athletics,court,regulation,slippery
+Sports and Athletics,crowd,energetic,unruly
+Sports and Athletics,defeat,gracious,bitter
+Sports and Athletics,defeat,honorable,humiliating
+Sports and Athletics,defeat,learning experience,crushing
+Sports and Athletics,defense,solid,porous
+Sports and Athletics,determination,unwavering,obsessive
+Sports and Athletics,doping,undetectable,cheating
+Sports and Athletics,doping,undetected,exposed
+Sports and Athletics,draft,promising,disappointing
+Sports and Athletics,draft,promising,unpredictable
+Sports and Athletics,dynasty,dominant,declining
+Sports and Athletics,endorsement,valuable,sell-out
+Sports and Athletics,endurance,lasting,waning
+Sports and Athletics,endurance,lasting,weak
+Sports and Athletics,equipment,high-quality,faulty
+Sports and Athletics,equipment,high-quality,substandard
+Sports and Athletics,equipment,maintained,broken
+Sports and Athletics,exercise,healthy,strenuous
+Sports and Athletics,facility,state-of-the-art,run-down
+Sports and Athletics,fair play,ethical,unsportsmanlike
+Sports and Athletics,fan,enthusiastic,fanatic
+Sports and Athletics,fan,supportive,rowdy
+Sports and Athletics,fans,passionate,hooligan
+Sports and Athletics,field,well-maintained,muddy
+Sports and Athletics,fitness,peak,declining
+Sports and Athletics,fitness,peak,unfit
+Sports and Athletics,flexibility,supple,stiff
+Sports and Athletics,focus,laser-sharp,distracted
+Sports and Athletics,foul,unintentional,flagrant
+Sports and Athletics,game,competitive,one-sided
+Sports and Athletics,game,exciting,boring
+Sports and Athletics,game,well-played,sloppy
+Sports and Athletics,gear,protective,cumbersome
+Sports and Athletics,goal,achievable,unrealistic
+Sports and Athletics,goal,achieved,missed
+Sports and Athletics,gym,well-equipped,smelly
+Sports and Athletics,humility,gracious,self-deprecating
+Sports and Athletics,hydration,essential,excessive
+Sports and Athletics,injury,minor,severe
+Sports and Athletics,injury,recoverable,career-ending
+Sports and Athletics,integrity,honorable,questionable
+Sports and Athletics,judge,expert,subjective
+Sports and Athletics,leadership,inspiring,overbearing
+Sports and Athletics,league,competitive,unbalanced
+Sports and Athletics,league,organized,corrupt
+Sports and Athletics,legacy,enduring,tarnished
+Sports and Athletics,locker room,team-oriented,exclusive
+Sports and Athletics,mascot,spirited,offensive
+Sports and Athletics,match,close,blowout
+Sports and Athletics,medal,golden,participation
+Sports and Athletics,motivation,driving,forced
+Sports and Athletics,nutrition,balanced,restrictive
+Sports and Athletics,offense,aggressive,timid
+Sports and Athletics,overtime,thrilling,exhausting
+Sports and Athletics,passion,devoted,obsessed
+Sports and Athletics,penalty,fair,harsh
+Sports and Athletics,performance,outstanding,disappointing
+Sports and Athletics,performance,stellar,disappointing
+Sports and Athletics,player,skilled,unskilled
+Sports and Athletics,point,crucial,meaningless
+Sports and Athletics,pool,Olympic-sized,murky
+Sports and Athletics,practice,consistent,sporadic
+Sports and Athletics,practice,consistent,tedious
+Sports and Athletics,practice,focused,unproductive
+Sports and Athletics,pressure,challenging,overwhelming
+Sports and Athletics,prize,substantial,paltry
+Sports and Athletics,ranking,top,bottom
+Sports and Athletics,record,broken,standing
+Sports and Athletics,record,unbeaten,dismal
+Sports and Athletics,recovery,full,partial
+Sports and Athletics,recovery,rejuvenating,incomplete
+Sports and Athletics,recruit,talented,overhyped
+Sports and Athletics,recruitment,strategic,desperate
+Sports and Athletics,reflex,quick,delayed
+Sports and Athletics,rehabilitation,restorative,painful
+Sports and Athletics,respect,mutual,lacking
+Sports and Athletics,retirement,timely,premature
+Sports and Athletics,retirement,well-earned,premature
+Sports and Athletics,rivalry,intense,manufactured
+Sports and Athletics,rivalry,motivating,bitter
+Sports and Athletics,rules,clear,convoluted
+Sports and Athletics,score,accurate,disputed
+Sports and Athletics,score,decisive,marginal
+Sports and Athletics,score,winning,losing
+Sports and Athletics,scouting,thorough,overlooking
+Sports and Athletics,skill,developed,raw
+Sports and Athletics,skill,masterful,lacking
+Sports and Athletics,skill,proficient,inept
+Sports and Athletics,spectator,engaged,rowdy
+Sports and Athletics,speed,blazing,average
+Sports and Athletics,speed,swift,slow
+Sports and Athletics,speed,swift,sluggish
+Sports and Athletics,spirit,uplifting,crushed
+Sports and Athletics,sponsorship,lucrative,exploitative
+Sports and Athletics,sport,challenging,dangerous
+Sports and Athletics,sportsmanship,admirable,poor
+Sports and Athletics,sportsmanship,respectful,poor
+Sports and Athletics,stadium,impressive,overcrowded
+Sports and Athletics,stadium,state-of-the-art,dilapidated
+Sports and Athletics,stamina,tireless,fatigued
+Sports and Athletics,strategy,clever,predictable
+Sports and Athletics,strategy,effective,predictable
+Sports and Athletics,strength,impressive,average
+Sports and Athletics,strength,powerful,feeble
+Sports and Athletics,stress,energizing,debilitating
+Sports and Athletics,team,cohesive,fractured
+Sports and Athletics,team,coordinated,dysfunctional
+Sports and Athletics,team,unified,dysfunctional
+Sports and Athletics,teamwork,collaborative,lacking
+Sports and Athletics,technique,refined,sloppy
+Sports and Athletics,tie,evenly matched,unsatisfying
+Sports and Athletics,tournament,exciting,tedious
+Sports and Athletics,tournament,prestigious,grueling
+Sports and Athletics,tournament,prestigious,minor
+Sports and Athletics,track,fast,uneven
+Sports and Athletics,trade,beneficial,lopsided
+Sports and Athletics,training,effective,grueling
+Sports and Athletics,training,intense,lax
+Sports and Athletics,training,rigorous,exhausting
+Sports and Athletics,transfer,strategic,disruptive
+Sports and Athletics,umpire,authoritative,inconsistent
+Sports and Athletics,underdog,inspiring,outmatched
+Sports and Athletics,uniform,professional,ill-fitting
+Sports and Athletics,uniform,professional,shabby
+Sports and Athletics,upset,surprising,predictable
+Sports and Athletics,victory,decisive,narrow
+Sports and Athletics,victory,triumphant,hollow
+Sports and Athletics,workout,invigorating,punishing
+Technology and Innovation,5G,high-speed,radiation-concerning
+Technology and Innovation,API,integrating,dependency-creating
+Technology and Innovation,NFC,contactless,limited-range
+Technology and Innovation,algorithm,efficient,flawed
+Technology and Innovation,algorithm,optimized,inefficient
+Technology and Innovation,app,useful,battery-draining
+Technology and Innovation,app,user-friendly,clunky
+Technology and Innovation,artificial intelligence,beneficial,dangerous
+Technology and Innovation,artificial intelligence,intelligent,unpredictable
+Technology and Innovation,augmented reality,enhancing,distracting
+Technology and Innovation,augmented reality,interactive,glitchy
+Technology and Innovation,augmented reality,useful,distracting
+Technology and Innovation,automation,efficient,impersonal
+Technology and Innovation,automation,productive,job-displacing
+Technology and Innovation,automation,streamlined,unreliable
+Technology and Innovation,backup,safeguarding,space-consuming
+Technology and Innovation,bandwidth,sufficient,limited
+Technology and Innovation,battery,long-lasting,depleting
+Technology and Innovation,battery,long-lasting,short-lived
+Technology and Innovation,beta testing,refining,buggy
+Technology and Innovation,big data,analyzed,unused
+Technology and Innovation,big data,informative,overwhelming
+Technology and Innovation,biotechnology,innovative,controversial
+Technology and Innovation,biotechnology,revolutionary,controversial
+Technology and Innovation,blockchain,secure,vulnerable
+Technology and Innovation,blockchain,transparent,energy-intensive
+Technology and Innovation,blockchain,transparent,opaque
+Technology and Innovation,bluetooth,wireless,interference-prone
+Technology and Innovation,broadband,reliable,bandwidth-limited
+Technology and Innovation,camera,high-quality,privacy-invading
+Technology and Innovation,cloud,accessible,insecure
+Technology and Innovation,cloud computing,flexible,unstable
+Technology and Innovation,cloud computing,scalable,down
+Technology and Innovation,code,clean,messy
+Technology and Innovation,code,elegant,spaghetti
+Technology and Innovation,coding,creative,frustrating
+Technology and Innovation,compatibility,seamless,incompatible
+Technology and Innovation,compatibility,versatile,limiting
+Technology and Innovation,computer,advanced,obsolete
+Technology and Innovation,computer,powerful,outdated
+Technology and Innovation,connectivity,stable,intermittent
+Technology and Innovation,cryptocurrency,decentralized,volatile
+Technology and Innovation,customization,personalized,non-standard
+Technology and Innovation,cybersecurity,protective,breached
+Technology and Innovation,cybersecurity,protective,paranoid
+Technology and Innovation,cybersecurity,robust,weak
+Technology and Innovation,data,structured,unstructured
+Technology and Innovation,data mining,insightful,invasive
+Technology and Innovation,database,organized,corrupted
+Technology and Innovation,debugging,successful,ongoing
+Technology and Innovation,desktop,stable,bulky
+Technology and Innovation,development,agile,waterfall
+Technology and Innovation,development,progressive,costly
+Technology and Innovation,device,portable,cumbersome
+Technology and Innovation,device,portable,fragile
+Technology and Innovation,digital payment,seamless,hackable
+Technology and Innovation,discovery,enlightening,accidental
+Technology and Innovation,disruption,game-changing,destabilizing
+Technology and Innovation,download,acquiring,malware-risking
+Technology and Innovation,drone,maneuverable,intrusive
+Technology and Innovation,drone,versatile,invasive
+Technology and Innovation,e-commerce,convenient,impulse-buying
+Technology and Innovation,encryption,secure,weak
+Technology and Innovation,encryption,strong,breakable
+Technology and Innovation,engineering,precise,overengineered
+Technology and Innovation,feature,useful,bloatware
+Technology and Innovation,fiber optic,fast,expensive-to-install
+Technology and Innovation,firewall,defensive,restrictive
+Technology and Innovation,firmware,updated,outdated
+Technology and Innovation,gadget,useful,gimmicky
+Technology and Innovation,genetic engineering,precise,ethically-questionable
+Technology and Innovation,hardware,compatible,incompatible
+Technology and Innovation,hardware,durable,fragile
+Technology and Innovation,hardware,robust,faulty
+Technology and Innovation,incubator,nurturing,pressure-inducing
+Technology and Innovation,innovation,disruptive,incremental
+Technology and Innovation,innovation,groundbreaking,derivative
+Technology and Innovation,innovation,groundbreaking,unnecessary
+Technology and Innovation,integration,unifying,complex
+Technology and Innovation,intellectual property,valuable,restrictive
+Technology and Innovation,interface,intuitive,confusing
+Technology and Innovation,internet,connected,addictive
+Technology and Innovation,internet,fast,slow
+Technology and Innovation,internet of things,connected,insecure
+Technology and Innovation,internet of things,connected,vulnerable
+Technology and Innovation,interoperability,flexible,challenging
+Technology and Innovation,invention,novel,impractical
+Technology and Innovation,keyboard,tactile,noisy
+Technology and Innovation,laptop,flexible,heavy
+Technology and Innovation,launch,exciting,premature
+Technology and Innovation,lens,focusing,distorting
+Technology and Innovation,machine learning,accurate,biased
+Technology and Innovation,machine learning,adaptive,biased
+Technology and Innovation,machine learning,adaptive,opaque
+Technology and Innovation,malware,sophisticated,malicious
+Technology and Innovation,manufacturing,productive,polluting
+Technology and Innovation,memory,capacious,volatile
+Technology and Innovation,memory,expandable,limited
+Technology and Innovation,microphone,sensitive,eavesdropping
+Technology and Innovation,mouse,precise,repetitive-strain
+Technology and Innovation,nanotechnology,microscopic,unpredictable
+Technology and Innovation,nanotechnology,precise,unpredictable
+Technology and Innovation,network,collaborative,vulnerable
+Technology and Innovation,network,connected,disconnected
+Technology and Innovation,optimization,streamlining,over-complicating
+Technology and Innovation,password,protective,forgettable
+Technology and Innovation,patent,granted,pending
+Technology and Innovation,platform,integrated,fragmented
+Technology and Innovation,plugin,extending,bloating
+Technology and Innovation,printer,productive,ink-guzzling
+Technology and Innovation,processor,fast,power-hungry
+Technology and Innovation,programming,logical,complex
+Technology and Innovation,projector,presenting,bulky
+Technology and Innovation,prototype,conceptual,unfinished
+Technology and Innovation,prototype,functional,buggy
+Technology and Innovation,prototype,functional,flawed
+Technology and Innovation,quality control,meticulous,bottlenecking
+Technology and Innovation,quantum computing,powerful,unstable
+Technology and Innovation,renewable energy,sustainable,intermittent
+Technology and Innovation,research,investigative,time-consuming
+Technology and Innovation,restore,recovering,time-consuming
+Technology and Innovation,robot,precise,malfunctioning
+Technology and Innovation,robotics,helpful,malfunctioning
+Technology and Innovation,robotics,precise,job-threatening
+Technology and Innovation,satellite,orbiting,space-cluttering
+Technology and Innovation,scalability,flexible,rigid
+Technology and Innovation,scalability,growing,unsustainable
+Technology and Innovation,scanner,digitizing,slow
+Technology and Innovation,screen,high-resolution,addictive
+Technology and Innovation,search engine,informative,filter-bubbling
+Technology and Innovation,sensor,perceptive,intrusive
+Technology and Innovation,sensor,sensitive,inaccurate
+Technology and Innovation,server,reliable,overloaded
+Technology and Innovation,server,reliable,unstable
+Technology and Innovation,smartphone,versatile,distracting
+Technology and Innovation,social media,engaging,time-wasting
+Technology and Innovation,software,efficient,buggy
+Technology and Innovation,software,stable,glitchy
+Technology and Innovation,speaker,clear,disruptive
+Technology and Innovation,startup,agile,unstable
+Technology and Innovation,startup,innovative,risky
+Technology and Innovation,startup,successful,failed
+Technology and Innovation,storage,spacious,limited
+Technology and Innovation,streaming,on-demand,buffering
+Technology and Innovation,sync,harmonizing,conflicting
+Technology and Innovation,touchscreen,responsive,fingerprint-prone
+Technology and Innovation,update,improved,problematic
+Technology and Innovation,update,improving,interrupting
+Technology and Innovation,update,seamless,problematic
+Technology and Innovation,upgrade,enhancing,costly
+Technology and Innovation,upload,sharing,privacy-risking
+Technology and Innovation,user experience,intuitive,frustrating
+Technology and Innovation,user experience,seamless,frustrating
+Technology and Innovation,user experience,smooth,frustrating
+Technology and Innovation,user interface,intuitive,cluttered
+Technology and Innovation,venture capital,enabling,controlling
+Technology and Innovation,venture capital,invested,divested
+Technology and Innovation,video call,connecting,awkward
+Technology and Innovation,virtual reality,immersive,disorienting
+Technology and Innovation,virtual reality,immersive,nauseating
+Technology and Innovation,virus,replicating,destructive
+Technology and Innovation,wi-fi,convenient,signal-dropping
+Travel and Transportation,Airbnb,unique,inconsistent
+Travel and Transportation,GPS,accurate,battery-dependent
+Travel and Transportation,GPS,reliable,signal-lost
+Travel and Transportation,accommodation,clean,dirty
+Travel and Transportation,accommodation,comfortable,overpriced
+Travel and Transportation,adventure,exciting,risky
+Travel and Transportation,airplane,fast,cramped
+Travel and Transportation,airport,international,stressful
+Travel and Transportation,all-inclusive,comprehensive,restrictive
+Travel and Transportation,alley,shortcut,sketchy
+Travel and Transportation,backpack,portable,overloaded
+Travel and Transportation,backpacking,adventurous,grueling
+Travel and Transportation,bed and breakfast,charming,intrusive
+Travel and Transportation,bicycle,eco-friendly,tiring
+Travel and Transportation,boat,relaxing,seasickness-inducing
+Travel and Transportation,booking,confirmed,overbooked
+Travel and Transportation,booking,easy,complicated
+Travel and Transportation,border,crossing,restricted
+Travel and Transportation,bridge,connecting,tolled
+Travel and Transportation,bus,economical,slow
+Travel and Transportation,bus terminal,accessible,dingy
+Travel and Transportation,cable car,picturesque,height-inducing
+Travel and Transportation,camping,outdoor,uncomfortable
+Travel and Transportation,car,personal,traffic-prone
+Travel and Transportation,carry-on,convenient,limited
+Travel and Transportation,charging station,eco-friendly,scarce
+Travel and Transportation,compass,reliable,basic
+Travel and Transportation,connection,smooth,missed
+Travel and Transportation,credit card,convenient,high fees
+Travel and Transportation,cruise,leisurely,confined
+Travel and Transportation,culture shock,eye-opening,overwhelming
+Travel and Transportation,currency exchange,fair rate,poor rate
+Travel and Transportation,currency exchange,necessary,costly
+Travel and Transportation,customs,necessary,time-consuming
+Travel and Transportation,customs,smooth,delayed
+Travel and Transportation,delay,short,long
+Travel and Transportation,destination,popular,remote
+Travel and Transportation,duty-free,tax-free,overpriced
+Travel and Transportation,excursion,informative,touristy
+Travel and Transportation,expedition,adventurous,dangerous
+Travel and Transportation,exploration,discovery,lost
+Travel and Transportation,exploration,planned,spontaneous
+Travel and Transportation,ferry,scenic,weather-dependent
+Travel and Transportation,flight,convenient,delayed
+Travel and Transportation,gas station,necessary,overpriced
+Travel and Transportation,guidebook,informative,bulky
+Travel and Transportation,hang glider,liberating,dangerous
+Travel and Transportation,helicopter,panoramic,noisy
+Travel and Transportation,highway,fast,congested
+Travel and Transportation,homesickness,nostalgic,depressing
+Travel and Transportation,hostel,affordable,crowded
+Travel and Transportation,hot air balloon,romantic,weather-dependent
+Travel and Transportation,hotel,luxurious,bedbug-infested
+Travel and Transportation,hoverboard,futuristic,fire-prone
+Travel and Transportation,immigration,processed,rejected
+Travel and Transportation,immigration,welcoming,strict
+Travel and Transportation,infrastructure,modern,crumbling
+Travel and Transportation,inn,cozy,old-fashioned
+Travel and Transportation,intersection,crossroads,accident-prone
+Travel and Transportation,itinerary,flexible,packed
+Travel and Transportation,itinerary,planned,rigid
+Travel and Transportation,jet lag,mild,severe
+Travel and Transportation,jet lag,temporary,debilitating
+Travel and Transportation,jetpack,futuristic,impractical
+Travel and Transportation,journey,memorable,tedious
+Travel and Transportation,luggage,light,heavy
+Travel and Transportation,luggage,necessary,heavy
+Travel and Transportation,map,accurate,outdated
+Travel and Transportation,map,informative,outdated
+Travel and Transportation,marina,scenic,exclusive
+Travel and Transportation,motel,affordable,sketchy
+Travel and Transportation,motorcycle,thrilling,dangerous
+Travel and Transportation,navigation,guided,misdirected
+Travel and Transportation,package deal,value,inflexible
+Travel and Transportation,parachute,thrilling,risky
+Travel and Transportation,parking,convenient,expensive
+Travel and Transportation,passport,enabling,bureaucratic
+Travel and Transportation,passport,valid,expired
+Travel and Transportation,passport stamp,collectable,ink-smudged
+Travel and Transportation,path,scenic,overgrown
+Travel and Transportation,photograph,capturing,staged
+Travel and Transportation,pilgrimage,spiritual,arduous
+Travel and Transportation,port,bustling,industrial
+Travel and Transportation,postcard,thoughtful,cliché
+Travel and Transportation,public transport,frequent,infrequent
+Travel and Transportation,reservation,guaranteed,unconfirmed
+Travel and Transportation,reservation,secured,canceled
+Travel and Transportation,resort,all-inclusive,isolated
+Travel and Transportation,rest area,convenient,basic
+Travel and Transportation,rideshare,flexible,surge-pricing
+Travel and Transportation,road,connecting,potholed
+Travel and Transportation,road trip,freeing,long
+Travel and Transportation,rocket,cutting-edge,expensive
+Travel and Transportation,rollerblade,fun,outdated
+Travel and Transportation,route,direct,detour
+Travel and Transportation,scooter,nimble,unstable
+Travel and Transportation,segway,novel,gimmicky
+Travel and Transportation,ship,majestic,polluting
+Travel and Transportation,sightseeing,enriching,touristy
+Travel and Transportation,sightseeing,informative,superficial
+Travel and Transportation,skateboard,cool,injury-prone
+Travel and Transportation,souvenir,authentic,kitsch
+Travel and Transportation,souvenir,memorable,tacky
+Travel and Transportation,spacecraft,pioneering,exclusive
+Travel and Transportation,street,lively,noisy
+Travel and Transportation,subway,urban,crowded
+Travel and Transportation,suitcase,spacious,cumbersome
+Travel and Transportation,taxi,on-demand,expensive
+Travel and Transportation,timeshare,ownership,binding
+Travel and Transportation,tour,guided,rushed
+Travel and Transportation,tourism,cultural,overtourism
+Travel and Transportation,tourism,sustainable,exploitative
+Travel and Transportation,traffic,flowing,gridlocked
+Travel and Transportation,trail,natural,challenging
+Travel and Transportation,train,scenic,crowded
+Travel and Transportation,train station,central,busy
+Travel and Transportation,tram,efficient,limited
+Travel and Transportation,translation,helpful,inaccurate
+Travel and Transportation,transportation,efficient,congested
+Travel and Transportation,transportation hub,efficient,chaotic
+Travel and Transportation,travel,adventurous,exhausting
+Travel and Transportation,travel insurance,comprehensive,limited
+Travel and Transportation,travel insurance,protective,expensive
+Travel and Transportation,traveler's check,secure,outdated
+Travel and Transportation,trip,exciting,tiring
+Travel and Transportation,tunnel,direct,claustrophobic
+Travel and Transportation,vacation,relaxing,stressful
+Travel and Transportation,visa,approved,denied
+Travel and Transportation,visa,permitting,restrictive
+Travel and Transportation,walking,healthy,slow
+Travel and Transportation,wanderlust,inspiring,restless
+Travel and Transportation,zip line,exhilarating,scary
+Weather and Climate,El Niño,warming,disruptive
+Weather and Climate,La Niña,cooling,crop-affecting
+Weather and Climate,acid rain,pH-altering,corrosive
+Weather and Climate,air mass,large,stagnant
+Weather and Climate,air mass,uniform,mixed
+Weather and Climate,air quality,good,poor
+Weather and Climate,anemometer,measuring,specialized
+Weather and Climate,atmosphere,protective,polluted
+Weather and Climate,atmosphere,stable,turbulent
+Weather and Climate,aurora,spectacular,unpredictable
+Weather and Climate,autumn,colorful,dreary
+Weather and Climate,avalanche,powerful,deadly
+Weather and Climate,barometer,rising,falling
+Weather and Climate,barometer,sensitive,fluctuating
+Weather and Climate,blizzard,cozy,raining
+Weather and Climate,blizzard,impressive,paralyzing
+Weather and Climate,carbon footprint,measurable,increasing
+Weather and Climate,climate,stable,changing
+Weather and Climate,climate change,significant,controversial
+Weather and Climate,climate change,studied,denied
+Weather and Climate,climate model,predictive,uncertain
+Weather and Climate,cloud,fluffy,gloomy
+Weather and Climate,cloud,scattered,overcast
+Weather and Climate,cold,crisp,freezing
+Weather and Climate,condensation,water-forming,visibility-reducing
+Weather and Climate,conduction,direct transfer,inefficient
+Weather and Climate,convection,heat-transferring,turbulent
+Weather and Climate,cyclone,intense,ravaging
+Weather and Climate,deforestation,cleared,devastating
+Weather and Climate,desertification,expanding,threatening
+Weather and Climate,dew point,condensing,uncomfortable
+Weather and Climate,drought,dry,parching
+Weather and Climate,drought,water-saving,devastating
+Weather and Climate,earthquake,moving,devastating
+Weather and Climate,emission,released,polluting
+Weather and Climate,equinox,balanced,unremarkable
+Weather and Climate,erosion,natural,destructive
+Weather and Climate,evaporation,cooling,drying
+Weather and Climate,exosphere,outermost,tenuous
+Weather and Climate,flood,cleansing,devastating
+Weather and Climate,flood,flowing,destructive
+Weather and Climate,fog,mysterious,hazardous
+Weather and Climate,forecast,accurate,inaccurate
+Weather and Climate,forecast,informative,inaccurate
+Weather and Climate,front,boundary,unstable
+Weather and Climate,front (weather),passing,stalled
+Weather and Climate,frost,glistening,damaging
+Weather and Climate,glacier,massive,retreating
+Weather and Climate,global warming,concerning,politicized
+Weather and Climate,global warming,gradual,accelerated
+Weather and Climate,greenhouse effect,natural,enhanced
+Weather and Climate,greenhouse effect,warming,intensifying
+Weather and Climate,gulf stream,warming,slowing
+Weather and Climate,hail,interesting,damaging
+Weather and Climate,hail,interesting,uninteresting
+Weather and Climate,heat,warm,sweltering
+Weather and Climate,heat index,perceived heat,stressful
+Weather and Climate,high pressure,clear,drought-inducing
+Weather and Climate,humidity,comfortable,muggy
+Weather and Climate,humidity,comfortable,stifling
+Weather and Climate,humidity,moist,sticky
+Weather and Climate,hurricane,awe-inspiring,catastrophic
+Weather and Climate,hurricane,powerful,catastrophic
+Weather and Climate,hygrometer,calibrated,uncalibrated
+Weather and Climate,hygrometer,precise,complex
+Weather and Climate,ice,glistening,treacherous
+Weather and Climate,ionosphere,radio-reflecting,disturbed
+Weather and Climate,isobar,equal pressure,complex
+Weather and Climate,isotherm,equal temperature,varying
+Weather and Climate,jet stream,fast-flowing,shifting
+Weather and Climate,jet stream,stable,wavy
+Weather and Climate,low pressure,cloudy,stormy
+Weather and Climate,magnetosphere,protective,vulnerable
+Weather and Climate,mesosphere,middle,little-known
+Weather and Climate,meteorology,precise,imprecise
+Weather and Climate,meteorology,scientific,imprecise
+Weather and Climate,microclimate,localized,significant
+Weather and Climate,mirage,optical,deceptive
+Weather and Climate,mist,ethereal,damp
+Weather and Climate,monsoon,moisture-bringing,flooding
+Weather and Climate,natural disaster,predicted,unexpected
+Weather and Climate,ocean current,circulating,changing
+Weather and Climate,ozone layer,protective,depleting
+Weather and Climate,ozone layer,recovering,thinning
+Weather and Climate,permafrost,frozen,thawing
+Weather and Climate,polar vortex,circulating,destabilizing
+Weather and Climate,pollution,regulated,toxic
+Weather and Climate,precipitation,gentle,heavy
+Weather and Climate,precipitation,nourishing,flooding
+Weather and Climate,prediction,helpful,unreliable
+Weather and Climate,pressure,stable,dropping
+Weather and Climate,pressure,stable,unstable
+Weather and Climate,radar,clear,interfered
+Weather and Climate,radar,detecting,limited
+Weather and Climate,radiation,warming,harmful
+Weather and Climate,rain,refreshing,flooding
+Weather and Climate,rain,refreshing,pouring
+Weather and Climate,rain gauge,collecting,overflow-prone
+Weather and Climate,rainbow,sunny,dark
+Weather and Climate,satellite,observing,fallible
+Weather and Climate,satellite (weather),high-resolution,low-resolution
+Weather and Climate,sea level,rising,threatening
+Weather and Climate,season,cyclic,changing
+Weather and Climate,season,typical,unusual
+Weather and Climate,sleet,wintry,treacherous
+Weather and Climate,smog,flowing,choking
+Weather and Climate,snow,picturesque,treacherous
+Weather and Climate,snow,pristine,blizzard
+Weather and Climate,solstice,astronomical,short day
+Weather and Climate,spring,renewing,allergy-inducing
+Weather and Climate,storm,brief,prolonged
+Weather and Climate,storm,dramatic,destructive
+Weather and Climate,storm,powerful,destructive
+Weather and Climate,stratosphere,stable,ozone-depleting
+Weather and Climate,sublimation,phase-changing,ice-reducing
+Weather and Climate,summer,sunny,scorching
+Weather and Climate,sunshine,bright,scorching
+Weather and Climate,temperature,mild,extreme
+Weather and Climate,temperature,moderate,extreme
+Weather and Climate,thermometer,accurate,broken
+Weather and Climate,thermosphere,ionized,radio-disrupting
+Weather and Climate,thunder,powerful,frightening
+Weather and Climate,tornado,awe-inspiring,devastating
+Weather and Climate,trade winds,consistent,weakening
+Weather and Climate,troposphere,weather-containing,turbulent
+Weather and Climate,typhoon,impressive,deadly
+Weather and Climate,visibility,clear,poor
+Weather and Climate,volcanic eruption,spectacular,devastating
+Weather and Climate,weather,changeable,unpredictable
+Weather and Climate,weather balloon,exploratory,short-lived
+Weather and Climate,weather pattern,consistent,erratic
+Weather and Climate,wind,breezy,gusty
+Weather and Climate,wind,calm,strong
+Weather and Climate,wind,cooling,gusty
+Weather and Climate,wind chill,felt temperature,dangerous
+Weather and Climate,winter,snowy,harsh

@@ -44,6 +44,8 @@ class ScoreAndPlotConfig:
         self._initialize_model_name_dict()
         self._initialize_evaluation_models()
         self._initialize_device()
+        self._initialize_lda_model()
+        self._initialize_tokenizer()
         self.fig_size = kwargs.get('fig_size', (8, 4))
         self.y_subtitle = kwargs.get('y_subtitle', 0.94)
         self.hf_auth_token = "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"
@@ -131,7 +133,9 @@ class ScoreAndPlotConfig:
     def _initialize_evaluation_models(self):
         """Initialize the model names for sentiment analysis and language detection."""
         self.sentiment_model_name: str = "nlptown/bert-base-multilingual-uncased-sentiment"
+        self.max_tokens_for_sentiment_classification: int = 512
         self.language_detection_model_name: str = "papluca/xlm-roberta-base-language-detection"
+        self.bertscore_model_name: str = "microsoft/deberta-large-mnli"
 
     def _initialize_device(self):
         """
@@ -140,7 +144,16 @@ class ScoreAndPlotConfig:
         self.device = torch.device("mps" if torch.backends.mps.is_available() else
                               "cuda" if torch.cuda.is_available() else 
                               "cpu")
-        return 
+        return
+    
+    def _initialize_lda_model(self):
+        """Initialize the LDA model."""
+        self.num_topic_words: int = 25
+
+    def _initialize_tokenizer(self):
+        """Initialize the tokenizer."""
+        self.tokenizer_name: str = "bert-base-multilingual-uncased"
+    
     #pylint: disable=line-too-long
     def validate(self):
         """Validate the configuration settings."""
@@ -156,7 +169,6 @@ class ScoreAndPlotConfig:
         assert isinstance(self.rouge_use_stemmer, bool), "rouge_use_stemmer must be a boolean."
         assert isinstance(self.sentiment_model_name, str), "sentiment_model_name must be a string."
         assert isinstance(self.language_detection_model_name, str), "language_detection_model_name must be a string."
-        # ... TODO: continue 
-
+        assert isinstance(self.num_topic_words, int), "num_topic_words must be an integer."
         logging.info("Configuration settings are valid.")
     #pylint: enable=line-too-long
