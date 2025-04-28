@@ -45,7 +45,7 @@ class ScoreAndPlotConfig:
         self._initialize_evaluation_models()
         self._initialize_device()
         self._initialize_lda_model()
-        self._initialize_tokenizer()
+        self._initialize_tokenizer_for_topic_scorer()
         self.fig_size = kwargs.get('fig_size', (8, 4))
         self.y_subtitle = kwargs.get('y_subtitle', 0.94)
         self.hf_auth_token = "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"
@@ -136,6 +136,7 @@ class ScoreAndPlotConfig:
         self.max_tokens_for_sentiment_classification: int = 512
         self.language_detection_model_name: str = "papluca/xlm-roberta-base-language-detection"
         self.bertscore_model_name: str = "microsoft/deberta-large-mnli"
+        self.perplexity_model_alias: str = "llama3_1b"
 
     def _initialize_device(self):
         """
@@ -150,9 +151,9 @@ class ScoreAndPlotConfig:
         """Initialize the LDA model."""
         self.num_topic_words: int = 25
 
-    def _initialize_tokenizer(self):
+    def _initialize_tokenizer_for_topic_scorer(self):
         """Initialize the tokenizer."""
-        self.tokenizer_name: str = "bert-base-multilingual-uncased"
+        self.tokenizer_name_for_topic_scorer: str = "bert-base-multilingual-uncased"
     
     #pylint: disable=line-too-long
     def validate(self):

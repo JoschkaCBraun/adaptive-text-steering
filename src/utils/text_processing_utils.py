@@ -43,19 +43,19 @@ class TextProcessor:
             # Try loading the model normally
             logger.debug(f"Attempting to load spaCy model '{model_name}'...")
             lemmatizer = spacy.load(model_name, disable=["parser", "ner"])
-            logger.info(f"Successfully loaded spaCy model '{model_name}'.")
+            logger.debug(f"Successfully loaded spaCy model '{model_name}'.")
             return lemmatizer
         except OSError:
             # Catch the error if the model is not found
             logger.warning(f"SpaCy model '{model_name}' not found.")
             if spacy_download:
-                logger.info(f"Attempting to download '{model_name}' automatically...")
+                logger.debug(f"Attempting to download '{model_name}' automatically...")
                 try:
                     spacy_download(model_name)
-                    logger.info(f"Successfully downloaded '{model_name}'. Retrying load...")
+                    logger.debug(f"Successfully downloaded '{model_name}'. Retrying load...")
                     # Retry loading after successful download
                     lemmatizer = spacy.load(model_name, disable=["parser", "ner"])
-                    logger.info(f"Successfully loaded spaCy model '{model_name}' after download.")
+                    logger.debug(f"Successfully loaded spaCy model '{model_name}' after download.")
                     return lemmatizer
                 except Exception as e:
                     logger.error(f"Failed to automatically download or load '{model_name}' after download attempt: {e}", exc_info=True)

@@ -2,18 +2,7 @@
 create_training_samples.py
 
 This script creates training samples for all relevant topic ids in the dataset.
-'''
-# Standard library imports
-import logging
-from typing import Dict, List, Tuple
 
-# Third-party imports
-import pandas as pd
-import random
-from src.utils import load_topic_representations, validate_topic_representation_type, validate_pairing_type, save_topic_vector_training_samples
-from config.experiment_config import ExperimentConfig
-
-'''
 I want to load the topic representations from the json files and then create training samples
 from them.
 
@@ -29,6 +18,16 @@ topic representation vs random string
 
 Every function generating training samples should take in a tid and a number of training samples to generate.
 '''
+# Standard library imports
+import logging
+from typing import Dict, List, Tuple
+
+# Third-party imports
+import pandas as pd
+import random
+from src.utils import load_topic_representations, validate_topic_representation_type, \
+    validate_pairing_type, save_topic_vector_training_samples
+from config.experiment_config import ExperimentConfig
 
 # Set up logging 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

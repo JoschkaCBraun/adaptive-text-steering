@@ -13,7 +13,6 @@ The steering vector depends on the following parameters:
 '''
 
 # Standard library imports
-import os
 import logging
 import pickle
 from typing import Dict
@@ -21,7 +20,8 @@ from typing import Dict
 # Third-party imports
 from steering_vectors import train_steering_vector
 
-from src.utils import load_model_and_tokenizer, get_topic_vector_file_path, load_topic_vector_training_samples, save_topic_vector, load_topic_vector
+from src.utils import load_model_and_tokenizer, get_topic_vector_file_path,
+load_topic_vector_training_samples, save_topic_vector, load_topic_vector
 from config.experiment_config import ExperimentConfig
 
 # Set up logging
@@ -29,7 +29,9 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # pylint: disable=logging-fstring-interpolation
-def get_topic_vector(model_alias: str, layer: int, topic_representation_type: str, pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> Dict[str, float]:
+def get_topic_vector(model_alias: str, layer: int, topic_representation_type: str, 
+                     pairing_type: str, tid: int, num_samples: int, language: str = 'en'
+                     ) -> Dict[str, float]:
     """
     Get or train the steering vector for a given topic id.
     

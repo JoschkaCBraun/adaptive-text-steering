@@ -83,6 +83,7 @@ class NEWTSDataset(Dataset):
             'summary1': article['summary1'],
             'summary2': article['summary2'],
             'article_idx': article['article_idx'],
+            'docId': article['docId'],
             'tid1': article['tid1'],
             'tid2': article['tid2'],
         }

@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # --- Text Similarity Evaluator Class ---
 
-class TextSimilarityEvaluator:
+class ExtrinsicQualityScorer:
     """
     Loads similarity scoring models once and evaluates individual text pairs.
 
@@ -146,7 +146,7 @@ def main():
     try:
         # Pass the config object during initialization
         # device_override can be set here e.g. evaluator = TextSimilarityEvaluator(config=config, device_override='cpu')
-        evaluator = TextSimilarityEvaluator(config=config)
+        evaluator = ExtrinsicQualityScorer(config=config)
         logger.info("--- Evaluator Initialized Successfully ---")
     except (AttributeError, Exception) as e:
         logger.error(f"Fatal error during evaluator initialization: {e}", exc_info=True)
@@ -198,13 +198,13 @@ def main():
         logger.info(f"  Reference: '{case['reference']}'")
 
         # Get scores using the *same* evaluator instance
-        similarity_scores = evaluator.get_similarity_scores(
+        quality_scores = evaluator.get_quality_scores(
             generated_text=case['generated'],
             reference_text=case['reference']
         )
 
         print(f"  Scores:")
-        for name, score in similarity_scores.items():
+        for name, score in quality_scores.items():
             print(f"    {name}: {score:.4f}")
 
     logger.info("\n--- Test Cases Finished ---")

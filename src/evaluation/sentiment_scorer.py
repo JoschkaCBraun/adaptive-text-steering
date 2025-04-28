@@ -139,12 +139,12 @@ class SentimentScorer:
             # VADER's 'compound' score is already normalized between -1 and 1
             norm_vader_score = vader_scores['compound']
 
-            return (norm_transformer_score, norm_vader_score)
+            return {'transformer': norm_transformer_score, 'vader': norm_vader_score}
 
         except Exception as e:
             # Log error and return default (0.0, 0.0) as requested for analysis failures
             logger.error(f"Failed to analyze sentiment for text: '{truncated_text[:50]}...'. Error: {e}", exc_info=True)
-            return (0.0, 0.0) # Return neutral scores on error
+            return {'transformer': 0.0, 'vader': 0.0} # Return neutral scores on error
 
 # --- Main Execution Example ---
 

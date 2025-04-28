@@ -93,24 +93,29 @@ def generate_newts_summaries(
         }
         
         results: Dict[str, Union[Dict[str, Any], List[Dict[str, Any]]]] = {'experiment_information': experiment_information}
-        generated_summaries: List[Dict[str, Any]] = []
+        generated_summaries: Dict[str, Dict[str, Any]] = {}
         
         with torch.no_grad():  # Operations inside don't track gradients
             # Process one article at a time instead of in batches
             for article_index in range(min(len(dataset), num_articles)):
                 article_data = dataset[article_index]
-                
                 article_idx = int(article_data['article_idx']) 
+                docId = article_data['docId']
                 article = article_data['article']
                 tid1 = article_data['tid1']
                 tid2 = article_data['tid2']
+                summary1 = article_data['summary1']
+                summary2 = article_data['summary2']
                 
                 prompt = get_newts_summary_sentiment_prompt(article=article)
                 summary_entry: Dict[str, Any] = {
+                    'docId': docId,
                     'article_idx': article_idx,
+                    'article': article,
                     'tid1': tid1,
                     'tid2': tid2,
-                    'article': article,
+                    'summary1': summary1,
+                    'summary2': summary2,
                     'prompt': prompt,
                     'summaries': {}
                 }
@@ -118,19 +123,14 @@ def generate_newts_summaries(
                 # Generate summaries with different steering strengths
                 for strength in config.STEERING_STRENGTHS:
                     try:
-                        print(f"Generating summary for article {article_idx} with strength {strength}")
-                        # Apply steering vector with the current strength
                         summary = generate_text_with_steering_vector(model=model, tokenizer=tokenizer, prompt=prompt, steering_vector=steering_vector, steering_strength=strength, device=device, max_new_tokens=max_new_tokens)
-                        print(summary)
                             
-                        # Store the summary with this steering strength
                         summary_entry['summaries'][str(strength)] = summary
-                        logger.info(f"Generated summary for article {article_idx} with strength {strength}")
                     except Exception as e:
                         logger.error(f"Error generating summary for article {article_idx} with strength {strength}: {str(e)}")
                         summary_entry['summaries'][str(strength)] = f"Error: {str(e)}"
                 
-                generated_summaries.append(summary_entry)
+                generated_summaries[str(article_idx)] = summary_entry
                 logger.info(f"Completed article {len(generated_summaries)}/{num_articles}")
         
         logger.info(f"Generated {len(generated_summaries)} summaries.")
@@ -181,15 +181,14 @@ def main() -> None:
     config = ExperimentConfig()
     model_alias = "llama3_1b"
     dataset_name = "NEWTS_train"
-    num_articles = 3
+    num_articles = 250
     representation_type = "sentiment_sentences"
     language = "en"
-    steering_layers = [11]
+    steering_layers = [8]
     num_samples = 500
     use_topic_prompt = False
 
     results = generate_newts_summaries(config=config, model_alias=model_alias, dataset_name=dataset_name, num_articles=num_articles, num_samples=num_samples, representation_type=representation_type, language=language, steering_layers=steering_layers, use_topic_prompt=use_topic_prompt)
-    print(results)
 
 if __name__ == "__main__":
     main()
