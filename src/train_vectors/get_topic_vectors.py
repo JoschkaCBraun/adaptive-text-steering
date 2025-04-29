@@ -1,7 +1,7 @@
 '''
-create_topic_vectors.py
+get_topic_vectors.py
 
-This script creates a topic vectors. 
+This script gets or trains a topic vector.
 
 The steering vector depends on the following parameters:
 - model_alias
@@ -14,14 +14,15 @@ The steering vector depends on the following parameters:
 
 # Standard library imports
 import logging
+import random
 import pickle
 from typing import Dict
 
 # Third-party imports
 from steering_vectors import train_steering_vector
 
-from src.utils import load_model_and_tokenizer, get_topic_vector_file_path,
-load_topic_vector_training_samples, save_topic_vector, load_topic_vector
+from src.utils import load_model_and_tokenizer, get_topic_vector_file_path, \
+    load_topic_vector_training_samples, save_topic_vector, load_topic_vector
 from config.experiment_config import ExperimentConfig
 
 # Set up logging
@@ -44,7 +45,8 @@ def get_topic_vector(model_alias: str, layer: int, topic_representation_type: st
     :param num_samples: The number of samples to use for training the steering vector.
     :return: The steering vector for the specified topic id.
     """
-    topic_vector_file_path = get_topic_vector_file_path(model_alias, layer, topic_representation_type, pairing_type, tid, num_samples, language)
+    topic_vector_file_path = get_topic_vector_file_path(
+        model_alias, layer, topic_representation_type, pairing_type, tid, num_samples, language)
 
     try:
         with open(topic_vector_file_path, 'rb') as f:
@@ -53,7 +55,8 @@ def get_topic_vector(model_alias: str, layer: int, topic_representation_type: st
     except FileNotFoundError:
         # If the file is not found, train all topic vectors for the specified encoding type
         logger.info(f"Topic vector for topic ID {tid} not found. Training all topic vectors.")
-        train_topic_vectors(model_alias, layer, topic_representation_type, pairing_type, tid, num_samples, language)
+        train_topic_vectors(model_alias, layer, topic_representation_type, pairing_type, tid,
+                            num_samples, language)
 
         # Retry loading the newly trained vector
         try:
@@ -64,7 +67,8 @@ def get_topic_vector(model_alias: str, layer: int, topic_representation_type: st
             logger.error(f"Error loading topic vectors for topic ID {tid}, even after training.")
             return {}
         
-def train_topic_vectors(model_alias: str, layer: int, topic_representation_type: str, pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> None:
+def train_topic_vectors(model_alias: str, layer: int, topic_representation_type: str,
+                        pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> None:
     ''' Train the steering vectors for each topic in the topic strings.
 
     :param topic_encoding_type: The type of topic encoding to use.
@@ -75,20 +79,38 @@ def train_topic_vectors(model_alias: str, layer: int, topic_representation_type:
     training_samples = load_topic_vector_training_samples(topic_representation_type, pairing_type, tid, language)
 
     # select the first num_samples samples
-    training_samples = training_samples[:num_samples]
+    if len(training_samples) < num_samples:
+        logger.warning(f"Not enough training samples for topic ID {tid}. Using all samples.")
+    else:
+        # select random num_samples samples
+        training_samples = random.sample(training_samples, num_samples)
 
-    # train the steering vector
     steering_vector = train_steering_vector(model, tokenizer, training_samples, layers=[layer])
 
-    # save the steering vector
     topic_vector_file_path = get_topic_vector_file_path(model_alias, layer, topic_representation_type, pairing_type, tid, num_samples, language)
     save_topic_vector(topic_vector_file_path, steering_vector)
 
 # pylint: enable=logging-fstring-interpolation
 
+def main() -> None:
+    '''
+    Train example topic vector to test the topic vector training pipeline.
+    '''
+    model_alias = "llama3_1b"
+    layer = 8
+    topic_representation_type = "topic_words"
+    pairing_type = "against_random_topic_representation"
+    tid = 12
+    num_samples = 50
+    language = "en"
+
+    topic_vector = get_topic_vector(model_alias, layer, topic_representation_type, pairing_type,
+                                    tid, num_samples, language)
+
+    loaded_topic_vector = load_topic_vector(
+        get_topic_vector_file_path(model_alias, layer, topic_representation_type, pairing_type,
+                                   tid, num_samples, language))
+
 
 if __name__ == "__main__":
-    # get the topic vector for the topic id 1
-    topic_vector = get_topic_vector(model_alias="llama3_1b", layer=12, topic_representation_type="topic_words", pairing_type="against_random_topic_representation", tid=12, num_samples=100, language="en")
-
-    loaded_topic_vector = load_topic_vector(get_topic_vector_file_path(model_alias="llama3_1b", layer=12, topic_representation_type="topic_words", pairing_type="against_random_topic_representation", tid=12, num_samples=100, language="en"))
+    main()

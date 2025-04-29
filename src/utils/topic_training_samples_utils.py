@@ -138,8 +138,6 @@ def get_topic_vectors_folder_name() -> str:
 
 def get_topic_vector_file_name(model_alias: str, layer: int, topic_representation_type: str, pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> str:
     '''Get the file name for storing topic vectors.'''
-    folder_name = get_topic_vectors_folder_name()
-
     file_name = f"{model_alias}_layer_{layer}_{topic_representation_type}_{pairing_type}_{language}_tid_{tid}_num_samples_{num_samples}.pkl"
     return file_name
 

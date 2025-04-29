@@ -4,16 +4,18 @@ import logging
 import os
 from typing import Dict, Any, List, Optional, Tuple
 from collections import defaultdict
-import math # For checking nan/inf
+import math
 
 # Third-party imports
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 
-# Configure logging (ensure it's configured elsewhere or uncomment)
-# logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+figsize = (6, 3)
+base_filename = 'plot_topic_30'
 
 # --- Helper Function to Load Data ---
 def load_scored_data(file_path: str) -> Optional[Dict[str, Any]]:
@@ -40,8 +42,33 @@ def load_scored_data(file_path: str) -> Optional[Dict[str, Any]]:
         logger.error(f"An unexpected error occurred loading data: {e}", exc_info=True)
         return None
 
+# --- Outlier Removal Function ---
+def remove_outliers(data: List[float], percentile: float = 99.0) -> List[float]:
+    """
+    Removes outliers from a list of values based on a percentile threshold.
+    
+    Args:
+        data: List of numeric values
+        percentile: Percentile threshold (e.g., 99.0 for top 1%)
+        
+    Returns:
+        List with outliers removed
+    """
+    if not data or len(data) < 2:
+        return data
+        
+    threshold = np.percentile(data, percentile)
+    filtered_data = [x for x in data if x <= threshold]
+    
+    removed_count = len(data) - len(filtered_data)
+    if removed_count > 0:
+        logger.info(f"Removed {removed_count} outliers (top {100-percentile:.1f}%) from data")
+        
+    return filtered_data
+
 # --- Data Preparation Function ---
-def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict[str, List[str]]) -> Tuple[Dict[str, Dict[str, List[float]]], Dict[str, int]]:
+def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict[str, List[str]], 
+                     remove_perplexity_outliers: bool = True, outlier_percentile: float = 99.0) -> Tuple[Dict[str, Dict[str, List[float]]], Dict[str, int], List[str]]:
     """
     Extracts specified metrics from scored_summaries, groups by strength,
     and calculates counts.
@@ -51,11 +78,14 @@ def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict
         metrics_to_extract: Dict defining which metrics to pull. 
                            Keys are score categories (e.g., 'sentiment_scores'), 
                            Values are lists of metric names (e.g., ['transformer', 'vader']).
+        remove_perplexity_outliers: Whether to remove top percentile of perplexity scores
+        outlier_percentile: Percentile threshold for outlier removal (e.g., 99.0 for top 1%)
 
     Returns:
         A tuple containing:
         - data_by_strength: Dict[strength_str, Dict[metric_name, List[float]]]
         - counts_by_strength: Dict[strength_str, int] (number of valid entries per strength)
+        - sorted_strengths: List of sorted strength values
     """
     
     # Identify and sort steering strengths numerically
@@ -77,6 +107,30 @@ def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict
 
     all_metric_names = [metric for sublist in metrics_to_extract.values() for metric in sublist]
 
+    # First pass: collect all perplexity values for outlier detection if needed
+    all_perplexity_values = []
+    if remove_perplexity_outliers and 'intrinsic_scores' in metrics_to_extract and 'perplexity' in metrics_to_extract['intrinsic_scores']:
+        for article_idx, strength_dict in scored_summaries.items():
+            if not isinstance(strength_dict, dict):
+                continue
+                
+            for strength in sorted_strengths:
+                score_dict = strength_dict.get(strength)
+                
+                if score_dict is not None and isinstance(score_dict, dict):
+                    intrinsic_scores = score_dict.get('intrinsic_scores')
+                    if intrinsic_scores is not None and isinstance(intrinsic_scores, dict):
+                        perplexity = intrinsic_scores.get('perplexity')
+                        if perplexity is not None and isinstance(perplexity, (int, float)) and math.isfinite(perplexity):
+                            all_perplexity_values.append(float(perplexity))
+    
+    # Calculate perplexity threshold if needed
+    perplexity_threshold = None
+    if all_perplexity_values and remove_perplexity_outliers:
+        perplexity_threshold = np.percentile(all_perplexity_values, outlier_percentile)
+        logger.info(f"Perplexity outlier threshold (top {100-outlier_percentile:.1f}%): {perplexity_threshold:.2f}")
+
+    # Second pass: collect data with outlier filtering
     for article_idx, strength_dict in scored_summaries.items():
         if not isinstance(strength_dict, dict):
             # logger.warning(f"Skipping article {article_idx}: Invalid data format.")
@@ -96,6 +150,15 @@ def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict
                             value = category_scores.get(metric)
                             # Check if value is a valid number (not None, NaN, Inf)
                             if value is not None and isinstance(value, (int, float)) and math.isfinite(value):
+                                # Apply outlier filtering for perplexity if enabled
+                                if (remove_perplexity_outliers and 
+                                    score_category == 'intrinsic_scores' and 
+                                    metric == 'perplexity' and 
+                                    perplexity_threshold is not None and 
+                                    float(value) > perplexity_threshold):
+                                    logger.debug(f"Filtered out perplexity outlier: {value} > {perplexity_threshold}")
+                                    continue
+                                    
                                 data_by_strength[strength][metric].append(float(value))
                             else:
                                 logger.debug(f"Article {article_idx}, Strength {strength}, Metric {score_category}.{metric}: Invalid or missing value ({value}).")
@@ -113,9 +176,11 @@ def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict
 
 # --- Plotting Function ---
 def plot_scores_vs_strength(
-    scored_data: Dict[str, Any], 
+    scored_data: Dict[str, Any],
+    base_filename: str = "plot_30",
     output_dir: str = "data/plots/sentiment_vectors/",
-    base_filename: str = "plot_250"
+    remove_perplexity_outliers: bool = True,
+    outlier_percentile: float = 99.0
 ):
     """
     Generates and saves plots for sentiment and intrinsic scores vs. steering strength.
@@ -124,6 +189,8 @@ def plot_scores_vs_strength(
         scored_data: The dictionary containing experiment_info and scored_summaries.
         output_dir: Directory to save the plots.
         base_filename: Base name for the output plot files.
+        remove_perplexity_outliers: Whether to remove top percentile of perplexity scores
+        outlier_percentile: Percentile threshold for outlier removal (e.g., 99.0 for top 1%)
     """
     if not scored_data or 'scored_summaries' not in scored_data:
         logger.error("Invalid or missing scored_data provided for plotting.")
@@ -141,18 +208,22 @@ def plot_scores_vs_strength(
     # --- 1. Plot Sentiment Scores ---
     logger.info("Preparing data for Sentiment plot...")
     sentiment_metrics = {'sentiment_scores': ['transformer', 'vader']}
-    sentiment_data, counts, sorted_strengths = prepare_plot_data(scored_summaries, sentiment_metrics)
+    sentiment_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries, 
+        sentiment_metrics,
+        remove_perplexity_outliers=False  # No outlier removal for sentiment
+    )
     
     if not sentiment_data:
          logger.warning("No valid sentiment data found to plot.")
     else:
         logger.info("Generating Sentiment plot...")
-        fig_sent, ax1_sent = plt.subplots(figsize=(12, 7))
-        ax2_sent = ax1_sent.twinx() # Second y-axis
+        fig_sent, ax_sent = plt.subplots(figsize=figsize)
 
         colors = {'transformer': 'tab:blue', 'vader': 'tab:red'}
-        axes = {'transformer': ax1_sent, 'vader': ax2_sent}
         labels = {'transformer': 'Transformer Sentiment', 'vader': 'VADER Sentiment'}
+        scatter_markers = {'transformer': 'o', 'vader': '^'}  # Define scatter markers for sentiment
+        mean_markers = {'transformer': 'o', 'vader': '^'}  # Define mean markers for sentiment
         
         # Prepare data for plotting (x positions and y values)
         x_positions = np.arange(len(sorted_strengths))
@@ -160,7 +231,6 @@ def plot_scores_vs_strength(
         plot_labels = []
 
         for metric in ['transformer', 'vader']:
-            ax = axes[metric]
             color = colors[metric]
             label = labels[metric]
             
@@ -179,33 +249,30 @@ def plot_scores_vs_strength(
                     y_means.append(np.nan) # Use NaN if no data for mean line
 
             # Plot scatter points
-            scatter_handle = ax.scatter(all_x_scatter, all_y_scatter, color=color, alpha=0.4, label=f"{label} Points")
+            scatter_handle = ax_sent.scatter(all_x_scatter, all_y_scatter, color=color, alpha=0.4, label=f"{label} Points", marker=scatter_markers[metric])
             # Plot mean line (connect non-NaN points)
-            mean_line_handle, = ax.plot(x_positions, y_means, color='black', marker='o', linestyle='-', label=f"Mean {label}")
+            mean_line_handle, = ax_sent.plot(x_positions, y_means, color='black', marker=mean_markers[metric], linestyle='-', label=f"Mean {label}")
             
             plot_handles.extend([scatter_handle, mean_line_handle])
             plot_labels.extend([f"{label} Points", f"Mean {label}"])
-            
-            ax.set_ylabel(label, color=color)
-            ax.tick_params(axis='y', labelcolor=color)
 
-        # Configure combined plot elements
-        ax1_sent.set_xlabel("Steering Strength")
-        ax1_sent.set_xticks(x_positions)
-        ax1_sent.set_xticklabels(sorted_strengths)
+        # Configure plot elements
+        ax_sent.set_xlabel("Steering Strength")
+        ax_sent.set_xticks(x_positions)
+        ax_sent.set_xticklabels(sorted_strengths)
+        ax_sent.set_ylabel("Sentiment (-1 negative, 0 neutral, 1 positive)")
+        ax_sent.set_ylim(-1.05, 1.05)
         
-        # Create title with counts
-        count_str = ", ".join([f"{s}: {counts.get(s, 0)}" for s in sorted_strengths])
-        plot_title = f"Sentiment Scores vs. Steering Strength\n(Articles per strength: {count_str})"
-        ax1_sent.set_title(plot_title, pad=20) # Add padding to avoid overlap
+        plot_title = f"Sentiment Scores vs. Steering Strength"
+        ax_sent.set_title(plot_title)
 
-        # Combine legends
-        ax1_sent.legend(plot_handles, plot_labels, loc='best')
+        # Add legend at bottom right with 2 columns
+        ax_sent.legend(plot_handles, plot_labels, loc='lower right', ncol=2, bbox_to_anchor=(1.0, 0.0), frameon=True, facecolor='white', edgecolor='gray')
         
         fig_sent.tight_layout()
         
         # Save plot
-        sent_filename = f"{base_filename}_sentiment.png"
+        sent_filename = f"{base_filename}_sentiment.pdf"
         sent_filepath = os.path.join(output_dir, sent_filename)
         try:
             plt.savefig(sent_filepath, dpi=300)
@@ -217,13 +284,18 @@ def plot_scores_vs_strength(
     # --- 2. Plot Intrinsic Scores ---
     logger.info("Preparing data for Intrinsic Quality plot...")
     intrinsic_metrics = {'intrinsic_scores': ['perplexity', 'distinct_word_2', 'distinct_char_2']}
-    intrinsic_data, counts, sorted_strengths = prepare_plot_data(scored_summaries, intrinsic_metrics)
+    intrinsic_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries, 
+        intrinsic_metrics,
+        remove_perplexity_outliers=remove_perplexity_outliers,
+        outlier_percentile=outlier_percentile
+    )
 
     if not intrinsic_data:
          logger.warning("No valid intrinsic data found to plot.")
     else:
         logger.info("Generating Intrinsic Quality plot...")
-        fig_intr, ax1_intr = plt.subplots(figsize=(12, 7))
+        fig_intr, ax1_intr = plt.subplots(figsize=figsize)
         ax2_intr = ax1_intr.twinx() # Second y-axis for distinctness
 
         # Define metrics, axes, colors, labels, markers for means
@@ -234,6 +306,7 @@ def plot_scores_vs_strength(
         axes = {'perplexity': ax1_intr, 'distinct_word_2': ax2_intr, 'distinct_char_2': ax2_intr}
         labels = {'perplexity': 'Perplexity', 'distinct_word_2': 'Distinct-2 Words', 'distinct_char_2': 'Distinct-2 Chars'}
         mean_markers = {'perplexity': 'o', 'distinct_word_2': 's', 'distinct_char_2': '^'} # Different markers for means
+        scatter_markers = {'transformer': 'o', 'vader': '^'}  # Define scatter markers for sentiment
 
         x_positions = np.arange(len(sorted_strengths))
         plot_handles = []
@@ -261,9 +334,9 @@ def plot_scores_vs_strength(
                     y_means.append(np.nan)
 
             # Plot scatter points
-            scatter_handle = ax.scatter(all_x_scatter, all_y_scatter, color=color, alpha=0.4, label=f"{label} Points")
+            scatter_handle = ax.scatter(all_x_scatter, all_y_scatter, color=color, alpha=0.4, label=f"{label} Points", zorder=1)
             # Plot mean line (connect non-NaN points) - using black as requested
-            mean_line_handle, = ax.plot(x_positions, y_means, color='black', marker=mean_marker, linestyle='-', label=f"Mean {label}")
+            mean_line_handle, = ax.plot(x_positions, y_means, color='black', marker=mean_marker, linestyle='-', label=f"Mean {label}", zorder=2)
 
             plot_handles.extend([scatter_handle, mean_line_handle])
             plot_labels.extend([f"{label} Points", f"Mean {label}"])
@@ -274,32 +347,30 @@ def plot_scores_vs_strength(
                  ax.tick_params(axis='y', labelcolor=colors['perplexity'])
             elif metric == metrics_ax2[0]: # Only set label for the first metric on axis 2
                  ax.set_ylabel(f"{labels['distinct_word_2']} / {labels['distinct_char_2']}", color='black') # Shared axis label
-                 # Use default color for shared axis ticks, or choose one
-                 # ax.tick_params(axis='y', labelcolor='black') 
 
         # Configure combined plot elements
         ax1_intr.set_xlabel("Steering Strength")
         ax1_intr.set_xticks(x_positions)
         ax1_intr.set_xticklabels(sorted_strengths)
         
-        # Create title with counts
-        count_str = ", ".join([f"{s}: {counts.get(s, 0)}" for s in sorted_strengths])
-        plot_title = f"Intrinsic Quality Scores vs. Steering Strength\n(Articles per strength: {count_str})"
-        ax1_intr.set_title(plot_title, pad=20) # Add padding
+        plot_title = f"Intrinsic Quality Scores vs. Steering Strength"
+        ax1_intr.set_title(plot_title)
 
-        # Combine legends
-        # Matplotlib might automatically handle colors for labels on ax2, adjust if needed
-        ax1_intr.legend(plot_handles, plot_labels, loc='best') 
-        
         # Set y-limits if needed, e.g., distinctness scores are usually 0-1
-        ax2_intr.set_ylim(bottom=max(0, ax2_intr.get_ylim()[0]), top=min(1, ax2_intr.get_ylim()[1]*1.1)) # Ensure distinct axis is roughly 0-1
-        # Maybe adjust perplexity scale if it's very large/small
-        # ax1_intr.set_yscale('log') # If perplexity varies greatly
+        ax2_intr.set_ylim(bottom=0, top=1.05) # Set distinct axis to 0-1.05
+            # Add legend at bottom right with 3 columns, similar to sentiment plot
+        fig_intr.legend(plot_handles, 
+                        plot_labels, 
+                        loc='upper center',
+                        bbox_to_anchor=(0.5, 0.90),
+                        ncol=3, 
+                        frameon=True)
+
 
         fig_intr.tight_layout()
 
         # Save plot
-        intr_filename = f"{base_filename}_intrinsic.png"
+        intr_filename = f"{base_filename}_intrinsic.pdf"
         intr_filepath = os.path.join(output_dir, intr_filename)
         try:
             plt.savefig(intr_filepath, dpi=300)
@@ -315,10 +386,10 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
     # --- Replace with the actual path to your *scored* JSON file ---
-    scored_json_path = 'data/scores/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_250_articles_sentiment_sentences_20250426_003933.json'
+    scored_json_path = 'data/scores/topic_vectors/topic_summaries_llama3_1b_NEWTS_train_30_articles_topic_words_20250428_170346.json'
 
     # Load the scored data
     scored_data = load_scored_data(scored_json_path)
 
-    # Plot the scores vs. strength
-    plot_scores_vs_strength(scored_data)
+    # Plot the scores vs. strength with outlier removal
+    plot_scores_vs_strength(scored_data, remove_perplexity_outliers=True, outlier_percentile=99.0)

@@ -1,487 +1,672 @@
-'''
-plot_results.py
-
-This script plots topical and quality scores of experiment results. 
-Plots are stored as .pdf files in the respective data/plots/{experiment_name} folder.
-Results can also be plotted using the plot_results.ipynb notebook.
-'''
-
 # Standard library imports
-import os
-import sys
 import json
 import logging
-from typing import Optional
-import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
+import os
+from typing import Dict, Any, List, Optional, Tuple, Union
+from collections import defaultdict
+import math
 
 # Third-party imports
 import numpy as np
-import torch
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 
-# Local imports
-script_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(script_dir)
-sys.path.append(parent_dir)
-
-#pylint: disable=wrong-import-position
-from config.score_and_plot_config import ScoreAndPlotConfig
-from utils.load_topic_lda import get_file_name, get_data_dir
-#pylint: enable=wrong-import-position
-
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# pylint: disable=logging-fstring-interpolation
-class ResultsPlotter:
-    """
-    A class to plot the scores of the experiment results.
-    """
-    def __init__(self, eval_config: ScoreAndPlotConfig):
-        """
-        Initializes the ResultsPlotter class.
-        """
-        self.eval_config = eval_config
-        self._initialize_paths()
-        self._initialize_experiment_scores()
-        self._initialize_experiment_settings()
-        self._initialize_experiment_specific_values()
-        self.eval_config = eval_config
-        self._initialize_font_sizes_and_styles()
-        self._initialize_fig_settings()
-        self._initialize_dictionaries()
-        self._initialize_file_name_and_directory()
-        self._validate()
+figsize = (6, 3) # Slightly wider figsize for potentially complex legends
 
-    def _initialize_paths(self):
-        """Initialize the relevant paths. """
-        try:
-            self.data_folder_path = get_data_dir(os.getcwd())
-            self.scores_folder_path = os.path.join(self.data_folder_path, 'scores')
-            self.plots_folder_path = os.path.join(self.data_folder_path, 'plots')
+# --- Utility Functions ---
 
-        except FileNotFoundError as e:
-            logger.error(f"Error: {e}. Please make sure that the data directory exists.")
-            sys.exit(1)
-
-    def _initialize_experiment_scores(self):
-        experiment_scores_file_path = os.path.join(self.scores_folder_path,
-                                                   self.eval_config.scores_experiment_name,
-                                                   self.eval_config.scores_to_be_plotted_file_name)
-        try:
-            with open(experiment_scores_file_path, 'r', encoding='utf-8') as file:
-                self.experiment_scores = json.load(file)
-        except FileNotFoundError as e:
-            logger.error(f"Error: {e}. Please make sure that the experiment scores file exists.")
-            sys.exit(1)
-
-    def _initialize_experiment_settings(self):
-        """Initialize the experiment settings."""
-        self.experiment_info = self.experiment_scores['experiment_info']
-        self.experiment_config = self.experiment_info['EXPERIMENT_CONFIG']
-        self.experiment_name = self.experiment_config['experiment_name']
-        self.experiment_name_pretty = self.experiment_name.replace('_', ' ')
-        self.model_alias = self.experiment_config['model_alias']
-        self.num_articles = self.experiment_info['DATASET_CONFIG']['num_articles']
-        self.num_beams = self.experiment_info['GENERATION_CONFIG']['num_beams']
-        self.max_new_tokens = self.experiment_info['GENERATION_CONFIG']['max_new_tokens']
-        self.min_new_tokens = self.experiment_info['GENERATION_CONFIG']['min_new_tokens']
-        self.beam_info = "beam search" if self.num_beams > 1 else "greedy search"
-
-    def _initialize_experiment_specific_values(self):
-        """Initialize the experiment specific values."""
-        if self.experiment_name == 'prompt_engineering':
-            self.prompt_engineering_focus_types = self.experiment_info['PROMPT_ENGINEERING_DICT']['focus_types']
-            self.focus_labels = [focus_type.replace('_', ' ') for focus_type in self.prompt_engineering_focus_types]
-        elif self.experiment_name == 'constant_shift':
-            self.factors = self.experiment_info['CONSTANT_SHIFT_DICT']['factors']
-            self.factors_name = 'shift constants'
-        elif self.experiment_name == 'factor_scaling':
-            self.factors = self.experiment_info['FACTOR_SCALING_DICT']['factors']
-            self.factors_name = 'scaling factors'
-        elif self.experiment_name == 'threshold_selection':
-            self.factors = self.experiment_info['THRESHOLD_SELECTION_DICT']['factors']
-            self.topical_encouragement = self.experiment_info['THRESHOLD_SELECTION_DICT']['topical_encouragement']
-            self.factors_name = 'selection thresholds'
-        elif self.experiment_name == 'topic_vectors':
-            self.topic_vectors_config = self.experiment_info['TOPIC_VECTORS_CONFIG']
-            self.topic_encoding_types = list(self.topic_vectors_config.keys())
-            self.factors_name = 'topic encoding types'
-        else:
-            raise ValueError(f"Invalid experiment name: {self.experiment_name}. "
-                             "Please select a valid experiment name.")
-    
-    def _initialize_font_sizes_and_styles(self):
-        """Initialize the font sizes for the plots. """
-        self.fs_title = self.eval_config.fs_title
-        self.style_title = self.eval_config.style_title
-        self.fs_suptitle = self.eval_config.fs_suptitle
-        self.fs_label = self.eval_config.fs_label
-        self.fontweight_label = self.eval_config.fontweight_label
-        self.fs_legend = self.eval_config.fs_legend
-        self.fs_ticks = self.eval_config.fs_ticks
-        self.y_subtitle = self.eval_config.y_subtitle
-    
-    def _initialize_fig_settings(self):
-        """ Initialize the save figure settings. """
-        self.dpi = self.eval_config.dpi
-        self.bbox_inches = self.eval_config.bbox_inches
-        self.plot_data_format = self.eval_config.plot_data_format
-        self.fig_size = self.eval_config.fig_size
-
-    def _initialize_dictionaries(self):
-        """ Initialize the method dictionary for the plots. """
-        self.method_dict = self.eval_config.method_dict
-        self.model_name_dict = self.eval_config.model_name_dict
-    
-    def _initialize_file_name_and_directory(self): # check this function again!
-        """ Initialize the file name. """
-        file_info = {
-            'output_type': 'plots',
-            'experiment_name': self.experiment_name,
-            'model_alias': self.model_alias,
-            'num_articles': self.num_articles,
-            'min_new_tokens': self.min_new_tokens,
-            'max_new_tokens': self.max_new_tokens,
-            'num_beams': self.num_beams,
-        }
-        self.file_name = get_file_name(file_info=file_info)
-
-        self.experiment_plots_path = os.path.join(self.plots_folder_path, self.experiment_name)
-    
-    def _validate(self):
-        """ Validate the experiment name. """
-        if self.experiment_name not in self.VALID_EXPERIMENT_NAMES:
-            logger.error(f"The run_experiments.py script is not configured to execute the experiment "
-                         f'"{self.experiment_name}". It is only meant for the following experiments: '
-                         f'{", ".join(self.VALID_EXPERIMENT_NAMES)}.')
-            sys.exit(1)
-        # self.eval_config.plot_experiment_name must be equal to self.experiment_name
-        if self.eval_config.plot_experiment_name != self.experiment_name:
-            logger.error(f"Invalid experiment name: {self.eval_config.plot_experiment_name}. "
-                         "Please select a valid experiment name.")
-            sys.exit(1)
-
-    
-    def plot_results(self, exhaustive: Optional[bool] = True, score_type: Optional[str] = None):
-        """
-        Plot the results of the experiment.
-        """
-        if exhaustive and score_type is None:
-            if self.experiment_name == 'prompt_engineering':
-                self.plot_prompt_engineering_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='topic')
-                self.plot_prompt_engineering_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='quality')
-
-            elif self.experiment_name in ['constant_shift', 'factor_scaling', 'threshold_selection']:
-                self.plot_logits_reweighting_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='topic')
-                self.plot_logits_reweighting_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='quality')
-            
-            elif self.experiment_name == 'topic_vectors':
-                self.plot_topic_vectors_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='topic')
-                self.plot_topic_vectors_results_exhaustive(
-                    experiment_results=self.experiment_scores['experiment_results'],
-                    score_type='quality')
+def get_nested_value(data_dict: Dict, key_path: str, default: Any = None) -> Any:
+    """Safely retrieves a value from a nested dictionary using a dot-separated path."""
+    keys = key_path.split('.')
+    value = data_dict
+    try:
+        for key in keys:
+            if isinstance(value, dict):
+                value = value.get(key)
             else:
-                raise ValueError(f"Invalid experiment name: {self.experiment_name}. "
-                                "Please select a valid experiment name.")
-        else:
-            logger.error("Currently not implemented yet. Therefore Invalid choice. "
-                         "Please select 'exhaustive' as True and don't provide a 'score_type'.")
+                # Handle cases where an intermediate key might point to a list or non-dict
+                logger.debug(f"Cannot traverse further at key '{key}' in path '{key_path}'. Value is not a dict: {value}")
+                return default
+            if value is None: # Stop if any key is missing
+                 logger.debug(f"Key '{key}' not found in path '{key_path}'.")
+                 return default
+        return value
+    except Exception as e:
+        logger.debug(f"Error accessing nested key '{key_path}': {e}")
+        return default
 
-    def plot_prompt_engineering_results(self, avg_scores: dict, score_type: str, method: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
+# --- Data Loading and Preparation ---
 
-        :param avg_scores: Dictionary of average scores with reweighting factors as keys.
-        :param score_type: Type of scores to plot, either 'topic' or 'quality'.
-        :param method: Method used to calculate the scores, e.g. 'MAUVE', 'BERTScore', 'ROUGE-1', 'ROUGE-2', 'ROUGE-L'.
-        """
-        score_type = score_type.lower()
-        focus_types = self.prompt_engineering_focus_types
+def load_scored_data(file_path: str) -> Optional[Dict[str, Any]]:
+    """Loads the scored summary data from a JSON file."""
+    logger.info(f"Attempting to load scored data from: {file_path}")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        logger.info("Scored data loaded successfully.")
+        # Basic validation
+        if 'scored_summaries' not in data or not isinstance(data['scored_summaries'], dict):
+            logger.error("Loaded data missing 'scored_summaries' dictionary.")
+            return None
+        # Allow missing experiment_information with a warning
+        if 'experiment_information' not in data:
+             logger.warning("Loaded data missing 'experiment_information'. Using default plot info.")
+             data['experiment_information'] = {} # Add empty dict to avoid errors later
 
-        if score_type == 'topic':
-            wrt1 = 'tid1'
-            wrt2 = 'tid2'
-        elif score_type == 'quality':
-            wrt1 = 'summary1'
-            wrt2 = 'summary2'
-        else:
-            raise ValueError("Invalid choice. Please select 'topic' or 'quality'.")
-        
-        # set viridis colors
-        colors = plt.cm.viridis(np.linspace(0, 1, 3))
-        plt.rcParams["figure.figsize"] = self.fig_size
-        avg_scores1 = [avg_scores[focus][wrt1] for focus in focus_types]
-        avg_scores2 = [avg_scores[focus][wrt2] for focus in focus_types]
+        return data
+    except FileNotFoundError:
+        logger.error(f"File not found: {file_path}")
+        return None
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding JSON from file: {file_path} - {e}")
+        return None
+    except Exception as e:
+        logger.error(f"An unexpected error occurred loading data: {e}", exc_info=True)
+        return None
 
-        x = np.arange(len(focus_types))
-        width = 0.35
-        
-        plt.bar(x - width/2, avg_scores1, width, label=f'w.r.t. {wrt1}', color=colors[0], edgecolor='grey')
-        plt.bar(x + width/2, avg_scores2, width, label=f'w.r.t. {wrt2}', color=colors[1], edgecolor='grey')
-        plt.suptitle(f'Summary {score_type} scores of prompt engineering experiment',
-                     fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        if score_type == 'topic':
-            plt.ylabel(f'Average {score_type} score ({self.method_dict[method].lower()})', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        elif score_type == 'quality':
-            plt.ylabel(f'Average {self.method_dict[method]} score', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.xlabel('Summary type', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.xticks(x, self.focus_labels, fontsize=self.fs_ticks)
-        plt.legend(prop={'size': self.fs_legend})
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_{method}_scores_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
+def prepare_plot_data(
+    scored_summaries: Dict[str, Any],
+    metrics_to_extract: List[str], # Now a list of full metric paths
+    perplexity_metric_path: str = 'intrinsic_scores.perplexity', # Full path for perplexity
+    remove_perplexity_outliers: bool = False,
+    outlier_percentile: float = 99.0
+) -> Tuple[Dict[str, Dict[str, List[float]]], Dict[str, int], List[str]]:
+    """
+    Extracts specified metrics (using full dot.notation paths) from scored_summaries,
+    groups by strength, calculates counts, and optionally removes perplexity outliers.
 
-    def plot_prompt_engineering_results_exhaustive(self, experiment_results: dict, score_type: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
-        :param experiment_results: Dictionary containing the scores for each method and focus type.
-        :param score_type: String indicating whether to plot 'topic' or 'quality'.
-        """
-        score_type = score_type.lower()
+    Args:
+        scored_summaries: The dictionary keyed by article_idx containing scores.
+        metrics_to_extract: List of full metric paths (e.g., 'sentiment_scores.vader',
+                           'topic_scores.tid1.dict').
+        perplexity_metric_path: The full path to the perplexity metric for outlier removal.
+        remove_perplexity_outliers: Whether to remove top percentile of perplexity scores.
+        outlier_percentile: Percentile threshold for outlier removal.
 
-        # Initialize data storage
-        scores_data = {}
-        focus_types = ['tid1_focus', 'no_focus', 'tid2_focus']
-        methods = []
+    Returns:
+        A tuple containing:
+        - data_by_strength: Dict[strength_str, Dict[full_metric_path, List[float]]]
+        - counts_by_strength: Dict[strength_str, int] (number of valid entries per strength)
+        - sorted_strengths: List of sorted strength values
+    """
+    # Identify and sort steering strengths numerically
+    strengths = set()
+    for article_scores in scored_summaries.values():
+        if isinstance(article_scores, dict):
+            strengths.update(article_scores.keys())
 
-        if score_type == 'topic':
-            wrt1, wrt2 = 'tid1', 'tid2'
-            methods = ['lemmatize', 'tokenize', 'dict']
-        elif score_type == 'quality':
-            wrt1, wrt2 = 'summary1', 'summary2'
-            methods = ['mauve', 'bert', 'rougeL']
-        else:
-            raise ValueError("Invalid choice for 'score_type', please select 'topic' or 'quality'.")
-        
-        for method in methods:
-            scores_data[method] = calculate_scores(experiment_results=experiment_results, score_type=score_type, method=method)
+    try:
+        sorted_strengths = sorted([s for s in strengths if s is not None], key=float)
+    except ValueError:
+        logger.warning("Could not sort steering strengths numerically, using string sort.")
+        sorted_strengths = sorted([s for s in strengths if s is not None])
 
-        plt.rcParams["figure.figsize"] = self.fig_size
-        colors = plt.cm.viridis(np.linspace(0, 1, len(methods)))
-        index = np.arange(len(focus_types))
-        bar_width = 0.25
-        bottom_heights = np.zeros(len(focus_types)*2)
-        for m, method in enumerate(methods):
-            for i, focus in enumerate(focus_types):
-                score_1 = scores_data[method][focus][wrt1]
-                score_2 = scores_data[method][focus][wrt2]
-                plt.bar(x=i - bar_width/1.5, height=score_1, width=bar_width,
-                        bottom=bottom_heights[2*i+0], label=f'{method}' if i == 0 else "",
-                        color=colors[m], edgecolor='black', linewidth=2)
-                plt.bar(x=i + bar_width/1.5, height=score_2, width=bar_width,
-                        bottom=bottom_heights[2*i+1], color=colors[m],
-                        edgecolor='black', linestyle='--', linewidth=2)
-                bottom_heights[2*i+0] += score_1
-                bottom_heights[2*i+1] += score_2
+    data_by_strength = defaultdict(lambda: defaultdict(list))
+    counts_by_strength = defaultdict(int)
+    valid_score_dict_counts = defaultdict(int)
 
-        plt.suptitle(f'Summary {score_type} scores of prompt engineering experiment', fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        plt.ylabel(f'{score_type.capitalize()} Scores', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.ylim(top=max(bottom_heights) * 1.2)
-        plt.xlabel('Summary Type', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.xticks(index, self.focus_labels, fontsize=self.fs_ticks)
-        
-        legend_elements = []
-        legend_elements.append(Patch(facecolor='white', edgecolor='black', label=f"w.r.t {wrt1}"))
-        legend_elements.append(Patch(facecolor='white', edgecolor='black', linestyle='--', label=f"w.r.t. {wrt2}"))
-        legend_elements.append(Patch(facecolor='white', alpha=0, label=""))
-        for m, method in enumerate(methods):
-            legend_elements.append(Patch(facecolor=colors[m], label=f"{self.method_dict[method]}"))
+    # --- First pass: Collect all perplexity values for outlier detection if needed ---
+    all_perplexity_values = []
+    if remove_perplexity_outliers and perplexity_metric_path in metrics_to_extract:
+        logger.info(f"Collecting '{perplexity_metric_path}' values for outlier detection.")
+        for article_idx, strength_dict in scored_summaries.items():
+            if not isinstance(strength_dict, dict): continue
+            for strength in sorted_strengths:
+                score_dict = strength_dict.get(strength)
+                if score_dict is not None and isinstance(score_dict, dict):
+                    perplexity_val = get_nested_value(score_dict, perplexity_metric_path)
+                    if perplexity_val is not None and isinstance(perplexity_val, (int, float)) and math.isfinite(perplexity_val):
+                        all_perplexity_values.append(float(perplexity_val))
 
-        plt.legend(handles=legend_elements, prop={'size': self.fs_legend}, loc='upper right', ncol=2, frameon=False)
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_exhaustive_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
+    # Calculate perplexity threshold if needed
+    perplexity_threshold = None
+    if all_perplexity_values and remove_perplexity_outliers:
+        try:
+            perplexity_threshold = np.percentile(all_perplexity_values, outlier_percentile)
+            logger.info(f"'{perplexity_metric_path}' outlier threshold (top {100 - outlier_percentile:.1f}%): {perplexity_threshold:.2f}")
+        except IndexError:
+             logger.warning(f"Could not calculate percentile for {perplexity_metric_path}. Outlier removal skipped.")
+             remove_perplexity_outliers = False # Disable if calculation failed
 
-    def plot_logits_reweighting_results(self, avg_scores: dict, score_type: str, method: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
 
-        :param avg_scores: Dictionary of average scores with reweighting factors as keys.
-        :param choice: String indicating whether to plot 'topic' or 'rouge'
-        """
-        labels = [f'{factor}' for factor in avg_scores.keys()]
-        scores = [score for score in avg_scores.values()]
-        colors = plt.cm.viridis(np.linspace(0, 1, len(scores)))
+    # --- Second pass: Collect data with potential outlier filtering ---
+    for article_idx, strength_dict in scored_summaries.items():
+        if not isinstance(strength_dict, dict):
+            continue
 
-        # Plotting
-        plt.figure(figsize=self.fig_size)
-        plt.bar(x=labels, height=scores, color=colors, edgecolor='grey')
-        plt.xlabel(xlabel=self.factors_name.capitalize(), fontweight=self.fontweight_label, fontsize=self.fs_label)
-        plt.suptitle(f'Summary {score_type} scores of {self.experiment_name_pretty} experiment', fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        if score_type == 'topic':
-            plt.ylabel(f'Average {score_type} score', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        elif score_type == 'quality':
-            plt.ylabel(f'Average {self.method_dict[method]} score', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_{method}_scores_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
-        
-    def plot_logits_reweighting_results_exhaustive(self, experiment_results: dict, score_type: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
-        :param experiment_results: Dictionary containing the scores for each method and focus type.
-        :param score_type: String indicating whether to plot 'topic' or 'quality'.
-        """
-        score_type = score_type.lower()
-        scores_data = {}
-        if score_type == 'topic':
-            methods = ['lemmatize', 'tokenize', 'dict']
-        elif score_type == 'quality':
-            methods = ['mauve', 'bert', 'rougeL']
-        else:
-            raise ValueError("Invalid choice for 'score_type', please select 'topic' or 'quality'.")
-        
-        for method in methods:
-            scores_data[method] = calculate_scores(experiment_results=experiment_results, score_type=score_type, method=method)
-        factors = [factor for factor in scores_data[methods[0]].keys()]
-        labels = [f'{factor}' for factor in factors]
+        for strength in sorted_strengths:
+            score_dict = strength_dict.get(strength)
 
-        plt.rcParams["figure.figsize"] = self.fig_size
-        colors = plt.cm.viridis(np.linspace(0, 1, len(methods)))
-        index = np.arange(len(factors))
-        bar_width = 0.7
-        bottom_heights = np.zeros(len(factors))
-        for m, method in enumerate(methods):
-            for i, factor in enumerate(factors):
-                score = scores_data[method][factor]
-                plt.bar(x=i, height=score, width=bar_width, bottom=bottom_heights[i],
-                        label=f"{self.method_dict[method]} Score" if i == 0 else "", color=colors[m],
-                        edgecolor='black', linewidth=1)
-                bottom_heights[i] += score
-        
-        plt.ylabel(f'{score_type.capitalize()} Scores', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.suptitle(f'Summary {score_type} scores of {self.experiment_name_pretty} experiment', fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        
-        plt.ylim(top=max(bottom_heights) * 1.2)
-        plt.xlabel(xlabel=self.factors_name.capitalize(), fontweight=self.fontweight_label, fontsize=self.fs_label)
-        plt.xticks(ticks=index, labels=factors, fontsize=self.fs_ticks)
-        plt.legend(prop={'size': self.fs_legend}, loc='upper center', ncol=3, frameon=False)
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_exhaustive_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
+            if score_dict is not None and isinstance(score_dict, dict):
+                valid_score_dict_counts[strength] += 1 # Count this strength entry
 
-    def plot_topic_vectors_results(self, avg_scores: dict, score_type: str, method: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
+                for metric_path in metrics_to_extract:
+                    value = get_nested_value(score_dict, metric_path)
 
-        :param avg_scores: Dictionary of average scores with reweighting factors as keys.
-        :param choice: String indicating whether to plot 'topic' or 'rouge'
-        """
-        labels = [topic_encoding_type for topic_encoding_type in avg_scores.keys()]
-        scores = [score for score in avg_scores.values()]
-        colors = plt.cm.viridis(np.linspace(0, 1, len(scores)))
+                    # Check if value is a valid number (not None, NaN, Inf)
+                    if value is not None and isinstance(value, (int, float)) and math.isfinite(value):
+                        # Apply outlier filtering for perplexity if enabled
+                        if (remove_perplexity_outliers and
+                            metric_path == perplexity_metric_path and
+                            perplexity_threshold is not None and
+                            float(value) > perplexity_threshold):
+                            logger.debug(f"Filtered out perplexity outlier: {value} > {perplexity_threshold}")
+                            continue # Skip adding this outlier
 
-        # Plotting
-        plt.figure(figsize=self.fig_size)
-        plt.bar(x=labels, height=scores, color=colors, edgecolor='grey')
-        plt.xlabel(xlabel=self.factors_name.capitalize(), fontweight=self.fontweight_label, fontsize=self.fs_label)
-        plt.xticks(fontsize=self.fs_ticks, rotation=5)
-        plt.suptitle(f'Summary {score_type} scores of {self.experiment_name_pretty} experiment', fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        if score_type == 'topic':
-            plt.ylabel(f'Average {score_type} score', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        elif score_type == 'quality':
-            plt.ylabel(f'Average {self.method_dict[method]} score', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_{method}_scores_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
+                        data_by_strength[strength][metric_path].append(float(value))
+                    else:
+                        logger.debug(f"Article {article_idx}, Strength {strength}, Metric {metric_path}: Invalid or missing value ({value}).")
+            else:
+                 logger.debug(f"Article {article_idx}, Strength {strength}: Missing or invalid score dictionary.")
 
-    def plot_topic_vectors_results_exhaustive(self, experiment_results: dict, score_type: str):
-        """
-        Plot the average scores for different reweighting factors, selectable between topic scores and ROUGE scores.
-        :param experiment_results: Dictionary containing the scores for each method and focus type.
-        :param score_type: String indicating whether to plot 'topic' or 'quality'.
-        """
-        score_type = score_type.lower()
-        scores_data = {}
-        if score_type == 'topic':
-            methods = ['lemmatize', 'tokenize', 'dict']
-        elif score_type == 'quality':
-            methods = ['mauve', 'bert', 'rougeL']
-        else:
-            raise ValueError("Invalid choice for 'score_type', please select 'topic' or 'quality'.")
-        
-        for method in methods:
-            scores_data[method] = calculate_scores(experiment_results=experiment_results, score_type=score_type, method=method)
-        factors = [factor for factor in scores_data[methods[0]].keys()]
-        labels = [topic_encoding_type for topic_encoding_type in avg_scores.keys()]
+    # Use the count of valid score dictionaries
+    counts_by_strength = dict(valid_score_dict_counts)
 
-        plt.rcParams["figure.figsize"] = self.fig_size
-        colors = plt.cm.viridis(np.linspace(0, 1, len(methods)))
-        index = np.arange(len(factors))
-        bar_width = 0.7
-        bottom_heights = np.zeros(len(factors))
-        for m, method in enumerate(methods):
-            for i, factor in enumerate(factors):
-                score = scores_data[method][factor]
-                plt.bar(x=i, height=score, width=bar_width, bottom=bottom_heights[i],
-                        label=f"{self.method_dict[method]} Score" if i == 0 else "", color=colors[m],
-                        edgecolor='black', linewidth=1)
-                bottom_heights[i] += score
-        
-        plt.ylabel(f'{score_type.capitalize()} Scores', fontsize=self.fs_label, fontweight=self.fontweight_label)
-        plt.suptitle(f'Summary {score_type} scores of {self.experiment_name_pretty} experiment', fontsize=self.fs_suptitle, fontweight='bold', y=self.y_subtitle)
-        plt.title(f'Using {self.model_name_dict[self.model_alias]} model with {self.beam_info} on {self.num_articles} articles',
-                  fontsize=self.fs_title, style=self.style_title)
-        
-        plt.ylim(top=max(bottom_heights) * 1.2)
-        plt.xlabel(xlabel=self.factors_name.capitalize(), fontweight=self.fontweight_label, fontsize=self.fs_label)
-        plt.xticks(ticks=index, labels=factors, fontsize=self.fs_ticks, rotation=5)
-        plt.legend(prop={'size': self.fs_legend}, loc='upper center', ncol=3, frameon=False)
-        plt.tight_layout()
-        plt.savefig(fname=f'{self.experiment_plots_path}/{score_type.lower()}_exhaustive_{self.file_name}.pdf',
-                    dpi=self.dpi, format=self.plot_data_format)
-        plt.show()
+    # Log counts for verification
+    for strength in sorted_strengths:
+        logger.debug(f"Strength {strength}: Found {counts_by_strength.get(strength, 0)} valid score entries.")
+        # for metric_path in metrics_to_extract:
+        #      logger.debug(f"  Metric {metric_path}: Collected {len(data_by_strength.get(strength, {}).get(metric_path, []))} values.")
 
-def main():
-    '''
-    Generate plots for the results of the experiments.
-    '''
-    eval_config = ScoreAndPlotConfig()
-    results_plotter = ResultsPlotter(eval_config=eval_config)
 
-    if results_plotter.experiment_name not in results_plotter.VALID_EXPERIMENT_NAMES:
-        logger.error('The run_experiments.py script is not configured to execute the experiment '
-                     f'"{eval_config.EXPERIMENT_NAME}". It is only meant for the following experiments: '
-                     f'{", ".join(eval_config.VALID_EXPERIMENT_NAMES)}.')
-        sys.exit(1)
+    return dict(data_by_strength), counts_by_strength, sorted_strengths
 
-    # Set random seed for reproducibility
-    torch.manual_seed(0)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed_all(0)
 
-    # Generate abstractive summaries, settings are defined in the config.py file
+# --- Core Plotting Function ---
 
-    results_plotter.plot_results()
+def _create_scatter_mean_plot(
+    plot_data: Dict[str, Dict[str, List[float]]],
+    counts: Dict[str, int],
+    sorted_strengths: List[str],
+    plot_config: Dict[str, Any],
+    title: str,
+    xlabel: str,
+    output_filepath: str,
+    figsize: Tuple[float, float] = (7, 4) # Default figsize
+):
+    """
+    Core function to generate a scatter plot with mean lines, supporting dual axes.
 
-# pylint: enable=logging-fstring-interpolation
+    Args:
+        plot_data: Data grouped by strength and metric path.
+        counts: Counts of valid entries per strength.
+        sorted_strengths: List of sorted strength values.
+        plot_config: Dictionary defining metrics, axes, labels, colors, etc.
+                     Expected structure:
+                     {
+                         'primary_axis': {
+                             'metrics': [{'name': str, 'label': str, 'color': str, 'mean_marker': str, 'scatter_marker': str}, ...],
+                             'ylabel': str,
+                             'ylim': Optional[Tuple[float, float]]
+                         },
+                         'secondary_axis': Optional[{... similar structure ...}],
+                         'scatter_alpha': float,
+                         'mean_line_color': str,
+                         'mean_line_style': str,
+                         'legend_opts': Dict[str, Any]
+                     }
+        title: The main title for the plot.
+        xlabel: Label for the x-axis.
+        output_filepath: Full path to save the plot file.
+        figsize: Figure size tuple.
+    """
+    logger.info(f"Generating plot: {title}")
+    fig, ax1 = plt.subplots(figsize=figsize)
+    ax2 = None
+    axes = {'primary': ax1}
 
-if __name__ == "__main__":
-    main()
+    # Configure secondary axis if defined
+    if plot_config.get('secondary_axis'):
+        logger.debug("Configuring secondary Y-axis.")
+        ax2 = ax1.twinx()
+        axes['secondary'] = ax2
+
+    x_positions = np.arange(len(sorted_strengths))
+    all_handles = []
+    all_labels = []
+
+    # --- Plot metrics for each axis ---
+    for axis_key, ax in axes.items():
+        axis_config = plot_config.get(f"{axis_key}_axis")
+        if not axis_config or not axis_config.get('metrics'):
+            logger.debug(f"No metrics configured for {axis_key} axis.")
+            continue
+
+        logger.debug(f"Plotting metrics for {axis_key} axis: {[m['name'] for m in axis_config['metrics']]}")
+
+        for metric_info in axis_config['metrics']:
+            metric_path = metric_info['name']
+            metric_label = metric_info['label']
+            metric_color = metric_info['color']
+            scatter_marker = metric_info.get('scatter_marker', 'o') # Default marker
+            mean_marker = metric_info.get('mean_marker', 'o')      # Default marker
+
+            # Collect data for scatter and mean calculation
+            all_x_scatter = []
+            all_y_scatter = []
+            y_means = []
+
+            for i, strength in enumerate(sorted_strengths):
+                y_values = plot_data.get(strength, {}).get(metric_path, [])
+                if y_values:
+                    # Jitter x-positions slightly for scatter visibility
+                    jitter = np.random.normal(0, 0.05, len(y_values))
+                    all_x_scatter.extend([x_positions[i] + jitter])
+                    all_y_scatter.extend(y_values)
+                    y_means.append(np.mean(y_values))
+                else:
+                    y_means.append(np.nan) # Use NaN if no data for mean line
+
+
+            # Flatten the list of arrays for scatter plot if jitter was applied
+            if all_x_scatter:
+                 all_x_scatter = np.concatenate(all_x_scatter)
+
+
+            # Plot scatter points
+            scatter_handle = ax.scatter(
+                all_x_scatter, all_y_scatter,
+                color=metric_color,
+                alpha=plot_config.get('scatter_alpha', 0.6),
+                label=metric_label, # Just use the metric label
+                marker=scatter_marker,
+                zorder=1 # Scatter behind mean line
+            )
+
+            # Plot mean line (connecting non-NaN points)
+            valid_indices = ~np.isnan(y_means) # Find where means are valid
+            mean_line_handle, = ax.plot(
+                x_positions[valid_indices], np.array(y_means)[valid_indices],
+                color=plot_config.get('mean_line_color', 'black'),
+                marker=mean_marker,
+                linestyle=plot_config.get('mean_line_style', '-'),
+                label="Mean", # Just use "Mean"
+                zorder=2 # Mean line on top
+            )
+
+            # Collect handles/labels for the legend
+            all_handles.append(scatter_handle)
+            all_labels.append(metric_label)
+            all_handles.append(mean_line_handle)
+            all_labels.append("Mean")
+
+
+        # Configure axis labels and limits
+        ax.set_ylabel(axis_config['ylabel'], color='black')
+        ax.tick_params(axis='y', labelcolor='black')
+        if axis_config.get('ylim'):
+            ax.set_ylim(axis_config['ylim'])
+            logger.debug(f"Set {axis_key} axis ylim: {axis_config['ylim']}")
+
+    # --- Configure overall plot elements ---
+    ax1.set_xlabel(xlabel)
+    ax1.set_xticks(x_positions)
+    ax1.set_xticklabels(sorted_strengths)
+    
+    # Set title with extra padding at the top
+    ax1.set_title(title, pad=7)
+    ax1.grid(axis='y', linestyle='--', alpha=0.7) # Add light grid
+
+    # --- Configure Legend ---
+    legend_opts = plot_config.get('legend_opts', {})
+    # Use ax1.legend instead of fig.legend to place it inside the plot
+    default_legend_opts = {
+        'loc': 'upper center', 
+        'ncol': 3, 
+        'frameon': True,
+        'edgecolor': 'black',  # Add border to make it stand out
+        'fancybox': True,      # Rounded corners
+        'shadow': False,       # No shadow
+        'fontsize': 9,         # Increased font size
+        'markerscale': 1.2,    # Slightly larger markers in legend
+        'columnspacing': 0.5,  # Space between columns
+        'handletextpad': 0.5,  # Space between legend handles and labels
+        'bbox_to_anchor': (0.107, 0.88),
+    }
+    final_legend_opts = {**default_legend_opts, **legend_opts} # User opts override defaults
+
+    fig.legend(all_handles, all_labels, **final_legend_opts)
+            
+            
+
+    fig.tight_layout()
+
+
+    # Ensure output directory exists
+    output_dir = os.path.dirname(output_filepath)
+    if output_dir: # Check if not empty (saving in current dir)
+        try:
+            os.makedirs(output_dir, exist_ok=True)
+        except OSError as e:
+            logger.error(f"Could not create output directory {output_dir}: {e}")
+            plt.close(fig)
+            return # Cannot save
+
+    # Save plot
+    try:
+        plt.savefig(output_filepath, dpi=300, bbox_inches='tight')
+        logger.info(f"Plot saved to: {output_filepath}")
+    except Exception as e:
+        logger.error(f"Failed to save plot {output_filepath}: {e}")
+    finally:
+        plt.close(fig) # Close figure to free memory
+
+
+# --- Specific Plotting Functions ---
+
+def plot_sentiment_scores(
+    scored_data: Dict[str, Any],
+    output_dir: str = "data/plots/sentiment_vectors/",
+    base_filename: str = "plot_30"
+):
+    """Generates plot for Sentiment scores vs. Steering Strength."""
+    if 'scored_summaries' not in scored_data: return
+    experiment_info = scored_data.get('experiment_information', {})
+    plot_title_prefix = experiment_info.get('plot_title_prefix', 'Sentiment Scores') # Get prefix from data or use default
+
+    metric_paths = ['sentiment_scores.transformer', 'sentiment_scores.vader']
+    plot_config = {
+        'primary_axis': {
+            'metrics': [
+                {'name': 'sentiment_scores.transformer', 'label': 'Transformer', 'color': 'tab:blue', 'mean_marker': 'o', 'scatter_marker': 'o'},
+                {'name': 'sentiment_scores.vader', 'label': 'VADER', 'color': 'tab:red', 'mean_marker': '^', 'scatter_marker': '^'}
+            ],
+            'ylabel': 'Sentiment Score (-1 to 1)',
+            'ylim': (-1.05, 1.05)
+        },
+        'secondary_axis': None,
+        'scatter_alpha': 0.6,
+        'mean_line_color': 'black',
+        'mean_line_style': '-',
+        'legend_opts': {'loc': 'upper left', 'ncol': 2, 'bbox_to_anchor': (0.125, 0.88)} # Below title
+    }
+
+    plot_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries=scored_data['scored_summaries'],
+        metrics_to_extract=metric_paths,
+        remove_perplexity_outliers=False # No outlier removal for sentiment
+    )
+
+    if not plot_data:
+        logger.warning("No valid sentiment data found to plot.")
+        return
+
+    output_filepath = os.path.join(output_dir, f"{base_filename}_sentiment.pdf")
+    _create_scatter_mean_plot(
+        plot_data=plot_data,
+        counts=counts,
+        sorted_strengths=sorted_strengths,
+        plot_config=plot_config,
+        title=f"{plot_title_prefix} vs. Steering Strength",
+        xlabel="Steering Strength",
+        output_filepath=output_filepath,
+        figsize=figsize
+    )
+
+def plot_intrinsic_scores(
+    scored_data: Dict[str, Any],
+    output_dir: str = "data/plots/sentiment_vectors/",
+    base_filename: str = "plot_30",
+    remove_perplexity_outliers: bool = True,
+    outlier_percentile: float = 99.0
+):
+    """Generates plot for Intrinsic Quality scores vs. Steering Strength."""
+    if 'scored_summaries' not in scored_data: return
+    experiment_info = scored_data.get('experiment_information', {})
+    plot_title_prefix = experiment_info.get('plot_title_prefix', 'Intrinsic Quality') # Get prefix from data or use default
+
+    metric_paths = [
+        'intrinsic_scores.perplexity',
+        'intrinsic_scores.distinct_word_2',
+        'intrinsic_scores.distinct_char_2'
+    ]
+    plot_config = {
+        'primary_axis': {
+            'metrics': [
+                {'name': 'intrinsic_scores.perplexity', 'label': 'Perplexity', 'color': 'tab:green', 'mean_marker': 'o', 'scatter_marker': 'o'}
+            ],
+            'ylabel': 'Perplexity',
+            'ylim': None # Auto-scale perplexity unless outliers are extreme
+        },
+        'secondary_axis': {
+             'metrics': [
+                 {'name': 'intrinsic_scores.distinct_word_2', 'label': 'Distinct-2 Words', 'color': 'tab:orange', 'mean_marker': 's', 'scatter_marker': 's'},
+                 {'name': 'intrinsic_scores.distinct_char_2', 'label': 'Distinct-2 Chars', 'color': 'tab:purple', 'mean_marker': '^', 'scatter_marker': '^'}
+             ],
+             'ylabel': 'Distinctness Score (0-1)',
+             'ylim': (0, 1.32)
+        },
+        'scatter_alpha': 0.6,
+        'mean_line_color': 'black',
+        'mean_line_style': '-',
+        'legend_opts': {'loc': 'upper left', 'ncol': 3, 'bbox_to_anchor': (0.17, 0.88)} # Below title
+    }
+
+    plot_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries=scored_data['scored_summaries'],
+        metrics_to_extract=metric_paths,
+        perplexity_metric_path='intrinsic_scores.perplexity', # Specify which metric is perplexity
+        remove_perplexity_outliers=remove_perplexity_outliers,
+        outlier_percentile=outlier_percentile
+    )
+
+    if not plot_data:
+        logger.warning("No valid intrinsic data found to plot.")
+        return
+
+    output_filepath = os.path.join(output_dir, f"{base_filename}_intrinsic.pdf")
+    _create_scatter_mean_plot(
+        plot_data=plot_data,
+        counts=counts,
+        sorted_strengths=sorted_strengths,
+        plot_config=plot_config,
+        title=f"{plot_title_prefix} vs. Steering Strength",
+        xlabel="Steering Strength",
+        output_filepath=output_filepath,
+        figsize=figsize
+    )
+
+def plot_topic_scores(
+    scored_data: Dict[str, Any],
+    topic_id: str = "tid1", # Which topic ID to plot (e.g., 'tid1')
+    output_dir: str = "data/plots/sentiment_vectors/",
+    base_filename: str = "plot_30"
+):
+    """Generates plot for Topic scores vs. Steering Strength for a specific topic ID."""
+    if 'scored_summaries' not in scored_data: return
+    experiment_info = scored_data.get('experiment_information', {})
+    plot_title_prefix = experiment_info.get('plot_title_prefix', 'Topic Scores') # Get prefix from data or use default
+
+    # Dynamically create metric paths based on topic_id
+    metric_paths = [
+        f'topic_scores.{topic_id}.dict',
+        f'topic_scores.{topic_id}.tokenize',
+        f'topic_scores.{topic_id}.lemmatize'
+    ]
+    plot_config = {
+        'primary_axis': {
+            'metrics': [
+                {'name': f'topic_scores.{topic_id}.dict', 'label': 'Dict Score', 'color': 'tab:cyan', 'mean_marker': 'o', 'scatter_marker': 'o'},
+                {'name': f'topic_scores.{topic_id}.tokenize', 'label': 'Tokenize Score', 'color': 'tab:olive', 'mean_marker': 's', 'scatter_marker': 's'},
+                {'name': f'topic_scores.{topic_id}.lemmatize', 'label': 'Lemmatize Score', 'color': 'tab:pink', 'mean_marker': '^', 'scatter_marker': '^'}
+            ],
+            'ylabel': f'Topic Score ({topic_id})',
+            'ylim': None # Auto-scale topic scores
+        },
+        'secondary_axis': None,
+        'scatter_alpha': 0.6,
+        'mean_line_color': 'black',
+        'mean_line_style': '-',
+        'legend_opts': {'loc': 'upper left', 'ncol': 3} # Below title
+    }
+
+    plot_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries=scored_data['scored_summaries'],
+        metrics_to_extract=metric_paths,
+        remove_perplexity_outliers=False # No outlier removal needed here
+    )
+
+    # Check if *any* topic data was found
+    data_found = any(
+        metric_path in plot_data.get(strength, {})
+        for strength in sorted_strengths
+        for metric_path in metric_paths
+    )
+
+    if not data_found:
+        logger.warning(f"No valid topic data found for {topic_id} to plot.")
+        return
+
+    output_filepath = os.path.join(output_dir, f"{base_filename}_topic_{topic_id}.pdf")
+    _create_scatter_mean_plot(
+        plot_data=plot_data,
+        counts=counts,
+        sorted_strengths=sorted_strengths,
+        plot_config=plot_config,
+        title=f"{plot_title_prefix} vs. Steering Strength",
+        xlabel="Steering Strength",
+        output_filepath=output_filepath,
+        figsize=figsize
+    )
+
+def plot_extrinsic_scores(
+    scored_data: Dict[str, Any],
+    reference_key: str = "reference_text1", # Which reference text results to plot
+    output_dir: str = "data/plots/sentiment_vectors/",
+    base_filename: str = "plot_30"
+):
+    """Generates plot for Extrinsic Quality scores vs. Steering Strength for a specific reference."""
+    if 'scored_summaries' not in scored_data: return
+    experiment_info = scored_data.get('experiment_information', {})
+    plot_title_prefix = experiment_info.get('plot_title_prefix', 'Extrinsic Quality') # Get prefix from data or use default
+
+    # Dynamically create metric paths based on reference_key
+    metric_paths = [
+        f'extrinsic_scores.{reference_key}.rouge1',
+        f'extrinsic_scores.{reference_key}.rouge2',
+        f'extrinsic_scores.{reference_key}.rougeL',
+        f'extrinsic_scores.{reference_key}.bert_f1'
+    ]
+    plot_config = {
+        'primary_axis': {
+            'metrics': [
+                {'name': f'extrinsic_scores.{reference_key}.rouge1', 'label': 'ROUGE-1', 'color': 'tab:blue', 'mean_marker': 'o', 'scatter_marker': 'o'},
+                {'name': f'extrinsic_scores.{reference_key}.rouge2', 'label': 'ROUGE-2', 'color': 'tab:red', 'mean_marker': 's', 'scatter_marker': 's'},
+                {'name': f'extrinsic_scores.{reference_key}.rougeL', 'label': 'ROUGE-L', 'color': 'tab:green', 'mean_marker': '^', 'scatter_marker': '^'}
+            ],
+            'ylabel': 'ROUGE Score (0-1)',
+            'ylim': (0, 1.05) # ROUGE scores are typically 0-1
+        },
+        'secondary_axis': {
+             'metrics': [
+                 {'name': f'extrinsic_scores.{reference_key}.bert_f1', 'label': 'BERTScore F1', 'color': 'tab:purple', 'mean_marker': 'd', 'scatter_marker': 'd'}
+             ],
+             'ylabel': 'BERTScore F1 (0-1)',
+             'ylim': (0, 1.05) # BERTScore F1 is also typically 0-1
+        },
+        'scatter_alpha': 0.6,
+        'mean_line_color': 'black',
+        'mean_line_style': '-',
+        'legend_opts': {'loc': 'upper left', 'ncol': 4, 'bbox_to_anchor': (0.145, 0.88)} # Below title
+    }
+
+    plot_data, counts, sorted_strengths = prepare_plot_data(
+        scored_summaries=scored_data['scored_summaries'],
+        metrics_to_extract=metric_paths,
+        remove_perplexity_outliers=False # No outlier removal needed here
+    )
+
+    # Check if *any* extrinsic data was found for this reference
+    data_found = any(
+        metric_path in plot_data.get(strength, {})
+        for strength in sorted_strengths
+        for metric_path in metric_paths
+    )
+
+    if not data_found:
+        logger.warning(f"No valid extrinsic data found for reference '{reference_key}' to plot.")
+        return
+
+    output_filepath = os.path.join(output_dir, f"{base_filename}_extrinsic_{reference_key}.pdf")
+    _create_scatter_mean_plot(
+        plot_data=plot_data,
+        counts=counts,
+        sorted_strengths=sorted_strengths,
+        plot_config=plot_config,
+        title=f"{plot_title_prefix} vs. Steering Strength",
+        xlabel="Steering Strength",
+        output_filepath=output_filepath,
+        figsize=figsize
+    )
+
+
+# --- Main Execution ---
+if __name__ == '__main__':
+    # Configure logging for example usage
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+    # --- Configuration ---
+    # --- Replace with the actual path to your *scored* JSON file ---
+    scored_json_path = 'data/scores/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_250_articles_sentiment_sentences_20250426_003933.json'
+    output_plot_dir = "data/plots/steering_analysis" # Define a specific output directory
+    base_plot_filename = "llama3_1b_newts_train_250_sentiment" # Base name for plot files
+    topic_id_to_plot = "tid1" # Specify which topic ID to plot (adjust if needed)
+    reference_key_to_plot = "reference_text1" # Specify which reference key to plot (adjust if needed)
+
+
+    # --- Load Data ---
+    scored_data = load_scored_data(scored_json_path)
+
+    if scored_data:
+        # --- Generate Plots ---
+        logger.info(f"--- Generating Plots for {base_plot_filename} ---")
+
+        # 1. Sentiment Scores
+        plot_sentiment_scores(
+            scored_data=scored_data,
+            output_dir=output_plot_dir,
+            base_filename=base_plot_filename
+        )
+
+        # 2. Intrinsic Scores (with perplexity outlier removal)
+        plot_intrinsic_scores(
+            scored_data=scored_data,
+            output_dir=output_plot_dir,
+            base_filename=base_plot_filename,
+            remove_perplexity_outliers=True,
+            outlier_percentile=99.0
+        )
+
+        # 3. Topic Scores (for the specified topic ID)
+        plot_topic_scores(
+            scored_data=scored_data,
+            topic_id=topic_id_to_plot,
+            output_dir=output_plot_dir,
+            base_filename=base_plot_filename
+        )
+
+        # 4. Extrinsic Scores (for the specified reference key)
+        plot_extrinsic_scores(
+            scored_data=scored_data,
+            reference_key=reference_key_to_plot,
+            output_dir=output_plot_dir,
+            base_filename=base_plot_filename
+        )
+
+        # Add plots for other references/topics if present and desired
+        # Example: Check if 'reference_text2' exists before plotting
+        # if 'reference_text2' in scored_data.get('scored_summaries', {}).get('0', {}).get('0', {}).get('extrinsic_scores', {}):
+        #      logger.info("Plotting extrinsic scores for reference_text2...")
+        #      plot_extrinsic_scores(
+        #          scored_data=scored_data,
+        #          reference_key="reference_text2",
+        #          output_dir=output_plot_dir,
+        #          base_filename=base_plot_filename
+        #      )
+
+        logger.info("--- Plotting Complete ---")
+    else:
+        logger.error("Failed to load scored data. No plots generated.")

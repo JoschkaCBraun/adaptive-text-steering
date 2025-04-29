@@ -5,7 +5,7 @@ This script creates topic representations for all relevant topic ids in the data
 '''
 # Standard library imports
 import logging
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 # Third-party imports
 import pandas as pd
@@ -16,32 +16,6 @@ from config.experiment_config import ExperimentConfig
 # Set up logging 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
-def create_topic_representations(config: ExperimentConfig, topic_representation_type: str
-                            ) -> Dict[int, List[Tuple[str, str]]]:
-    '''Create training samples for the steering vector.
-
-    :param topic_representation_type: The type of topic representation to use.
-    :return: A dictionary of topic representations for each topic.
-    '''
-    df = load_newts_dataframe(num_articles=config.NUM_ARTICLES)
-    topic_representations = dict()
-
-    if topic_representation_type == 'topic_strings':
-        topic_strings = generate_topic_strings(config=config, df=df)
-        for tid in topic_strings.keys():
-            topic_representations[tid] = create_samples_from_strings(tid_positive=tid,
-                                                                topic_strings=topic_strings)
-    elif topic_representation_type == 'topic_summaries':
-        relevant_tids = list(map(int, df['tid1'].unique()))
-        for tid in relevant_tids:
-            topic_representations[tid] = create_samples_from_summaries(config=config, tid_positive=tid,
-                                                                  df=df)
-    else:
-        logger.error(f"Invalid topic representation type: {topic_representation_type}")
-        raise ValueError(f"Invalid topic representation type: {topic_representation_type}")
-    
-    return topic_representations
 
 def generate_topic_strings(config: ExperimentConfig, df: pd.DataFrame) -> Dict[int, Dict[str, List[str]]]:
     '''Generate topic strings for all relevant topic ids in the dataset.

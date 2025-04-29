@@ -23,7 +23,6 @@ import logging
 from typing import Dict, List, Tuple
 
 # Third-party imports
-import pandas as pd
 import random
 from src.utils import load_topic_representations, validate_topic_representation_type, \
     validate_pairing_type, save_topic_vector_training_samples
@@ -35,15 +34,17 @@ logger = logging.getLogger(__name__)
 
 def create_all_topic_vector_training_samples(config: ExperimentConfig) -> None:
     '''
-    Create all topic vector training samples for all topics and topic representations and for the pairing type "against_random_topic_representation".
+    Create all topic vector training samples for all topics and topic representations and for the
+    pairing type "against_random_topic_representation".
     '''
     for topic_representation_type in config.TOPIC_REPRESENTATION_TYPES:
         num_samples = config.TOPIC_REPRESENTATION_TYPE_NUM_SAMPLES[topic_representation_type]
         for tid in config.TOPIC_IDS:
-            create_topic_vector_training_samples(config, topic_representation_type, "against_random_topic_representation", num_samples, tid)
+            create_topic_vector_training_samples(topic_representation_type, num_samples, tid,
+                                                 "against_random_topic_representation")
 
-def create_topic_vector_training_samples(config: ExperimentConfig, topic_representation_type: str, pairing_type: str, num_samples: int, tid: int
-                                         ) -> List[Tuple[str, str]]:
+def create_topic_vector_training_samples(topic_representation_type: str, num_samples: int, tid: int,
+                                         pairing_type: str) -> List[Tuple[str, str]]:
     '''Create num_samples training samples from topic representation type to train topic vector 
     with pairing_type for tid.
 
@@ -121,104 +122,13 @@ def create_training_pairs(positive_samples: List[str], all_samples: Dict[int, Li
         for neg_sample in interleaved_negatives:
             all_pairs.append((pos_sample, neg_sample))
 
-    total_possible_pairs = len(all_pairs)
-    # --- 3. Handle num_samples: Subsample or return all ---
+    total_possible_pairs = len(all_pairs)    # --- 3. Handle num_samples: Subsample or return all ---
     if num_samples <= total_possible_pairs:
         return random.sample(all_pairs, num_samples)
     else:
         logger.warning(f"Requested num_samples ({num_samples}) is greater than total possible pairs ({total_possible_pairs}). "
                        f"Returning all {total_possible_pairs} unique pairs.")
         return all_pairs
-
-def create_training_samples(config: ExperimentConfig, topic_representation_type: str
-                          ) -> Dict[int, List[Tuple[str, str]]]:
-    """Create training samples using stored data."""
-    training_samples: Dict[int, List[Tuple[str, str]]] = {}
-    
-    if topic_representation_type == 'topic_strings':
-        # Load all types
-        words = load_topic_representations("topic_words")
-        phrases = load_topic_representations("topic_phrases")
-        descriptions = load_topic_representations("topic_descriptions")
-        
-        # Create pairs for each topic
-        for tid in words.keys():
-            training_samples[tid] = []
-            # Add pairs from each type
-            training_samples[tid].extend(create_training_pairs(words[tid], words, tid, config.NUM_SAMPLES))
-            training_samples[tid].extend(create_training_pairs(phrases[tid], phrases, tid, config.NUM_SAMPLES))
-            training_samples[tid].extend(create_training_pairs(descriptions[tid], descriptions, tid, config.NUM_SAMPLES))
-            
-    elif topic_representation_type == 'topic_summaries':
-        summaries = load_topic_representations("topic_summaries")
-        for tid in summaries.keys():
-            training_samples[tid] = create_training_pairs(summaries[tid], summaries, tid, config.NUM_SAMPLES)
-            
-    return training_samples
-
-def create_samples_from_strings(tid_positive: int, topic_strings: Dict[int, Dict[str, List[str]]],
-                                ) -> List[Tuple[str, str]]:
-    '''Create training samples from topic strings to train topic vector for tid_pos.
-
-    :param tid_positive: The positive topic id for which the steering vector is to be trained.
-    :param topic_strings: A dictionary of topic strings for all relevant topic ids.
-    :return: A list of tuples of (positive_prompt, negative_prompt).
-    '''
-    training_samples = []
-
-    for tid_negative, negative_data in topic_strings.items():
-        if tid_negative == tid_positive:
-            continue
-        for key, positive_data in topic_strings[tid_positive].items():
-            training_samples.append((' '.join(positive_data), ' '.join(negative_data[key])))
-
-    return training_samples
-
-def create_samples_from_summaries(config: ExperimentConfig, tid_positive: int, df: pd.DataFrame
-                                  ) -> List[Tuple[str, str]]:
-    ''' Create training samples from summaries to train the steering vector for tid_positive.
-    
-    :param config: A Config object containing the configuration parameters.
-    :param tid_positive: The positive topic id for which the steering vector is to be trained.
-    :param df: A pandas DataFrame containing the dataset.
-    :return: A list of tuples of (positive_prompt, negative_prompt).    
-    '''
-    training_samples = []
-
-    include_non_matching = config.INCLUDE_NON_MATCHING
-    num_samples = config.NUM_SAMPLES
-    
-    # Filter summaries specifically associated with the positive topic id
-    positive_summaries = df.loc[df['tid1'] == tid_positive, 'summary1'].tolist() + \
-                         df.loc[df['tid2'] == tid_positive, 'summary2'].tolist()
-
-    len_positive_summaries = len(positive_summaries)
-    if len_positive_summaries == 0:
-        logger.error(f"No summaries found for topic id {tid_positive}")
-        raise ValueError(f"No summaries found for topic id {tid_positive}")
-    
-    non_matching_samples_needed = max(0, num_samples - len_positive_summaries)
-    pos_idx = 0
-    
-    for _, row in df.iterrows():
-        if row['tid1'] == tid_positive:
-            training_samples.append((row['summary1'], row['summary2']))
-
-        elif row['tid2'] == tid_positive:
-            training_samples.append((row['summary2'], row['summary1']))
-
-        elif include_non_matching and non_matching_samples_needed > 0:
-            training_samples.append((positive_summaries[pos_idx % len_positive_summaries],
-                                     row['summary1']))
-            non_matching_samples_needed -= 1
-            if non_matching_samples_needed > 0:
-                training_samples.append((positive_summaries[(pos_idx + 1) % len_positive_summaries],
-                                         row['summary2']))
-                non_matching_samples_needed -= 1
-            pos_idx += 2
-
-    return training_samples
-
 
 def main() -> None:
     config = ExperimentConfig()
