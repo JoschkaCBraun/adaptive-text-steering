@@ -21,6 +21,10 @@
 !/datasets/sentiment/*
 !/datasets/readability/
 !/datasets/readability/*
+!/datasets/readability/readability_synthetic_data/
+!/datasets/readability/readability_synthetic_data/*
+!/datasets/toxicity/
+!/datasets/toxicity/*
 !/datasets/toxicity/toxicity_synthetic_data/
 !/datasets/toxicity/toxicity_synthetic_data/*
 
