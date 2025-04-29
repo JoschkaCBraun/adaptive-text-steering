@@ -10,7 +10,7 @@ import sys
 import logging
 
 # Third-party imports
-from transformers import pipeline as transformer_pipeline # Renamed to avoid clash
+from transformers import pipeline as transformer_pipeline
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from config.score_and_plot_config import ScoreAndPlotConfig

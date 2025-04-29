@@ -134,6 +134,7 @@ class ScoreAndPlotConfig:
         """Initialize the model names for sentiment analysis and language detection."""
         self.sentiment_model_name: str = "nlptown/bert-base-multilingual-uncased-sentiment"
         self.max_tokens_for_sentiment_classification: int = 512
+        self.max_tokens_for_toxicity_classification: int = 512
         self.language_detection_model_name: str = "papluca/xlm-roberta-base-language-detection"
         self.bertscore_model_name: str = "microsoft/deberta-large-mnli"
         self.perplexity_model_alias: str = "llama3_1b"

@@ -19,6 +19,10 @@
 !/datasets/random/*
 !/datasets/sentiment/
 !/datasets/sentiment/*
+!/datasets/readability/
+!/datasets/readability/*
+!/datasets/toxicity/toxicity_synthetic_data/
+!/datasets/toxicity/toxicity_synthetic_data/*
 
 # exclude jigsaw and imdb_sentiment and other datasets because they are too large
 **/toxicity_jigsaw/

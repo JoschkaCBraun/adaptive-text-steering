@@ -18,6 +18,8 @@ from src.evaluation.sentiment_scorer import SentimentScorer
 from src.evaluation.topic_scorer import TopicScorer
 from src.evaluation.intrinsic_quality_scorer import IntrinsicQualityScorer
 from src.evaluation.extrinsic_quality_scorer import ExtrinsicQualityScorer
+from src.evaluation.readability_scorer import ReadabilityScorer
+from src.evaluation.toxicity_scorer import ToxicityScorer
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -58,6 +60,12 @@ class Scorer:
             logger.info("Initializing ExtrinsicQualityScorer...")
             self.extrinsic_scorer = ExtrinsicQualityScorer(self.config)
             logger.info("ExtrinsicQualityScorer initialized.")
+            logger.info("Initializing ReadabilityScorer...")
+            self.readability_scorer = ReadabilityScorer(self.config)
+            logger.info("ReadabilityScorer initialized.")
+            logger.info("Initializing ToxicityScorer...")
+            self.toxicity_scorer = ToxicityScorer(self.config)
+            logger.info("ToxicityScorer initialized.")
 
             logger.info("Main Scorer initialized successfully.")
 
@@ -133,6 +141,8 @@ class Scorer:
             scores['topic_scores'] = {}
         if reference_text1 is not None:
             scores['extrinsic_scores'] = {}
+        scores['readability_scores'] = {}
+        scores['toxicity_scores'] = {}
 
         # 1. Sentiment Scoring (Always runs if text is valid)
         try:
@@ -187,6 +197,20 @@ class Scorer:
                 scores['extrinsic_scores']['reference_text2'] = extrinsic_scores2_dict
             except Exception as e:
                 logger.error(f"Error during extrinsic scoring: {e}", exc_info=False)
+
+        # 5. Readability Scoring (Always runs if text is valid)
+        try:
+            readability_scores_dict = self.readability_scorer.get_readability_scores(text)
+            scores['readability_scores'] = readability_scores_dict
+        except Exception as e:
+            logger.error(f"Error during readability scoring: {e}", exc_info=False)
+
+        # 6. Toxicity Scoring (Always runs if text is valid)
+        try:
+            toxicity_scores_dict = self.toxicity_scorer.get_toxicity_scores(text)
+            scores['toxicity_scores'] = toxicity_scores_dict
+        except Exception as e:
+            logger.error(f"Error during toxicity scoring: {e}", exc_info=False)
 
         logger.debug(f"Finished scoring text (first 50 chars): '{text[:50]}...'")
         return scores

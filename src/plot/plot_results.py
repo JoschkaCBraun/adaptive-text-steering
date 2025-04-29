@@ -2,14 +2,13 @@
 import json
 import logging
 import os
-from typing import Dict, Any, List, Optional, Tuple, Union
+from typing import Dict, Any, List, Optional, Tuple
 from collections import defaultdict
 import math
 
 # Third-party imports
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -284,7 +283,7 @@ def _create_scatter_mean_plot(
                 marker=mean_marker,
                 linestyle=plot_config.get('mean_line_style', '-'),
                 label="Mean", # Just use "Mean"
-                zorder=2 # Mean line on top
+                zorder=10 # Mean line on top with higher z-order
             )
 
             # Collect handles/labels for the legend
@@ -610,9 +609,9 @@ if __name__ == '__main__':
 
     # --- Configuration ---
     # --- Replace with the actual path to your *scored* JSON file ---
-    scored_json_path = 'data/scores/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_250_articles_sentiment_sentences_20250426_003933.json'
+    scored_json_path = 'data/scores/topic_vectors/topic_summaries_llama3_1b_NEWTS_train_250_articles_topic_words_20250429_031304.json'
     output_plot_dir = "data/plots/steering_analysis" # Define a specific output directory
-    base_plot_filename = "llama3_1b_newts_train_250_sentiment" # Base name for plot files
+    base_plot_filename = "llama3_1b_newts_train_250_topic_words" # Base name for plot files
     topic_id_to_plot = "tid1" # Specify which topic ID to plot (adjust if needed)
     reference_key_to_plot = "reference_text1" # Specify which reference key to plot (adjust if needed)
 

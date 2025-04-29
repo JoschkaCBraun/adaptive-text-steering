@@ -132,12 +132,12 @@ def score_sentiment_summaries(input_file_path: str) -> Optional[Dict[str, Any]]:
 
 def main():
 
-    input_json_path = 'data/results/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_250_articles_sentiment_sentences_20250426_003933.json'
+    input_json_path = 'data/results/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_10_articles_sentiment_sentences_20250425_205615.json'
 
     scored_summaries = score_sentiment_summaries(input_json_path)
 
     # Save the scored summaries to a new JSON file
-    output_json_path = 'data/scores/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_250_articles_sentiment_sentences_20250426_003933.json'
+    output_json_path = 'data/scores/sentiment_vectors/sentiment_summaries_llama3_1b_NEWTS_train_10_articles_sentiment_sentences_20250429_031304.json'
     with open(output_json_path, 'w', encoding='utf-8') as f:
         json.dump(scored_summaries, f, ensure_ascii=False, indent=2)
 
