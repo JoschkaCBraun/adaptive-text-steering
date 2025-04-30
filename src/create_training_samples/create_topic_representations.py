@@ -83,10 +83,10 @@ def generate_and_save_all_samples(config: ExperimentConfig) -> None:
             topic_summaries[tid].append(summary)
     
     # Save all types
-    save_topic_representations(topic_words, "topic_words")
-    save_topic_representations(topic_phrases, "topic_phrases")
-    save_topic_representations(topic_descriptions, "topic_descriptions")
-    save_topic_representations(topic_summaries, "topic_summaries")
+    save_topic_representations(topic_words, "words")
+    save_topic_representations(topic_phrases, "phrases")
+    save_topic_representations(topic_descriptions, "descriptions")
+    save_topic_representations(topic_summaries, "summaries")
 
 if __name__ == "__main__":
     config = ExperimentConfig()

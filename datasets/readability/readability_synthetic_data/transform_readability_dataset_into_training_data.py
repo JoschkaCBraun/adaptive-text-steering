@@ -1,6 +1,6 @@
 import json
 
-def transform_simplicity_dataset(input_file, output_file):
+def transform_readability_dataset(input_file, output_file):
     # Read the input JSON file
     with open(input_file, 'r') as f:
         data = json.load(f)
@@ -16,7 +16,7 @@ def transform_simplicity_dataset(input_file, output_file):
     output_data = {
         "sample_size": 500,
         "language": "en",
-        "dataset": "simplicity_explanations",
+        "dataset": "readability_explanations",
         "tuples": tuples
     }
 
@@ -27,10 +27,10 @@ def transform_simplicity_dataset(input_file, output_file):
     print(f"Transformation complete. New dataset saved as {output_file}")
 
 def main():
-    input_file = 'data/datasets/simplicity/simplicity_synthetic_data/simplicity_explanations_500_en.json'
-    output_file = 'data/datasets/simplicity/simplicity_explanations_500_en_transformed.json'
+    input_file = 'data/datasets/readability/readability_synthetic_data/readability_explanations_500_en.json'
+    output_file = 'data/datasets/readability/readability_explanations_500_en_transformed.json'
 
-    transform_simplicity_dataset(input_file, output_file)
+    transform_readability_dataset(input_file, output_file)
 
 if __name__ == "__main__":
     main()

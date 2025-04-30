@@ -35,6 +35,7 @@ class ExperimentConfig:
         self.HUGGINGFACE_TOKEN = os.getenv('HUGGINGFACE_TOKEN')
         self.OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
         self.VALID_EXPERIMENT_NAMES = ['prompt_engineering', 'topic_vector', 'sentiment_vector']
+        self.VALID_BEHAVIOR_TYPES = ['topic', 'toxicity', 'readability', 'sentiment']
         self.TOPIC_VECTOR_EXPERIMENT_NAMES = ['word_steering', 'phrase_steering', 'description_steering', 'summary_steering']
         self.EXPERIMENT_NAME: str = kwargs.get('EXPERIMENT_NAME', 'sentiment_vector')
 
@@ -75,6 +76,7 @@ class ExperimentConfig:
 
         # number of words from topic model to use as features
         self.NUM_TOPIC_WORDS: int = kwargs.get('NUM_TOPIC_WORDS', 25)
+        self.BEHAVIOR_WORDS_NUM_SAMPLES: int = kwargs.get('BEHAVIOR_WORDS_NUM_SAMPLES', 100)
         # steering strengths for topic vectors
         self.STEERING_STRENGTHS: List[float] = kwargs.get('STEERING_STRENGTHS', [-5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 5])
         # minimum value of phi to consider when extracting topic words

@@ -31,8 +31,13 @@ from .get_basic import (
 )
 
 from .get_prompt import (
-    get_newts_summary_topic_prompt,
-    get_newts_summary_sentiment_prompt,
+    get_newts_summary_prompt,
+)
+
+from .get_steering_vector_file_paths import (
+    get_steering_vector_path,
+    save_steering_vector,
+    load_steering_vector,
 )
 
 from .plotting_functions.plot_results_as_violine_plots import (
@@ -57,24 +62,15 @@ from .lda_utils import (
     get_topic_words,
 )
 
-from .sentiment_utils import (
-    load_sentiment_vector_training_samples,
-    get_sentiment_representation_file_name,
-)
-
 from .topic_training_samples_utils import (
     save_topic_representations,
     load_topic_representations,
     save_topic_vector_training_samples,
     load_topic_vector_training_samples,
-    get_topic_vector_file_path,
-    get_topic_vector_file_name,
-    get_topic_vectors_folder_name,
-    save_topic_vector,
-    load_topic_vector,
 )
 
 from .validate_inputs import (
+    validate_behavior_type,
     validate_topic_representation_type,
     validate_pairing_type,
     validate_language,
@@ -119,8 +115,11 @@ __all__ = [
     "get_device",
     "get_path",
     # get prompt
-    "get_newts_summary_topic_prompt",
-    "get_newts_summary_sentiment_prompt",
+    "get_newts_summary_prompt",
+    # get steering vector file paths
+    "get_steering_vector_path",
+    "save_steering_vector",
+    "load_steering_vector",
     # load datasets
     "load_newts_dataloader",
     "load_newts_dataframe",
@@ -132,22 +131,15 @@ __all__ = [
     "load_lda_and_dictionary",
     "load_dictionary",
     "load_lda",
-    # "get_topic_words",
-    # sentiment utils
-    "load_sentiment_vector_training_samples",
-    "get_sentiment_representation_file_name",
+    "get_topic_words",
     # topic representations
     "save_topic_representations",
     "load_topic_representations",
     "save_topic_vector_training_samples",
     "load_topic_vector_training_samples",
-    "get_topic_vector_file_path",
-    "get_topic_vector_file_name",
-    "get_topic_vectors_folder_name",
-    "save_topic_vector",
-    "load_topic_vector",
     # validate inputs
     "validate_topic_representation_type",
     "validate_pairing_type",
     "validate_language",
+    "validate_behavior_type",
 ]

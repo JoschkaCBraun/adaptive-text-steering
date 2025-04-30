@@ -1,11 +1,10 @@
 """
-Utilities for managing topic training samples.
+Utilities for managing topic representations and training samples.
 """
 import os
 import json
 from datetime import datetime
 from typing import Dict, List, Tuple
-import pickle
 
 def save_topic_representations(samples: Dict[int, List[str]], representation_type: str, language: str = 'en') -> None:
     """
@@ -72,7 +71,7 @@ def get_topic_representations_file_name(representation_type: str, language: str 
     """
     Make a file name from representation type and language.
     """
-    return f"{representation_type}_{language}_representations.json"
+    return f"topic_{representation_type}_{language}_representations.json"
 
 def save_topic_vector_training_samples(samples: Dict[int, List[Tuple[str, str]]], representation_type: str, pairing_type: str, tid: int, language: str = 'en') -> None:
     '''
@@ -104,45 +103,10 @@ def get_topic_vector_training_samples_file_path(representation_type: str, pairin
     path = os.getenv('TOPIC_VECTOR_TRAINING_SAMPLES_PATH')
     if path is None:
         raise ValueError("TOPIC_VECTOR_TRAINING_SAMPLES_PATH is not set")
-    return os.path.join(path, representation_type, file_name)
+    return os.path.join(path, f"topic_{representation_type}", file_name)
 
 def get_topic_vector_training_samples_file_name(representation_type: str, pairing_type: str, tid: int, language: str = 'en') -> str:
     '''
     Get the file name for the topic vector training samples.
     '''
-    return f"tid_{tid}_{representation_type}_{pairing_type}_{language}_training_samples.json"
-
-def save_topic_vector(topic_vector_file_path: str, steering_vector) -> None:
-    '''
-    Save the topic vector to a file.
-    '''
-    with open(topic_vector_file_path, 'wb') as f:
-        pickle.dump(steering_vector, f)
-
-def load_topic_vector(topic_vector_file_path: str) -> Dict[str, float]:
-    '''
-    Load the topic vector from a file.
-    '''
-    with open(topic_vector_file_path, 'rb') as f:
-        return pickle.load(f)
-
-def get_topic_vectors_folder_name() -> str: 
-    '''Get the folder name for storing topic vectors.'''
-    data_path = os.getenv('DATA_PATH')
-    if data_path is None:
-        raise ValueError("DATA_PATH is not set")
-    folder_name = os.path.join(data_path, 'steering_vectors', 'topic_vectors')
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-    return folder_name
-
-def get_topic_vector_file_name(model_alias: str, layer: int, topic_representation_type: str, pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> str:
-    '''Get the file name for storing topic vectors.'''
-    file_name = f"{model_alias}_layer_{layer}_{topic_representation_type}_{pairing_type}_{language}_tid_{tid}_num_samples_{num_samples}.pkl"
-    return file_name
-
-def get_topic_vector_file_path(model_alias: str, layer: int, topic_representation_type: str, pairing_type: str, tid: int, num_samples: int, language: str = 'en') -> str:
-    '''Get the file path for storing topic vectors.'''
-    file_name = get_topic_vector_file_name(model_alias, layer, topic_representation_type, pairing_type, tid, language, num_samples)
-    folder_name = get_topic_vectors_folder_name()
-    return os.path.join(folder_name, file_name)
+    return f"tid_{tid}_topic_{representation_type}_{pairing_type}_{language}_training_samples.json"

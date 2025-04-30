@@ -68,26 +68,26 @@ class TextProcessor:
             logger.error(f"An unexpected error occurred while loading spaCy model '{model_name}': {e}", exc_info=True)
             raise RuntimeError(f"Failed load spaCy model '{model_name}'. Please check your spaCy installation and model.") from e
 
-    def process_text(self, text: str, method: str) -> Set[str]:
+    def process_text(self, text: str, method: str, remove_stopwords: bool = False) -> Set[str]:
         """
-        Processes text by lemmatizing or stemming it and removing stopwords.
+        Processes text by lemmatizing or stemming it and optionally removing stopwords.
 
         :param text: The text to process.
         :param method: The method to use for processing the text, either 'lemmatize' or 'stem'.
+        :param remove_stopwords: Whether to remove stopwords from the processed text.
         :return: A set of processed words.
         """
-        text.lower()
+        text = text.lower()
         processed_words = set()
         if method == 'lemmatize':
             lemmatized_text = self.lemmatizer(text)
             processed_words = {token.lemma_ for token in lemmatized_text if not 
-                                (token.is_punct or token.is_space or token.text in self.stopwords)}
+                                (token.is_punct or token.is_space or (remove_stopwords and token.text in self.stopwords))}
         elif method == 'stem':
             words = text.split()
-            processed_words = {self.stemmer.stem(word) for word in words if word not in self.stopwords}
-
-        else :
-            logger.error('Invalid method for proces_text: %s.'\
+            processed_words = {self.stemmer.stem(word) for word in words if not (remove_stopwords and word in self.stopwords)}
+        else:
+            logger.error('Invalid method for process_text: %s.'\
                         'Choose between "lemmatize" and "stem".', method)
         return processed_words
 

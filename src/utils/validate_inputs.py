@@ -2,11 +2,19 @@
 Validate inputs for the topic vector training samples.
 """
 
+from config.experiment_config import ExperimentConfig
+
+def validate_behavior_type(behavior_type: str) -> None:
+    '''Validate the behavior type.
+    '''
+    config = ExperimentConfig()
+    if behavior_type not in config.VALID_BEHAVIOR_TYPES:
+        raise ValueError(f"Invalid behavior type: {behavior_type}")
 
 def validate_topic_representation_type(topic_representation_type: str) -> None:
     '''Validate the topic representation type.
     '''
-    if topic_representation_type not in ['topic_words', 'topic_phrases', 'topic_descriptions', 'topic_summaries']:
+    if topic_representation_type not in ['words', 'phrases', 'descriptions', 'summaries']:
         raise ValueError(f"Invalid topic representation type: {topic_representation_type}")
     
 def validate_pairing_type(pairing_type: str) -> None:

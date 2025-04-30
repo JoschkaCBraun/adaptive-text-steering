@@ -9,13 +9,11 @@ import math
 # Third-party imports
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-figsize = (6, 3)
-base_filename = 'plot_topic_30'
+FIGSIZE = (6, 3)
 
 # --- Helper Function to Load Data ---
 def load_scored_data(file_path: str) -> Optional[Dict[str, Any]]:
@@ -177,8 +175,7 @@ def prepare_plot_data(scored_summaries: Dict[str, Any], metrics_to_extract: Dict
 # --- Plotting Function ---
 def plot_scores_vs_strength(
     scored_data: Dict[str, Any],
-    base_filename: str = "plot_30",
-    output_dir: str = "data/plots/sentiment_vectors/",
+    base_filename: str,
     remove_perplexity_outliers: bool = True,
     outlier_percentile: float = 99.0
 ):
@@ -187,7 +184,6 @@ def plot_scores_vs_strength(
 
     Args:
         scored_data: The dictionary containing experiment_info and scored_summaries.
-        output_dir: Directory to save the plots.
         base_filename: Base name for the output plot files.
         remove_perplexity_outliers: Whether to remove top percentile of perplexity scores
         outlier_percentile: Percentile threshold for outlier removal (e.g., 99.0 for top 1%)
@@ -197,13 +193,6 @@ def plot_scores_vs_strength(
         return
         
     scored_summaries = scored_data['scored_summaries']
-
-    # Ensure output directory exists
-    try:
-        os.makedirs(output_dir, exist_ok=True)
-    except OSError as e:
-        logger.error(f"Could not create output directory {output_dir}: {e}")
-        return
 
     # --- 1. Plot Sentiment Scores ---
     logger.info("Preparing data for Sentiment plot...")
@@ -218,7 +207,7 @@ def plot_scores_vs_strength(
          logger.warning("No valid sentiment data found to plot.")
     else:
         logger.info("Generating Sentiment plot...")
-        fig_sent, ax_sent = plt.subplots(figsize=figsize)
+        fig_sent, ax_sent = plt.subplots(figsize=FIGSIZE)
 
         colors = {'transformer': 'tab:blue', 'vader': 'tab:red'}
         labels = {'transformer': 'Transformer Sentiment', 'vader': 'VADER Sentiment'}
@@ -271,16 +260,8 @@ def plot_scores_vs_strength(
         
         fig_sent.tight_layout()
         
-        # Save plot
-        sent_filename = f"{base_filename}_sentiment.pdf"
-        sent_filepath = os.path.join(output_dir, sent_filename)
-        try:
-            plt.savefig(sent_filepath, dpi=300)
-            logger.info(f"Sentiment plot saved to: {sent_filepath}")
-        except Exception as e:
-            logger.error(f"Failed to save sentiment plot: {e}")
-        plt.close(fig_sent) # Close figure to free memory
-
+        save_plot(figure=fig_sent, base_filename=base_filename,
+                  behaviour_type='sentiment', plot_type='sentiment')
     # --- 2. Plot Intrinsic Scores ---
     logger.info("Preparing data for Intrinsic Quality plot...")
     intrinsic_metrics = {'intrinsic_scores': ['perplexity', 'distinct_word_2', 'distinct_char_2']}
@@ -295,7 +276,7 @@ def plot_scores_vs_strength(
          logger.warning("No valid intrinsic data found to plot.")
     else:
         logger.info("Generating Intrinsic Quality plot...")
-        fig_intr, ax1_intr = plt.subplots(figsize=figsize)
+        fig_intr, ax1_intr = plt.subplots(figsize=FIGSIZE)
         ax2_intr = ax1_intr.twinx() # Second y-axis for distinctness
 
         # Define metrics, axes, colors, labels, markers for means
@@ -369,27 +350,49 @@ def plot_scores_vs_strength(
 
         fig_intr.tight_layout()
 
-        # Save plot
-        intr_filename = f"{base_filename}_intrinsic.pdf"
-        intr_filepath = os.path.join(output_dir, intr_filename)
+        save_plot(figure=fig_intr, base_filename=base_filename,
+                  behaviour_type='intrinsic', plot_type='intrinsic')
+
+
+def save_plot(figure: plt.Figure, base_filename: str, plot_type: str) -> None:
+        """
+        Saves a plot to the plots directory.
+
+        Args:
+            figure: The figure to save.
+            base_filename: The base name of the plot.
+            plot_type: The type of plot.
+        """
+        filename = f"{base_filename}_{plot_type}.pdf"
+        plots_path = os.getenv('PLOTS_PATH')
+        plots_dir = os.path.join(plots_path, "newts_summaries")
+        filepath = os.path.join(plots_dir, filename)
+        # make sure plots directory exists
+        os.makedirs(plots_dir, exist_ok=True)
         try:
-            plt.savefig(intr_filepath, dpi=300)
-            logger.info(f"Intrinsic plot saved to: {intr_filepath}")
+            plt.savefig(filepath, dpi=300)
+            logger.info(f"{plot_type} plot saved to: {filepath}")
         except Exception as e:
-            logger.error(f"Failed to save intrinsic plot: {e}")
-        plt.close(fig_intr) # Close figure
+            logger.error(f"Failed to save {plot_type} plot: {e}")
+        plt.close(figure)
 
-
-# --- Example Usage ---
-if __name__ == '__main__':
+def main() -> None:
     # Configure logging for example usage
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
     # --- Replace with the actual path to your *scored* JSON file ---
-    scored_json_path = 'data/scores/topic_vectors/topic_summaries_llama3_1b_NEWTS_train_30_articles_topic_words_20250428_170346.json'
+    # get scored json path from environment variable
+    scores_path = os.getenv('SCORES_PATH')
+    file_path = 'readability_vectors/readability_summaries_llama3_1b_NEWTS_test_10_articles_words_False_20250430_141305.json'
+    scored_json_path = os.path.join(scores_path, file_path)
 
     # Load the scored data
     scored_data = load_scored_data(scored_json_path)
 
     # Plot the scores vs. strength with outlier removal
-    plot_scores_vs_strength(scored_data, remove_perplexity_outliers=True, outlier_percentile=99.0)
+    plot_scores_vs_strength(scored_data, base_filename=file_path, remove_perplexity_outliers=True, outlier_percentile=99.0)
+
+# --- Example Usage ---
+if __name__ == '__main__':
+    main()
+
