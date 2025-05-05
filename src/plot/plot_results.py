@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-figsize = (6, 3) # Slightly wider figsize for potentially complex legends
+figsize = (6, 3)
 
 # --- Utility Functions ---
 

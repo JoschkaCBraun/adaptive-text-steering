@@ -223,10 +223,10 @@ def _save_results(
 def main() -> None:
     # test the function
     config = ExperimentConfig()
-    behavior_type = "readability"
+    behavior_type = "toxicity"
     model_alias = "llama3_1b"
     load_test_set = False
-    num_articles = 10
+    num_articles = 100
     representation_type = "words"
     language = "en"
     steering_layers = [8]

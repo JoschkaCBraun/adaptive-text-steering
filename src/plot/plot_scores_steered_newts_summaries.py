@@ -14,7 +14,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 FIGSIZE = (6, 3)
-
+zero_to_one_ylim_with_padding = (-0.05, 1.05)
+minus_one_to_one_ylim_with_padding = (-1.1, 1.1)
 # --- Utility Functions ---
 
 def get_nested_value(data_dict: Dict, key_path: str, default: Any = None) -> Any:
@@ -309,6 +310,12 @@ def _create_scatter_mean_plot(
     ax1.set_title(title, pad=7)
     ax1.grid(axis='y', linestyle='--', alpha=0.7) # Add light grid
 
+    # Set y-ticks for secondary axis to only go up to 1.0
+    if ax2 is not None:
+        ax2.set_yticks(np.arange(0, 1.1, 0.2))  # Ticks from 0 to 1.0 in steps of 0.2
+        if plot_config['secondary_axis'].get('ylim') == (-3.1, 1.2):  # Special case for readability plot
+            ax2.set_yticks(np.arange(-3.0, 1.1, 0.5))  # Ticks from -3 to 1.3 in steps of 0.2
+
     # --- Configure Legend ---
     legend_opts = plot_config.get('legend_opts', {})
     # Use ax1.legend instead of fig.legend to place it inside the plot
@@ -361,6 +368,7 @@ def plot_sentiment_scores(
     """Generates plot for Sentiment scores vs. Steering Strength."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Sentiment Scores') # Get prefix from data or use default
 
     metric_paths = ['sentiment_scores.transformer', 'sentiment_scores.vader']
@@ -371,7 +379,7 @@ def plot_sentiment_scores(
                 {'name': 'sentiment_scores.vader', 'label': 'VADER', 'color': 'tab:red', 'mean_marker': '^', 'scatter_marker': '^'}
             ],
             'ylabel': 'Sentiment Score (-1 to 1)',
-            'ylim': (-1.05, 1.05)
+            'ylim': minus_one_to_one_ylim_with_padding
         },
         'secondary_axis': None,
         'scatter_alpha': 0.6,
@@ -396,7 +404,7 @@ def plot_sentiment_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -406,12 +414,13 @@ def plot_intrinsic_scores(
     scored_data: Dict[str, Any],
     output_dir: str = "data/plots/sentiment_vectors/",
     base_filename: str = "plot_30",
-    remove_perplexity_outliers: bool = True,
+    remove_perplexity_outliers: bool = False,
     outlier_percentile: float = 99.0
 ):
     """Generates plot for Intrinsic Quality scores vs. Steering Strength."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Intrinsic Quality') # Get prefix from data or use default
 
     metric_paths = [
@@ -433,7 +442,7 @@ def plot_intrinsic_scores(
                  {'name': 'intrinsic_scores.distinct_char_2', 'label': 'Distinct-2 Chars', 'color': 'tab:purple', 'mean_marker': '^', 'scatter_marker': '^'}
              ],
              'ylabel': 'Distinctness Score (0-1)',
-             'ylim': (0, 1.32)
+             'ylim': (-0.05, 1.4) 
         },
         'scatter_alpha': 0.6,
         'mean_line_color': 'black',
@@ -459,7 +468,7 @@ def plot_intrinsic_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -474,6 +483,7 @@ def plot_topic_scores(
     """Generates plot for Topic scores vs. Steering Strength for a specific topic ID."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Topic Scores') # Get prefix from data or use default
 
     # Dynamically create metric paths based on topic_id
@@ -490,7 +500,7 @@ def plot_topic_scores(
                 {'name': f'topic_scores.{topic_id}.lemmatize', 'label': 'Lemmatize Score', 'color': 'tab:pink', 'mean_marker': '^', 'scatter_marker': '^'}
             ],
             'ylabel': f'Topic Score ({topic_id})',
-            'ylim': None # Auto-scale topic scores
+            'ylim': zero_to_one_ylim_with_padding
         },
         'secondary_axis': None,
         'scatter_alpha': 0.6,
@@ -522,7 +532,7 @@ def plot_topic_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -537,6 +547,7 @@ def plot_extrinsic_scores(
     """Generates plot for Extrinsic Quality scores vs. Steering Strength for a specific reference."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Extrinsic Quality') # Get prefix from data or use default
 
     # Dynamically create metric paths based on reference_key
@@ -554,14 +565,14 @@ def plot_extrinsic_scores(
                 {'name': f'extrinsic_scores.{reference_key}.rougeL', 'label': 'ROUGE-L', 'color': 'tab:green', 'mean_marker': '^', 'scatter_marker': '^'}
             ],
             'ylabel': 'ROUGE Score (0-1)',
-            'ylim': (0, 1.05) # ROUGE scores are typically 0-1
+            'ylim': zero_to_one_ylim_with_padding # ROUGE scores are typically 0-1
         },
         'secondary_axis': {
              'metrics': [
                  {'name': f'extrinsic_scores.{reference_key}.bert_f1', 'label': 'BERTScore F1', 'color': 'tab:purple', 'mean_marker': 'd', 'scatter_marker': 'd'}
              ],
              'ylabel': 'BERTScore F1 (0-1)',
-             'ylim': (0, 1.05) # BERTScore F1 is also typically 0-1
+             'ylim': zero_to_one_ylim_with_padding # BERTScore F1 is also typically 0-1
         },
         'scatter_alpha': 0.6,
         'mean_line_color': 'black',
@@ -592,7 +603,7 @@ def plot_extrinsic_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -606,6 +617,7 @@ def plot_readability_scores(
     """Generates plot for Readability scores vs. Steering Strength."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Readability Scores') # Get prefix from data or use default
 
     metric_paths = ['readability_scores.distilbert', 'readability_scores.deberta']
@@ -615,19 +627,19 @@ def plot_readability_scores(
                 {'name': 'readability_scores.deberta', 'label': 'DeBERTa', 'color': 'tab:blue', 'mean_marker': 'o', 'scatter_marker': 'o'}
             ],
             'ylabel': 'DeBERTa Score',
-            'ylim': None # Auto-scale
+            'ylim': (25.1, -0.1)
         },
         'secondary_axis': {
             'metrics': [
                 {'name': 'readability_scores.distilbert', 'label': 'DistilBERT', 'color': 'tab:red', 'mean_marker': '^', 'scatter_marker': '^'}
             ],
             'ylabel': 'DistilBERT Score',
-            'ylim': None # Auto-scale
+            'ylim': (-3.1, 1.2) # Reversed axis for DistilBERT
         },
         'scatter_alpha': 0.6,
         'mean_line_color': 'black',
         'mean_line_style': '-',
-        'legend_opts': {'loc': 'upper left', 'ncol': 2, 'bbox_to_anchor': (0.125, 0.88)} # Below title
+        'legend_opts': {'loc': 'upper left', 'ncol': 2, 'bbox_to_anchor': (0.32, 0.88)} # Below title
     }
 
     plot_data, counts, sorted_strengths = prepare_plot_data(
@@ -646,7 +658,7 @@ def plot_readability_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -660,6 +672,7 @@ def plot_toxicity_scores(
     """Generates plot for Toxicity scores vs. Steering Strength."""
     if 'scored_summaries' not in scored_data: return
     experiment_info = scored_data.get('experiment_information', {})
+    behavior_type = experiment_info.get('behavior_type', 'Unknown').capitalize()
     plot_title_prefix = experiment_info.get('plot_title_prefix', 'Toxicity Scores') # Get prefix from data or use default
 
     metric_paths = [
@@ -675,13 +688,13 @@ def plot_toxicity_scores(
                 {'name': 'toxicity_scores.roberta_toxicity', 'label': 'RoBERTa Toxicity', 'color': 'tab:green', 'mean_marker': '^', 'scatter_marker': '^'}
             ],
             'ylabel': 'Toxicity Score (0-1)',
-            'ylim': (0, 1.05) # Toxicity scores are typically 0-1
+            'ylim': zero_to_one_ylim_with_padding # Toxicity scores are typically 0-1
         },
         'secondary_axis': None,
         'scatter_alpha': 0.6,
         'mean_line_color': 'black',
         'mean_line_style': '-',
-        'legend_opts': {'loc': 'upper left', 'ncol': 3, 'bbox_to_anchor': (0.17, 0.88)} # Below title
+        'legend_opts': {'loc': 'upper left', 'ncol': 3, 'bbox_to_anchor': (0.105, 0.88)} # Below title
     }
 
     plot_data, counts, sorted_strengths = prepare_plot_data(
@@ -700,7 +713,7 @@ def plot_toxicity_scores(
         counts=counts,
         sorted_strengths=sorted_strengths,
         plot_config=plot_config,
-        title=f"{plot_title_prefix} vs. Steering Strength",
+        title=f"{behavior_type} Steering: {plot_title_prefix} vs. Steering Strength",
         xlabel="Steering Strength",
         output_filepath=output_filepath,
         figsize=FIGSIZE
@@ -712,7 +725,7 @@ def main() -> None:
 
     # --- Configuration ---
     # --- Replace with the actual path to your *scored* JSON file ---
-    FILE_NAME = 'readability_vectors/readability_summaries_llama3_1b_NEWTS_test_10_articles_words_False_20250430_141305.json'
+    FILE_NAME = 'toxicity_vectors/toxicity_summaries_llama3_1b_NEWTS_test_100_articles_words_False_20250430_233121.json'
     input_scores_path = os.getenv('SCORES_PATH')
     scored_json_path = os.path.join(input_scores_path, FILE_NAME)
     output_plot_dir = os.path.join(os.getenv('PLOTS_PATH'), 'newts_summaries')
@@ -740,7 +753,7 @@ def main() -> None:
             output_dir=output_plot_dir,
             base_filename=base_plot_filename,
             remove_perplexity_outliers=True,
-            outlier_percentile=99.0
+            outlier_percentile=97.5
         )
 
         # 3. Topic Scores (for the specified topic ID)
