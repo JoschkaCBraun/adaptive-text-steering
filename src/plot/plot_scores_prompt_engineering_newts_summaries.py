@@ -1,7 +1,7 @@
 """
-plot_scores_steered_newts_summaries.py
+plot_scores_prompt_engineering_newts_summaries.py
 
-This script generates plots of the scores for the steered experiments on the NEWTS dataset.
+This script generates plots of the scores for the prompt engineering experiments on the NEWTS dataset.
 
 It generates plots for the following:
 - Sentiment Scores

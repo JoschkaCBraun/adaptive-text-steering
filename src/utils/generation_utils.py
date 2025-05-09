@@ -83,3 +83,56 @@ def generate_text_with_steering_vector(
     generated_text = tokenizer.decode(generated_ids.cpu(), skip_special_tokens=True).strip()
 
     return generated_text
+
+def generate_text_without_steering_vector(
+    model: AutoModelForCausalLM,
+    tokenizer: AutoTokenizer,
+    prompt: str,
+    device: torch.device,
+    max_new_tokens: int = 256,
+    **generation_kwargs
+) -> str:
+    """
+    Generates text using a model without any steering vector, returning
+    only the newly generated text.
+
+    Args:
+        model: The causal language model.
+        tokenizer: The tokenizer associated with the model.
+        prompt: The input text prompt.
+        device: The torch device (e.g., 'cuda', 'cpu').
+        max_new_tokens: The maximum number of new tokens to generate.
+        **generation_kwargs: Additional keyword arguments passed to model.generate().
+
+    Returns:
+        The newly generated text string, excluding the input prompt.
+    """
+
+    # Tokenize input and get length
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True).to(device)
+    input_ids = inputs.input_ids
+    input_length = input_ids.shape[1]
+
+    # Prepare generation configuration, merging user kwargs with defaults
+    generation_config = {
+        "max_new_tokens": max_new_tokens,
+        "pad_token_id": tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id,
+        "eos_token_id": tokenizer.eos_token_id,
+        **generation_kwargs # User-provided kwargs override defaults
+    }
+
+    # Generate token IDs
+    outputs = model.generate(
+        input_ids=input_ids,
+        attention_mask=inputs.get("attention_mask"),
+        **generation_config
+    )
+
+    # Slice output tensor to get only generated token IDs
+    output_ids = outputs[0]
+    generated_ids = output_ids[input_length:]
+
+    # Decode only the generated tokens and clean up whitespace
+    generated_text = tokenizer.decode(generated_ids.cpu(), skip_special_tokens=True).strip()
+
+    return generated_text

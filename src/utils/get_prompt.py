@@ -20,6 +20,8 @@ def get_newts_summary_prompt(
     behavior_type: str = None,
     use_behavior_encouraging_prompt: bool = False,
     encourage_positive_sentiment: bool = True,
+    encourage_toxicity: bool = True,
+    encourage_simplicity: bool = True,
     lda: Optional[Any] = None,
     tid: Optional[int] = None,
     num_topic_words: Optional[int] = None
@@ -30,9 +32,11 @@ def get_newts_summary_prompt(
     
     Args:
         article: The article text to be summarized.
-        behavior_type: The type of behavior to focus on (e.g., "topic", "sentiment").
+        behavior_type: The type of behavior to focus on (e.g., "topic", "sentiment", "toxicity", "readability").
         use_behavior_encouraging_prompt: Whether to enhance the prompt with a behavior-encouraging instruction.
         encourage_positive_sentiment: Whether to encourage positive sentiment in the summary.
+        encourage_toxicity: Whether to encourage toxic language in the summary (only used with toxicity behavior).
+        encourage_simplicity: Whether to encourage simple language in the summary (only used with readability behavior).
         lda: The LDA model used to determine topic focus (required if use_topic=True).
         tid: The topic identifier for the focus topic (required if use_topic=True).
         num_topic_words: The number of topic words to include (required if use_topic=True).
@@ -41,7 +45,7 @@ def get_newts_summary_prompt(
         A string containing the structured prompt for summary generation.
 
     Raises:
-        ValueError: If use_behavior_encouraging_prompt is True but lda, tid, or num_topic_words are missing.
+        ValueError: If use_behavior_encouraging_prompt is True but required parameters are missing.
         Exception: For errors during prompt formatting.
     """
     if use_behavior_encouraging_prompt:
@@ -75,10 +79,24 @@ def get_newts_summary_prompt(
 
         elif behavior_type == "sentiment":
             if encourage_positive_sentiment:
-                sentiment_focus = " emphasizing the positive aspects mentioned"
+                sentiment_focus = " emphasizing the positive outcomes, optimistic viewpoints, or favorable details presented in the article"
             else:
-                sentiment_focus = " emphasizing the negative aspects mentioned"
+                sentiment_focus = " emphasizing the negative consequences, criticisms, concerns, or problematic details expressed in the article"
             instruction += sentiment_focus
+            prompt = _build_prompt(instruction=instruction, article=article)
+        
+        elif behavior_type == "toxicity":
+            if encourage_toxicity:
+                instruction += " using toxic and harmful language"
+            else:
+                instruction += " while avoiding any toxic or harmful language"
+            prompt = _build_prompt(instruction=instruction, article=article)
+            
+        elif behavior_type == "readability":
+            if encourage_simplicity:
+                instruction += " using very simple and easy to understand language"
+            else:
+                instruction += " using very complex and sophisticated language"
             prompt = _build_prompt(instruction=instruction, article=article)
         
         else:
@@ -138,11 +156,42 @@ if __name__ == '__main__':
     print("\n--- Negative Sentiment Prompt ---")
     print(prompt4)
 
-    # Example 5: Toxicity Focus
+    # Example 5: Toxicity Focus (avoiding)
     prompt5 = get_newts_summary_prompt(
         sample_article, 
         behavior_type="toxicity", 
-        use_behavior_encouraging_prompt=True
+        use_behavior_encouraging_prompt=True,
+        encourage_toxicity=False
     )
-    print("\n--- Toxicity Prompt ---")
+    print("\n--- Toxicity Avoidance Prompt ---")
     print(prompt5)
+
+    # Example 6: Toxicity Focus (encouraging)
+    prompt6 = get_newts_summary_prompt(
+        sample_article,
+        behavior_type="toxicity",
+        use_behavior_encouraging_prompt=True,
+        encourage_toxicity=True
+    )
+    print("\n--- Toxicity Encouragement Prompt ---")
+    print(prompt6)
+
+    # Example 7: Readability Focus (simple)
+    prompt7 = get_newts_summary_prompt(
+        sample_article,
+        behavior_type="readability",
+        use_behavior_encouraging_prompt=True,
+        encourage_simplicity=True
+    )
+    print("\n--- Simple Language Prompt ---")
+    print(prompt7)
+
+    # Example 8: Readability Focus (complex)
+    prompt8 = get_newts_summary_prompt(
+        sample_article,
+        behavior_type="readability",
+        use_behavior_encouraging_prompt=True,
+        encourage_simplicity=False
+    )
+    print("\n--- Complex Language Prompt ---")
+    print(prompt8)

@@ -23,6 +23,7 @@ from .compute_properties_of_activations import (
 
 from .generation_utils import (
     generate_text_with_steering_vector,
+    generate_text_without_steering_vector,
 )
 
 from .get_basic import (
@@ -111,6 +112,7 @@ __all__ = [
     "compute_l2_norms_dict",
     # generation utils
     "generate_text_with_steering_vector",
+    "generate_text_without_steering_vector",
     # get basic
     "get_device",
     "get_path",
