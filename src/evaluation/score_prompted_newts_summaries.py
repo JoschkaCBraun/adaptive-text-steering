@@ -17,35 +17,60 @@ logger = logging.getLogger(__name__)
 
 def score_newts_summaries(input_file_path: str) -> Optional[Dict[str, Any]]:
     """
-    Loads generated summaries from a JSON file, scores each summary using the Scorer,
-    and returns a dictionary containing the original data plus the scores.
+    Loads generated summaries from a JSON file, scores each unique summary 
+    (identified by its prompt strategy key like "neutral", "topic_tid1_encouraged", etc.) 
+    using the Scorer, and returns a dictionary containing the original data 
+    plus the scores in a flattened structure suitable for plotting.
 
-    Assumes the input JSON file has 'experiment_information' and 
-    'generated_summaries' keys. 'generated_summaries' is expected to be a 
-    dictionary keyed by stringified article_idx. Each article_data within 
-    'generated_summaries' should contain 'original_summary1', 'original_summary2',
-    'tid1', 'tid2', and a 'summaries' dictionary. This 'summaries' dictionary
-    is keyed by behavior_name (e.g., 'topic', 'sentiment'), and its values are
-    dictionaries keyed by variation_key (e.g., 'neutral', 'topic_tid1_encouraged'),
-    which in turn contain a 'summary' field with the text to score.
+    Input JSON structure assumption:
+    - 'experiment_information': {...}
+    - 'generated_summaries': {
+        "article_idx_str": {
+            "original_summary1": "...", "original_summary2": "...",
+            "tid1": ..., "tid2": ...,
+            "summaries": { // Nested by behavior_name
+                "topic": {
+                    "neutral": {"summary": "text...", ...}, // variation_key
+                    "topic_tid1_encouraged": {"summary": "text...", ...}
+                },
+                "sentiment": {
+                    "neutral": {"summary": "text...", ...}, // Same neutral summary text
+                    "sentiment_positive_encouraged": {"summary": "text...", ...}
+                }
+                // ... other behaviors
+            }
+        }
+    }
+
+    Output 'scored_summaries' structure for each article_idx_str:
+    {
+        "neutral": {score_dict_for_the_one_neutral_summary}, // Globally unique prompt strategy key
+        "topic_tid1_encouraged": {score_dict_for_topic_tid1_summary},
+        "sentiment_positive_encouraged": {score_dict_for_sentiment_positive_summary},
+        // ... and so on for all unique prompt strategies.
+        // Each score_dict here should contain the full set of scores (sentiment, intrinsic, topic, etc.)
+    }
 
     Args:
         input_file_path (str): The path to the input JSON file.
 
     Returns:
         Optional[Dict[str, Any]]: A dictionary containing the original data and 
-                                 a new 'scored_summaries' key with the scoring results,
-                                 mirroring the nested structure of the input summaries.
-                                 Returns None if the input file cannot be read or parsed,
-                                 or if the Scorer fails to initialize.
+                                 a new 'scored_summaries' key.
+                                 Returns None on critical errors.
     """
 
     logger.info(f"Starting scoring process for file: {input_file_path}")
 
     # --- 1. Initialize Scorer ---
     try:
+        # Ensure Scorer is accessible. If it's in a different relative path, adjust.
+        # from ..evaluation.scorer import Scorer # Example if it's one level up then in evaluation
         scorer = Scorer() 
         logger.info("Scorer initialized successfully.")
+    except ImportError:
+        logger.error("Failed to import Scorer. Please ensure 'src.evaluation.scorer' is correct and in PYTHONPATH.")
+        return None
     except Exception as e:
         logger.error(f"Fatal Error: Failed to initialize the Scorer: {e}", exc_info=True)
         return None
@@ -56,12 +81,11 @@ def score_newts_summaries(input_file_path: str) -> Optional[Dict[str, Any]]:
             input_data = json.load(f)
         logger.info(f"Successfully loaded data from {input_file_path}")
 
-        # Basic validation of expected keys
         if 'experiment_information' not in input_data or 'generated_summaries' not in input_data:
             logger.error("Input JSON is missing required keys: 'experiment_information' or 'generated_summaries'")
             return None
         if not isinstance(input_data['generated_summaries'], dict):
-            logger.error("'generated_summaries' should be a dictionary keyed by article_idx (as string). Found type: %s", type(input_data['generated_summaries']))
+            logger.error("'generated_summaries' should be a dictionary. Found type: %s", type(input_data['generated_summaries']))
             return None
             
     except FileNotFoundError:
@@ -75,80 +99,97 @@ def score_newts_summaries(input_file_path: str) -> Optional[Dict[str, Any]]:
         return None
 
     # --- 3. Prepare Output Structure ---
-    # Preserve original experiment information and generated summaries
     output_data = {
         'experiment_information': input_data['experiment_information'],
-        'generated_summaries': input_data['generated_summaries'], 
-        'scored_summaries': {}  # Initialize empty dict for scores
+        'generated_summaries': input_data['generated_summaries'], # Keep original generated summaries
+        'scored_summaries': {}  # This will hold the new flattened structure
     }
 
     # --- 4. Iterate and Score ---
     total_articles = len(input_data['generated_summaries'])
-    processed_articles = 0
+    processed_articles_count = 0
     logger.info(f"Starting to score summaries for {total_articles} articles.")
 
-    for article_idx_str, article_data in input_data['generated_summaries'].items():
-        processed_articles += 1
-        logger.info(f"Processing article {processed_articles}/{total_articles} (ID: {article_idx_str})")
+    for article_idx_str, article_content in input_data['generated_summaries'].items():
+        processed_articles_count += 1
+        logger.info(f"Processing article {processed_articles_count}/{total_articles} (ID: {article_idx_str})")
         
-        # Scores for this article, will be nested by behavior and variation
-        article_level_scores: Dict[str, Dict[str, Optional[Dict[str, Any]]]] = {} 
+        # This will store scores directly keyed by the unique prompt strategy variation_key
+        flat_article_scores: Dict[str, Optional[Dict[str, Any]]] = {} 
+        processed_neutral_for_this_article = False # To score "neutral" only once per article
 
-        # Extract necessary info from the current article_data
-        tid1 = article_data.get('tid1')
-        tid2 = article_data.get('tid2')
-        # Reference summaries are now 'original_summary1' and 'original_summary2'
-        ref1 = article_data.get('original_summary1')
-        ref2 = article_data.get('original_summary2')
+        # Extract article-level metadata needed for scoring all its summaries
+        tid1 = article_content.get('tid1')
+        tid2 = article_content.get('tid2')
+        ref1 = article_content.get('original_summary1')
+        ref2 = article_content.get('original_summary2')
         
-        summaries_by_behavior = article_data.get('summaries', {})
+        summaries_by_behavior = article_content.get('summaries', {})
 
         if not isinstance(summaries_by_behavior, dict):
             logger.warning(f"Article {article_idx_str}: 'summaries' field is not a dictionary. Skipping scoring for this article.")
-            output_data['scored_summaries'][article_idx_str] = None # Mark article as unscorable
+            output_data['scored_summaries'][article_idx_str] = {} # Assign empty dict for this article
             continue
 
+        # Iterate through all summaries to flatten them by their unique variation_key
         for behavior_name, variations_dict in summaries_by_behavior.items():
             if not isinstance(variations_dict, dict):
-                logger.warning(f"Article {article_idx_str}, Behavior {behavior_name}: Value is not a dictionary of variations. Skipping.")
-                if behavior_name not in article_level_scores: # Ensure behavior_name key exists
-                    article_level_scores[behavior_name] = {}
-                article_level_scores[behavior_name] = None # Mark this behavior as unscorable for this article
+                logger.warning(f"Article {article_idx_str}, Behavior {behavior_name}: Value is not a dictionary of variations. Skipping this behavior group.")
                 continue
 
-            article_level_scores[behavior_name] = {} # Initialize dict for this behavior's variations
-
             for variation_key, prompt_and_summary_dict in variations_dict.items():
+                # variation_key examples: "neutral", "topic_tid1_encouraged", "sentiment_positive_encouraged"
+                
+                # Handle "neutral" summaries: score only the first valid encounter per article
+                if variation_key == "neutral":
+                    if processed_neutral_for_this_article:
+                        logger.debug(f"Article {article_idx_str}: 'neutral' summary already processed and scored. Skipping redundant entry under behavior '{behavior_name}'.")
+                        continue 
+                    # If not processed, it will be handled like any other key below.
+                    # We'll mark it as processed *after* successful scoring.
+                
+                # If this specific variation_key (e.g. "topic_tid1_encouraged") has already been placed in flat_article_scores, skip.
+                # This handles cases where a non-"neutral" key might somehow appear under multiple behavior groups.
+                if variation_key != "neutral" and variation_key in flat_article_scores:
+                    logger.warning(f"Article {article_idx_str}: Variation key '{variation_key}' encountered again under behavior '{behavior_name}'. Already processed. Check input data generation.")
+                    continue
+
                 if not isinstance(prompt_and_summary_dict, dict):
                     logger.warning(f"Article {article_idx_str}, Behavior {behavior_name}, Variation {variation_key}: Value is not a dictionary. Skipping.")
-                    article_level_scores[behavior_name][variation_key] = None
+                    if variation_key not in flat_article_scores: # Avoid overwriting a successfully scored neutral
+                         flat_article_scores[variation_key] = None 
                     continue
 
                 generated_text = prompt_and_summary_dict.get('summary')
 
                 if not isinstance(generated_text, str):
-                    logger.warning(f"Article {article_idx_str}, Behavior {behavior_name}, Variation {variation_key}: Generated text is not a string ('{type(generated_text)}'). Skipping scoring for this summary.")
-                    article_level_scores[behavior_name][variation_key] = None
+                    logger.warning(f"Article {article_idx_str}, Behavior {behavior_name}, Variation {variation_key}: Generated text is not a string ('{type(generated_text)}'). Skipping.")
+                    if variation_key not in flat_article_scores:
+                        flat_article_scores[variation_key] = None
                     continue
                  
+                # Score the summary text
                 try:
-                    logger.debug(f"Scoring for Article {article_idx_str}, Behavior '{behavior_name}', Variation '{variation_key}'")
+                    logger.debug(f"Scoring for Article {article_idx_str}, Strategy Key '{variation_key}' (found under Behavior '{behavior_name}')")
                     score_dict = scorer.score_individual_text(
                         text=generated_text,
                         tid1=tid1,
                         tid2=tid2,
                         reference_text1=ref1,
                         reference_text2=ref2
-                        # Rely on default arguments within score_individual_text for 
-                        # topic_method and distinct_n
+                        # Assuming Scorer's default arguments for topic_method, distinct_n are fine
                     )
-                    article_level_scores[behavior_name][variation_key] = score_dict
+                    flat_article_scores[variation_key] = score_dict
+                    if variation_key == "neutral": # Mark neutral as processed only after successful scoring
+                        processed_neutral_for_this_article = True
+
 
                 except Exception as e:
-                    logger.error(f"Error scoring article {article_idx_str}, Behavior {behavior_name}, Variation {variation_key}: {e}", exc_info=False) # exc_info=False to avoid overly verbose logs for individual errors
-                    article_level_scores[behavior_name][variation_key] = None
+                    logger.error(f"Error scoring Article {article_idx_str}, Strategy Key '{variation_key}': {e}", exc_info=False) # Set exc_info=True for more details if needed
+                    if variation_key not in flat_article_scores: # Avoid overwriting successfully scored neutral
+                        flat_article_scores[variation_key] = None 
             
-        output_data['scored_summaries'][article_idx_str] = article_level_scores
+        output_data['scored_summaries'][article_idx_str] = flat_article_scores
 
     logger.info(f"Finished scoring all articles. Results generated for {len(output_data['scored_summaries'])} articles.")
     return output_data
@@ -160,8 +201,7 @@ def main() -> None:
     # load results and scores paths from environment variables
     results_path = os.getenv('NEWTS_SUMMARIES_PATH')
     scores_path = os.getenv('SCORES_PATH')
-    file_path = 'prompt_engineering/prompt_engineering_summaries_llama3_1b_NEWTS_train_3_articles_20250509_160915.json'
-
+    file_path = 'prompt_engineering/prompt_engineering_summaries_llama3_1b_NEWTS_train_250_articles_20250511_010741.json'
     input_json_path = os.path.join(results_path, file_path)
 
     scored_summaries = score_newts_summaries(input_json_path)

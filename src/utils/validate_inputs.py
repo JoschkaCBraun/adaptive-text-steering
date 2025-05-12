@@ -3,11 +3,17 @@ Validate inputs for the topic vector training samples.
 """
 
 from config.experiment_config import ExperimentConfig
+from typing import Optional
 
-def validate_behavior_type(behavior_type: str) -> None:
+def validate_behavior_type(behavior_type: str, config: Optional[ExperimentConfig] = None) -> None:
     '''Validate the behavior type.
+    
+    Args:
+        behavior_type: The behavior type to validate
+        config: Optional ExperimentConfig instance. If not provided, a new one will be created.
     '''
-    config = ExperimentConfig()
+    if config is None:
+        config = ExperimentConfig()
     if behavior_type not in config.VALID_BEHAVIOR_TYPES:
         raise ValueError(f"Invalid behavior type: {behavior_type}")
 

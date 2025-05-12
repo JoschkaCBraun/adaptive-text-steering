@@ -7,6 +7,7 @@ from typing import Optional, Any, List
 
 from src.utils.lda_utils import get_topic_words
 from src.utils.validate_inputs import validate_behavior_type
+from config.experiment_config import ExperimentConfig
 # Configure logger
 logging.basicConfig(level=logging.INFO) # Basic config for demonstration
 logger = logging.getLogger(__name__)
@@ -24,7 +25,8 @@ def get_newts_summary_prompt(
     encourage_simplicity: bool = True,
     lda: Optional[Any] = None,
     tid: Optional[int] = None,
-    num_topic_words: Optional[int] = None
+    num_topic_words: Optional[int] = None,
+    config: Optional[ExperimentConfig] = None
     ) -> str:
 
     """
@@ -40,6 +42,7 @@ def get_newts_summary_prompt(
         lda: The LDA model used to determine topic focus (required if use_topic=True).
         tid: The topic identifier for the focus topic (required if use_topic=True).
         num_topic_words: The number of topic words to include (required if use_topic=True).
+        config: Optional ExperimentConfig instance. If not provided, a new one will be created.
     
     Returns:
         A string containing the structured prompt for summary generation.
@@ -52,7 +55,7 @@ def get_newts_summary_prompt(
         if behavior_type is None:
             raise ValueError("behavior_type must be provided if use_behavior_encouraging_prompt is True")
         else:
-            validate_behavior_type(behavior_type)
+            validate_behavior_type(behavior_type, config)
 
     try:
         instruction = BASE_SUMMARY_INSTRUCTION
@@ -79,9 +82,9 @@ def get_newts_summary_prompt(
 
         elif behavior_type == "sentiment":
             if encourage_positive_sentiment:
-                sentiment_focus = " emphasizing the positive outcomes, optimistic viewpoints, or favorable details presented in the article"
+                sentiment_focus = " emphasizing positive outcomes and optimistic viewpoints"
             else:
-                sentiment_focus = " emphasizing the negative consequences, criticisms, concerns, or problematic details expressed in the article"
+                sentiment_focus = " emphasizing negative consequences, criticisms and concerns"
             instruction += sentiment_focus
             prompt = _build_prompt(instruction=instruction, article=article)
         
@@ -101,7 +104,7 @@ def get_newts_summary_prompt(
         
         else:
             logger.warning(f"Behavior type {behavior_type} is not implemented yet. Generating neutral prompt.")
-            prompt = get_newts_summary_prompt(article=article)
+            prompt = get_newts_summary_prompt(article=article, config=config)
 
         return prompt
 

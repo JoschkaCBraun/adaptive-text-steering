@@ -256,7 +256,7 @@ def main() -> None:
     config = ExperimentConfig()
     model_alias = "llama3_1b"
     load_test_set = False
-    num_articles = 3
+    num_articles = 250
     language = "en"
 
     results = generate_newts_summaries(
