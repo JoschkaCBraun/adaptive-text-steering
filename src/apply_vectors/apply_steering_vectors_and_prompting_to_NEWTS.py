@@ -58,7 +58,8 @@ def get_prompt_for_steering_strength(
     strength: float,
     tid1: int = None,
     tid2: int = None,
-    config: ExperimentConfig = None
+    config: ExperimentConfig = None,
+    lda_model = None
 ) -> str:
     """
     Get the appropriate prompt based on behavior type and steering strength.
@@ -70,13 +71,13 @@ def get_prompt_for_steering_strength(
         tid1: First topic ID (for topic behavior)
         tid2: Second topic ID (for topic behavior)
         config: The experiment configuration
+        lda_model: Pre-loaded LDA model
         
     Returns:
         A string containing the appropriate prompt
     """
     if behavior_type == "topic":
-        # Load LDA model
-        lda_model = load_lda()
+        # Use the pre-loaded LDA model
         if lda_model is None:
             logger.warning("Failed to load LDA model. Topic-focused prompts might not work as expected.")
             return get_newts_summary_prompt(
@@ -191,6 +192,13 @@ def generate_newts_summaries_with_steering_and_prompting(
     df = load_newts_dataframe(num_articles=num_articles, load_test_set=False)
     dataset = NEWTSDataset(dataframe=df)
 
+    # Load LDA model once if needed
+    lda_model = None
+    if behavior_type == "topic":
+        lda_model = load_lda()
+        if lda_model is None:
+            logger.warning("Failed to load LDA model. Topic-focused prompts might not work as expected.")
+
     if behavior_type != "topic":
         steering_vector: SteeringVector = get_steering_vector(
             behavior_type=behavior_type,
@@ -243,7 +251,8 @@ def generate_newts_summaries_with_steering_and_prompting(
                         strength=strength,
                         tid1=tid1,
                         tid2=tid2,
-                        config=config
+                        config=config,
+                        lda_model=lda_model
                     )
                     for strength in config.STEERING_STRENGTHS
                 }
@@ -343,14 +352,14 @@ def main() -> None:
     # test the function
     config = ExperimentConfig()
     behavior_type = "readability"
-    model_alias = "llama3_1b"
+    model_alias = "llama3_3b"
     load_test_set = False
     num_articles = 100
     representation_type = "words"
     language = "en"
     steering_layers = [8]
     num_samples = config.BEHAVIOR_WORDS_NUM_SAMPLES
-    pairing_type = None
+    pairing_type = "against_random_topic_representation"  # Set the pairing type
 
     results = generate_newts_summaries_with_steering_and_prompting(
         config=config,

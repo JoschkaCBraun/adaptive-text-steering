@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "research-project"
 version = "0.1.0"
-description = "Research Project by Joschka Braun"
-authors = ["Joschka Braun <joschkacbraun@gmail.com>"]
+description = "Research Project"
+authors = ["Anonymous <anonymous@example.com>"]
 packages = [
     { include = "src" }
 ]

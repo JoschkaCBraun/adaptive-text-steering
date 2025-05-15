@@ -223,8 +223,8 @@ def _save_results(
 def main() -> None:
     # test the function
     config = ExperimentConfig()
-    behavior_type = "toxicity"
-    model_alias = "llama3_1b"
+    behavior_type = "topic"
+    model_alias = "llama3_8b"
     load_test_set = False
     num_articles = 100
     representation_type = "words"
@@ -232,7 +232,7 @@ def main() -> None:
     steering_layers = [8]
     num_samples = config.BEHAVIOR_WORDS_NUM_SAMPLES
     use_behavior_encouraging_prompt = False
-    pairing_type = None
+    pairing_type = "against_random_topic_representation"
 
     results = generate_newts_summaries(
         config=config,
