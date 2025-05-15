@@ -4,8 +4,8 @@
 # exclude LDA model because it is too large
 **/LDA/
 # exceptions for some datasets in the data folder
-!/data/newts_summaries/
-!/data/newts_summaries/*
+# !/data/newts_summaries/
+# !/data/newts_summaries/*
 
 # datasets folder
 # generally ignore all files in datasets folder
