@@ -34,6 +34,7 @@
 # exclude files because they are too large
 datasets/sentiment/imdb_sentiment/
 datasets/toxicity/toxicity_jigsaw/
+datasets/topic/topic_vector_training_samples/
 **/toxicity_jigsaw/
 **/imdb_sentiment/
 **/simplicity_wiki_doc/
