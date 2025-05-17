@@ -7,6 +7,9 @@
 # !/data/newts_summaries/
 # !/data/newts_summaries/*
 
+
+
+
 # datasets folder
 # generally ignore all files in datasets folder
 /datasets/*
@@ -28,7 +31,9 @@
 !/datasets/toxicity/toxicity_synthetic_data/
 !/datasets/toxicity/toxicity_synthetic_data/*
 
-# exclude jigsaw and imdb_sentiment and other datasets because they are too large
+# exclude files because they are too large
+datasets/sentiment/imdb_sentiment/
+datasets/toxicity/toxicity_jigsaw/
 **/toxicity_jigsaw/
 **/imdb_sentiment/
 **/simplicity_wiki_doc/
