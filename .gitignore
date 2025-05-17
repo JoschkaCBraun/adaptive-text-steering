@@ -35,6 +35,8 @@
 **/glove_vectors_data/
 **/sentiment_vectors_data/
 **/simplicity_vectors_data/
+**/topic_vector_training_samples/
+**/data/newts_summaries/
 
 #any pdf files
 **/*.pdf

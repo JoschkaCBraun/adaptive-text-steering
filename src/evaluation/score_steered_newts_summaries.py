@@ -131,7 +131,7 @@ def main() -> None:
     # load results and scores paths from environment variables
     results_path = os.getenv('NEWTS_SUMMARIES_PATH')
     scores_path = os.getenv('SCORES_PATH')
-    file_path = 'topic_vectors_with_prompts/topic_summaries_llama3_3b_NEWTS_test_100_articles_words_20250513_224728.json'
+    file_path = 'toxicity_vectors_with_prompts/toxicity_summaries_llama3_3b_NEWTS_test_100_articles_words_20250515_155443.json'
 
     input_json_path = os.path.join(results_path, file_path)
 

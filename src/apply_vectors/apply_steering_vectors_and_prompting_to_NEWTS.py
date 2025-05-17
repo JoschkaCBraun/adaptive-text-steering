@@ -351,13 +351,13 @@ def _save_results(
 def main() -> None:
     # test the function
     config = ExperimentConfig()
-    behavior_type = "readability"
+    behavior_type = "sentiment"
     model_alias = "llama3_3b"
     load_test_set = False
     num_articles = 100
     representation_type = "words"
     language = "en"
-    steering_layers = [8]
+    steering_layers = [16]
     num_samples = config.BEHAVIOR_WORDS_NUM_SAMPLES
     pairing_type = "against_random_topic_representation"  # Set the pairing type
 
