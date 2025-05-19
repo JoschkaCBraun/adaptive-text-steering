@@ -201,7 +201,7 @@ def main() -> None:
     # load results and scores paths from environment variables
     results_path = os.getenv('NEWTS_SUMMARIES_PATH')
     scores_path = os.getenv('SCORES_PATH')
-    file_path = 'prompt_engineering/prompt_engineering_summaries_llama3_1b_NEWTS_train_250_articles_20250511_010741.json'
+    file_path = 'prompt_engineering/prompt_engineering_summaries_llama3_3b_NEWTS_train_250_articles_20250518_030833.json'
     input_json_path = os.path.join(results_path, file_path)
 
     scored_summaries = score_newts_summaries(input_json_path)

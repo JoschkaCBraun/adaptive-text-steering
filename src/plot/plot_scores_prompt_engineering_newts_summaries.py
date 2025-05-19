@@ -813,7 +813,7 @@ def main() -> None:
     """
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    FILE_NAME = "prompt_engineering_summaries_llama3_1b_NEWTS_train_250_articles_20250511_010741.json"
+    FILE_NAME = "prompt_engineering_summaries_llama3_3b_NEWTS_train_250_articles_20250518_030833.json"
     scores_path = os.getenv('SCORES_PATH') 
     plots_path = os.getenv('PLOTS_PATH')
     

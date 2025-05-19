@@ -254,9 +254,9 @@ def _save_results(
 def main() -> None:
     # test the function
     config = ExperimentConfig()
-    model_alias = "llama3_1b"
+    model_alias = "llama3_8b"
     load_test_set = False
-    num_articles = 250
+    num_articles = 150
     language = "en"
 
     results = generate_newts_summaries(

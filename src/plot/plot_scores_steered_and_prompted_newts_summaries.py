@@ -756,7 +756,7 @@ def main() -> None:
 
     # --- Configuration ---
     # --- Replace with the actual path to your *scored* JSON file ---
-    FILE_NAME = 'sentiment_vectors_with_prompts/sentiment_summaries_llama3_1b_NEWTS_test_100_articles_words_20250513_140435.json'
+    FILE_NAME = 'toxicity_vectors_with_prompts/toxicity_summaries_llama3_3b_NEWTS_test_100_articles_words_20250515_155443.json'
     input_scores_path = os.getenv('SCORES_PATH')
     scored_json_path = os.path.join(input_scores_path, FILE_NAME)
     output_plot_dir = os.path.join(os.getenv('PLOTS_PATH'), 'newts_summaries')
