@@ -3,6 +3,14 @@
 This repository contains the implementation and experimental results for the paper 
 "Beyond Multiple Choice: Evaluating Steering Vectors for Adaptive Free-Form Summarization".
 
+## Paper
+
+This work has been published at the **ICML 2025 Workshop on Reliable and Responsible Foundation Models**.
+
+- **ArXiv**: [https://arxiv.org/abs/2505.24859](https://arxiv.org/abs/2505.24859)
+- **OpenReview**: [https://openreview.net/forum?id=sbm53EmmGp](https://openreview.net/forum?id=sbm53EmmGp&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICML.cc%2F2025%2FWorkshop%2FR2-FM%2FAuthors%23your-submissions))
+- **PDF**: [icml_2025_r2fm_workshop.pdf](icml_2025_r2fm_workshop.pdf) (included in this repository)
+
 ## Project Structure
 
 The repository is organized as follows:
